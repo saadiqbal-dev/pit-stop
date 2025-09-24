@@ -1,0 +1,51 @@
+/* CSS Custom Properties (Variables) - Pitstop */
+
+:root {
+  /* Font Families */
+  --font-family-open-sans: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-family-inter: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+
+  --font-family-base: var(--font-family-open-sans);
+  --font-family-accent: var(--font-family-inter);
+
+  /* Colors */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-brand-red-primary: #EB2227; /* Nav background */
+  --color-brand-red-accent: #ED1F24;  /* CTA button */
+  --color-brand-red-accent-hover: #D41B20;
+  --color-text-default: #000000;
+  --color-text-inverse: #FFFFFF;
+
+  /* Layout */
+  --container-max-width: 1920px;
+
+  /* Header spacings */
+  --header-padding-x: 100px;
+  --header-top-padding-y: 38.55px;
+  --header-nav-padding-y: 20px;
+
+  /* Header elements */
+  --logo-width: 265.581px;
+  --logo-height: 136.894px;
+  --controls-gap: 57px;
+  --dropdown-gap: 8px;
+
+  /* Button - Primary */
+  --button-radius-sm: 5px;
+  --button-primary-width: 250px;
+  --button-primary-height: 60px;
+  --button-primary-bg: var(--color-brand-red-accent);
+  --button-primary-bg-hover: var(--color-brand-red-accent-hover);
+  --button-primary-text: var(--color-text-inverse);
+  --button-primary-font: var(--font-family-accent);
+  --button-primary-font-size: 18px;
+  --button-primary-line-height: 32px;
+  --button-primary-font-weight: 600;
+
+  /* Typography - Nav */
+  --nav-font: var(--font-family-base);
+  --nav-font-size: 18px;
+  --nav-line-height: 30px;
+  --nav-font-weight: 600;
+}

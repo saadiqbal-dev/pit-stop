@@ -1,0 +1,56 @@
+/* CSS Reset - Pitstop */
+
+/* Prevent layout shift from scrollbar */
+html {
+    overflow-y: scroll; /* Always show scrollbar to prevent layout shift */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Box sizing reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+body,
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, li,
+figure, figcaption, blockquote,
+dl, dd {
+    margin: 0;
+    padding: 0;
+}
+
+/* List reset */
+ul, ol {
+    list-style: none;
+}
+
+/* Image reset */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Button reset */
+button {
+    cursor: pointer;
+    font: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+/* Link reset */
+a {
+    text-decoration: none;
+    color: inherit;
+}
