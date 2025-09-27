@@ -37,10 +37,11 @@
 
 ## Additional Best Practices
 1. **CSS Variables**: Define global variables in `variables.css` for colors, fonts, spacing
-2. **Mobile-First Approach**: Write CSS for mobile first, then add media queries for larger screens
-3. **Performance**: Lazy load images and defer non-critical JavaScript
-4. **Accessibility**: Ensure proper ARIA labels, semantic HTML, and keyboard navigation
-5. **Comments**: Add clear comments for complex logic or section boundaries
+2. **DRY Principle**: Create variables for any values used more than once to maintain consistency and ease of maintenance
+3. **Mobile-First Approach**: Write CSS for mobile first, then add media queries for larger screens
+4. **Performance**: Lazy load images and defer non-critical JavaScript
+5. **Accessibility**: Ensure proper ARIA labels, semantic HTML, and keyboard navigation
+6. **Comments**: Add clear comments for complex logic or section boundaries
 6. **Testing Commands**:
    - Lint: `npm run lint` (if available)
    - Type checking: `npm run typecheck` (if available)
