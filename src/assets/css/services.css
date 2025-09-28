@@ -56,6 +56,29 @@
 .services-card {
   background: #fff;
   box-shadow: 0 0 7.5px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  padding: 35px 40px 63px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 53px;
+}
+
+.services-card h2 {
+  color: #000;
+  text-align: center;
+  font-family: var(--font-family-base);
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 46px; /* 164.286% */
+}
+
+.services-svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .services-button {
@@ -66,9 +89,9 @@
   font-style: normal;
   font-weight: 500;
   line-height: 32px; /* 200% */
-  border-radius: 0 5px 5px 0;
+  border-radius: 5px;
   background: #ed1f24;
   padding: 9px 20.5px;
-  position: absolute;
-  right: 0;
+  border: none;
+  cursor: pointer;
 }
