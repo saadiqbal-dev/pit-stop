@@ -49,7 +49,7 @@
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 540px);
-  grid-template-rows: repeat(4, 430px);
+  grid-auto-rows: 430px;
   gap: 50px;
 }
 
@@ -63,6 +63,15 @@
   align-items: center;
   justify-content: space-between;
   gap: 53px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.services-card:nth-child(n + 10) {
+  display: none;
+}
+
+.services-grid.expanded .services-card:nth-child(n + 10) {
+  display: flex;
 }
 
 .services-card h2 {
