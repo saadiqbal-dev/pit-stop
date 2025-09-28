@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="assets/css/fonts.css" />
     <link rel="stylesheet" href="assets/css/variables.css" />
     <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/hero.css" />
+    <link rel="stylesheet" href="assets/css/search-bar.css" />
+    <link rel="stylesheet" href="assets/css/video-section.css" />
+    <link rel="stylesheet" href="assets/css/services.css" />
   </head>
   <body>
     <!-- Header -->
@@ -120,27 +124,24 @@
                       </li>
                     </ul>
                   </div>
-                    <div>
-                        <ul class="header__dropdown-list">
-                        <li class="header__dropdown-item">
-                            <a href="#" class="header__dropdown-link">Batteries</a>
-                        </li>
-                        <li class="header__dropdown-item">
-                            <a href="#" class="header__dropdown-link"
-                            >Tow Bars</a
-                            >
-                        </li>
-                        <li class="header__dropdown-item">
-                            <a href="#" class="header__dropdown-link"
-                            >ADAS</a
-                            >
-                        </li>
-                        <li class="header__dropdown-item">
-                            <a href="#" class="header__dropdown-link"
-                            >Fleet Servicing</a
-                            >
-                        </li>
-                        </ul>
+                  <div>
+                    <ul class="header__dropdown-list">
+                      <li class="header__dropdown-item">
+                        <a href="#" class="header__dropdown-link">Batteries</a>
+                      </li>
+                      <li class="header__dropdown-item">
+                        <a href="#" class="header__dropdown-link">Tow Bars</a>
+                      </li>
+                      <li class="header__dropdown-item">
+                        <a href="#" class="header__dropdown-link">ADAS</a>
+                      </li>
+                      <li class="header__dropdown-item">
+                        <a href="#" class="header__dropdown-link"
+                          >Fleet Servicing</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </li>
 
@@ -265,7 +266,75 @@
     <!-- Main Content -->
     <main>
       <!-- Your main content goes here -->
-      <h1>Test</h1>
+      <section class="hero-wrapper">
+        <div class="hero__content">
+          <h1 class="main_heading">Keeping You Safe on the Road</h1>
+          <p class="sub_heading">45 years of trust on the New Zealand roads</p>
+          <button class="hero__button">Find out More</button>
+        </div>
+      </section>
+      <section class="search-wrapper">
+        <div class="search-content">
+          <h2 class="search-heading">There's a Pit Stop Near You!</h2>
+
+          <div class="search-input">
+            <input
+              class="input-bar"
+              id="dropdown"
+              type="text"
+              placeholder="Enter your Location"
+            />
+
+            <button class="search-button">Submit</button>
+          </div>
+        </div>
+      </section>
+      <section class="section-video-wrapper">
+        <div class="section-video-content">
+          <video class="video-wrapper" autoplay loop muted playsinline>
+            <source src="./assets/vid/pit-stop.mp4" />
+          </video>
+          <div class="text-content">
+            <div class="text-content-heading-container">
+              <img src="./assets/img/bar.svg" />
+              <p class="tagline">Welcome to Pit Stop</p>
+              <h2 class="content-heading">
+                We Help You and Your Family to Travel Safely
+              </h2>
+            </div>
+            <p class="content-description">
+              Together we will have a positive impact on our community and
+              environment.
+            </p>
+            <button class="hero__button">Find our more</button>
+          </div>
+        </div>
+      </section>
+      <section class="services-wrapper">
+        <div class="services-container">
+          <div class="services-heading-container">
+            <h2 class="services-heading">Our Products & Services</h2>
+            <p class="services-description">Book your service today.</p>
+          </div>
+          <div class="services-grid">
+            <div class="services-card"></div>
+            <div class="services-card"></div>
+            <div class="services-card"></div>
+            <div class="services-card"></div>
+            <div class="services-card"></div>
+            <div class="services-card"></div>
+            <div class="services-card"></div>
+            <div class="services-card"></div>
+            <div class="services-card"></div>
+            <div class="services-card"></div>
+            <div class="services-card"></div>
+            <div class="services-card"></div>
+          </div>
+          <div>
+            <button class="services-button">See More Services</button>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- JavaScript Files -->
