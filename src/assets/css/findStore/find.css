@@ -1,0 +1,56 @@
+.find-wrapper {
+  display: flex;
+  width: 100vw;
+  height: calc(100svh - 286px);
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background: #eb2227;
+}
+
+.find-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  max-width: 1920px;
+  margin: 0 auto;
+  h2 {
+    color: #fff;
+    font-family: var(--font-family-base);
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 46px; /* 164.286% */
+  }
+}
+
+.find-input {
+  border-radius: 3px 0 0 3px;
+  padding: 12px 21px;
+  background: #f4f5f7;
+  color: #9c7d7d;
+  font-family: var(--font-family-accent);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 177.778% */
+  width: 753px;
+  height: 55px;
+  flex-shrink: 0;
+  border: none;
+}
+
+.find-input::placeholder {
+  color: #9c7d7d;
+  font-family: var(--font-family-accent);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 177.778% */
+}
+
+.find-input:focus {
+  outline: none;
+  border: none;
+}
