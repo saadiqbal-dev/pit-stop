@@ -267,11 +267,25 @@
       <section class="find-wrapper">
         <div class="find-container">
           <h2>Select your Pit Stop Branch</h2>
-          <input
-            type="text"
-            placeholder="Select your Preferred Region"
-            class="find-input"
-          />
+          <div class="find-dropdown">
+            <div class="find-input">
+              <span class="find-input-text">Select your Preferred Region</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="8" viewBox="0 0 15 8" fill="none" class="find-input-arrow">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.0243 0L7.51031 6.14436L0.96885 0L0 0.914842L7.49656 7.99351L15 0.914842L14.0311 0H14.0243Z" fill="#9C7D7D"/>
+              </svg>
+            </div>
+            <ul class="find-dropdown-list">
+              <li class="find-dropdown-item" data-value="northland">+ Northland</li>
+              <li class="find-dropdown-item" data-value="auckland">+ Auckland</li>
+              <li class="find-dropdown-item" data-value="bay-of-plenty">+ Bay Of Plenty</li>
+              <li class="find-dropdown-item" data-value="waikato">+ Waikato</li>
+              <li class="find-dropdown-item" data-value="east-coast">+ East Coast</li>
+              <li class="find-dropdown-item" data-value="hawkes-bay">+ Hawkes Bay</li>
+              <li class="find-dropdown-item" data-value="taranaki">+ Taranaki</li>
+              <li class="find-dropdown-item" data-value="manawatu-wanganui">+ Manawatu-Wanganui</li>
+              <li class="find-dropdown-item" data-value="wellington">+ Wellington</li>
+            </ul>
+          </div>
         </div>
       </section>
     </main>
@@ -280,5 +294,6 @@
     <script src="js/header-navigation.js"></script>
     <script src="js/services-toggle.js"></script>
     <script src="js/carousel-arrows.js"></script>
+    <script src="js/find-dropdown.js"></script>
   </body>
 </html>
