@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pitstop - Home</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/fonts.css" />
+    <link rel="stylesheet" href="assets/css/variables.css" />
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/search/search.css" />
+  </head>
+  <link rel="stylesheet" href="assets/css/reviews.css" />
+  <body>
+    <!-- Header -->
+    <header class="header-wrapper">
+      <!-- Top band: full width background -->
+      <div class="header__top-band">
+        <div class="header__inner">
+          <!-- Top Section with Logo and Controls -->
+          <div class="header__top">
+            <!-- Logo -->
+            <div class="header__logo">
+              <img src="assets/img/logo-desktop.svg" alt="Logo" />
+            </div>
+
+            <!-- Right Controls -->
+            <div class="header__right-controls">
+              <!-- Search Icon -->
+              <div class="header__search-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="43"
+                  height="42"
+                  viewBox="0 0 43 42"
+                  fill="none"
+                >
+                  <path
+                    d="M16.114 31.5239C19.9849 31.5239 23.6603 30.1881 26.5536 27.7456L40.7078 41.6184C40.9815 41.8855 41.3138 42 41.6462 42C41.9785 42 42.3304 41.8855 42.6041 41.6184C43.132 41.1031 43.132 40.2635 42.6041 39.7674L28.45 25.8946C33.748 19.712 33.4352 10.4571 27.492 4.63698C24.4618 1.64107 20.415 0 16.114 0C11.813 0 7.7662 1.66015 4.73596 4.6179C-1.57865 10.7815 -1.57865 20.7806 4.73596 26.925C7.78575 29.9019 11.813 31.5239 16.114 31.5239ZM6.6323 6.50704C9.15424 4.00727 12.5364 2.65243 16.114 2.65243C19.6916 2.65243 23.0738 4.00727 25.5957 6.50704C30.8351 11.6402 30.8351 19.9791 25.5957 25.0741C23.0738 27.5738 19.6916 28.9287 16.114 28.9287C12.5364 28.9287 9.15424 27.5738 6.6323 25.0741C1.39293 19.9409 1.39293 11.602 6.6323 6.50704Z"
+                    fill="black"
+                  />
+                </svg>
+              </div>
+
+              <!-- Phone Button -->
+              <button class="header__phone-button">Click for 0800 No.</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nav band: full width background -->
+      <div class="header__nav-band">
+        <div class="header__inner">
+          <!-- Navigation Section -->
+          <nav class="header__nav">
+            <ul class="header__nav-menu">
+              <li
+                class="header__nav-item header__nav-item--dropdown"
+                data-dropdown="services"
+              >
+                <a href="#" class="header__nav-link">SERVICES</a>
+                <span class="header__dropdown-arrow">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="15"
+                    height="8"
+                    viewBox="0 0 15 8"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_71_492)">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M14.0243 0L7.51031 6.14436L0.96885 0L0 0.914842L7.49656 7.99351L15 0.914842L14.0311 0H14.0243Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_71_492">
+                        <rect width="15" height="8" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+                <div class="header__dropdown-menu" id="services-dropdown">
+                  <div>
+                    <ul class="header__dropdown-list">
+                      <li class="header__dropdown-item">
+                        <a href="#" class="header__dropdown-link">WOF</a>
+                      </li>
+                      <li class="header__dropdown-item">
+                        <a href="#" class="header__dropdown-link"
+                          >Service Packages</a
+                        >
+                      </li>
+                      <li class="header__dropdown-item">
+                        <a href="#" class="header__dropdown-link">Brakes</a>
+                      </li>
+                      <li class="header__dropdown-item">
+                        <a href="#" class="header__dropdown-link"
+                          >EV & Hybrid Service Packages</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <ul class="header__dropdown-list">
+                      <li class="header__dropdown-item">
+                        <a href="#" class="header__dropdown-link">Suspension</a>
+                      </li>
+                      <li class="header__dropdown-item">
+                        <a href="#" class="header__dropdown-link">Tyres</a>
+                      </li>
+                      <li class="header__dropdown-item">
+                        <a href="#" class="header__dropdown-link">Diagnosis</a>
+                      </li>
+                      <li class="header__dropdown-item">
+                        <a href="#" class="header__dropdown-link">Exhausts</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <ul class="header__dropdown-list">
+                      <li class="header__dropdown-item">
+                        <a href="#" class="header__dropdown-link">Batteries</a>
+                      </li>
+                      <li class="header__dropdown-item">
+                        <a href="#" class="header__dropdown-link">Tow Bars</a>
+                      </li>
+                      <li class="header__dropdown-item">
+                        <a href="#" class="header__dropdown-link">ADAS</a>
+                      </li>
+                      <li class="header__dropdown-item">
+                        <a href="#" class="header__dropdown-link"
+                          >Fleet Servicing</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+
+              <li
+                class="header__nav-item header__nav-item--dropdown"
+                data-dropdown="store"
+              >
+                <a href="#" class="header__nav-link">FIND A STORE</a>
+                <span class="header__dropdown-arrow">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="15"
+                    height="8"
+                    viewBox="0 0 15 8"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_71_492_2)">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M14.0243 0L7.51031 6.14436L0.96885 0L0 0.914842L7.49656 7.99351L15 0.914842L14.0311 0H14.0243Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_71_492_2">
+                        <rect width="15" height="8" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+                <!-- <div class="header__dropdown-menu" id="store-dropdown">
+                  <ul class="header__dropdown-list">
+                    <li class="header__dropdown-item">
+                      <a href="#" class="header__dropdown-link"
+                        >Auckland Stores</a
+                      >
+                    </li>
+                    <li class="header__dropdown-item">
+                      <a href="#" class="header__dropdown-link"
+                        >Wellington Stores</a
+                      >
+                    </li>
+                    <li class="header__dropdown-item">
+                      <a href="#" class="header__dropdown-link"
+                        >Christchurch Stores</a
+                      >
+                    </li>
+                    <li class="header__dropdown-item">
+                      <a href="#" class="header__dropdown-link"
+                        >Hamilton Stores</a
+                      >
+                    </li>
+                    <li class="header__dropdown-item">
+                      <a href="#" class="header__dropdown-link"
+                        >All Locations</a
+                      >
+                    </li>
+                  </ul>
+                </div> -->
+              </li>
+
+              <li class="header__nav-item">
+                <a href="#" class="header__nav-link">FREE WOF CHECK</a>
+              </li>
+
+              <li
+                class="header__nav-item header__nav-item--dropdown"
+                data-dropdown="about"
+              >
+                <a href="#" class="header__nav-link">ABOUT</a>
+                <span class="header__dropdown-arrow">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="15"
+                    height="8"
+                    viewBox="0 0 15 8"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_71_492_3)">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M14.0243 0L7.51031 6.14436L0.96885 0L0 0.914842L7.49656 7.99351L15 0.914842L14.0311 0H14.0243Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_71_492_3">
+                        <rect width="15" height="8" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+                <div class="header__dropdown-menu" id="about-dropdown">
+                  <ul class="header__dropdown-list">
+                    <li class="header__dropdown-item">
+                      <a href="#" class="header__dropdown-link">Our Story</a>
+                    </li>
+                    <li class="header__dropdown-item">
+                      <a href="#" class="header__dropdown-link">Our Team</a>
+                    </li>
+                    <li class="header__dropdown-item">
+                      <a href="#" class="header__dropdown-link">Careers</a>
+                    </li>
+                    <li class="header__dropdown-item">
+                      <a href="#" class="header__dropdown-link">Contact Us</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="header__nav-item">
+                <a href="#" class="header__nav-link">FINANCE</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Your main content goes here -->
+      <section class="search-wrapper">
+        <div class="search-container">
+          <input type="text" placeholder="Search" class="search-input" />
+        </div>
+      </section>
+    </main>
+
+    <!-- JavaScript Files -->
+  </body>
+</html>

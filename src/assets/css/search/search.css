@@ -1,0 +1,38 @@
+.search-wrapper {
+  display: flex;
+  width: 100vw;
+  height: calc(100svh - 286px);
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background: #eb2227;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.search-input {
+  display: flex;
+  /* width: 100%; */
+  width: 1256px;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  outline: none;
+  color: #ffffff;
+  font-family: var(--font-family-base);
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 62.625px;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  opacity: 1; /* Firefox fix */
+}
