@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const input = document.querySelector('.find-input');
   const inputText = document.querySelector('.find-input-text');
   const dropdownItems = document.querySelectorAll('.find-dropdown-item');
+  const loading = document.querySelector('.find-loading');
+  const title = document.querySelector('.find-title');
 
   // Toggle dropdown on input click
   input.addEventListener('click', function(e) {
@@ -15,10 +17,19 @@ document.addEventListener('DOMContentLoaded', function() {
   dropdownItems.forEach(item => {
     item.addEventListener('click', function(e) {
       e.stopPropagation();
-      const selectedText = this.textContent;
-      inputText.textContent = selectedText;
-      inputText.style.color = '#000';
-      dropdown.classList.remove('active');
+      const selectedValue = this.getAttribute('data-value');
+
+      // Hide dropdown and title
+      dropdown.style.display = 'none';
+      title.style.display = 'none';
+
+      // Show loading state
+      loading.classList.add('active');
+
+      // Redirect after 2 seconds (adjust timing as needed)
+      setTimeout(function() {
+        window.location.href = 'booking.html?region=' + selectedValue;
+      }, 2000);
     });
   });
 
