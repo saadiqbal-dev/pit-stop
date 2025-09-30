@@ -9,13 +9,15 @@ const carouselArrows = (() => {
   let gap = 50;
 
   const init = () => {
-    carouselTrack = document.querySelector('.carousel-cards-container');
+    carouselTrack = document.querySelector(".carousel-cards-container");
     if (!carouselTrack) return;
 
-    carouselCards = Array.from(carouselTrack.querySelectorAll('.carousel-card'));
+    carouselCards = Array.from(
+      carouselTrack.querySelectorAll(".carousel-card")
+    );
     if (carouselCards.length === 0) return;
 
-    const arrows = document.querySelectorAll('.carousel-arrows svg');
+    const arrows = document.querySelectorAll(".carousel-arrows svg");
     prevButton = arrows[0];
     nextButton = arrows[1];
 
@@ -32,76 +34,91 @@ const carouselArrows = (() => {
       cardWidth = firstCard.offsetWidth;
     }
 
-    carouselTrack.style.display = 'flex';
-    carouselTrack.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-    carouselTrack.style.willChange = 'transform';
+    carouselTrack.style.display = "flex";
+    // We now scroll instead of transforming
+    carouselTrack.style.transition = "";
+    carouselTrack.style.willChange = "scroll-position";
 
     const containerWidth = carouselTrack.parentElement.offsetWidth;
-    const contentWidth = document.querySelector('.carousel-content')?.offsetWidth || 0;
+    const contentWidth =
+      document.querySelector(".carousel-content")?.offsetWidth || 0;
     const availableWidth = containerWidth - contentWidth - 100;
+
+    // Read actual computed gap from CSS to avoid drift
+    const computedGap = parseFloat(getComputedStyle(carouselTrack).gap || "50");
+    gap = isNaN(computedGap) ? 50 : computedGap;
 
     visibleCards = Math.floor(availableWidth / (cardWidth + gap));
     visibleCards = Math.max(1, Math.min(visibleCards, 3));
   };
 
   const attachEventListeners = () => {
-    prevButton.addEventListener('click', slidePrev);
-    nextButton.addEventListener('click', slideNext);
+    prevButton.addEventListener("click", slidePrev);
+    nextButton.addEventListener("click", slideNext);
 
-    prevButton.style.cursor = 'pointer';
-    nextButton.style.cursor = 'pointer';
+    prevButton.style.cursor = "pointer";
+    nextButton.style.cursor = "pointer";
 
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
       setupCarousel();
-      updateCarouselPosition();
+      snapToNearestCard();
+      updateButtonStates();
     });
+
+    carouselTrack.addEventListener(
+      "scroll",
+      () => {
+        updateButtonStates();
+      },
+      { passive: true }
+    );
   };
 
   const slidePrev = () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateCarouselPosition();
-      updateButtonStates();
-    }
+    const step = cardWidth + gap;
+    carouselTrack.scrollBy({ left: -step, behavior: "smooth" });
   };
 
   const slideNext = () => {
-    const maxIndex = Math.max(0, carouselCards.length - visibleCards);
-    if (currentIndex < maxIndex) {
-      currentIndex++;
-      updateCarouselPosition();
-      updateButtonStates();
-    }
+    const step = cardWidth + gap;
+    carouselTrack.scrollBy({ left: step, behavior: "smooth" });
   };
 
-  const updateCarouselPosition = () => {
-    const translateX = -(currentIndex * (cardWidth + gap));
-    carouselTrack.style.transform = `translateX(${translateX}px)`;
+  const snapToNearestCard = () => {
+    const step = cardWidth + gap;
+    const index = Math.round(carouselTrack.scrollLeft / step);
+    const target = index * step;
+    carouselTrack.scrollTo({ left: target, behavior: "auto" });
   };
 
   const updateButtonStates = () => {
-    const maxIndex = Math.max(0, carouselCards.length - visibleCards);
+    const maxScroll = Math.max(
+      0,
+      carouselTrack.scrollWidth - carouselTrack.clientWidth
+    );
+    const atStart = carouselTrack.scrollLeft <= 0;
+    const atEnd = carouselTrack.scrollLeft >= maxScroll - 1;
 
-    if (currentIndex <= 0) {
-      prevButton.style.opacity = '0.3';
-      prevButton.style.pointerEvents = 'none';
+    if (atStart) {
+      prevButton.style.opacity = "0.3";
+      prevButton.style.pointerEvents = "none";
     } else {
-      prevButton.style.opacity = '1';
-      prevButton.style.pointerEvents = 'auto';
+      prevButton.style.opacity = "1";
+      prevButton.style.pointerEvents = "auto";
     }
 
-    if (currentIndex >= maxIndex) {
-      nextButton.style.opacity = '0.3';
-      nextButton.style.pointerEvents = 'none';
+    if (atEnd) {
+      nextButton.style.opacity = "0.3";
+      nextButton.style.pointerEvents = "none";
     } else {
-      nextButton.style.opacity = '1';
-      nextButton.style.pointerEvents = 'auto';
+      nextButton.style.opacity = "1";
+      nextButton.style.pointerEvents = "auto";
     }
   };
 
   return {
-    init
+    init,
   };
 })();
 
-document.addEventListener('DOMContentLoaded', carouselArrows.init);
+document.addEventListener("DOMContentLoaded", carouselArrows.init);
