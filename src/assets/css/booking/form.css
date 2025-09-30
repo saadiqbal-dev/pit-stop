@@ -11,53 +11,53 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 1920px;
+  max-width: var(--container-max-width);
   width: 100%;
-  padding: 71px 20px;
+  padding: 71px var(--spacing-lg);
 }
 
 .form-content {
   display: flex;
   flex-direction: column;
-  max-width: 880px;
+  max-width: var(--width-form-max);
   width: 100%;
   align-items: start;
   justify-content: space-between;
-  gap: 18px;
+  gap: var(--spacing-lg);
 }
 
 .form-content h2 {
-  color: #000;
+  color: var(--color-black);
   font-family: var(--font-family-base);
-  font-size: 40px;
+  font-size: var(--font-size-h2);
   font-style: normal;
   font-weight: 700;
-  line-height: 62.625px; /* 156.563% */
+  line-height: var(--line-height-xl);
 }
 
 .booking-form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--spacing-sm);
   width: 100%;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: var(--spacing-sm);
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--spacing-sm);
 }
 
 .form-label {
-  color: #000;
-  font-family: "Open Sans";
-  font-size: 15px;
+  color: var(--color-black);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -65,16 +65,16 @@
 }
 
 .form-input {
-  border-radius: 2px;
-  border: 1px solid #d9d9d9;
-  background: #fff;
-  color: #000;
-  font-family: "Open Sans";
-  font-size: 16px;
+  border-radius: var(--radius-sm);
+  border: var(--border-thin) solid var(--color-border-light);
+  background: var(--color-white);
+  color: var(--color-black);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  padding: 8px 18px;
+  padding: var(--spacing-xs) var(--spacing-lg);
   width: 100%;
   box-sizing: border-box;
   outline: none;
@@ -82,11 +82,11 @@
 
 .form-input:focus {
   outline: none;
-  border-color: #d9d9d9;
+  border-color: var(--color-border-light);
 }
 
 .form-input::placeholder {
-  color: #999;
+  color: var(--color-text-muted);
 }
 
 /* Red asterisk in labels */
@@ -95,14 +95,14 @@
 }
 
 .form-label .required-asterisk {
-  color: #eb2227;
+  color: var(--color-brand-red-primary);
 }
 
 .form-select {
   appearance: none;
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='15' height='8' viewBox='0 0 15 8' fill='none'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.0243 0L7.51031 6.14436L0.96885 0L0 0.914842L7.49656 7.99351L15 0.914842L14.0311 0H14.0243Z' fill='%239C7D7D'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
-  background-position: right 18px center;
+  background-position: right var(--spacing-lg) center;
   padding-right: 45px;
   cursor: pointer;
 }
@@ -122,16 +122,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 2px;
-  border: 1px solid #d9d9d9;
-  background: #fff;
-  color: #000;
-  font-family: "Open Sans";
-  font-size: 16px;
+  border-radius: var(--radius-sm);
+  border: var(--border-thin) solid var(--color-border-light);
+  background: var(--color-white);
+  color: var(--color-black);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  padding: 8px 18px;
+  padding: var(--spacing-xs) var(--spacing-lg);
   width: 100%;
   box-sizing: border-box;
   cursor: pointer;
@@ -143,16 +143,16 @@
 }
 
 .form-dropdown-text {
-  color: #000;
-  font-family: "Open Sans";
-  font-size: 16px;
+  color: var(--color-black);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
 .form-dropdown-text.placeholder {
-  color: #999;
+  color: var(--color-text-muted);
 }
 
 .form-dropdown-arrow {
@@ -166,20 +166,20 @@
 
 .form-dropdown-list {
   position: absolute;
-  top: calc(100% + 2px);
+  top: calc(100% + var(--spacing-sm) / 5);
   left: 0;
   width: 100%;
   max-height: 250px;
-  border-radius: 2px;
-  border: 1px solid #d9d9d9;
-  background: #fff;
+  border-radius: var(--radius-sm);
+  border: var(--border-thin) solid var(--color-border-light);
+  background: var(--color-white);
   list-style: none;
   padding: 0;
   margin: 0;
   overflow-y: auto;
   display: none;
   z-index: 10;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-dropdown);
 }
 
 .form-dropdown.active .form-dropdown-list {
@@ -187,19 +187,19 @@
 }
 
 .form-dropdown-item {
-  color: #000;
-  font-family: "Open Sans";
-  font-size: 16px;
+  color: var(--color-black);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  padding: 10px 18px;
+  padding: var(--spacing-sm) var(--spacing-lg);
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
 .form-dropdown-item:hover {
-  background: rgba(0, 0, 0, 0.05);
+  background: var(--color-shadow-light);
 }
 
 .form-dropdown-item.selected {
@@ -216,7 +216,7 @@
 /* Submit Button */
 .form-submit-button {
   width: fit-content;
-  margin-top: 20px;
+  margin-top: var(--spacing-lg);
   align-self: flex-start;
 }
 
@@ -226,11 +226,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #fff;
-  border: 1px solid #d9d9d9;
+  background: var(--color-white);
+  border: var(--border-thin) solid var(--color-border-light);
   border-radius: 4px;
-  padding: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-popup);
   z-index: 1000;
   display: none;
 }
@@ -258,54 +258,54 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: var(--spacing-lg);
 }
 
 .calendar-header button {
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: var(--font-size-h6);
   cursor: pointer;
-  color: #000;
+  color: var(--color-black);
 }
 
 .calendar-header span {
-  font-family: "Open Sans";
-  font-size: 16px;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
   font-weight: 700;
-  color: #000;
+  color: var(--color-black);
 }
 
 .calendar-weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
-  margin-bottom: 10px;
+  gap: var(--radius-lg);
+  margin-bottom: var(--spacing-sm);
 }
 
 .calendar-weekday {
-  font-family: "Open Sans";
-  font-size: 14px;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-xs);
   font-weight: 700;
-  color: #000;
+  color: var(--color-black);
   text-align: center;
-  padding: 10px;
+  padding: var(--spacing-sm);
 }
 
 .calendar-days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
+  gap: var(--radius-lg);
 }
 
 .calendar-day {
-  font-family: "Open Sans";
-  font-size: 14px;
-  color: #000;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-xs);
+  color: var(--color-black);
   text-align: center;
-  padding: 10px;
+  padding: var(--spacing-sm);
   cursor: pointer;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
   transition: background-color 0.2s ease;
 }
 
@@ -319,12 +319,12 @@
 }
 
 .calendar-day.selected {
-  background: #eb2227;
-  color: #fff;
+  background: var(--color-brand-red-primary);
+  color: var(--color-white);
 }
 
 .calendar-day.today {
-  border: 1px solid #eb2227;
+  border: var(--border-thin) solid var(--color-brand-red-primary);
 }
 
 /* Time Picker */
@@ -333,11 +333,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #fff;
-  border: 1px solid #d9d9d9;
+  background: var(--color-white);
+  border: var(--border-thin) solid var(--color-border-light);
   border-radius: 4px;
-  padding: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-popup);
   z-index: 1000;
   display: none;
 }
@@ -347,17 +347,17 @@
 }
 
 .time-picker-header {
-  font-family: "Open Sans";
-  font-size: 16px;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
   font-weight: 700;
-  color: #000;
-  margin-bottom: 20px;
+  color: var(--color-black);
+  margin-bottom: var(--spacing-lg);
   text-align: center;
 }
 
 .time-picker-content {
   display: flex;
-  gap: 20px;
+  gap: var(--spacing-lg);
   justify-content: center;
 }
 
@@ -367,26 +367,26 @@
 }
 
 .time-picker-label {
-  font-family: "Open Sans";
-  font-size: 14px;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-xs);
   font-weight: 700;
-  color: #000;
-  margin-bottom: 10px;
+  color: var(--color-black);
+  margin-bottom: var(--spacing-sm);
   text-align: center;
 }
 
 .time-picker-select {
   max-height: 200px;
   overflow-y: auto;
-  border: 1px solid #d9d9d9;
-  border-radius: 2px;
+  border: var(--border-thin) solid var(--color-border-light);
+  border-radius: var(--radius-sm);
 }
 
 .time-option {
-  font-family: "Open Sans";
-  font-size: 14px;
-  color: #000;
-  padding: 8px 20px;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-xs);
+  color: var(--color-black);
+  padding: var(--spacing-xs) var(--spacing-lg);
   cursor: pointer;
   text-align: center;
   transition: background-color 0.2s ease;
@@ -397,25 +397,490 @@
 }
 
 .time-option.selected {
-  background: #eb2227;
-  color: #fff;
+  background: var(--color-brand-red-primary);
+  color: var(--color-white);
 }
 
 .time-picker-confirm {
-  margin-top: 20px;
+  margin-top: var(--spacing-lg);
   width: 100%;
-  padding: 10px;
-  background: #eb2227;
-  color: #fff;
+  padding: var(--spacing-sm);
+  background: var(--color-brand-red-primary);
+  color: var(--color-white);
   border: none;
-  border-radius: 2px;
-  font-family: "Open Sans";
-  font-size: 16px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
 .time-picker-confirm:hover {
-  background: #d01f24;
+  background: var(--color-brand-red-accent-hover);
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Desktop Small - 1536px */
+@media (max-width: 1536px) {
+  .form-container {
+    padding: 65px var(--spacing-lg);
+  }
+
+  .form-content h2 {
+    font-size: 44px;
+    line-height: 52px;
+  }
+
+  .form-label {
+    font-size: 13px;
+  }
+
+  .form-input,
+  .form-dropdown-input,
+  .form-dropdown-text {
+    font-size: 15px;
+  }
+
+  .calendar-popup,
+  .time-picker-popup {
+    padding: 19px;
+  }
+}
+
+/* Laptop Large - 1440px */
+@media (max-width: 1440px) {
+  .form-container {
+    padding: 60px var(--spacing-lg);
+  }
+
+  .form-content h2 {
+    font-size: 42px;
+    line-height: 50px;
+  }
+
+  .form-label {
+    font-size: 13px;
+  }
+
+  .form-input,
+  .form-dropdown-input,
+  .form-dropdown-text {
+    font-size: 15px;
+  }
+
+  .calendar-popup,
+  .time-picker-popup {
+    padding: 18px;
+  }
+
+  .calendar-header span,
+  .time-picker-header {
+    font-size: 15px;
+  }
+
+  .calendar-weekday,
+  .calendar-day,
+  .time-option {
+    font-size: 12px;
+  }
+}
+
+/* Laptop Medium - 1366px */
+@media (max-width: 1366px) {
+  .form-container {
+    padding: 57px var(--spacing-lg);
+  }
+
+  .form-content h2 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .form-label {
+    font-size: 12px;
+  }
+
+  .form-input,
+  .form-dropdown-input,
+  .form-dropdown-text {
+    font-size: 14px;
+    padding: 7px 17px;
+  }
+
+  .form-dropdown-item {
+    font-size: 14px;
+    padding: 9px 17px;
+  }
+
+  .calendar-popup,
+  .time-picker-popup {
+    padding: 17px;
+  }
+
+  .calendar-header span,
+  .time-picker-header {
+    font-size: 14px;
+  }
+
+  .calendar-weekday,
+  .calendar-day,
+  .time-option {
+    font-size: 11px;
+  }
+}
+
+/* Laptop - 1280px */
+@media (max-width: 1280px) {
+  .form-container {
+    padding: 55px var(--spacing-md);
+  }
+
+  .form-content {
+    gap: 18px;
+  }
+
+  .form-content h2 {
+    font-size: 38px;
+    line-height: 46px;
+  }
+
+  .form-label {
+    font-size: 12px;
+  }
+
+  .form-input,
+  .form-dropdown-input,
+  .form-dropdown-text {
+    font-size: 14px;
+    padding: 7px 18px;
+  }
+
+  .form-row {
+    gap: 10px;
+  }
+
+  .form-group {
+    gap: 10px;
+  }
+
+  .form-dropdown-item {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+
+  .calendar-popup,
+  .time-picker-popup {
+    padding: 16px;
+  }
+
+  .calendar-header span,
+  .time-picker-header {
+    font-size: 14px;
+  }
+
+  .calendar-weekday,
+  .calendar-day {
+    font-size: 11px;
+    padding: 8px;
+  }
+
+  .time-option {
+    font-size: 11px;
+    padding: 6px 16px;
+  }
+
+  .time-picker-confirm {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .form-submit-button {
+    margin-top: 18px;
+  }
+}
+
+/* Tablet Landscape - 1024px */
+@media (max-width: 1024px) {
+  .form-container {
+    padding: 50px var(--spacing-md);
+  }
+
+  .form-content {
+    gap: 16px;
+  }
+
+  .form-content h2 {
+    font-size: 34px;
+    line-height: 42px;
+  }
+
+  .form-label {
+    font-size: 11px;
+  }
+
+  .form-input,
+  .form-dropdown-input,
+  .form-dropdown-text {
+    font-size: 13px;
+    padding: 6px 16px;
+  }
+
+  .form-row {
+    gap: 8px;
+  }
+
+  .form-group {
+    gap: 8px;
+  }
+
+  .form-dropdown-item {
+    font-size: 13px;
+    padding: 9px 16px;
+  }
+
+  .form-dropdown-list {
+    max-height: 220px;
+  }
+
+  .calendar-popup,
+  .time-picker-popup {
+    padding: 14px;
+  }
+
+  .calendar-header span,
+  .time-picker-header {
+    font-size: 13px;
+  }
+
+  .calendar-weekday,
+  .calendar-day {
+    font-size: 10px;
+    padding: 7px;
+  }
+
+  .time-option {
+    font-size: 10px;
+    padding: 5px 14px;
+  }
+
+  .time-picker-select {
+    max-height: 180px;
+  }
+
+  .time-picker-confirm {
+    font-size: 13px;
+    padding: 7px;
+  }
+
+  .form-submit-button {
+    margin-top: 16px;
+  }
+}
+
+/* Tablet Portrait - 768px */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 40px var(--spacing-sm);
+  }
+
+  .form-content {
+    gap: 14px;
+  }
+
+  .form-content h2 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .form-label {
+    font-size: 10px;
+  }
+
+  .form-input,
+  .form-dropdown-input,
+  .form-dropdown-text {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+
+  .form-group {
+    gap: 8px;
+  }
+
+  .form-dropdown-item {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+
+  .form-dropdown-list {
+    max-height: 200px;
+  }
+
+  .form-textarea {
+    min-height: 80px;
+  }
+
+  .calendar-popup,
+  .time-picker-popup {
+    padding: 12px;
+    max-width: 90%;
+  }
+
+  .calendar-header {
+    margin-bottom: 12px;
+  }
+
+  .calendar-header span,
+  .time-picker-header {
+    font-size: 12px;
+  }
+
+  .calendar-weekdays,
+  .calendar-days {
+    gap: 8px;
+  }
+
+  .calendar-weekday,
+  .calendar-day {
+    font-size: 9px;
+    padding: 6px;
+  }
+
+  .time-picker-content {
+    gap: 12px;
+  }
+
+  .time-option {
+    font-size: 9px;
+    padding: 4px 12px;
+  }
+
+  .time-picker-select {
+    max-height: 160px;
+  }
+
+  .time-picker-confirm {
+    font-size: 12px;
+    padding: 6px;
+    margin-top: 12px;
+  }
+
+  .form-submit-button {
+    margin-top: 14px;
+  }
+}
+
+/* Mobile - 480px */
+@media (max-width: 480px) {
+  .form-container {
+    padding: 30px 12px;
+  }
+
+  .form-content {
+    gap: 12px;
+  }
+
+  .form-content h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .form-label {
+    font-size: 9px;
+  }
+
+  .form-input,
+  .form-dropdown-input,
+  .form-dropdown-text {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+
+  .form-group {
+    gap: 6px;
+  }
+
+  .form-dropdown-item {
+    font-size: 11px;
+    padding: 7px 12px;
+  }
+
+  .form-dropdown-list {
+    max-height: 180px;
+  }
+
+  .form-textarea {
+    min-height: 70px;
+  }
+
+  .calendar-popup,
+  .time-picker-popup {
+    padding: 10px;
+    max-width: 95%;
+  }
+
+  .calendar-header {
+    margin-bottom: 10px;
+  }
+
+  .calendar-header button {
+    font-size: 14px;
+  }
+
+  .calendar-header span,
+  .time-picker-header {
+    font-size: 11px;
+  }
+
+  .calendar-weekdays,
+  .calendar-days {
+    gap: 6px;
+  }
+
+  .calendar-weekday,
+  .calendar-day {
+    font-size: 8px;
+    padding: 5px;
+  }
+
+  .time-picker-content {
+    gap: 10px;
+  }
+
+  .time-picker-label {
+    font-size: 9px;
+    margin-bottom: 6px;
+  }
+
+  .time-option {
+    font-size: 8px;
+    padding: 4px 10px;
+  }
+
+  .time-picker-select {
+    max-height: 140px;
+  }
+
+  .time-picker-confirm {
+    font-size: 11px;
+    padding: 5px;
+    margin-top: 10px;
+  }
+
+  .form-submit-button {
+    margin-top: 12px;
+    width: 100%;
+  }
 }

@@ -71,4 +71,79 @@
   --dropdown-item-color: var(--color-text-default);
   --dropdown-item-color-hover: var(--color-brand-red-primary);
   --dropdown-item-bg-hover: #f8f9fa;
+
+  /* Additional Colors */
+  --color-text-gray: #1d1c1c;
+  --color-border-gray: #cecaca;
+  --color-border-light: #d9d9d9;
+  --color-background-light: #f4f5f7;
+  --color-text-placeholder: #9c7d7d;
+  --color-text-muted: #999;
+  --color-shadow-light: rgba(0, 0, 0, 0.05);
+  --color-shadow-medium: rgba(0, 0, 0, 0.1);
+  --color-shadow-dark: rgba(0, 0, 0, 0.2);
+
+  /* Spacing Scale */
+  --spacing-xs: 8px;
+  --spacing-sm: 10px;
+  --spacing-md: 16px;
+  --spacing-lg: 20px;
+  --spacing-xl: 24px;
+  --spacing-2xl: 35px;
+  --spacing-3xl: 40px;
+  --spacing-4xl: 50px;
+  --spacing-5xl: 60px;
+  --spacing-6xl: 100px;
+  --spacing-7xl: 140px;
+  --spacing-8xl: 150px;
+
+  /* Container Padding */
+  --padding-x-desktop: 100px;
+  --padding-x-laptop-lg: 80px;
+  --padding-x-laptop: 60px;
+  --padding-x-tablet: 40px;
+  --padding-x-mobile: 20px;
+
+  /* Font Sizes */
+  --font-size-hero: 64px;
+  --font-size-h1: 50px;
+  --font-size-h2: 40px;
+  --font-size-h3: 32px;
+  --font-size-h4: 28px;
+  --font-size-h5: 22px;
+  --font-size-h6: 20px;
+  --font-size-lg: 18px;
+  --font-size-base: 16px;
+  --font-size-sm: 15px;
+  --font-size-xs: 14px;
+
+  /* Line Heights */
+  --line-height-hero: 85px;
+  --line-height-xl: 62.625px;
+  --line-height-lg: 46px;
+  --line-height-md: 32px;
+  --line-height-sm: 30px;
+  --line-height-xs: 26px;
+  --line-height-2xs: 24px;
+  --line-height-3xs: 18px;
+
+  /* Border Radius */
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 5px;
+
+  /* Box Shadows */
+  --shadow-card: 0 0 7.5px 5px rgba(0, 0, 0, 0.1);
+  --shadow-dropdown: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-popup: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+  /* Borders */
+  --border-thin: 1px;
+  --border-medium: 2px;
+
+  /* Component Widths */
+  --width-find-dropdown: 753px;
+  --width-search-dropdown: 572px;
+  --width-service-card: 540px;
+  --width-form-max: 880px;
 }
