@@ -275,6 +275,120 @@
         <div class="form-container">
           <div class="form-content">
             <h2>Book a Vehicle Service</h2>
+            <form class="booking-form">
+              <!-- Row 1: Name -->
+              <div class="form-group">
+                <input type="text" class="form-input" placeholder="Name *" required />
+              </div>
+
+              <!-- Row 2: Email -->
+              <div class="form-group">
+                <input type="email" class="form-input" placeholder="Email *" required />
+              </div>
+
+              <!-- Row 3: Phone Number -->
+              <div class="form-group">
+                <input type="tel" class="form-input" placeholder="Phone Number *" required />
+              </div>
+
+              <!-- Row 4: Vehicle Registration and Make -->
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="text" class="form-input" placeholder="Vehicle Registration *" required />
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-input" placeholder="Vehicle Make *" required />
+                </div>
+              </div>
+
+              <!-- Row 5: Vehicle Model and Year -->
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="text" class="form-input" placeholder="Vehicle Model *" required />
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-input" placeholder="Vehicle Year *" required />
+                </div>
+              </div>
+
+              <!-- Type of Service -->
+              <div class="form-group">
+                <label class="form-label">Type of Service <span class="required-asterisk">*</span></label>
+                <div class="form-dropdown service-dropdown">
+                  <div class="form-dropdown-input">
+                    <span class="form-dropdown-text placeholder">Select Service</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="8" viewBox="0 0 15 8" fill="none" class="form-dropdown-arrow">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M14.0243 0L7.51031 6.14436L0.96885 0L0 0.914842L7.49656 7.99351L15 0.914842L14.0311 0H14.0243Z" fill="#9C7D7D"/>
+                    </svg>
+                  </div>
+                  <ul class="form-dropdown-list">
+                    <li class="form-dropdown-item" data-value="wof">WOF</li>
+                    <li class="form-dropdown-item" data-value="service-packages">Service Packages</li>
+                    <li class="form-dropdown-item" data-value="brakes">Brakes</li>
+                    <li class="form-dropdown-item" data-value="ev-hybrid">EV & Hybrid Service Packages</li>
+                    <li class="form-dropdown-item" data-value="suspension">Suspension</li>
+                    <li class="form-dropdown-item" data-value="tyres">Tyres</li>
+                    <li class="form-dropdown-item" data-value="diagnostics">Diagnostics</li>
+                    <li class="form-dropdown-item" data-value="exhausts">Exhausts</li>
+                    <li class="form-dropdown-item" data-value="batteries">Batteries</li>
+                    <li class="form-dropdown-item" data-value="tow-bars">Tow Bars</li>
+                    <li class="form-dropdown-item" data-value="adas">ADAS</li>
+                    <li class="form-dropdown-item" data-value="fleet">Fleet Servicing</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Pit Stop Location -->
+              <div class="form-group">
+                <label class="form-label">Pit Stop Location <span class="required-asterisk">*</span></label>
+                <div class="form-dropdown">
+                  <div class="form-dropdown-input">
+                    <span class="form-dropdown-text">Select your Preferred Region</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="8" viewBox="0 0 15 8" fill="none" class="form-dropdown-arrow">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M14.0243 0L7.51031 6.14436L0.96885 0L0 0.914842L7.49656 7.99351L15 0.914842L14.0311 0H14.0243Z" fill="#9C7D7D"/>
+                    </svg>
+                  </div>
+                  <ul class="form-dropdown-list">
+                    <li class="form-dropdown-item" data-value="northland">+ Northland</li>
+                    <li class="form-dropdown-item" data-value="auckland">+ Auckland</li>
+                    <li class="form-dropdown-item" data-value="bay-of-plenty">+ Bay Of Plenty</li>
+                    <li class="form-dropdown-item" data-value="waikato">+ Waikato</li>
+                    <li class="form-dropdown-item" data-value="east-coast">+ East Coast</li>
+                    <li class="form-dropdown-item" data-value="hawkes-bay">+ Hawkes Bay</li>
+                    <li class="form-dropdown-item" data-value="taranaki">+ Taranaki</li>
+                    <li class="form-dropdown-item" data-value="manawatu-wanganui">+ Manawatu-Wanganui</li>
+                    <li class="form-dropdown-item" data-value="wellington">+ Wellington</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Preferred Date of Service -->
+              <div class="form-group">
+                <label class="form-label">Preferred Date of Service <span class="required-asterisk">*</span></label>
+                <input type="text" class="form-input form-date-input" placeholder="Please Select" readonly required />
+              </div>
+
+              <!-- Preferred Time of Service -->
+              <div class="form-group">
+                <label class="form-label">Preferred Time of Service <span class="required-asterisk">*</span></label>
+                <input type="text" class="form-input form-time-input" placeholder="Please Select" readonly required />
+              </div>
+
+              <!-- WOF Expiry Date -->
+              <div class="form-group">
+                <label class="form-label">WOF Expiry Date</label>
+                <input type="text" class="form-input form-wof-date-input" placeholder="Please Select" readonly />
+              </div>
+
+              <!-- Additional Comments -->
+              <div class="form-group">
+                <label class="form-label">Additional Comments</label>
+                <textarea class="form-input form-textarea" placeholder="Please enter any additional comments you'd like us to know" rows="4"></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="services-button form-submit-button">Submit</button>
+            </form>
           </div>
         </div>
       </section>
@@ -375,5 +489,6 @@
     <script src="js/header-navigation.js"></script>
     <script src="js/services-toggle.js"></script>
     <script src="js/carousel-arrows.js"></script>
+    <script src="js/booking-form.js"></script>
   </body>
 </html>
