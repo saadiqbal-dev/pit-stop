@@ -76,8 +76,8 @@
 /* Desktop Small - 1536px */
 @media (max-width: 1536px) {
   .text-content {
-    padding: 0 195px;
-    gap: 47px;
+    padding: 0 145px;
+    gap: 40px;
   }
 
   .text-content-heading-container {
@@ -103,8 +103,8 @@
 /* Laptop Large - 1440px */
 @media (max-width: 1440px) {
   .text-content {
-    padding: 0 170px;
-    gap: 45px;
+    padding: 0 130px;
+    gap: 30px;
   }
 
   .text-content-heading-container {
@@ -130,8 +130,8 @@
 /* Laptop Medium - 1366px */
 @media (max-width: 1366px) {
   .text-content {
-    padding: 0 155px;
-    gap: 42px;
+    padding: 0 110px;
+    gap: 35px;
   }
 
   .text-content-heading-container {
@@ -157,8 +157,8 @@
 /* Laptop - 1280px */
 @media (max-width: 1280px) {
   .text-content {
-    padding: 0 140px;
-    gap: 40px;
+    padding: 0 100px;
+    gap: 30px;
   }
 
   .text-content-heading-container {
@@ -184,8 +184,8 @@
 /* Tablet Landscape - 1024px */
 @media (max-width: 1024px) {
   .text-content {
-    padding: 0 100px;
-    gap: 35px;
+    padding: 0 60px;
+    gap: 14px;
   }
 
   .text-content-heading-container {
