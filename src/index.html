@@ -281,12 +281,25 @@
           <h2 class="search-heading">There's a Pit Stop Near You!</h2>
 
           <div class="search-input">
-            <input
-              class="input-bar"
-              id="dropdown"
-              type="text"
-              placeholder="Enter your Location"
-            />
+            <div class="search-dropdown">
+              <div class="search-dropdown-input">
+                <span class="search-dropdown-text placeholder">Enter your Location</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="8" viewBox="0 0 15 8" fill="none" class="search-dropdown-arrow">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M14.0243 0L7.51031 6.14436L0.96885 0L0 0.914842L7.49656 7.99351L15 0.914842L14.0311 0H14.0243Z" fill="#9C7D7D"/>
+                </svg>
+              </div>
+              <ul class="search-dropdown-list">
+                <li class="search-dropdown-item" data-value="northland">+ Northland</li>
+                <li class="search-dropdown-item" data-value="auckland">+ Auckland</li>
+                <li class="search-dropdown-item" data-value="bay-of-plenty">+ Bay Of Plenty</li>
+                <li class="search-dropdown-item" data-value="waikato">+ Waikato</li>
+                <li class="search-dropdown-item" data-value="east-coast">+ East Coast</li>
+                <li class="search-dropdown-item" data-value="hawkes-bay">+ Hawkes Bay</li>
+                <li class="search-dropdown-item" data-value="taranaki">+ Taranaki</li>
+                <li class="search-dropdown-item" data-value="manawatu-wanganui">+ Manawatu-Wanganui</li>
+                <li class="search-dropdown-item" data-value="wellington">+ Wellington</li>
+              </ul>
+            </div>
 
             <button class="search-button">Submit</button>
           </div>
@@ -590,5 +603,6 @@
     <script src="js/header-navigation.js"></script>
     <script src="js/services-toggle.js"></script>
     <script src="js/carousel-arrows.js"></script>
+    <script src="js/home-location-dropdown.js"></script>
   </body>
 </html>
