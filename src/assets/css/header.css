@@ -68,7 +68,7 @@
   opacity: 0.8;
 }
 
-.header__phone-button {
+a.header__phone-button {
   width: var(--button-primary-width);
   height: var(--button-primary-height);
   flex-shrink: 0;
@@ -84,9 +84,13 @@
   line-height: var(--button-primary-line-height);
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.header__phone-button:hover {
+a.header__phone-button:hover {
   background: var(--button-primary-bg-hover);
 }
 
@@ -250,7 +254,7 @@
     height: 124px;
   }
 
-  .header__phone-button {
+  a.header__phone-button {
     width: 220px;
     height: 55px;
     font-size: 16px;
@@ -280,7 +284,7 @@
     gap: 40px;
   }
 
-  .header__phone-button {
+  a.header__phone-button {
     width: 200px;
     height: 50px;
     font-size: 15px;
@@ -338,7 +342,7 @@
   height: 38px;
 }
 
-.mobile-header__hamburger {
+a.mobile-header__hamburger {
   width: 42.999px;
   height: 29px;
   flex-shrink: 0;
@@ -349,9 +353,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 
-.mobile-header__hamburger svg {
+a.mobile-header__hamburger svg {
   width: 42.999px;
   height: 29px;
 }
@@ -392,7 +397,7 @@
   object-fit: contain;
 }
 
-.mobile-menu__close {
+a.mobile-menu__close {
   width: 33px;
   height: 33px;
   flex-shrink: 0;
@@ -403,9 +408,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 
-.mobile-menu__close svg {
+a.mobile-menu__close svg {
   width: 33px;
   height: 33px;
 }

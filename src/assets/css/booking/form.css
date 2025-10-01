@@ -261,12 +261,13 @@
   margin-bottom: var(--spacing-lg);
 }
 
-.calendar-header button {
+.calendar-header a {
   background: none;
   border: none;
   font-size: var(--font-size-h6);
   cursor: pointer;
   color: var(--color-black);
+  text-decoration: none;
 }
 
 .calendar-header span {
@@ -401,7 +402,7 @@
   color: var(--color-white);
 }
 
-.time-picker-confirm {
+a.time-picker-confirm {
   margin-top: var(--spacing-lg);
   width: 100%;
   padding: var(--spacing-sm);
@@ -414,10 +415,15 @@
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.time-picker-confirm:hover {
-  background: var(--color-brand-red-accent-hover);
+a.time-picker-confirm:hover {
+  background: var(--button-primary-bg-hover);
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
@@ -591,7 +597,7 @@
     padding: 6px 16px;
   }
 
-  .time-picker-confirm {
+  a.time-picker-confirm {
     font-size: 14px;
     padding: 8px;
   }
@@ -669,7 +675,7 @@
     max-height: 180px;
   }
 
-  .time-picker-confirm {
+  a.time-picker-confirm {
     font-size: 13px;
     padding: 7px;
   }
@@ -794,7 +800,7 @@
     width: 100%;
   }
 
-  .time-picker-confirm {
+  a.time-picker-confirm {
     font-size: 12px;
     padding: 6px;
     margin-top: 12px;
@@ -886,7 +892,7 @@
     margin-bottom: 10px;
   }
 
-  .calendar-header button {
+  .calendar-header a {
     font-size: 14px;
   }
 
@@ -924,7 +930,7 @@
     max-height: 140px;
   }
 
-  .time-picker-confirm {
+  a.time-picker-confirm {
     font-size: 11px;
     padding: 5px;
     margin-top: 10px;

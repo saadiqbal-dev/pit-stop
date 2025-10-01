@@ -137,7 +137,7 @@
   background: rgba(237, 31, 36, 0.1);
 }
 
-.search-button {
+a.search-button {
   color: var(--color-white);
   text-align: center;
   font-family: var(--font-family-accent);
@@ -156,10 +156,14 @@
   border: none;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.search-button:hover {
-  background: var(--color-brand-red-accent-hover);
+a.search-button:hover {
+  background: var(--button-primary-bg-hover);
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
@@ -292,7 +296,7 @@
     padding: 6px 20px;
   }
 
-  .search-button {
+  a.search-button {
     font-size: 14px;
     padding: 0 18px;
   }
@@ -334,7 +338,7 @@
     padding: 6px 18px;
   }
 
-  .search-button {
+  a.search-button {
     font-size: 13px;
     padding: 0 16px;
   }
@@ -391,7 +395,7 @@
     padding: 6px 16px;
   }
 
-  .search-button {
+  a.search-button {
     font-size: 12px;
     padding: 0 14px;
   }
@@ -437,7 +441,7 @@
     padding: 6px 14px;
   }
 
-  .search-button {
+  a.search-button {
     font-size: 11px;
     padding: 0 12px;
   }

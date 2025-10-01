@@ -39,7 +39,7 @@
   line-height: var(--line-height-xl);
 }
 
-.hero__button {
+a.hero__button {
   margin-top: 20px;
 
   color: var(--color-white);
@@ -52,7 +52,16 @@
   padding: var(--spacing-sm) 31px;
   border-radius: var(--radius-lg);
   border: var(--border-thin) solid var(--color-white);
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, color 0.3s ease;
   /* height: var(--spacing-4xl); */
+}
+
+a.hero__button:hover {
+  background: var(--color-white);
+  color: var(--color-black);
+  border: var(--border-thin) solid var(--color-white);
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
@@ -124,7 +133,7 @@
     line-height: 50px;
   }
 
-  .hero__button {
+  a.hero__button {
     font-size: var(--font-size-sm);
     /* height: 45px; */
     margin-top: 0;
@@ -147,7 +156,7 @@
     line-height: 46px;
   }
 
-  .hero__button {
+  a.hero__button {
     font-size: var(--font-size-xs);
     /* height: 42px; */
     padding: var(--spacing-xs) 30px;
@@ -175,7 +184,7 @@
     text-align: center;
   }
 
-  .hero__button {
+  a.hero__button {
     font-size: var(--font-size-xs);
     /* height: 40px; */
     padding: var(--spacing-xs) var(--spacing-lg);
@@ -199,7 +208,7 @@
     line-height: 30px;
   }
 
-  .hero__button {
+  a.hero__button {
     font-size: var(--font-size-xs);
     /* height: 38px; */
     padding: var(--spacing-xs) var(--spacing-md);

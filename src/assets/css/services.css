@@ -91,7 +91,7 @@
   left: 0;
 }
 
-.services-button {
+a.services-button {
   color: var(--color-white);
   text-align: center;
   font-family: var(--font-family-accent);
@@ -104,6 +104,13 @@
   padding: var(--spacing-sm) 20.5px;
   border: none;
   cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+a.services-button:hover {
+  background: var(--button-primary-bg-hover);
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
@@ -243,7 +250,7 @@
     line-height: 36px;
   }
 
-  .services-button {
+  a.services-button {
     font-size: 14px;
     padding: 8px 18px;
   }
@@ -283,7 +290,7 @@
     line-height: 32px;
   }
 
-  .services-button {
+  a.services-button {
     font-size: 13px;
     padding: 8px 16px;
   }
@@ -323,7 +330,7 @@
     line-height: 28px;
   }
 
-  .services-button {
+  a.services-button {
     font-size: 12px;
     padding: 8px 14px;
   }
@@ -362,7 +369,7 @@
     line-height: 26px;
   }
 
-  .services-button {
+  a.services-button {
     font-size: 11px;
     padding: 6px 12px;
   }
