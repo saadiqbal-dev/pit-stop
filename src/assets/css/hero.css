@@ -150,7 +150,7 @@
   .hero__button {
     font-size: var(--font-size-xs);
     /* height: 42px; */
-    padding: var(--spacing-xs) 24px;
+    padding: var(--spacing-xs) 30px;
   }
 }
 
@@ -185,7 +185,7 @@
 /* Mobile - 480px */
 @media (max-width: 480px) {
   .hero__content {
-    padding: 60px 16px;
+    padding: 60px 30px;
     gap: var(--spacing-md);
   }
 
