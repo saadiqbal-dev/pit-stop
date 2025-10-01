@@ -223,11 +223,13 @@
   }
 
   .reviews-container {
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
+    display: flex;
+    flex-direction: column-reverse;
   }
 
   .image-container {
-    display: none;
+    display: block;
   }
 
   .reviews-content {
