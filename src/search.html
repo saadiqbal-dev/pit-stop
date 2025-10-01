@@ -85,8 +85,12 @@
                     </defs>
                   </svg>
                 </span>
-                <div class="header__dropdown-menu" id="services-dropdown">
-                  <div>
+                <div
+                  class="header__dropdown-menu header__dropdown-menu--services"
+                  id="services-dropdown"
+                >
+                  <!-- Left Side: Dynamic Links Container -->
+                  <div class="header__dropdown-links-container">
                     <ul class="header__dropdown-list">
                       <li class="header__dropdown-item">
                         <a href="#" class="header__dropdown-link">WOF</a>
@@ -104,10 +108,6 @@
                           >EV & Hybrid Service Packages</a
                         >
                       </li>
-                    </ul>
-                  </div>
-                  <div>
-                    <ul class="header__dropdown-list">
                       <li class="header__dropdown-item">
                         <a href="#" class="header__dropdown-link">Suspension</a>
                       </li>
@@ -120,10 +120,6 @@
                       <li class="header__dropdown-item">
                         <a href="#" class="header__dropdown-link">Exhausts</a>
                       </li>
-                    </ul>
-                  </div>
-                  <div>
-                    <ul class="header__dropdown-list">
                       <li class="header__dropdown-item">
                         <a href="#" class="header__dropdown-link">Batteries</a>
                       </li>
@@ -140,66 +136,23 @@
                       </li>
                     </ul>
                   </div>
+
+                  <!-- Right Side: Static Content -->
+                  <div class="header__dropdown-static-content">
+                    <div class="header__dropdown-divider"></div>
+                    <div class="header__dropdown-cta-section">
+                      <a href="booking.html" class="header__dropdown-cta-button"
+                        >Book A Service</a
+                      >
+                      <a href="#" class="header__dropdown-link">Rewards</a>
+                      <a href="#" class="header__dropdown-link">Contact Us</a>
+                    </div>
+                  </div>
                 </div>
               </li>
 
-              <li
-                class="header__nav-item header__nav-item--dropdown"
-                data-dropdown="store"
-              >
+              <li class="header__nav-item">
                 <a href="find-a-store.html" class="header__nav-link">FIND A STORE</a>
-                <span class="header__dropdown-arrow">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="8"
-                    viewBox="0 0 15 8"
-                    fill="none"
-                  >
-                    <g clip-path="url(#clip0_71_492_2)">
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M14.0243 0L7.51031 6.14436L0.96885 0L0 0.914842L7.49656 7.99351L15 0.914842L14.0311 0H14.0243Z"
-                        fill="white"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_71_492_2">
-                        <rect width="15" height="8" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </span>
-                <!-- <div class="header__dropdown-menu" id="store-dropdown">
-                  <ul class="header__dropdown-list">
-                    <li class="header__dropdown-item">
-                      <a href="#" class="header__dropdown-link"
-                        >Auckland Stores</a
-                      >
-                    </li>
-                    <li class="header__dropdown-item">
-                      <a href="#" class="header__dropdown-link"
-                        >Wellington Stores</a
-                      >
-                    </li>
-                    <li class="header__dropdown-item">
-                      <a href="#" class="header__dropdown-link"
-                        >Christchurch Stores</a
-                      >
-                    </li>
-                    <li class="header__dropdown-item">
-                      <a href="#" class="header__dropdown-link"
-                        >Hamilton Stores</a
-                      >
-                    </li>
-                    <li class="header__dropdown-item">
-                      <a href="#" class="header__dropdown-link"
-                        >All Locations</a
-                      >
-                    </li>
-                  </ul>
-                </div> -->
               </li>
 
               <li class="header__nav-item">
