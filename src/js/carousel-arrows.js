@@ -7,16 +7,49 @@ const carouselArrows = (() => {
   let cardWidth = 0;
   let visibleCards = 3;
   let gap = 50;
+  let currentCarouselType = null; // 'desktop' or 'mobile'
+  let resizeTimeout = null;
+
+  const cleanup = () => {
+    if (prevButton) {
+      prevButton.removeEventListener("click", slidePrev);
+    }
+    if (nextButton) {
+      nextButton.removeEventListener("click", slideNext);
+    }
+    if (carouselTrack) {
+      carouselTrack.removeEventListener("scroll", updateButtonStates);
+    }
+  };
 
   const init = () => {
-    // Check for desktop carousel first, then mobile
-    carouselTrack = document.querySelector(".carousel-cards-container");
+    // Check which carousel is visible
+    const desktopCarousel = document.querySelector(".carousel-wrapper-desktop");
+    const mobileCarousel = document.querySelector(".carousel-wrapper-mobile");
     let isMobile = false;
+    let newCarouselType = null;
 
-    if (!carouselTrack || window.getComputedStyle(carouselTrack).display === 'none') {
-      carouselTrack = document.querySelector(".carousel-cards-container-mobile");
+    // Determine which carousel is visible
+    if (mobileCarousel && window.getComputedStyle(mobileCarousel).display !== 'none') {
+      carouselTrack = mobileCarousel.querySelector(".carousel-cards-container-mobile");
       isMobile = true;
+      newCarouselType = 'mobile';
+    } else if (desktopCarousel && window.getComputedStyle(desktopCarousel).display !== 'none') {
+      carouselTrack = desktopCarousel.querySelector(".carousel-cards-container");
+      isMobile = false;
+      newCarouselType = 'desktop';
     }
+
+    // Only reinitialize if carousel type changed
+    if (newCarouselType === currentCarouselType && prevButton && nextButton) {
+      setupCarousel();
+      updateButtonStates();
+      return;
+    }
+
+    // Clean up previous event listeners
+    cleanup();
+    currentCarouselType = newCarouselType;
 
     if (!carouselTrack) return;
 
@@ -24,8 +57,9 @@ const carouselArrows = (() => {
     carouselCards = Array.from(carouselTrack.querySelectorAll(cardSelector));
     if (carouselCards.length === 0) return;
 
+    const arrowsContainer = isMobile ? mobileCarousel : desktopCarousel;
     const arrowsSelector = isMobile ? ".carousel-arrows-mobile svg" : ".carousel-arrows svg";
-    const arrows = document.querySelectorAll(arrowsSelector);
+    const arrows = arrowsContainer.querySelectorAll(arrowsSelector);
     prevButton = arrows[0];
     nextButton = arrows[1];
 
@@ -60,6 +94,13 @@ const carouselArrows = (() => {
     visibleCards = Math.max(1, Math.min(visibleCards, 3));
   };
 
+  const handleResize = () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      init(); // Reinitialize to check if carousel type changed
+    }, 150);
+  };
+
   const attachEventListeners = () => {
     prevButton.addEventListener("click", slidePrev);
     nextButton.addEventListener("click", slideNext);
@@ -67,17 +108,9 @@ const carouselArrows = (() => {
     prevButton.style.cursor = "pointer";
     nextButton.style.cursor = "pointer";
 
-    window.addEventListener("resize", () => {
-      setupCarousel();
-      snapToNearestCard();
-      updateButtonStates();
-    });
-
     carouselTrack.addEventListener(
       "scroll",
-      () => {
-        updateButtonStates();
-      },
+      updateButtonStates,
       { passive: true }
     );
   };
@@ -129,4 +162,9 @@ const carouselArrows = (() => {
   };
 })();
 
-document.addEventListener("DOMContentLoaded", carouselArrows.init);
+document.addEventListener("DOMContentLoaded", () => {
+  carouselArrows.init();
+  window.addEventListener("resize", () => {
+    carouselArrows.init();
+  });
+});
