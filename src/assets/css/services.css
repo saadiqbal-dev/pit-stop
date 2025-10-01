@@ -64,7 +64,11 @@
   align-items: center;
   justify-content: space-between;
   gap: 53px;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services-card:hover {
+  box-shadow: 0 0 7.5px 5px rgba(0, 0, 0, 0.30);
 }
 
 .services-card:nth-child(n + 10) {
