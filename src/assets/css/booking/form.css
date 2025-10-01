@@ -402,7 +402,8 @@
   color: var(--color-white);
 }
 
-a.time-picker-confirm {
+a.time-picker-confirm,
+button.time-picker-confirm {
   margin-top: var(--spacing-lg);
   width: 100%;
   padding: var(--spacing-sm);
@@ -422,7 +423,8 @@ a.time-picker-confirm {
   text-align: center;
 }
 
-a.time-picker-confirm:hover {
+a.time-picker-confirm:hover,
+button.time-picker-confirm:hover {
   background: var(--button-primary-bg-hover);
 }
 
@@ -597,7 +599,8 @@ a.time-picker-confirm:hover {
     padding: 6px 16px;
   }
 
-  a.time-picker-confirm {
+  a.time-picker-confirm,
+  button.time-picker-confirm {
     font-size: 14px;
     padding: 8px;
   }
@@ -675,7 +678,8 @@ a.time-picker-confirm:hover {
     max-height: 180px;
   }
 
-  a.time-picker-confirm {
+  a.time-picker-confirm,
+  button.time-picker-confirm {
     font-size: 13px;
     padding: 7px;
   }
@@ -800,7 +804,8 @@ a.time-picker-confirm:hover {
     width: 100%;
   }
 
-  a.time-picker-confirm {
+  a.time-picker-confirm,
+  button.time-picker-confirm {
     font-size: 12px;
     padding: 6px;
     margin-top: 12px;
@@ -930,7 +935,8 @@ a.time-picker-confirm:hover {
     max-height: 140px;
   }
 
-  a.time-picker-confirm {
+  a.time-picker-confirm,
+  button.time-picker-confirm {
     font-size: 11px;
     padding: 5px;
     margin-top: 10px;

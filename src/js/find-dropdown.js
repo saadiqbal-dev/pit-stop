@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const inputText = document.querySelector('.find-input-text');
   const dropdownItems = document.querySelectorAll('.find-dropdown-item');
   const loading = document.querySelector('.find-loading');
-  const title = document.querySelector('.find-title');
+  const title = document.querySelector('.find-container h2');
 
   // Toggle dropdown on input click
   input.addEventListener('click', function(e) {

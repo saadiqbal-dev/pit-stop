@@ -1,3 +1,10 @@
+/* Set page background to red for find-a-store page */
+body {
+  background: var(--color-brand-red-primary);
+  min-height: 100vh;
+  height: auto;
+}
+
 .find-wrapper {
   display: flex;
   width: 100vw;

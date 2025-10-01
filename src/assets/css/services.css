@@ -95,7 +95,8 @@
   left: 0;
 }
 
-a.services-button {
+a.services-button,
+button.services-button {
   color: var(--color-white);
   text-align: center;
   font-family: var(--font-family-accent);
@@ -113,7 +114,8 @@ a.services-button {
   transition: background-color 0.3s ease;
 }
 
-a.services-button:hover {
+a.services-button:hover,
+button.services-button:hover {
   background: var(--button-primary-bg-hover);
 }
 
@@ -254,7 +256,8 @@ a.services-button:hover {
     line-height: 36px;
   }
 
-  a.services-button {
+  a.services-button,
+  button.services-button {
     font-size: 14px;
     padding: 8px 18px;
   }
@@ -294,7 +297,8 @@ a.services-button:hover {
     line-height: 32px;
   }
 
-  a.services-button {
+  a.services-button,
+  button.services-button {
     font-size: 13px;
     padding: 8px 16px;
   }
@@ -341,7 +345,8 @@ a.services-button:hover {
   .services-card {
   }
 
-  a.services-button {
+  a.services-button,
+  button.services-button {
     font-size: 12px;
     padding: 8px 14px;
   }
@@ -384,7 +389,8 @@ a.services-button:hover {
     transform: scale(0.8);
   }
 
-  a.services-button {
+  a.services-button,
+  button.services-button {
     font-size: 11px;
     padding: 6px 12px;
   }
