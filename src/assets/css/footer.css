@@ -93,12 +93,23 @@
   }
 }
 .services-link {
-  display: flex;
+  columns: 2;
+  column-gap: 70px;
   width: 100%;
-  /* max-width: 185px; */
-  gap: 70px;
-  align-items: start;
-  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.services-link li {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Single column when 6 or fewer items */
+.services-link:has(li:nth-child(6):last-child),
+.services-link:has(li:nth-child(-n + 5):last-child) {
+  columns: 1;
 }
 
 .copyright-footer {
@@ -122,6 +133,51 @@
   align-items: center;
   justify-content: center;
   gap: 38px;
+}
+
+/* Mobile CTA Section - Hidden on desktop */
+.mobile-cta {
+  display: none;
+}
+
+.mobile-cta__description {
+  color: #1d1c1c;
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  margin: 0;
+}
+
+.mobile-cta__button {
+  width: 100%;
+  max-width: 200px;
+  height: 50px;
+  border-radius: var(--button-radius-sm);
+  background: var(--button-primary-bg);
+  border: none;
+  color: var(--button-primary-text);
+  text-align: center;
+  font-family: var(--button-primary-font);
+  font-size: var(--button-primary-font-size);
+  font-style: normal;
+  font-weight: var(--button-primary-font-weight);
+  line-height: var(--button-primary-line-height);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.mobile-cta__button:hover {
+  background: var(--button-primary-bg-hover);
+}
+
+.mobile-cta__social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 38px;
+  margin-top: 10px;
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
@@ -249,7 +305,12 @@
   }
 
   .services-link {
-    gap: 60px;
+    column-gap: 60px;
+  }
+
+  .services-link:has(li:nth-child(6):last-child),
+  .services-link:has(li:nth-child(-n + 5):last-child) {
+    columns: 1;
   }
 
   .copyright-footer p {
@@ -307,7 +368,12 @@
   }
 
   .services-link {
-    gap: 55px;
+    column-gap: 55px;
+  }
+
+  .services-link:has(li:nth-child(6):last-child),
+  .services-link:has(li:nth-child(-n + 5):last-child) {
+    columns: 1;
   }
 
   .copyright-footer p {
@@ -367,7 +433,12 @@
   }
 
   .services-link {
-    gap: 45px;
+    column-gap: 45px;
+  }
+
+  .services-link:has(li:nth-child(6):last-child),
+  .services-link:has(li:nth-child(-n + 5):last-child) {
+    columns: 1;
   }
 
   .copyright-footer p {
@@ -387,7 +458,7 @@
 /* Tablet Portrait - 768px */
 @media (max-width: 768px) {
   .footer-container {
-    padding: 40px 20px;
+    padding: 40px 30px;
     gap: 50px;
   }
 
@@ -399,6 +470,11 @@
   .footer-content {
     flex-direction: column;
     gap: 40px;
+    align-items: flex-start;
+  }
+
+  .footer-logo {
+    align-self: flex-start;
   }
 
   .links-container {
@@ -430,8 +506,53 @@
   }
 
   .services-link {
+    column-gap: 0;
+    columns: 1 !important;
+  }
+
+  /* Show mobile CTA below logo */
+  .mobile-cta--top {
+    display: flex;
     flex-direction: column;
-    gap: 30px;
+    align-items: flex-start;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .mobile-cta--top h3 {
+    margin: 0;
+    font-size: 16px;
+    line-height: 16px;
+    color: #1d1c1c;
+    font-family: var(--font-family-base);
+  }
+
+  .mobile-cta__description {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0;
+  }
+
+  .mobile-cta__button {
+    max-width: 180px;
+    height: 45px;
+    font-size: 14px;
+  }
+
+  .mobile-cta__social-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 55px;
+  }
+
+  /* .mobile-cta__social-icons img {
+    width: 20px;
+    height: 20px;
+  } */
+
+  /* Hide desktop social icons on mobile */
+  .copyright-footer .social-icons {
+    display: none;
   }
 
   .copyright-footer {
@@ -440,23 +561,14 @@
   }
 
   .copyright-footer p {
-    font-size: 10px;
-  }
-
-  .social-icons {
-    gap: 20px;
-  }
-
-  .social-icons svg {
-    width: 20px;
-    height: 20px;
+    font-size: 14px;
   }
 }
 
 /* Mobile - 480px */
 @media (max-width: 480px) {
   .footer-container {
-    padding: 30px 16px;
+    padding: 30px 30px;
     gap: 40px;
   }
 
@@ -468,6 +580,11 @@
   .footer-content {
     flex-direction: column;
     gap: 30px;
+    align-items: flex-start;
+  }
+
+  .footer-logo {
+    align-self: flex-start;
   }
 
   .links-container {
@@ -488,19 +605,66 @@
 
   .links-content h3,
   .links-content-services h3 {
-    font-size: 11px;
-    line-height: 16px;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 600;
   }
 
   .links-content li,
   .links-content-services li {
-    font-size: 11px;
-    line-height: 16px;
+    font-size: 16px;
+    line-height: 26px;
   }
 
   .services-link {
+    column-gap: 0;
+    columns: 1 !important;
+  }
+
+  /* Show mobile CTA below logo */
+  .mobile-cta--top {
+    display: flex;
     flex-direction: column;
-    gap: 24px;
+    align-items: flex-start;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .mobile-cta--top h3 {
+    margin: 0;
+    font-size: 16px;
+    line-height: 26px;
+    color: #1d1c1c;
+    font-family: var(--font-family-base);
+    font-weight: 600;
+  }
+
+  .mobile-cta__description {
+    font-size: 16px;
+    line-height: 26px;
+    margin: 0;
+  }
+
+  .mobile-cta__button {
+    max-width: 160px;
+    height: 40px;
+    font-size: 13px;
+  }
+
+  .mobile-cta__social-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 55px;
+  }
+
+  /* .mobile-cta__social-icons img {
+    width: 18px;
+    height: 18px;
+  } */
+
+  /* Hide desktop social icons on mobile */
+  .copyright-footer .social-icons {
+    display: none;
   }
 
   .copyright-footer {
@@ -509,15 +673,6 @@
   }
 
   .copyright-footer p {
-    font-size: 9px;
-  }
-
-  .social-icons {
-    gap: 16px;
-  }
-
-  .social-icons svg {
-    width: 18px;
-    height: 18px;
+    font-size: 14px;
   }
 }
