@@ -9,15 +9,23 @@ const carouselArrows = (() => {
   let gap = 50;
 
   const init = () => {
+    // Check for desktop carousel first, then mobile
     carouselTrack = document.querySelector(".carousel-cards-container");
+    let isMobile = false;
+
+    if (!carouselTrack || window.getComputedStyle(carouselTrack).display === 'none') {
+      carouselTrack = document.querySelector(".carousel-cards-container-mobile");
+      isMobile = true;
+    }
+
     if (!carouselTrack) return;
 
-    carouselCards = Array.from(
-      carouselTrack.querySelectorAll(".carousel-card")
-    );
+    const cardSelector = isMobile ? ".carousel-card-mobile" : ".carousel-card";
+    carouselCards = Array.from(carouselTrack.querySelectorAll(cardSelector));
     if (carouselCards.length === 0) return;
 
-    const arrows = document.querySelectorAll(".carousel-arrows svg");
+    const arrowsSelector = isMobile ? ".carousel-arrows-mobile svg" : ".carousel-arrows svg";
+    const arrows = document.querySelectorAll(arrowsSelector);
     prevButton = arrows[0];
     nextButton = arrows[1];
 

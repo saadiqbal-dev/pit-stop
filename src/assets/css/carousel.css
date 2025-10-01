@@ -72,6 +72,30 @@
   line-height: normal;
 }
 
+.carousel-logo-mobile {
+  display: none;
+}
+
+.carousel-heading-mobile {
+  display: none;
+}
+
+.carousel-cards-container-mobile {
+  display: none;
+}
+
+.carousel-arrows-mobile {
+  display: none;
+}
+
+.carousel-card-mobile {
+  display: none;
+}
+
+.carousel-content-container-mobile {
+  display: none;
+}
+
 .carousel-arrows {
   display: flex;
   align-items: start;
@@ -403,10 +427,14 @@
 
 /* Tablet Portrait - 768px */
 @media (max-width: 768px) {
+  .carousel-wrapper {
+    padding: 0;
+  }
   .carousel-container {
     flex-direction: column;
-    padding: 60px 20px;
-    gap: 30px;
+    padding: 60px 30px;
+    gap: 10px;
+    background: #eb2227;
   }
 
   .carousel-container::before {
@@ -414,42 +442,102 @@
   }
 
   .carousel-content {
-    padding: 30px;
+    padding: 0px;
     max-width: 100%;
-    min-height: auto;
+    height: fit-content;
+    align-items: start;
+    justify-content: start;
+    gap: 30px;
   }
 
   .carousel-overlay {
     width: 100%;
+    display: none;
+  }
+
+  .carousel-logo-mobile {
+    display: block;
   }
 
   .carousel-heading {
+    display: none;
+  }
+
+  .carousel-heading-mobile {
+    display: block;
+    color: #fff;
+    font-family: var(--font-family-base);
     font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
   }
 
   .carousel-arrows {
+    display: none;
+  }
+
+  .carousel-arrows-mobile {
+    display: flex;
+    align-items: start;
+    justify-content: start;
     gap: 6px;
   }
 
-  .carousel-arrows svg {
+  .carousel-arrows-mobile svg {
     width: 36px;
     height: 36px;
   }
 
-  .carousel-cards-container {
+  .carousel-cards-container-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     gap: 24px;
+    height: fit-content;
     margin-left: 0;
+    overflow-x: auto;
+    overflow-y: visible;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: 100%;
+  }
+
+  .carousel-cards-container-mobile::-webkit-scrollbar {
+    display: none;
+  }
+
+  .carousel-card-mobile {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    min-width: 320px;
+    height: 420px;
+    background: #fff;
+    flex-shrink: 0;
+  }
+
+  .carousel-content-container-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .carousel-cards-container {
+    display: none !important;
+  }
+
+  .carousel-card {
+    display: none !important;
   }
 
   .carousel-content-container {
     padding: 20px;
     gap: 20px;
-  }
-
-  .carousel-card {
-    width: 100%;
-    max-width: 320px;
-    height: 420px;
   }
 
   .card-heading {
@@ -476,42 +564,83 @@
   }
 
   .carousel-content {
-    padding: 24px;
+    padding: 0px;
     max-width: 100%;
     min-height: auto;
   }
 
   .carousel-overlay {
-    width: 100%;
+    display: none;
+  }
+
+  .carousel-logo-mobile {
+    display: block;
   }
 
   .carousel-heading {
+    display: none;
+  }
+
+  .carousel-heading-mobile {
+    display: block;
     font-size: 20px;
   }
 
   .carousel-arrows {
+    display: none;
+  }
+
+  .carousel-arrows-mobile {
+    display: flex;
     gap: 5px;
   }
 
-  .carousel-arrows svg {
+  .carousel-arrows-mobile svg {
     width: 32px;
     height: 32px;
   }
 
-  .carousel-cards-container {
+  .carousel-cards-container-mobile {
+    display: flex;
     gap: 20px;
     margin-left: 0;
+    overflow-x: auto;
+    overflow-y: visible;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: 100%;
+  }
+
+  .carousel-cards-container-mobile::-webkit-scrollbar {
+    display: none;
+  }
+
+  .carousel-card-mobile {
+    display: flex;
+    width: 280px;
+    min-width: 280px;
+    height: 380px;
+    flex-shrink: 0;
+  }
+
+  .carousel-content-container-mobile {
+    display: flex;
+    padding: 18px;
+    gap: 18px;
+  }
+
+  .carousel-cards-container {
+    display: none !important;
+  }
+
+  .carousel-card {
+    display: none !important;
   }
 
   .carousel-content-container {
     padding: 18px;
     gap: 18px;
-  }
-
-  .carousel-card {
-    width: 100%;
-    max-width: 100%;
-    height: 380px;
   }
 
   .card-heading {
