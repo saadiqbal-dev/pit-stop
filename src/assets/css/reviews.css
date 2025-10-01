@@ -261,11 +261,13 @@
   }
 
   .reviews-container {
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
+    display: flex;
+    flex-direction: column-reverse;
   }
 
   .image-container {
-    display: none;
+    display: block;
   }
 
   .reviews-content {
@@ -274,14 +276,16 @@
   }
 
   .reviews-heading {
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 32px;
+    line-height: 42px;
+    font-weight: 700;
   }
 
   .reviews-description,
   .reviews-description span {
-    font-size: 13px;
-    line-height: 20px;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 600;
   }
 
   .reviews-google {

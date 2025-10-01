@@ -226,6 +226,83 @@ a.header__phone-button:hover {
   transition: transform 0.2s ease;
 }
 
+/* Services Dropdown Specific Styles */
+.header__dropdown-menu--services {
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.header__dropdown-links-container {
+  display: flex;
+  flex: 1;
+}
+
+.header__dropdown-menu--services .header__dropdown-list {
+  display: grid;
+  column-gap: 60px;
+  list-style: none;
+  width: 100%;
+}
+
+/* Dynamic column layout based on item count */
+/* 1-5 items: 1 column */
+.header__dropdown-menu--services .header__dropdown-list:has(li:nth-child(-n+5):last-child) {
+  grid-template-columns: 1fr;
+}
+
+/* 6-10 items: 2 columns */
+.header__dropdown-menu--services .header__dropdown-list:has(li:nth-child(n+6):nth-child(-n+10):last-child) {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* 11+ items: 3 columns */
+.header__dropdown-menu--services .header__dropdown-list:has(li:nth-child(n+11):last-child) {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Static Right Side Content */
+.header__dropdown-static-content {
+  display: flex;
+  gap: 160px;
+  align-items: stretch;
+}
+
+.header__dropdown-divider {
+  width: 1px;
+  background: #B8B5B5;
+  align-self: stretch;
+}
+
+.header__dropdown-cta-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.header__dropdown-cta-button {
+  color: var(--color-white);
+  background: var(--color-brand-red-accent);
+  padding: var(--spacing-sm) 20.5px;
+  border-radius: var(--radius-lg);
+  font-family: var(--font-family-accent);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  line-height: var(--line-height-md);
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.header__dropdown-cta-button:hover {
+  background: var(--button-primary-bg-hover);
+}
+
+.header__dropdown-cta-section .header__dropdown-link {
+  padding: 0;
+}
+
 /* Responsive Breakpoints */
 
 /* Laptop Large - 1440px */
@@ -236,6 +313,20 @@ a.header__phone-button:hover {
 
   .header__nav {
     padding: var(--header-nav-padding-y) 80px;
+  }
+
+  /* Services Dropdown Responsive */
+  .header__dropdown-static-content {
+    gap: 140px;
+  }
+
+  .header__dropdown-menu--services .header__dropdown-list {
+    column-gap: 50px;
+  }
+
+  .header__dropdown-cta-button {
+    font-size: 15px;
+    padding: 9px 18px;
   }
 }
 
@@ -262,6 +353,25 @@ a.header__phone-button:hover {
 
   .header__nav-link {
     font-size: 16px;
+  }
+
+  /* Services Dropdown Responsive */
+  .header__dropdown-static-content {
+    gap: 120px;
+  }
+
+  .header__dropdown-menu--services .header__dropdown-list {
+    column-gap: 45px;
+  }
+
+  .header__dropdown-cta-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .header__dropdown-link {
+    font-size: 15px;
+    line-height: 23px;
   }
 }
 
@@ -293,6 +403,25 @@ a.header__phone-button:hover {
   .header__nav-link {
     font-size: 15px;
     line-height: 26px;
+  }
+
+  /* Services Dropdown Responsive */
+  .header__dropdown-static-content {
+    gap: 100px;
+  }
+
+  .header__dropdown-menu--services .header__dropdown-list {
+    column-gap: 40px;
+  }
+
+  .header__dropdown-cta-button {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+
+  .header__dropdown-link {
+    font-size: 15px;
+    line-height: 23px;
   }
 }
 
@@ -509,17 +638,4 @@ a.mobile-menu__close svg {
   }
 }
 
-/* Mobile dropdown responsive adjustments for other breakpoints */
-@media (max-width: 1024px) {
-  .header__dropdown-link {
-    font-size: 15px;
-    line-height: 23px;
-  }
-}
-
-@media (max-width: 1280px) {
-  .header__dropdown-link {
-    font-size: 15px;
-    line-height: 23px;
-  }
-}
+/* Mobile dropdown responsive adjustments are now integrated above */
