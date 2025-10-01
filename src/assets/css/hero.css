@@ -21,7 +21,7 @@
   gap: var(--spacing-lg);
 }
 
-.main_heading {
+.hero__content h1 {
   color: var(--color-white);
   font-family: var(--font-family-base);
   font-size: var(--font-size-hero);
@@ -30,7 +30,7 @@
   line-height: var(--line-height-hero);
 }
 
-.sub_heading {
+.hero__content p {
   color: var(--color-white);
   font-family: var(--font-family-base);
   font-size: var(--font-size-h3);
@@ -72,12 +72,12 @@ a.hero__button:hover {
     padding: 190px var(--padding-x-desktop);
   }
 
-  .main_heading {
+  .hero__content h1 {
     font-size: 60px;
     line-height: 80px;
   }
 
-  .sub_heading {
+  .hero__content p {
     font-size: 30px;
     line-height: 52px;
   }
@@ -89,12 +89,12 @@ a.hero__button:hover {
     padding: 180px var(--padding-x-laptop-lg);
   }
 
-  .main_heading {
+  .hero__content h1 {
     font-size: 56px;
     line-height: 74px;
   }
 
-  .sub_heading {
+  .hero__content p {
     font-size: 28px;
     line-height: 54px;
   }
@@ -106,12 +106,12 @@ a.hero__button:hover {
     padding: 170px var(--padding-x-laptop-lg);
   }
 
-  .main_heading {
+  .hero__content h1 {
     font-size: 52px;
     line-height: 70px;
   }
 
-  .sub_heading {
+  .hero__content p {
     font-size: 27px;
     line-height: 52px;
   }
@@ -123,12 +123,12 @@ a.hero__button:hover {
     padding: 160px var(--padding-x-laptop);
   }
 
-  .main_heading {
+  .hero__content h1 {
     font-size: 48px;
     line-height: 64px;
   }
 
-  .sub_heading {
+  .hero__content p {
     font-size: 26px;
     line-height: 50px;
   }
@@ -146,12 +146,12 @@ a.hero__button:hover {
     padding: 120px var(--padding-x-tablet);
   }
 
-  .main_heading {
+  .hero__content h1 {
     font-size: 40px;
     line-height: 54px;
   }
 
-  .sub_heading {
+  .hero__content p {
     font-size: 24px;
     line-height: 46px;
   }
@@ -172,13 +172,13 @@ a.hero__button:hover {
     justify-content: center;
   }
 
-  .main_heading {
+  .hero__content h1 {
     font-size: 40px;
     line-height: 48px;
     text-align: center;
   }
 
-  .sub_heading {
+  .hero__content p {
     font-size: 22px;
     line-height: 30px;
     text-align: center;
@@ -198,12 +198,12 @@ a.hero__button:hover {
     gap: var(--spacing-md);
   }
 
-  .main_heading {
+  .hero__content h1 {
     font-size: 28px;
     line-height: 38px;
   }
 
-  .sub_heading {
+  .hero__content p {
     font-size: 18px;
     line-height: 30px;
   }

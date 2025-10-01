@@ -37,7 +37,7 @@
   gap: 24px;
 }
 
-.tagline {
+.text-content-heading-container p {
   color: #eb2227;
   font-family: var(--font-family-base);
   font-size: 20px;
@@ -46,7 +46,7 @@
   line-height: 29px; /* 145% */
 }
 
-.content-heading {
+.text-content-heading-container h2 {
   color: var(--color-white);
   font-family: var(--font-family-base);
   font-size: 40px;
@@ -55,7 +55,7 @@
   line-height: 52px; /* 130% */
 }
 
-.content-description {
+.text-content > p {
   color: var(--color-white);
   font-family: var(--font-family-base);
   font-size: 20px;
@@ -87,17 +87,17 @@
     gap: 23px;
   }
 
-  .tagline {
+  .text-content-heading-container p {
     font-size: 19px;
     line-height: 28px;
   }
 
-  .content-heading {
+  .text-content-heading-container h2 {
     font-size: 38px;
     line-height: 50px;
   }
 
-  .content-description {
+  .text-content > p {
     font-size: 19px;
     line-height: 29px;
   }
@@ -114,17 +114,17 @@
     gap: 22px;
   }
 
-  .tagline {
+  .text-content-heading-container p {
     font-size: 18px;
     line-height: 27px;
   }
 
-  .content-heading {
+  .text-content-heading-container h2 {
     font-size: 36px;
     line-height: 48px;
   }
 
-  .content-description {
+  .text-content > p {
     font-size: 18px;
     line-height: 28px;
   }
@@ -141,17 +141,17 @@
     gap: 21px;
   }
 
-  .tagline {
+  .text-content-heading-container p {
     font-size: 17px;
     line-height: 26px;
   }
 
-  .content-heading {
+  .text-content-heading-container h2 {
     font-size: 34px;
     line-height: 46px;
   }
 
-  .content-description {
+  .text-content > p {
     font-size: 17px;
     line-height: 27px;
   }
@@ -168,17 +168,17 @@
     gap: 20px;
   }
 
-  .tagline {
+  .text-content-heading-container p {
     font-size: 17px;
     line-height: 25px;
   }
 
-  .content-heading {
+  .text-content-heading-container h2 {
     font-size: 32px;
     line-height: 44px;
   }
 
-  .content-description {
+  .text-content > p {
     font-size: 17px;
     line-height: 26px;
   }
@@ -195,17 +195,17 @@
     gap: 18px;
   }
 
-  .tagline {
+  .text-content-heading-container p {
     font-size: 16px;
     line-height: 23px;
   }
 
-  .content-heading {
+  .text-content-heading-container h2 {
     font-size: 28px;
     line-height: 40px;
   }
 
-  .content-description {
+  .text-content > p {
     font-size: 16px;
     line-height: 24px;
   }
@@ -226,17 +226,17 @@
     gap: 16px;
   }
 
-  .tagline {
+  .text-content-heading-container p {
     font-size: 15px;
     line-height: 21px;
   }
 
-  .content-heading {
+  .text-content-heading-container h2 {
     font-size: 24px;
     line-height: 34px;
   }
 
-  .content-description {
+  .text-content > p {
     font-size: 15px;
     line-height: 22px;
   }
@@ -262,17 +262,17 @@
     gap: 14px;
   }
 
-  .tagline {
+  .text-content-heading-container p {
     font-size: 14px;
     line-height: 19px;
   }
 
-  .content-heading {
+  .text-content-heading-container h2 {
     font-size: 20px;
     line-height: 28px;
   }
 
-  .content-description {
+  .text-content > p {
     font-size: 14px;
     line-height: 20px;
   }

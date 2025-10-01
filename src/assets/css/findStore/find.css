@@ -1,7 +1,7 @@
 .find-wrapper {
   display: flex;
   width: 100vw;
-  height: calc(100svh - 286px);
+  min-height: calc(100svh - 286px);
   align-items: center;
   justify-content: center;
   margin: 0 auto;
@@ -17,7 +17,7 @@
   margin: 0 auto;
 }
 
-.find-title {
+.find-container h2 {
   color: var(--color-white);
   font-family: var(--font-family-base);
   font-size: var(--font-size-h4);
@@ -152,7 +152,7 @@
 /* Desktop Small - 1536px */
 @media (max-width: 1536px) {
   .find-wrapper {
-    height: calc(100svh - 275px);
+    min-height: calc(100svh - 275px);
   }
 
   .find-title {
@@ -194,7 +194,7 @@
 /* Laptop Large - 1440px */
 @media (max-width: 1440px) {
   .find-wrapper {
-    height: calc(100svh - 260px);
+    min-height: calc(100svh - 260px);
   }
 
   .find-title {
@@ -236,7 +236,7 @@
 /* Laptop Medium - 1366px */
 @media (max-width: 1366px) {
   .find-wrapper {
-    height: calc(100svh - 250px);
+    min-height: calc(100svh - 250px);
   }
 
   .find-title {
@@ -279,7 +279,7 @@
 /* Laptop - 1280px */
 @media (max-width: 1280px) {
   .find-wrapper {
-    height: calc(100svh - 240px);
+    min-height: calc(100svh - 240px);
   }
 
   .find-title {
@@ -322,7 +322,7 @@
 /* Tablet Landscape - 1024px */
 @media (max-width: 1024px) {
   .find-wrapper {
-    height: calc(100svh - 220px);
+    min-height: calc(100svh - 220px);
   }
 
   .find-title {
@@ -365,7 +365,7 @@
 /* Tablet Portrait - 768px */
 @media (max-width: 768px) {
   .find-wrapper {
-    height: calc(100svh - 180px);
+    min-height: calc(100svh - 180px);
     padding: 60px 30px;
     align-items: start;
     width: 100%;
@@ -439,7 +439,7 @@
 /* Mobile - 480px */
 @media (max-width: 480px) {
   .find-wrapper {
-    height: calc(100svh - 180px);
+    min-height: calc(100svh - 180px);
     padding: 60px 30px;
     align-items: start;
     width: 100%;

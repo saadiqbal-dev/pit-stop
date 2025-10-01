@@ -67,7 +67,7 @@
   background: #eb2227; /* same as parent */
 }
 
-.carousel-heading {
+.carousel-overlay h2 {
   color: #fff;
   font-family: var(--font-family-base);
   font-size: 40px;
@@ -130,7 +130,7 @@
   background: white;
 }
 
-.card-heading {
+.carousel-content-container h2 {
   color: #000;
   font-family: var(--font-family-base);
   font-size: 28px;
@@ -139,7 +139,7 @@
   line-height: 33px; /* 117.857% */
 }
 
-.card-description {
+.carousel-content-container p {
   color: #000;
   font-family: var(--font-family-base);
   font-size: 20px;
@@ -174,7 +174,7 @@
     min-height: 700px;
   }
 
-  .carousel-heading {
+  .carousel-overlay h2 {
     font-size: 38px;
   }
 
@@ -193,12 +193,14 @@
     height: 575px;
   }
 
-  .card-heading {
+  .carousel-content-container h2,
+  .carousel-content-container-mobile h2 {
     font-size: 27px;
     line-height: 31px;
   }
 
-  .card-description {
+  .carousel-content-container p,
+  .carousel-content-container-mobile p {
     font-size: 19px;
     line-height: 29px;
   }
@@ -222,7 +224,7 @@
     min-height: 660px;
   }
 
-  .carousel-heading {
+  .carousel-overlay h2 {
     font-size: 36px;
   }
 
@@ -241,12 +243,14 @@
     height: 550px;
   }
 
-  .card-heading {
+  .carousel-content-container h2,
+  .carousel-content-container-mobile h2 {
     font-size: 26px;
     line-height: 30px;
   }
 
-  .card-description {
+  .carousel-content-container p,
+  .carousel-content-container-mobile p {
     font-size: 18px;
     line-height: 28px;
   }
@@ -270,7 +274,7 @@
     min-height: 630px;
   }
 
-  .carousel-heading {
+  .carousel-overlay h2 {
     font-size: 34px;
   }
 
@@ -289,12 +293,14 @@
     height: 530px;
   }
 
-  .card-heading {
+  .carousel-content-container h2,
+  .carousel-content-container-mobile h2 {
     font-size: 25px;
     line-height: 29px;
   }
 
-  .card-description {
+  .carousel-content-container p,
+  .carousel-content-container-mobile p {
     font-size: 17px;
     line-height: 27px;
   }
@@ -318,7 +324,7 @@
     min-height: 600px;
   }
 
-  .carousel-heading {
+  .carousel-overlay h2 {
     font-size: 32px;
   }
 
@@ -337,12 +343,14 @@
     height: 510px;
   }
 
-  .card-heading {
+  .carousel-content-container h2,
+  .carousel-content-container-mobile h2 {
     font-size: 24px;
     line-height: 28px;
   }
 
-  .card-description {
+  .carousel-content-container p,
+  .carousel-content-container-mobile p {
     font-size: 17px;
     line-height: 26px;
   }
@@ -366,7 +374,7 @@
     min-height: 520px;
   }
 
-  .carousel-heading {
+  .carousel-overlay h2 {
     font-size: 28px;
   }
 
@@ -394,12 +402,14 @@
     height: 460px;
   }
 
-  .card-heading {
+  .carousel-content-container h2,
+  .carousel-content-container-mobile h2 {
     font-size: 22px;
     line-height: 26px;
   }
 
-  .card-description {
+  .carousel-content-container p,
+  .carousel-content-container-mobile p {
     font-size: 16px;
     line-height: 24px;
   }
@@ -436,7 +446,15 @@
     gap: 30px;
   }
 
-  .carousel-heading-mobile {
+  .carousel-wrapper-mobile h2 {
+    color: #fff;
+    font-family: var(--font-family-base);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .carousel-content h2 {
     color: #fff;
     font-family: var(--font-family-base);
     font-size: 24px;
@@ -465,7 +483,7 @@
     height: fit-content;
     margin-left: 0;
     overflow-x: auto;
-    overflow-y: visible;
+    /* overflow-y: visible; */
     flex-wrap: nowrap;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -481,7 +499,7 @@
     flex-direction: column;
     width: 320px;
     min-width: 320px;
-    height: 420px;
+    /* height: 420px; */
     background: #fff;
     flex-shrink: 0;
   }
@@ -495,12 +513,36 @@
     gap: 20px;
   }
 
-  .card-heading {
+  .carousel-content-container-mobile h2 {
+    color: #000;
+    font-family: var(--font-family-base);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  .carousel-content-container-mobile p {
+    color: #000;
+    font-family: var(--font-family-base);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .carousel-content-container h2 {
     font-size: 20px;
     line-height: 24px;
   }
 
-  .card-description {
+  .carousel-content-container p {
     font-size: 15px;
     line-height: 22px;
   }
@@ -513,7 +555,7 @@
     gap: 20px;
   }
 
-  .carousel-heading-mobile {
+  .carousel-wrapper-mobile .carousel-content h2 {
     font-size: 20px;
   }
 
@@ -541,12 +583,36 @@
     gap: 18px;
   }
 
-  .card-heading {
+  .carousel-content-container-mobile h2 {
+    color: #000;
+    font-family: var(--font-family-base);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+  }
+
+  .carousel-content-container-mobile p {
+    color: #000;
+    font-family: var(--font-family-base);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .carousel-content-container h2 {
     font-size: 18px;
     line-height: 22px;
   }
 
-  .card-description {
+  .carousel-content-container p {
     font-size: 14px;
     line-height: 20px;
   }
