@@ -40,6 +40,8 @@
 }
 
 .hero__button {
+  margin-top: 20px;
+
   color: var(--color-white);
   text-align: center;
   font-family: var(--font-family-accent);
@@ -125,6 +127,7 @@
   .hero__button {
     font-size: var(--font-size-sm);
     /* height: 45px; */
+    margin-top: 0;
   }
 }
 

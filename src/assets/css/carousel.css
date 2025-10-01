@@ -76,7 +76,6 @@
   line-height: normal;
 }
 
-
 .carousel-arrows {
   display: flex;
   align-items: start;
@@ -510,7 +509,7 @@
 /* Mobile - 480px */
 @media (max-width: 480px) {
   .carousel-wrapper-mobile .carousel-container {
-    padding: 40px 16px;
+    padding: 40px 30px;
     gap: 20px;
   }
 

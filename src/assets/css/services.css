@@ -332,7 +332,7 @@
 /* Mobile - 480px */
 @media (max-width: 480px) {
   .services-container {
-    padding: 40px 16px;
+    padding: 40px 30px;
     gap: 36px;
   }
 
