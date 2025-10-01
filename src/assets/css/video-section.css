@@ -66,9 +66,12 @@
 
 .video-wrapper {
   width: 100%;
-  height: auto;
+  height: 100%;
+  min-height: 600px;
   scale: 1;
   overflow: hidden;
+  border: none;
+  display: block;
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
@@ -240,6 +243,7 @@
 
   .video-wrapper {
     order: -1;
+    min-height: 400px;
   }
 }
 
@@ -275,5 +279,6 @@
 
   .video-wrapper {
     order: -1;
+    min-height: 300px;
   }
 }
