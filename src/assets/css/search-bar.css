@@ -22,12 +22,11 @@
   position: relative;
 }
 
+/* Search heading - extends base h2 */
 .search-content h2 {
   color: var(--color-text-gray);
   text-align: right;
-  font-family: var(--font-family-base);
   font-size: var(--font-size-h5);
-  font-style: normal;
   font-weight: 600;
   line-height: var(--line-height-lg);
 }
@@ -137,33 +136,18 @@
   background: rgba(237, 31, 36, 0.1);
 }
 
-a.search-button {
-  color: var(--color-white);
-  text-align: center;
-  font-family: var(--font-family-accent);
-  font-size: var(--font-size-base);
-  font-style: normal;
-  font-weight: 500;
-  line-height: var(--line-height-md);
+/* Search button - extends .btn .btn-primary from base.css */
+.search-button {
   border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
-  background: var(--color-brand-red-accent);
   padding: var(--spacing-sm) 20.5px;
   position: absolute;
   right: 0;
   top: 0;
   bottom: 0;
   height: 100%;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-a.search-button:hover {
-  background: var(--button-primary-bg-hover);
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
@@ -296,7 +280,7 @@ a.search-button:hover {
     padding: 6px 20px;
   }
 
-  a.search-button {
+  .search-button {
     font-size: 14px;
     padding: 0 18px;
   }
@@ -338,7 +322,7 @@ a.search-button:hover {
     padding: 6px 18px;
   }
 
-  a.search-button {
+  .search-button {
     font-size: 13px;
     padding: 0 16px;
   }
@@ -395,7 +379,7 @@ a.search-button:hover {
     padding: 6px 16px;
   }
 
-  a.search-button {
+  .search-button {
     font-size: 12px;
     padding: 0 14px;
   }
@@ -441,7 +425,7 @@ a.search-button:hover {
     padding: 6px 14px;
   }
 
-  a.search-button {
+  .search-button {
     font-size: 11px;
     padding: 0 12px;
   }

@@ -21,47 +21,23 @@
   gap: var(--spacing-lg);
 }
 
+/* Hero-specific heading styles - extend base h1 */
 .hero__content h1 {
   color: var(--color-white);
-  font-family: var(--font-family-base);
   font-size: var(--font-size-hero);
-  font-style: normal;
-  font-weight: 700;
   line-height: var(--line-height-hero);
 }
 
+/* Hero-specific paragraph styles - extend base p */
 .hero__content p {
   color: var(--color-white);
-  font-family: var(--font-family-base);
   font-size: var(--font-size-h3);
-  font-style: normal;
-  font-weight: 600;
   line-height: var(--line-height-xl);
 }
 
-a.hero__button {
+/* Hero button - extends .btn .btn-outline from base.css */
+.hero__button {
   margin-top: 20px;
-
-  color: var(--color-white);
-  text-align: center;
-  font-family: var(--font-family-accent);
-  font-size: var(--font-size-base);
-  font-style: normal;
-  font-weight: 600;
-  line-height: var(--line-height-md);
-  padding: var(--spacing-sm) 31px;
-  border-radius: var(--radius-lg);
-  border: var(--border-thin) solid var(--color-white);
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  /* height: var(--spacing-4xl); */
-}
-
-a.hero__button:hover {
-  background: var(--color-white);
-  color: var(--color-black);
-  border: var(--border-thin) solid var(--color-white);
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
@@ -133,9 +109,8 @@ a.hero__button:hover {
     line-height: 50px;
   }
 
-  a.hero__button {
+  .hero__button {
     font-size: var(--font-size-sm);
-    /* height: 45px; */
     margin-top: 0;
   }
 }
@@ -156,9 +131,8 @@ a.hero__button:hover {
     line-height: 46px;
   }
 
-  a.hero__button {
+  .hero__button {
     font-size: var(--font-size-xs);
-    /* height: 42px; */
     padding: var(--spacing-xs) 30px;
   }
 }
@@ -184,9 +158,8 @@ a.hero__button:hover {
     text-align: center;
   }
 
-  a.hero__button {
+  .hero__button {
     font-size: var(--font-size-xs);
-    /* height: 40px; */
     padding: var(--spacing-xs) var(--spacing-lg);
   }
 }
@@ -208,9 +181,8 @@ a.hero__button:hover {
     line-height: 30px;
   }
 
-  a.hero__button {
+  .hero__button {
     font-size: var(--font-size-xs);
-    /* height: 38px; */
     padding: var(--spacing-xs) var(--spacing-md);
   }
 }

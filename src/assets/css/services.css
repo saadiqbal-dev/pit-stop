@@ -27,21 +27,18 @@
   justify-content: center;
 }
 
+/* Services heading - extends base h2 */
 .services-heading-container h2 {
-  color: var(--color-black);
   text-align: center;
-  font-family: var(--font-family-base);
   font-size: var(--font-size-h1);
-  font-style: normal;
-  font-weight: 700;
   line-height: 100.419px;
 }
+
+/* Services subheading - extends base p */
 .services-heading-container p {
   color: var(--color-text-gray);
   text-align: center;
-  font-family: var(--font-family-base);
   font-size: var(--font-size-h6);
-  font-style: normal;
   font-weight: 600;
   line-height: 29px;
 }
@@ -79,13 +76,10 @@
   display: flex;
 }
 
+/* Service card title - extends base h2 */
 .services-card h2 {
-  color: var(--color-black);
   text-align: center;
-  font-family: var(--font-family-base);
   font-size: var(--font-size-h4);
-  font-style: normal;
-  font-weight: 700;
   line-height: var(--line-height-lg);
 }
 
@@ -95,28 +89,9 @@
   left: 0;
 }
 
-a.services-button,
-button.services-button {
-  color: var(--color-white);
-  text-align: center;
-  font-family: var(--font-family-accent);
-  font-size: var(--font-size-base);
-  font-style: normal;
-  font-weight: 500;
-  line-height: var(--line-height-md);
-  border-radius: var(--radius-lg);
-  background: var(--color-brand-red-accent);
+/* Services button - extends .btn .btn-primary from base.css */
+.services-button {
   padding: var(--spacing-sm) 20.5px;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-}
-
-a.services-button:hover,
-button.services-button:hover {
-  background: var(--button-primary-bg-hover);
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
@@ -256,8 +231,7 @@ button.services-button:hover {
     line-height: 36px;
   }
 
-  a.services-button,
-  button.services-button {
+  .services-button {
     font-size: 14px;
     padding: 8px 18px;
   }
@@ -297,8 +271,7 @@ button.services-button:hover {
     line-height: 32px;
   }
 
-  a.services-button,
-  button.services-button {
+  .services-button {
     font-size: 13px;
     padding: 8px 16px;
   }
@@ -345,8 +318,7 @@ button.services-button:hover {
   .services-card {
   }
 
-  a.services-button,
-  button.services-button {
+  .services-button {
     font-size: 12px;
     padding: 8px 14px;
   }
@@ -389,8 +361,7 @@ button.services-button:hover {
     transform: scale(0.8);
   }
 
-  a.services-button,
-  button.services-button {
+  .services-button {
     font-size: 11px;
     padding: 6px 12px;
   }

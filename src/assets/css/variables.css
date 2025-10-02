@@ -146,4 +146,50 @@
   --width-search-dropdown: 572px;
   --width-service-card: 540px;
   --width-form-max: 880px;
+
+  /* Button States */
+  --button-focus-ring: rgba(235, 34, 39, 0.5);
+  --button-disabled-opacity: 0.5;
+
+  /* Form Colors */
+  --form-input-bg: #ffffff;
+  --form-input-border: var(--color-border-gray);
+  --form-input-border-focus: var(--color-brand-red-accent);
+  --form-input-text: var(--color-text-default);
+  --form-input-placeholder: var(--color-text-placeholder);
+  --form-input-disabled-bg: var(--color-background-light);
+  --form-input-disabled-opacity: 0.6;
+
+  /* Form Validation */
+  --form-valid-color: #28a745;
+  --form-invalid-color: #dc3545;
+  --form-focus-shadow: rgba(235, 34, 39, 0.1);
+
+  /* Alert Colors */
+  --alert-info-bg: #d1ecf1;
+  --alert-info-text: #0c5460;
+  --alert-info-border: #bee5eb;
+  --alert-success-bg: #d4edda;
+  --alert-success-text: #155724;
+  --alert-success-border: #c3e6cb;
+  --alert-warning-bg: #fff3cd;
+  --alert-warning-text: #856404;
+  --alert-warning-border: #ffeaa7;
+  --alert-error-bg: #f8d7da;
+  --alert-error-text: #721c24;
+  --alert-error-border: #f5c6cb;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Z-Index Scale */
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-fixed: 1030;
+  --z-index-modal-backdrop: 1040;
+  --z-index-modal: 1050;
+  --z-index-popover: 1060;
+  --z-index-tooltip: 1070;
 }

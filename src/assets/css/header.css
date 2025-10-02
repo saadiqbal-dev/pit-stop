@@ -68,30 +68,16 @@
   opacity: 0.8;
 }
 
-a.header__phone-button {
+/* Header phone button - extends .btn .btn-primary from base.css */
+.header__phone-button {
   width: var(--button-primary-width);
   height: var(--button-primary-height);
   flex-shrink: 0;
-  border-radius: var(--button-radius-sm);
-  background: var(--button-primary-bg);
-  border: none;
-  color: var(--button-primary-text);
-  text-align: center;
-  font-family: var(--button-primary-font);
   font-size: var(--button-primary-font-size);
-  font-style: normal;
-  font-weight: var(--button-primary-font-weight);
   line-height: var(--button-primary-line-height);
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-a.header__phone-button:hover {
-  background: var(--button-primary-bg-hover);
 }
 
 /* Header Navigation Section */
@@ -280,23 +266,10 @@ a.header__phone-button:hover {
   align-items: flex-start;
 }
 
+/* Dropdown CTA button - extends .btn .btn-primary from base.css */
 .header__dropdown-cta-button {
-  color: var(--color-white);
-  background: var(--color-brand-red-accent);
   padding: var(--spacing-sm) 20.5px;
-  border-radius: var(--radius-lg);
-  font-family: var(--font-family-accent);
-  font-size: var(--font-size-base);
-  font-weight: 500;
-  line-height: var(--line-height-md);
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.3s ease;
   white-space: nowrap;
-}
-
-.header__dropdown-cta-button:hover {
-  background: var(--button-primary-bg-hover);
 }
 
 .header__dropdown-cta-section .header__dropdown-link {
@@ -345,7 +318,7 @@ a.header__phone-button:hover {
     height: 124px;
   }
 
-  a.header__phone-button {
+  .header__phone-button {
     width: 220px;
     height: 55px;
     font-size: 16px;
@@ -394,7 +367,7 @@ a.header__phone-button:hover {
     gap: 40px;
   }
 
-  a.header__phone-button {
+  .header__phone-button {
     width: 200px;
     height: 50px;
     font-size: 15px;
@@ -471,7 +444,7 @@ a.header__phone-button:hover {
   height: 38px;
 }
 
-a.mobile-header__hamburger {
+.mobile-header__hamburger {
   width: 42.999px;
   height: 29px;
   flex-shrink: 0;
@@ -485,7 +458,7 @@ a.mobile-header__hamburger {
   text-decoration: none;
 }
 
-a.mobile-header__hamburger svg {
+.mobile-header__hamburger svg {
   width: 42.999px;
   height: 29px;
 }
@@ -526,7 +499,7 @@ a.mobile-header__hamburger svg {
   object-fit: contain;
 }
 
-a.mobile-menu__close {
+.mobile-menu__close {
   width: 33px;
   height: 33px;
   flex-shrink: 0;
@@ -540,7 +513,7 @@ a.mobile-menu__close {
   text-decoration: none;
 }
 
-a.mobile-menu__close svg {
+.mobile-menu__close svg {
   width: 33px;
   height: 33px;
 }
