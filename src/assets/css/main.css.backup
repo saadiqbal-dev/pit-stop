@@ -294,9 +294,101 @@ a {
 
 /* ========== TYPOGRAPHY ========== */
 
-/* Global typography selectors removed to prevent conflicts with old pages.
-   All typography styles are now component-specific (e.g., .hero__content h1, .services-heading-container h2)
-   This ensures new CSS won't override styles on existing pages. */
+/* Base Headings - CMS-ready defaults */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  color: var(--color-text-default);
+  margin: 0;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-xl);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-lg);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-md);
+}
+
+h4 {
+  font-size: var(--font-size-h4);
+  line-height: var(--line-height-md);
+}
+
+h5 {
+  font-size: var(--font-size-h5);
+  line-height: var(--line-height-sm);
+}
+
+h6 {
+  font-size: var(--font-size-h6);
+  line-height: var(--line-height-sm);
+}
+
+/* Base Paragraphs */
+p {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  line-height: var(--line-height-sm);
+  color: var(--color-text-default);
+  margin: 0;
+}
+
+/* Base Links */
+a {
+  font-family: var(--font-family-base);
+  font-size: inherit;
+  color: var(--color-brand-red-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-brand-red-accent-hover);
+  text-decoration: underline;
+}
+
+/* Base Lists */
+ul,
+ol {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-sm);
+  color: var(--color-text-default);
+  margin: 0;
+  padding-left: 1.5em;
+}
+
+ul li,
+ol li {
+  margin-bottom: 0.5em;
+}
+
+/* Blockquote */
+blockquote {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-lg);
+  font-style: italic;
+  line-height: var(--line-height-md);
+  color: var(--color-text-gray);
+  border-left: 4px solid var(--color-brand-red-accent);
+  padding-left: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+}
 
 /* ========== BUTTONS ========== */
 
@@ -400,9 +492,95 @@ a {
 
 /* ========== FORMS ========== */
 
-/* Global form element selectors removed to prevent conflicts with old pages.
-   All form styles are now component-specific (e.g., .booking-form input, .contact-form textarea)
-   This ensures new CSS won't override form styles on existing pages. */
+/* Base Form Elements */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="search"],
+textarea,
+select {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-sm);
+  color: var(--color-text-default);
+  background: var(--color-white);
+  border: var(--border-thin) solid var(--color-border-gray);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  width: 100%;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="search"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-brand-red-accent);
+  box-shadow: 0 0 0 3px rgba(235, 34, 39, 0.1);
+}
+
+input[type="text"]:disabled,
+input[type="email"]:disabled,
+input[type="password"]:disabled,
+input[type="tel"]:disabled,
+input[type="number"]:disabled,
+input[type="date"]:disabled,
+input[type="search"]:disabled,
+textarea:disabled,
+select:disabled {
+  background: var(--color-background-light);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-text-placeholder);
+}
+
+/* Form Labels */
+label {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-default);
+  display: block;
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Textarea */
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Select Dropdown */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23000' d='M10.59 0L6 4.58 1.41 0 0 1.41l6 6 6-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--spacing-sm) center;
+  padding-right: var(--spacing-3xl);
+}
+
+/* Checkboxes and Radio Buttons */
+input[type="checkbox"],
+input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  margin-right: var(--spacing-xs);
+  cursor: pointer;
+  accent-color: var(--color-brand-red-accent);
+}
 
 /* Form Validation States */
 .form-group {
@@ -500,8 +678,34 @@ a {
   border: var(--border-thin) solid #f5c6cb;
 }
 
-/* Global table selectors removed to prevent conflicts with old pages.
-   Create component-specific table styles if needed (e.g., .booking-form table, .data-table) */
+/* Table Component */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  margin: var(--spacing-lg) 0;
+}
+
+table thead {
+  background: var(--color-background-light);
+}
+
+table th {
+  font-weight: 700;
+  text-align: left;
+  padding: var(--spacing-md);
+  border-bottom: var(--border-medium) solid var(--color-border-gray);
+}
+
+table td {
+  padding: var(--spacing-md);
+  border-bottom: var(--border-thin) solid var(--color-border-light);
+}
+
+table tbody tr:hover {
+  background: var(--color-background-light);
+}
 
 /* Modal Component */
 .modal-overlay {
@@ -1418,10 +1622,8 @@ a {
 }
 
 .links-content h3 {
-  font-family: var(--font-family-base);
-  margin: 0;
-  padding: 0;
   color: #1d1c1c;
+  font-family: var(--font-family-base);
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -1448,10 +1650,8 @@ a {
 }
 
 .links-content-services h3 {
-  font-family: var(--font-family-base);
-  margin: 0;
-  padding: 0;
   color: #1d1c1c;
+  font-family: var(--font-family-base);
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -1494,10 +1694,8 @@ a {
 }
 
 .copyright-footer p {
-  font-family: var(--font-family-accent);
-  margin: 0;
-  padding: 0;
   color: #1d1c1c;
+  font-family: var(--font-family-accent);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -2087,9 +2285,6 @@ a.mobile-cta__button:hover {
 
 /* Hero-specific heading styles - extend base h1 */
 .hero__content h1 {
-  font-family: var(--font-family-base);
-  margin: 0;
-  padding: 0;
   color: var(--color-white);
   font-size: var(--font-size-hero);
   line-height: var(--line-height-hero);
@@ -2097,9 +2292,6 @@ a.mobile-cta__button:hover {
 
 /* Hero-specific paragraph styles - extend base p */
 .hero__content p {
-  font-family: var(--font-family-base);
-  margin: 0;
-  padding: 0;
   color: var(--color-white);
   font-size: var(--font-size-h3);
   line-height: var(--line-height-xl);
@@ -2288,9 +2480,6 @@ a.mobile-cta__button:hover {
 
 /* Search heading - extends base h2 */
 .search-content h2 {
-  font-family: var(--font-family-base);
-  margin: 0;
-  padding: 0;
   color: var(--color-text-gray);
   text-align: right;
   font-size: var(--font-size-h5);
@@ -2743,10 +2932,8 @@ a.mobile-cta__button:hover {
 }
 
 .text-content-heading-container p {
-  font-family: var(--font-family-base);
-  margin: 0;
-  padding: 0;
   color: #eb2227;
+  font-family: var(--font-family-base);
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
@@ -2754,10 +2941,8 @@ a.mobile-cta__button:hover {
 }
 
 .text-content-heading-container h2 {
-  font-family: var(--font-family-base);
-  margin: 0;
-  padding: 0;
   color: var(--color-white);
+  font-family: var(--font-family-base);
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
@@ -2765,10 +2950,8 @@ a.mobile-cta__button:hover {
 }
 
 .text-content > p {
-  font-family: var(--font-family-base);
-  margin: 0;
-  padding: 0;
   color: var(--color-white);
+  font-family: var(--font-family-base);
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -2962,14 +3145,11 @@ a.mobile-cta__button:hover {
 @media (max-width: 480px) {
   .section-video-content {
     grid-template-columns: 1fr;
-    width: 100%;
   }
 
   .text-content {
     padding: 40px 30px;
     gap: 24px;
-    width: 100%;
-    box-sizing: border-box;
   }
 
   .text-content-heading-container {
@@ -3033,9 +3213,6 @@ a.mobile-cta__button:hover {
 
 /* Services heading - extends base h2 */
 .services-heading-container h2 {
-  font-family: var(--font-family-base);
-  margin: 0;
-  padding: 0;
   text-align: center;
   font-size: var(--font-size-h1);
   line-height: 100.419px;
@@ -3043,9 +3220,6 @@ a.mobile-cta__button:hover {
 
 /* Services subheading - extends base p */
 .services-heading-container p {
-  font-family: var(--font-family-base);
-  margin: 0;
-  padding: 0;
   color: var(--color-text-gray);
   text-align: center;
   font-size: var(--font-size-h6);
@@ -3088,9 +3262,6 @@ a.mobile-cta__button:hover {
 
 /* Service card title - extends base h2 */
 .services-card h2 {
-  font-family: var(--font-family-base);
-  margin: 0;
-  padding: 0;
   text-align: center;
   font-size: var(--font-size-h4);
   line-height: var(--line-height-lg);
@@ -3335,10 +3506,6 @@ a.mobile-cta__button:hover {
     font-size: 12px;
     padding: 8px 14px;
   }
-
-  .services-svg {
-    width: 80%;
-  }
 }
 
 /* Mobile - 480px */
@@ -3381,10 +3548,6 @@ a.mobile-cta__button:hover {
   .services-button {
     font-size: 11px;
     padding: 6px 12px;
-  }
-
-  .services-svg {
-    width: 80%;
   }
 }
 
@@ -3463,10 +3626,8 @@ a.mobile-cta__button:hover {
 }
 
 .carousel-overlay h2 {
-  font-family: var(--font-family-base);
-  margin: 0;
-  padding: 0;
   color: #fff;
+  font-family: var(--font-family-base);
   font-size: 40px;
   font-style: normal;
   font-weight: 600;
@@ -3525,22 +3686,11 @@ a.mobile-cta__button:hover {
   height: 603px;
   flex-shrink: 0;
   background: white;
-  display: flex;
-  flex-direction: column;
-}
-
-.carousel-card img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  display: block;
 }
 
 .carousel-content-container h2 {
-  font-family: var(--font-family-base);
-  margin: 0;
-  padding: 0;
   color: #000;
+  font-family: var(--font-family-base);
   font-size: 28px;
   font-style: normal;
   font-weight: 700;
@@ -3548,10 +3698,8 @@ a.mobile-cta__button:hover {
 }
 
 .carousel-content-container p {
-  font-family: var(--font-family-base);
-  margin: 0;
-  padding: 0;
   color: #000;
+  font-family: var(--font-family-base);
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -3914,13 +4062,6 @@ a.mobile-cta__button:hover {
     flex-shrink: 0;
   }
 
-  .carousel-card-mobile img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-  }
-
   .carousel-content-container-mobile {
     display: flex;
     flex-direction: column;
@@ -3931,10 +4072,8 @@ a.mobile-cta__button:hover {
   }
 
   .carousel-content-container-mobile h2 {
-    font-family: var(--font-family-base);
-    margin: 0;
-    padding: 0;
     color: #000;
+    font-family: var(--font-family-base);
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
@@ -3942,10 +4081,8 @@ a.mobile-cta__button:hover {
   }
 
   .carousel-content-container-mobile p {
-    font-family: var(--font-family-base);
-    margin: 0;
-    padding: 0;
     color: #000;
+    font-family: var(--font-family-base);
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
@@ -4083,20 +4220,16 @@ a.mobile-cta__button:hover {
   gap: 50px;
 }
 .reviews-content h2 {
-  font-family: var(--font-family-base);
-  margin: 0;
-  padding: 0;
   color: var(--color-white);
+  font-family: var(--font-family-base);
   font-size: 40px;
   font-style: normal;
   font-weight: 600;
   line-height: 50px; /* 125% */
 }
 .reviews-content p {
-  font-family: var(--font-family-base);
-  margin: 0;
-  padding: 0;
   color: var(--color-white);
+  font-family: var(--font-family-base);
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -4378,10 +4511,8 @@ a.mobile-cta__button:hover {
 }
 
 .form-content h2 {
-  font-family: var(--font-family-base);
-  margin: 0;
-  padding: 0;
   color: var(--color-black);
+  font-family: var(--font-family-base);
   font-size: var(--font-size-h2);
   font-style: normal;
   font-weight: 700;
@@ -5333,10 +5464,8 @@ body.find-a-store-page {
 }
 
 .find-container h2 {
-  font-family: var(--font-family-base);
-  margin: 0;
-  padding: 0;
   color: var(--color-white);
+  font-family: var(--font-family-base);
   font-size: var(--font-size-h4);
   font-style: normal;
   font-weight: 600;
