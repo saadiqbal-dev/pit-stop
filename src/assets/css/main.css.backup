@@ -3688,7 +3688,7 @@ a.mobile-cta__button:hover {
   background: white;
 }
 
-.carousel-content-container h2 {
+.carousel-text-desktop h2 {
   color: #000;
   font-family: var(--font-family-base);
   font-size: 28px;
@@ -3751,7 +3751,7 @@ a.mobile-cta__button:hover {
     height: 575px;
   }
 
-  .carousel-content-container h2,
+  .carousel-text-desktop h2,
   .carousel-content-container-mobile h2 {
     font-size: 27px;
     line-height: 31px;
@@ -3801,7 +3801,7 @@ a.mobile-cta__button:hover {
     height: 550px;
   }
 
-  .carousel-content-container h2,
+  .carousel-text-desktop h2,
   .carousel-content-container-mobile h2 {
     font-size: 26px;
     line-height: 30px;
@@ -3851,7 +3851,7 @@ a.mobile-cta__button:hover {
     height: 530px;
   }
 
-  .carousel-content-container h2,
+  .carousel-text-desktop h2,
   .carousel-content-container-mobile h2 {
     font-size: 25px;
     line-height: 29px;
@@ -3901,7 +3901,7 @@ a.mobile-cta__button:hover {
     height: 510px;
   }
 
-  .carousel-content-container h2,
+  .carousel-text-desktop h2,
   .carousel-content-container-mobile h2 {
     font-size: 24px;
     line-height: 28px;
@@ -3960,7 +3960,7 @@ a.mobile-cta__button:hover {
     height: 460px;
   }
 
-  .carousel-content-container h2,
+  .carousel-text-desktop h2,
   .carousel-content-container-mobile h2 {
     font-size: 22px;
     line-height: 26px;
@@ -4095,7 +4095,7 @@ a.mobile-cta__button:hover {
     text-overflow: ellipsis;
   }
 
-  .carousel-content-container h2 {
+  .carousel-text-desktop h2 {
     font-size: 20px;
     line-height: 24px;
   }
@@ -4165,7 +4165,7 @@ a.mobile-cta__button:hover {
     text-overflow: ellipsis;
   }
 
-  .carousel-content-container h2 {
+  .carousel-text-desktop h2 {
     font-size: 18px;
     line-height: 22px;
   }

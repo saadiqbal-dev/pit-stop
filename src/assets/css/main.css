@@ -3574,7 +3574,7 @@ a.mobile-cta__button:hover {
   align-items: start;
   justify-content: start;
   padding: 30px;
-  gap: 30px;
+  gap: 50px;
 }
 
 .carousel-card {
@@ -3588,12 +3588,20 @@ a.mobile-cta__button:hover {
 
 .carousel-card img {
   width: 100%;
-  height: 280px;
+  height: 224px;
   object-fit: cover;
   display: block;
 }
 
-.carousel-content-container h2 {
+.carousel-text-desktop {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 20px;
+}
+
+.carousel-text-desktop h2 {
   font-family: var(--font-family-base);
   margin: 0;
   padding: 0;
@@ -3660,7 +3668,7 @@ a.mobile-cta__button:hover {
     height: 575px;
   }
 
-  .carousel-content-container h2,
+  .carousel-text-desktop h2,
   .carousel-content-container-mobile h2 {
     font-size: 27px;
     line-height: 31px;
@@ -3710,7 +3718,7 @@ a.mobile-cta__button:hover {
     height: 550px;
   }
 
-  .carousel-content-container h2,
+  .carousel-text-desktop h2,
   .carousel-content-container-mobile h2 {
     font-size: 26px;
     line-height: 30px;
@@ -3760,7 +3768,7 @@ a.mobile-cta__button:hover {
     height: 530px;
   }
 
-  .carousel-content-container h2,
+  .carousel-text-desktop h2,
   .carousel-content-container-mobile h2 {
     font-size: 25px;
     line-height: 29px;
@@ -3810,7 +3818,7 @@ a.mobile-cta__button:hover {
     height: 510px;
   }
 
-  .carousel-content-container h2,
+  .carousel-text-desktop h2,
   .carousel-content-container-mobile h2 {
     font-size: 24px;
     line-height: 28px;
@@ -3869,7 +3877,7 @@ a.mobile-cta__button:hover {
     height: 460px;
   }
 
-  .carousel-content-container h2,
+  .carousel-text-desktop h2,
   .carousel-content-container-mobile h2 {
     font-size: 22px;
     line-height: 26px;
@@ -4024,7 +4032,7 @@ a.mobile-cta__button:hover {
     text-overflow: ellipsis;
   }
 
-  .carousel-content-container h2 {
+  .carousel-text-desktop h2 {
     font-size: 20px;
     line-height: 24px;
   }
@@ -4100,7 +4108,7 @@ a.mobile-cta__button:hover {
     text-overflow: ellipsis;
   }
 
-  .carousel-content-container h2 {
+  .carousel-text-desktop h2 {
     font-size: 18px;
     line-height: 22px;
   }
