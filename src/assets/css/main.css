@@ -116,12 +116,12 @@ a {
 
   /* Header spacings */
   --header-padding-x: 100px;
-  --header-top-padding-y: 38.55px;
-  --header-nav-padding-y: 20px;
+  --header-top-padding-y: 33.55px;
+  --header-nav-padding-y: 10px;
 
   /* Header elements */
-  --logo-width: 265.581px;
-  --logo-height: 136.894px;
+  --logo-width: 180px;
+  --logo-height: 92.894px;
   --controls-gap: 57px;
   --dropdown-gap: 8px;
 
@@ -135,11 +135,11 @@ a {
   --button-primary-font: var(--font-family-accent);
   --button-primary-font-size: 18px;
   --button-primary-line-height: 32px;
-  --button-primary-font-weight: 600;
+  --button-primary-font-weight: 400;
 
   /* Typography - Nav */
   --nav-font: var(--font-family-base);
-  --nav-font-size: 18px;
+  --nav-font-size: 16px;
   --nav-line-height: 30px;
   --nav-font-weight: 600;
 
