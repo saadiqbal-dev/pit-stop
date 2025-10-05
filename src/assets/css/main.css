@@ -2242,18 +2242,19 @@ a.mobile-cta__button:hover {
   }
 
   .hero__content h1 {
-    font-size: 28px;
-    line-height: 38px;
+    font-size: 40px;
+    line-height: 48px;
   }
 
   .hero__content p {
-    font-size: 18px;
+    font-size: 22px;
     line-height: 30px;
   }
 
   .hero__button {
     font-size: var(--font-size-xs);
     padding: var(--spacing-xs) var(--spacing-md);
+    margin-top: 15px;
   }
 }
 
@@ -2611,8 +2612,8 @@ a.mobile-cta__button:hover {
   }
 
   .search-content h2 {
-    font-size: 14px;
-    line-height: 28px;
+    font-size: 20px;
+    line-height: 46px;
     text-align: left;
   }
 
@@ -2661,8 +2662,12 @@ a.mobile-cta__button:hover {
   }
 
   .search-content h2 {
-    font-size: 12px;
-    line-height: 24px;
+    font-size: 20px;
+    line-height: 46px;
+    text-align: left;
+  }
+  .search-dropdown-text.placeholder {
+    font-size: 16px;
   }
 
   .search-dropdown {
@@ -2688,12 +2693,12 @@ a.mobile-cta__button:hover {
   }
 
   .search-dropdown-item {
-    font-size: 11px;
+    font-size: 16px;
     padding: 6px 14px;
   }
 
   .search-button {
-    font-size: 11px;
+    font-size: 16px;
     padding: 0 12px;
   }
 }
@@ -2926,11 +2931,14 @@ a.mobile-cta__button:hover {
 @media (max-width: 768px) {
   .section-video-content {
     grid-template-columns: 1fr;
+    width: 100%;
   }
 
   .text-content {
     padding: 60px 30px;
     gap: 30px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .text-content-heading-container {
@@ -2977,17 +2985,20 @@ a.mobile-cta__button:hover {
   }
 
   .text-content-heading-container p {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 19px;
   }
 
   .text-content-heading-container h2 {
-    font-size: 20px;
+    font-size: 26px;
     line-height: 28px;
+  }
+  .text-content-heading-container img {
+    width: 75%;
   }
 
   .text-content > p {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 20px;
   }
 
@@ -3370,7 +3381,7 @@ a.mobile-cta__button:hover {
   }
 
   .services-card h2 {
-    font-size: 18px;
+    font-size: 28px;
     line-height: 26px;
   }
 
@@ -3379,8 +3390,8 @@ a.mobile-cta__button:hover {
   }
 
   .services-button {
-    font-size: 11px;
-    padding: 6px 12px;
+    font-size: 16px;
+    padding: 6px 24px;
   }
 
   .services-svg {
@@ -3975,13 +3986,19 @@ a.mobile-cta__button:hover {
     padding: 40px 30px;
     gap: 20px;
   }
+  .carousel-wrapper-mobile .carousel-content {
+    gap: 10px;
+  }
 
   .carousel-wrapper-mobile .carousel-content h2 {
-    font-size: 20px;
+    font-size: 22px;
+    line-height: 26px;
+    margin: 0;
   }
 
   .carousel-arrows-mobile {
     gap: 5px;
+    margin-top: 15px;
   }
 
   .carousel-arrows-mobile svg {
@@ -3996,7 +4013,7 @@ a.mobile-cta__button:hover {
   .carousel-card-mobile {
     width: 280px;
     min-width: 280px;
-    height: 380px;
+    /* height: 380px; */
   }
 
   .carousel-content-container-mobile {
