@@ -4219,7 +4219,7 @@ a.mobile-cta__button:hover {
   justify-content: center;
   gap: 50px;
 }
-.reviews-content h2 {
+.reviews-text h2 {
   color: var(--color-white);
   font-family: var(--font-family-base);
   font-size: 40px;
@@ -4270,7 +4270,7 @@ a.mobile-cta__button:hover {
     gap: 47px;
   }
 
-  .reviews-content h2 {
+  .reviews-text h2 {
     font-size: 38px;
     line-height: 48px;
   }
@@ -4298,7 +4298,7 @@ a.mobile-cta__button:hover {
     gap: 45px;
   }
 
-  .reviews-content h2 {
+  .reviews-text h2 {
     font-size: 36px;
     line-height: 46px;
   }
@@ -4326,7 +4326,7 @@ a.mobile-cta__button:hover {
     gap: 42px;
   }
 
-  .reviews-content h2 {
+  .reviews-text h2 {
     font-size: 34px;
     line-height: 44px;
   }
@@ -4354,7 +4354,7 @@ a.mobile-cta__button:hover {
     gap: 40px;
   }
 
-  .reviews-content h2 {
+  .reviews-text h2 {
     font-size: 32px;
     line-height: 42px;
   }
@@ -4382,7 +4382,7 @@ a.mobile-cta__button:hover {
     gap: 35px;
   }
 
-  .reviews-content h2 {
+  .reviews-text h2 {
     font-size: 28px;
     line-height: 38px;
   }
@@ -4420,7 +4420,7 @@ a.mobile-cta__button:hover {
     gap: 30px;
   }
 
-  .reviews-content h2 {
+  .reviews-text h2 {
     font-size: 24px;
     line-height: 34px;
   }
@@ -4458,7 +4458,7 @@ a.mobile-cta__button:hover {
     gap: 24px;
   }
 
-  .reviews-content h2 {
+  .reviews-text h2 {
     font-size: 32px;
     line-height: 42px;
     font-weight: 700;
