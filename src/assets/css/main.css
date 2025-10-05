@@ -830,10 +830,10 @@ a {
 
 /* Header phone button - extends .btn .btn-primary from base.css */
 .header__phone-button {
-  width: var(--button-primary-width);
-  height: var(--button-primary-height);
+  width: 175px;
+  height: 40px;
   flex-shrink: 0;
-  font-size: var(--button-primary-font-size);
+  font-size: 16px;
   line-height: var(--button-primary-line-height);
   display: flex;
   align-items: center;
@@ -3150,7 +3150,7 @@ a.mobile-cta__button:hover {
 
 /* Services button - extends .btn .btn-primary from base.css */
 .services-button {
-  padding: var(--spacing-sm) 30.5px;
+  padding: 4px 30.5px;
   font-weight: 400;
 }
 
@@ -3293,7 +3293,7 @@ a.mobile-cta__button:hover {
 
   .services-button {
     font-size: 14px;
-    padding: 8px 18px;
+    padding: 4px 30px;
   }
 }
 
@@ -3333,7 +3333,7 @@ a.mobile-cta__button:hover {
 
   .services-button {
     font-size: 13px;
-    padding: 8px 16px;
+    padding: 4px 25px;
   }
 }
 
@@ -3380,7 +3380,7 @@ a.mobile-cta__button:hover {
 
   .services-button {
     font-size: 12px;
-    padding: 8px 14px;
+    padding: 4px 20px;
   }
 
   .services-svg {
@@ -3427,7 +3427,7 @@ a.mobile-cta__button:hover {
 
   .services-button {
     font-size: 16px;
-    padding: 6px 24px;
+    padding: 4px 25px;
   }
 
   .services-svg {
