@@ -30,14 +30,24 @@ const carouselArrows = (() => {
     let newCarouselType = null;
 
     // Determine which carousel is visible
-    if (mobileCarousel && window.getComputedStyle(mobileCarousel).display !== 'none') {
-      carouselTrack = mobileCarousel.querySelector(".carousel-cards-container-mobile");
+    if (
+      mobileCarousel &&
+      window.getComputedStyle(mobileCarousel).display !== "none"
+    ) {
+      carouselTrack = mobileCarousel.querySelector(
+        ".carousel-cards-container-mobile"
+      );
       isMobile = true;
-      newCarouselType = 'mobile';
-    } else if (desktopCarousel && window.getComputedStyle(desktopCarousel).display !== 'none') {
-      carouselTrack = desktopCarousel.querySelector(".carousel-cards-container");
+      newCarouselType = "mobile";
+    } else if (
+      desktopCarousel &&
+      window.getComputedStyle(desktopCarousel).display !== "none"
+    ) {
+      carouselTrack = desktopCarousel.querySelector(
+        ".carousel-cards-container"
+      );
       isMobile = false;
-      newCarouselType = 'desktop';
+      newCarouselType = "desktop";
     }
 
     // Only reinitialize if carousel type changed
@@ -58,7 +68,9 @@ const carouselArrows = (() => {
     if (carouselCards.length === 0) return;
 
     const arrowsContainer = isMobile ? mobileCarousel : desktopCarousel;
-    const arrowsSelector = isMobile ? ".carousel-arrows-mobile svg" : ".carousel-arrows svg";
+    const arrowsSelector = isMobile
+      ? ".carousel-arrows-mobile svg"
+      : ".carousel-arrows svg";
     const arrows = arrowsContainer.querySelectorAll(arrowsSelector);
     prevButton = arrows[0];
     nextButton = arrows[1];
@@ -108,11 +120,9 @@ const carouselArrows = (() => {
     prevButton.style.cursor = "pointer";
     nextButton.style.cursor = "pointer";
 
-    carouselTrack.addEventListener(
-      "scroll",
-      updateButtonStates,
-      { passive: true }
-    );
+    carouselTrack.addEventListener("scroll", updateButtonStates, {
+      passive: true,
+    });
   };
 
   const slidePrev = () => {
@@ -141,7 +151,7 @@ const carouselArrows = (() => {
     const atEnd = carouselTrack.scrollLeft >= maxScroll - 1;
 
     if (atStart) {
-      prevButton.style.opacity = "0.3";
+      prevButton.style.opacity = "1";
       prevButton.style.pointerEvents = "none";
     } else {
       prevButton.style.opacity = "1";
@@ -149,7 +159,7 @@ const carouselArrows = (() => {
     }
 
     if (atEnd) {
-      nextButton.style.opacity = "0.3";
+      nextButton.style.opacity = "1";
       nextButton.style.pointerEvents = "none";
     } else {
       nextButton.style.opacity = "1";
