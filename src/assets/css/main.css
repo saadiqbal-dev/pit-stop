@@ -305,7 +305,7 @@ a {
   display: inline-block;
   font-family: var(--font-family-accent);
   font-size: var(--font-size-base);
-  font-weight: 500;
+  font-weight: 400;
   line-height: var(--line-height-md);
   text-align: center;
   text-decoration: none;
@@ -319,7 +319,7 @@ a {
 
 .btn:hover {
   text-decoration: none;
-  transform: translateY(-2px);
+  /* transform: translateY(-2px); */
 }
 
 .btn:focus {
@@ -364,6 +364,20 @@ a {
   background: transparent;
   color: var(--color-white);
   border: var(--border-thin) solid var(--color-white);
+}
+
+.btn-outline-black {
+  background: transparent;
+  color: var(--color-black);
+  border: var(--border-thin) solid var(--color-black);
+  padding: 8px 30.5px;
+  line-height: 28px;
+}
+
+.btn-outline-black:hover {
+  background: var(--color-brand-red-accent-hover);
+  color: var(--color-white);
+  border: var(--border-thin) solid var(--color-brand-red-accent-hover);
 }
 
 .btn-outline:hover {
@@ -753,6 +767,10 @@ a {
 .header-wrapper {
   display: flex;
   flex-direction: column;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--color-white);
 }
 
 /* Full-width bands */
@@ -1149,6 +1167,9 @@ a {
 .mobile-header {
   display: none;
   background: var(--color-white);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .mobile-header__content {
@@ -3115,7 +3136,8 @@ a.mobile-cta__button:hover {
 
 /* Services button - extends .btn .btn-primary from base.css */
 .services-button {
-  padding: var(--spacing-sm) 20.5px;
+  padding: var(--spacing-sm) 30.5px;
+  font-weight: 600;
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
