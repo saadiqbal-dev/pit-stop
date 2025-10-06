@@ -1045,6 +1045,14 @@ a {
 
 /* Laptop Large - 1440px */
 @media (max-width: 1440px) {
+  .header__logo {
+    height: fit-content;
+  }
+  .header__logo img {
+    /* width: 100%; */
+    height: 60px;
+    object-fit: contain;
+  }
   .header__top {
     padding: var(--header-top-padding-y) 80px;
   }
@@ -1071,21 +1079,21 @@ a {
 /* Laptop - 1280px */
 @media (max-width: 1280px) {
   .header__top {
-    padding: 35px 60px;
+    padding: 15px 60px;
   }
 
   .header__nav {
-    padding: 18px 60px;
+    padding: 8px 60px;
   }
 
   .header__logo {
     width: 240px;
-    height: 124px;
+    /* height: 124px; */
   }
 
   .header__phone-button {
-    width: 220px;
-    height: 55px;
+    width: 175px;
+    height: 40px;
     font-size: 16px;
   }
 
