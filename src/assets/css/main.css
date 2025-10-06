@@ -1176,7 +1176,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 70px 30px 30px 30px;
+  padding: 20px 30px;
 }
 
 .mobile-header__logo {
@@ -1252,7 +1252,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 70px 30px 30px 30px;
+  padding: 20px 30px;
 }
 
 .mobile-menu__logo {
@@ -1917,7 +1917,15 @@ a.mobile-cta__button:hover {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    gap: 15px;
+    gap: 35px;
+  }
+
+  .mobile-cta__text {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: start;
+    justify-content: start;
   }
 
   .mobile-cta--top h3 {
@@ -2023,12 +2031,28 @@ a.mobile-cta__button:hover {
   }
 
   /* Show mobile CTA below logo */
-  .mobile-cta--top {
+  /* .mobile-cta--top {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
     gap: 12px;
+  } */
+
+  .mobile-cta--top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 35px;
+  }
+
+  .mobile-cta__text {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: start;
+    justify-content: start;
   }
 
   .mobile-cta--top h3 {
@@ -2055,7 +2079,7 @@ a.mobile-cta__button:hover {
   .mobile-cta__social-icons {
     display: flex;
     flex-direction: row;
-    gap: 55px;
+    gap: 40px;
   }
 
   /* .mobile-cta__social-icons img {
@@ -2677,7 +2701,7 @@ a.mobile-cta__button:hover {
 /* Mobile - 480px */
 @media (max-width: 480px) {
   .search-content {
-    padding: 20px 30px;
+    padding: 18px 30px 37px 30px;
     gap: 12px;
     width: 100%;
   }
@@ -3524,7 +3548,7 @@ a.mobile-cta__button:hover {
   display: flex;
   align-items: start;
   justify-content: start;
-  gap: 8px;
+  gap: 20px;
   opacity: 1;
 }
 
@@ -4061,7 +4085,7 @@ a.mobile-cta__button:hover {
 
   .carousel-arrows-mobile {
     gap: 5px;
-    margin-top: 15px;
+    /* margin-top: 15px; */
   }
 
   .carousel-arrows-mobile svg {
@@ -4071,6 +4095,8 @@ a.mobile-cta__button:hover {
 
   .carousel-cards-container-mobile {
     gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   .carousel-card-mobile {
@@ -4425,8 +4451,8 @@ a.mobile-cta__button:hover {
   }
 
   .reviews-google {
-    width: 130px;
-    height: 45.34px;
+    /* width: 130px; */
+    height: 62.34px;
   }
 }
 
@@ -5779,6 +5805,12 @@ body.find-a-store-page {
     justify-content: start;
     width: 100%;
     gap: 10px;
+  }
+
+  .find-container h2 {
+    text-align: center;
+    font-size: 22px;
+    line-height: 30px;
   }
 
   .find-title {
