@@ -4187,6 +4187,8 @@ a.mobile-cta__button:hover {
   align-items: start;
   justify-content: center;
   gap: 50px;
+  margin-left: auto;
+  max-width: 960px;
 }
 .reviews-text {
   display: flex;
