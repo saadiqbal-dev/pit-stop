@@ -1416,8 +1416,8 @@ a {
 }
 
 .footer-logo {
-  width: 225px;
-  height: 114.368px;
+  /* width: 225px; */
+  height: 92.894px;
   flex-shrink: 0;
 }
 
@@ -1536,8 +1536,14 @@ a {
 .social-icons {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 38px;
+  justify-content: start;
+  gap: 22px;
+  max-width: 185px;
+  width: 100%;
+}
+
+.social-icons img {
+  max-height: 28px;
 }
 
 /* Mobile CTA Section - Hidden on desktop */
@@ -5452,6 +5458,7 @@ body.find-a-store-page {
   justify-content: center;
   max-width: var(--container-max-width);
   margin: 0 auto;
+  gap: 10px;
 }
 
 .find-container h2 {
@@ -5461,7 +5468,7 @@ body.find-a-store-page {
   color: var(--color-white);
   font-size: var(--font-size-h4);
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   line-height: var(--line-height-lg);
 }
 
