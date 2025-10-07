@@ -6149,7 +6149,7 @@ body.search-page .search-input::placeholder {
 /* Mobile - 480px */
 @media (max-width: 480px) {
   body.search-page .search-wrapper {
-    height: calc(100svh - 180px);
+    height: 100svh;
     padding: 60px 30px;
     align-items: start;
     width: 100%;
