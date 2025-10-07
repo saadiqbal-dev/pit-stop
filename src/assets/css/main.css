@@ -6065,6 +6065,7 @@ body.find-a-store-page {
     line-height: 30px;
     text-align: center;
     align-self: flex-start;
+    font-weight: 400;
     order: -1;
   }
   .find-loading-spinner {
