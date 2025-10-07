@@ -1813,6 +1813,7 @@ a.mobile-cta__button:hover {
 
   .social-icons {
     gap: 30px;
+    max-width: 170px;
   }
 
   .social-icons svg {
