@@ -74,6 +74,15 @@ class HeaderNavigation {
         window.addEventListener('resize', () => {
             this.closeAllDropdowns();
         });
+
+        // Close dropdowns on scroll
+        window.addEventListener('scroll', () => {
+            this.closeAllDropdowns();
+        }, true);
+
+        document.addEventListener('scroll', () => {
+            this.closeAllDropdowns();
+        }, true);
     }
 
     openDropdown(item) {

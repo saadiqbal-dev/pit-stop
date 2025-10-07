@@ -11,12 +11,14 @@
   <body>
     <!-- Header -->
     <header class="header-wrapper">
-      <div class="banner">
+      <div class="banner" id="top-banner">
         <div class="banner-content">
           <a><img src="assets/img/afterpay.svg" /></a>
           <p>Easy Vehicle Repair Finance with <span>Afterpay</span></p>
         </div>
-        <a><img src="assets/img/close.svg" /></a>
+        <a class="banner-close" id="banner-close"
+          ><img src="assets/img/close.svg"
+        /></a>
       </div>
       <!-- Top band: full width background -->
       <div class="header__top-band">
@@ -265,6 +267,11 @@
             </svg>
           </a>
         </div>
+      </div>
+      <div class="promotion-banner">
+        <img src="assets/img/brake.svg" />
+        <p>REDUCED PRICE BRAKE SPECIAL Save up to $100 on brake service</p>
+        <a class="btn btn-primary services-button">Book Now</a>
       </div>
     </section>
 
@@ -1041,6 +1048,7 @@
     </main>
 
     <!-- JavaScript Files -->
+    <script src="js/banner-close.js"></script>
     <script src="js/header-navigation.js"></script>
     <script src="js/services-toggle.js"></script>
     <script src="js/carousel-arrows.js"></script>

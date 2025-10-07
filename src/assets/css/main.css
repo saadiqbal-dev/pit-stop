@@ -1241,6 +1241,38 @@ a {
     font-size: 15px;
     line-height: 23px;
   }
+
+  .promotion-banner {
+    max-height: 70px;
+  }
+  .promotion-banner img {
+    width: auto;
+    height: 110px;
+    margin-top: 60px;
+  }
+  .promotion-banner p {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .promotion-banner {
+    padding: 20px 20px;
+    max-height: 80px;
+  }
+  .promotion-banner img {
+    width: auto;
+    height: 80px;
+    margin-top: 30px;
+  }
+  .promotion-banner p {
+    font-size: 12px;
+    line-height: 14px;
+    max-width: 200px;
+    margin: 0;
+  }
 }
 
 /* Mobile Header Styles */
