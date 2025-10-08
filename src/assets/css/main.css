@@ -1046,7 +1046,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px 100px;
+  padding: 15px 100px;
   background: #1d1c1c;
   /* max-height: 90px; */
 }
@@ -1061,18 +1061,19 @@ a {
 }
 
 .banner-content img {
-  width: 126px;
-  height: 43px;
+  width: 85px;
+  height: 30px;
   flex-shrink: 0;
+  aspect-ratio: 17/6;
 }
 .banner-content a {
   color: #ffffff;
   text-decoration: none;
-  height: 43px;
+  height: 30px;
 }
 .banner-content p {
   font-family: var(--font-family-base);
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 29px;
   text-align: center;
@@ -1095,10 +1096,10 @@ a {
 }
 
 .promotion-banner img {
-  width: 198.636px;
-  height: 190px;
+  width: 209px;
+  height: 200px;
   flex-shrink: 0;
-  aspect-ratio: 198.64/190;
+  aspect-ratio: 209/200;
   margin-top: 105px;
   /* position: absolute; */
 }
@@ -1106,11 +1107,11 @@ a {
 .promotion-banner p {
   color: #000;
   font-family: var(--font-family-base);
-  font-size: 28.788px;
+  font-size: 32px;
   font-style: normal;
   font-weight: 700;
-  line-height: 37.424px; /* 130% */
-  max-width: 490px;
+  line-height: 40px; /* 130% */
+  max-width: 547px;
 }
 
 /* Responsive Breakpoints */
@@ -2398,6 +2399,14 @@ a.mobile-cta__button:hover {
     line-height: 30px;
     text-align: center;
   }
+  .hero__container {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
 
   .hero__button {
     font-size: var(--font-size-xs);
@@ -3145,7 +3154,7 @@ a.mobile-cta__button:hover {
   }
 
   .text-content {
-    padding: 70px 30px;
+    padding: 75px 30px;
     gap: 24px;
     width: 100%;
     box-sizing: border-box;
