@@ -2381,6 +2381,10 @@ a.mobile-cta__button:hover {
 
 /* Tablet Portrait - 768px */
 @media (max-width: 768px) {
+  .hero-wrapper {
+    background-image: url("../img/hero-bg-mobile.jpg");
+  }
+
   .hero__content {
     padding: 80px var(--padding-x-mobile);
     gap: var(--spacing-md);
