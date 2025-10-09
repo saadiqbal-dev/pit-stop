@@ -11,12 +11,14 @@
   <body class="find-a-store-page">
     <!-- Header -->
     <header class="header-wrapper">
-      <div class="banner">
+      <div class="banner" id="top-banner">
         <div class="banner-content">
           <a><img src="assets/img/afterpay.svg" /></a>
           <p>Easy Vehicle Repair Finance with <span>Afterpay</span></p>
         </div>
-        <a><img src="assets/img/close.svg" /></a>
+        <a class="banner-close" id="banner-close"
+          ><img src="assets/img/close.svg"
+        /></a>
       </div>
       <!-- Top band: full width background -->
       <div class="header__top-band">
@@ -54,6 +56,9 @@
           </div>
         </div>
       </div>
+
+      <!-- Dropdown overlay -->
+      <div class="header__dropdown-overlay"></div>
 
       <!-- Nav band: full width background -->
       <div class="header__nav-band">
@@ -93,65 +98,73 @@
                   class="header__dropdown-menu header__dropdown-menu--services"
                   id="services-dropdown"
                 >
-                  <!-- Left Side: Dynamic Links Container -->
-                  <div class="header__dropdown-links-container">
-                    <ul class="header__dropdown-list">
-                      <li class="header__dropdown-item">
-                        <a href="#" class="header__dropdown-link">WOF</a>
-                      </li>
-                      <li class="header__dropdown-item">
-                        <a href="#" class="header__dropdown-link"
-                          >Service Packages</a
-                        >
-                      </li>
-                      <li class="header__dropdown-item">
-                        <a href="#" class="header__dropdown-link">Brakes</a>
-                      </li>
-                      <li class="header__dropdown-item">
-                        <a href="#" class="header__dropdown-link"
-                          >EV & Hybrid Service Packages</a
-                        >
-                      </li>
-                      <li class="header__dropdown-item">
-                        <a href="#" class="header__dropdown-link">Suspension</a>
-                      </li>
-                      <li class="header__dropdown-item">
-                        <a href="#" class="header__dropdown-link">Tyres</a>
-                      </li>
-                      <li class="header__dropdown-item">
-                        <a href="#" class="header__dropdown-link">Diagnosis</a>
-                      </li>
-                      <li class="header__dropdown-item">
-                        <a href="#" class="header__dropdown-link">Exhausts</a>
-                      </li>
-                      <li class="header__dropdown-item">
-                        <a href="#" class="header__dropdown-link">Batteries</a>
-                      </li>
-                      <li class="header__dropdown-item">
-                        <a href="#" class="header__dropdown-link">Tow Bars</a>
-                      </li>
-                      <li class="header__dropdown-item">
-                        <a href="#" class="header__dropdown-link">ADAS</a>
-                      </li>
-                      <li class="header__dropdown-item">
-                        <a href="#" class="header__dropdown-link"
-                          >Fleet Servicing</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
+                  <div class="header__dropdown-inner">
+                    <!-- Left Side: Dynamic Links Container -->
+                    <div class="header__dropdown-links-container">
+                      <ul class="header__dropdown-list">
+                        <li class="header__dropdown-item">
+                          <a href="#" class="header__dropdown-link">WOF</a>
+                        </li>
+                        <li class="header__dropdown-item">
+                          <a href="#" class="header__dropdown-link"
+                            >Service Packages</a
+                          >
+                        </li>
+                        <li class="header__dropdown-item">
+                          <a href="#" class="header__dropdown-link">Brakes</a>
+                        </li>
+                        <li class="header__dropdown-item">
+                          <a href="#" class="header__dropdown-link"
+                            >EV & Hybrid Service Packages</a
+                          >
+                        </li>
+                        <li class="header__dropdown-item">
+                          <a href="#" class="header__dropdown-link"
+                            >Suspension</a
+                          >
+                        </li>
+                        <li class="header__dropdown-item">
+                          <a href="#" class="header__dropdown-link">Tyres</a>
+                        </li>
+                        <li class="header__dropdown-item">
+                          <a href="#" class="header__dropdown-link"
+                            >Diagnosis</a
+                          >
+                        </li>
+                        <li class="header__dropdown-item">
+                          <a href="#" class="header__dropdown-link">Exhausts</a>
+                        </li>
+                        <li class="header__dropdown-item">
+                          <a href="#" class="header__dropdown-link"
+                            >Batteries</a
+                          >
+                        </li>
+                        <li class="header__dropdown-item">
+                          <a href="#" class="header__dropdown-link">Tow Bars</a>
+                        </li>
+                        <li class="header__dropdown-item">
+                          <a href="#" class="header__dropdown-link">ADAS</a>
+                        </li>
+                        <li class="header__dropdown-item">
+                          <a href="#" class="header__dropdown-link"
+                            >Fleet Servicing</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
 
-                  <!-- Right Side: Static Content -->
-                  <div class="header__dropdown-static-content">
-                    <div class="header__dropdown-divider"></div>
-                    <div class="header__dropdown-cta-section">
-                      <a
-                        href="booking.html"
-                        class="btn btn-primary header__dropdown-cta-button"
-                        >Book A Service</a
-                      >
-                      <a href="#" class="header__dropdown-link">Rewards</a>
-                      <a href="#" class="header__dropdown-link">Contact Us</a>
+                    <!-- Right Side: Static Content -->
+                    <div class="header__dropdown-static-content">
+                      <div class="header__dropdown-divider"></div>
+                      <div class="header__dropdown-cta-section">
+                        <a
+                          href="booking.html"
+                          class="btn btn-primary header__dropdown-cta-button"
+                          >Book A Service</a
+                        >
+                        <a href="#" class="header__dropdown-link">Rewards</a>
+                        <a href="#" class="header__dropdown-link">Contact Us</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -197,21 +210,25 @@
                     </defs>
                   </svg>
                 </span>
-                <div class="header__dropdown-menu" id="about-dropdown">
-                  <ul class="header__dropdown-list">
-                    <li class="header__dropdown-item">
-                      <a href="#" class="header__dropdown-link">Our Story</a>
-                    </li>
-                    <li class="header__dropdown-item">
-                      <a href="#" class="header__dropdown-link">Our Team</a>
-                    </li>
-                    <li class="header__dropdown-item">
-                      <a href="#" class="header__dropdown-link">Careers</a>
-                    </li>
-                    <li class="header__dropdown-item">
-                      <a href="#" class="header__dropdown-link">Contact Us</a>
-                    </li>
-                  </ul>
+                <div
+                  class="header__dropdown-menu header__dropdown-menu--about"
+                  id="about-dropdown"
+                >
+                  <div class="header__dropdown-inner">
+                    <ul class="header__dropdown-list">
+                      <li class="header__dropdown-item">
+                        <a href="#" class="header__dropdown-link">About</a>
+                      </li>
+                      <li class="header__dropdown-item">
+                        <a href="#" class="header__dropdown-link"
+                          >Franchising</a
+                        >
+                      </li>
+                      <li class="header__dropdown-item">
+                        <a href="#" class="header__dropdown-link">Jobs</a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </li>
 
@@ -222,11 +239,11 @@
           </nav>
         </div>
       </div>
-      <!-- <div class="promotion-banner">
+      <div class="promotion-banner">
         <img src="assets/img/brake.svg" />
         <p>REDUCED PRICE BRAKE SPECIAL Save up to $100 on brake service</p>
         <a class="btn btn-primary services-button">Book Now</a>
-      </div> -->
+      </div>
     </header>
 
     <!-- Mobile Header -->

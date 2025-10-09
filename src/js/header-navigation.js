@@ -8,6 +8,7 @@ class HeaderNavigation {
         this.dropdownItems = document.querySelectorAll('.header__nav-item--dropdown');
         this.activeDropdown = null;
         this.isTouchDevice = 'ontouchstart' in window;
+        this.overlay = document.querySelector('.header__dropdown-overlay');
 
         this.init();
     }
@@ -83,6 +84,13 @@ class HeaderNavigation {
         document.addEventListener('scroll', () => {
             this.closeAllDropdowns();
         }, true);
+
+        // Close dropdowns when clicking overlay
+        if (this.overlay) {
+            this.overlay.addEventListener('click', () => {
+                this.closeAllDropdowns();
+            });
+        }
     }
 
     openDropdown(item) {
@@ -98,8 +106,30 @@ class HeaderNavigation {
         // Set the dropdown top position to be right below the nav band
         dropdownMenu.style.top = `${navBandRect.bottom}px`;
 
+        // For About dropdown, align the content below the menu item
+        if (dropdownMenu.classList.contains('header__dropdown-menu--about')) {
+            const itemRect = item.getBoundingClientRect();
+            const inner = dropdownMenu.querySelector('.header__dropdown-inner');
+            if (inner) {
+                // Calculate the offset from center (where inner starts with margin auto)
+                const viewportWidth = window.innerWidth;
+                const innerMaxWidth = 1920;
+                const innerWidth = Math.min(viewportWidth, innerMaxWidth);
+                const innerStart = (viewportWidth - innerWidth) / 2;
+
+                // Calculate padding to align content below menu item
+                const paddingLeft = itemRect.left - innerStart;
+                inner.style.paddingLeft = `${Math.max(paddingLeft, 0)}px`;
+            }
+        }
+
         item.classList.add('is-active');
         this.activeDropdown = item;
+
+        // Show overlay
+        if (this.overlay) {
+            this.overlay.classList.add('is-active');
+        }
 
         // Set focus to first dropdown link for keyboard users
         const firstDropdownLink = item.querySelector('.header__dropdown-link');
@@ -112,6 +142,11 @@ class HeaderNavigation {
         item.classList.remove('is-active');
         if (this.activeDropdown === item) {
             this.activeDropdown = null;
+        }
+
+        // Hide overlay if no dropdowns are active
+        if (this.overlay && !this.activeDropdown) {
+            this.overlay.classList.remove('is-active');
         }
     }
 
