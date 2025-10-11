@@ -8,7 +8,7 @@
     <!-- Combined CSS File -->
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
-  <body class="find-a-store-page">
+  <body>
     <!-- Header -->
     <header class="header-wrapper">
       <div class="banner" id="top-banner">
@@ -418,88 +418,242 @@
     <!-- Main Content -->
     <main>
       <!-- Your main content goes here -->
-      <section class="find-wrapper">
-        <div class="find-container">
-          <h2>Select your Pit Stop Branch</h2>
-          <div class="find-dropdown">
-            <div class="find-input">
-              <span class="find-input-text">Select your Preferred Region</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="8"
-                viewBox="0 0 15 8"
-                fill="none"
-                class="find-input-arrow"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M14.0243 0L7.51031 6.14436L0.96885 0L0 0.914842L7.49656 7.99351L15 0.914842L14.0311 0H14.0243Z"
-                  fill="#9C7D7D"
-                />
-              </svg>
-            </div>
-            <ul class="find-dropdown-list">
-              <li class="find-dropdown-item" data-value="northland">
-                + Northland
-              </li>
-              <li class="find-dropdown-item" data-value="auckland">
-                + Auckland
-              </li>
-              <li class="find-dropdown-item" data-value="bay-of-plenty">
-                + Bay Of Plenty
-              </li>
-              <li class="find-dropdown-item" data-value="waikato">+ Waikato</li>
-              <li class="find-dropdown-item" data-value="east-coast">
-                + East Coast
-              </li>
-              <li class="find-dropdown-item" data-value="hawkes-bay">
-                + Hawkes Bay
-              </li>
-              <li class="find-dropdown-item" data-value="taranaki">
-                + Taranaki
-              </li>
-              <li class="find-dropdown-item" data-value="manawatu-wanganui">
-                + Manawatu-Wanganui
-              </li>
-              <li class="find-dropdown-item" data-value="wellington">
-                + Wellington
-              </li>
-            </ul>
+      <section class="hero-template-wrapper">
+        <div class="hero-template-container">
+          <div class="image-container">
+            <img
+              src="./assets/img/services/car.svg"
+              class="hero-template-img"
+            />
           </div>
-          <div class="find-loading">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="244"
-              height="244"
-              viewBox="0 0 244 244"
-              fill="none"
-              class="find-loading-spinner"
-            >
-              <path
-                d="M122 207.4C169.165 207.4 207.4 169.165 207.4 122C207.4 74.835 169.165 36.6001 122 36.6001C74.8345 36.6001 36.5996 74.835 36.5996 122C36.5996 169.165 74.8345 207.4 122 207.4Z"
-                stroke="url(#paint0_linear_130_731)"
-                stroke-width="7"
-                stroke-linecap="round"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_130_731"
-                  x1="36.5996"
-                  y1="36.6001"
-                  x2="207.4"
-                  y2="36.6001"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="#FF156D" stop-opacity="0" />
-                  <stop offset="1" stop-color="white" />
-                </linearGradient>
-              </defs>
-            </svg>
-            <p class="find-loading-text">
-              Transfering you to the booking page now
-            </p>
+          <div class="service-template-content">
+            <img src="assets/img/services/ezy-service.svg" />
+            <div class="service-template-text">
+              <h2>Service Packages</h2>
+              <h3>
+                At Pit Stop, we've got your vehicle servicing and car repair
+                needs covered.
+              </h3>
+              <p>
+                From car servicing, car repairs, warrant of fitness, brakes,
+                exhausts and mufflers, shock absorbers and tyres, and more, you
+                know you've come to the right place when you visit your local
+                Pit Stop! We have seven ezy services for you to choose from -
+                there's one to suit your vehicle.
+              </p>
+              <p>
+                If you are unsure what ezy service is right for your vehicle,
+                call your local Pit Stop store on <span>0800 748 786</span> and
+                we will be happy to advise you.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="service-toggle-wrapper">
+        <div class="service-toggle-container">
+          <h2>Choose Your Service Package</h2>
+          <div class="toggle-wrapper">
+            <div class="package-container">
+              <div class="package-header">
+                <img src="assets/img/services/express.svg" />
+                <div class="package-header__text">
+                  <p>from</p>
+                  <h4>$249</h4>
+                </div>
+              </div>
+              <div class="package-header">
+                <img src="assets/img/services/extensive.svg" />
+                <div class="package-header__text">
+                  <p>from</p>
+                  <h4>$249</h4>
+                </div>
+              </div>
+              <div class="package-header">
+                <img src="assets/img/services/elite.svg" />
+                <div class="package-header__text">
+                  <p>from</p>
+                  <h4>$249</h4>
+                </div>
+              </div>
+              <div class="package-header">
+                <img src="assets/img/services/euro-cars.svg" />
+                <div class="package-header__text">
+                  <p>from</p>
+                  <h4>$249</h4>
+                </div>
+              </div>
+              <div class="package-header">
+                <img src="assets/img/services/vans.svg" />
+                <div class="package-header__text">
+                  <p>from</p>
+                  <h4>$249</h4>
+                </div>
+              </div>
+              <div class="package-header">
+                <img src="assets/img/services/ev.svg" />
+                <div class="package-header__text">
+                  <p>from</p>
+                  <h4>$249</h4>
+                </div>
+              </div>
+            </div>
+            <div class="package-content">
+              <div class="package-features">
+                <div class="package-features__summary">
+                  <div>
+                    <h4>Service Summary:</h4>
+                    <ul>
+                      <li>Oil & Filter Change</li>
+                      <li>15 point check</li>
+                      <li>Reset Service Light</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>Checks carried out with this service:</h4>
+                    <p>
+                      <span>
+                        <ul>
+                          <li>Cambelt due date</li>
+                          <li>Washers & wipers</li>
+                          <li>Coolant level</li>
+                          <li>Battery Check</li>
+                          <li>horn Power steering</li>
+                          <li>fluid Brake</li>
+                          <li>fluid Transmission</li>
+                          <li>oil level</li>
+                          <li>Air filter</li>
+                          <li>All belts (excluding cambelt)</li>
+                          <li>Brake pads, rotors (visual)</li>
+                          <li>Brake hoses & lines</li>
+                          <li>CV boots & joints Exterior</li>
+                          <li>lights Tyre pressure</li>
+                        </ul>
+                      </span>
+                      * where accessible or applicable
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="package-cta">test</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews-wrapper">
+        <div class="reviews-container">
+          <div class="image-container">
+            <img
+              src="./assets/img/services/pitstop-service.png"
+              class="reviews-img"
+            />
+          </div>
+          <div class="service-content">
+            <div class="service-text">
+              <h2>Ezyscan Computer & Systems Health Check</h2>
+              <p>
+                When we service your vehicle it's not just visual checks and an
+                oil and filter change. We look after all of your vehicle’s
+                operational components. Your vehicle is controlled by many on
+                board computer systems that could have potential unseen issues
+                lurking, that may affect the reliability and safety of your car-
+                at Pit Stop we check and report on these electronic control
+                systems via our new comprehensive ezyscan computer & systems
+                health check, so you wont have to worry about breaking down!
+              </p>
+              <p>
+                Our Ezyscan Computer & System Health check is INCLUDED with our
+                extensive, elite, euro, 4x4 petrol/diesel, hybrid and ev ezy
+                services.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="footer-wrapper">
+        <div class="footer-container">
+          <div class="footer-content">
+            <img
+              src="assets/img/logo-desktop.svg"
+              alt="Logo"
+              class="footer-logo"
+            />
+
+            <!-- Mobile CTA Section (After Logo) -->
+            <div class="mobile-cta mobile-cta--top">
+              <div class="mobile-cta__text">
+                <h3>Get in touch</h3>
+                <p class="mobile-cta__description">
+                  If you'd like to contact us, we'd be delighted to hear from
+                  you.
+                </p>
+              </div>
+              <a href="#" class="btn btn-primary mobile-cta__button"
+                >Contact Us</a
+              >
+              <div class="mobile-cta__social-icons">
+                <img src="assets/img/FB.svg" alt="FB Logo" />
+                <img
+                  src="assets/img/instagram-mobile.svg"
+                  alt="instagram mobile"
+                />
+                <img src="assets/img/youtube.svg" alt="youtube logo" />
+              </div>
+            </div>
+
+            <div class="links-container">
+              <div class="links-content">
+                <h3>Home</h3>
+                <ul class="services-link">
+                  <li>Franchising</li>
+                  <li>About Us</li>
+                  <li>Contact Us</li>
+                  <li>Services</li>
+                  <li>Locations</li>
+                </ul>
+              </div>
+              <div class="links-content-services">
+                <h3>Products and Services</h3>
+                <ul class="services-link">
+                  <li>Service Packages</li>
+                  <li>WOF</li>
+                  <li>Brakes</li>
+                  <li>Car Repairs</li>
+                  <li>Tyres</li>
+                  <li>EV & Hybrid Service Packages</li>
+                  <li>Exhausts</li>
+                  <li>Diagnostics</li>
+                  <li>ADAS Calibration</li>
+                  <li>Towbars</li>
+                  <li>Shock Absorbers</li>
+                  <li>Batteries</li>
+                  <li>Safety Check</li>
+                  <li>Fleet Servicing</li>
+                </ul>
+              </div>
+              <div class="links-content">
+                <h3>Get Repair Finance</h3>
+                <ul class="services-link">
+                  <li>Apply for Repair Finance from our finance providers</li>
+                  <li>AfterPay</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="copyright-footer">
+            <div class="copyright-content">
+              <p>
+                &copy; 2025 PitStop Ltd. All rights reserved. |
+                <a>Privacy Policy</a> | Terms of Trade
+              </p>
+            </div>
+            <div class="social-icons">
+              <img src="assets/img/FB-Desktop.svg" alt="FB Logo" />
+              <img src="assets/img/instagram.svg" alt="instagram Logo" />
+              <img src="assets/img/youtube-Desktop.svg" alt="youtube logo" />
+            </div>
           </div>
         </div>
       </section>
@@ -509,7 +663,7 @@
     <script src="js/header-navigation.js"></script>
     <script src="js/services-toggle.js"></script>
     <script src="js/carousel-arrows.js"></script>
-    <script src="js/find-dropdown.js"></script>
+    <script src="js/booking-form.js"></script>
     <script src="js/mobile-menu-toggle.js"></script>
   </body>
 </html>

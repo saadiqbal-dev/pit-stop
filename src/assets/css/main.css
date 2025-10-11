@@ -4370,6 +4370,24 @@ a.mobile-cta__button:hover {
   max-height: 767px;
 }
 
+.hero-template-wrapper {
+  display: flex;
+  width: 100vw;
+  height: auto;
+  background: var(--color-white);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.hero-template-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
 .reviews-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -4390,6 +4408,10 @@ a.mobile-cta__button:hover {
   overflow: hidden;
   height: 100%;
 }
+
+.image-container img {
+  margin-left: auto;
+}
 .reviews-content {
   display: flex;
   flex-direction: column;
@@ -4398,6 +4420,77 @@ a.mobile-cta__button:hover {
   justify-content: center;
   gap: 50px;
   margin-left: auto;
+  max-width: 960px;
+}
+.service-template-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 100px;
+  align-items: start;
+  justify-content: center;
+  gap: 50px;
+  margin-right: auto;
+  max-width: 960px;
+}
+
+.service-template-text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 20px;
+}
+
+.service-template-text h2 {
+  font-family: var(--font-family-base);
+  margin: 0;
+  padding: 0;
+  color: var(--color-black);
+
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100.419px; /* 251.047% */
+}
+
+.service-template-text h3 {
+  font-family: var(--font-family-base);
+  margin: 0;
+  padding: 0;
+  color: var(--color-black);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 29px; /* 145% */
+}
+.service-template-text p {
+  font-family: var(--font-family-base);
+  margin: 0;
+  padding: 0;
+  color: var(--color-black);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 150% */
+}
+
+.service-template-text p span {
+  color: #ed1f24;
+  font-family: var(--font-family-base);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.service-content {
+  display: flex;
+  flex-direction: column;
+  padding: 110px 100px;
+  align-items: start;
+  justify-content: center;
+  gap: 50px;
+  margin-right: auto;
   max-width: 960px;
 }
 .reviews-text {
@@ -4443,11 +4536,203 @@ a.mobile-cta__button:hover {
   text-underline-position: from-font;
 }
 
+.service-text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 20px;
+}
+.service-text h2 {
+  font-family: var(--font-family-base);
+  margin: 0;
+  padding: 0;
+  color: var(--color-white);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 58px; /* 125% */
+}
+.service-content p {
+  font-family: var(--font-family-base);
+  margin: 0;
+  padding: 0;
+  color: var(--color-white);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 150% */
+}
+
+.service-content p span {
+  color: var(--color-white);
+  font-family: var(--font-family-base);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
 .reviews-google {
   height: 100%;
   flex-shrink: 0;
 }
 
+/* =========== service toggle */
+
+.service-toggle-wrapper {
+  display: flex;
+  width: 100vw;
+  height: auto;
+  background: #eeeeee66;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.service-toggle-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1920px;
+  padding: 65px 100px;
+  gap: 30px;
+  align-items: start;
+  justify-content: center;
+}
+
+.service-toggle-container h2 {
+  font-family: var(--font-family-base);
+  margin: 0;
+  padding: 0;
+  text-align: start;
+  color: var(--color-black);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 62.625px; /* 313.127% */
+}
+
+.toggle-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 52px;
+  height: 100%;
+}
+
+.package-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: start;
+  justify-content: center;
+  height: 100%;
+}
+
+.package-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 55px;
+  width: 100%;
+  max-width: 540px;
+  background: var(--color-white);
+  box-shadow: 0 0 12.8px 6px rgba(0, 0, 0, 0.07);
+  padding: 31px 28px;
+}
+
+.package-header p {
+  color: var(--color-black);
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 29px; /* 181.25% */
+  margin: 0;
+  padding: 0;
+}
+
+.package-header__text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.package-header h4 {
+  color: var(--color-black);
+  text-align: right;
+  font-family: var(--font-family-base);
+  font-size: 36px;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  line-height: 29px; /* 80.556% */
+}
+
+.package-header:hover {
+  box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.35);
+}
+
+.package-features__summary {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 12.8px 4px rgba(0, 0, 0, 0.07);
+  background-color: var(--color-white);
+  height: 100%;
+}
+
+.package-features__summary > div:first-child {
+  background: #ae2556;
+  padding: 27px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 15px;
+
+  h4 {
+    color: var(--color-white);
+    font-family: var(--font-family-base);
+    font-size: 20px;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    line-height: 28px; /* 140% */
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    li {
+      color: var(--color-white);
+      font-family: var(--font-family-base);
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 28px;
+    }
+  }
+}
+
+.package-features__summary > div:nth-child(2) {
+  background: white;
+  padding: 40px;
+  height: 100%;
+}
 /* ========== RESPONSIVE DESIGN ========== */
 
 /* Desktop Small - 1536px */
