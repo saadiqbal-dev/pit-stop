@@ -172,6 +172,11 @@ a {
   --color-shadow-light: rgba(0, 0, 0, 0.05);
   --color-shadow-medium: rgba(0, 0, 0, 0.1);
   --color-shadow-dark: rgba(0, 0, 0, 0.2);
+  --color-divider-gray: #b8b5b5;
+  --color-separator: #d0cece;
+  --color-pitstop-purple: #ae2556;
+  --color-carousel-bg: #eeeeee;
+  --color-gray-background: var(--color-gray-background);
 
   /* Spacing Scale */
   --spacing-xs: 8px;
@@ -972,6 +977,8 @@ a {
 
 .header__dropdown-link:hover {
   text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: 1px !important;
   color: var(--dropdown-item-color-hover);
 }
 
@@ -1067,7 +1074,7 @@ a {
 
 .header__dropdown-divider {
   width: 1px;
-  background: #b8b5b5;
+  background: var(--color-divider-gray);
   align-self: stretch;
 }
 
@@ -1094,11 +1101,11 @@ a {
   align-items: center;
   justify-content: center;
   padding: 15px 100px;
-  background: #1d1c1c;
+  background: var(--color-text-gray);
   /* max-height: 90px; */
 }
 .banner-content {
-  color: #ffffff;
+  color: var(--color-white);
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -1114,7 +1121,7 @@ a {
   aspect-ratio: 17/6;
 }
 .banner-content a {
-  color: #ffffff;
+  color: var(--color-white);
   text-decoration: none;
   height: 30px;
 }
@@ -1125,10 +1132,10 @@ a {
   line-height: 29px;
   text-align: center;
   margin: 0;
+}
 
-  span {
-    font-weight: 700;
-  }
+.banner-content p span {
+  font-weight: 700;
 }
 
 .promotion-banner {
@@ -1137,7 +1144,7 @@ a {
   align-items: center;
   justify-content: center;
   padding: 23px 100px;
-  background: #fff;
+  background: var(--color-white);
   position: relative;
   max-height: 128px;
 }
@@ -1158,7 +1165,7 @@ a {
 }
 
 .promotion-banner p {
-  color: #000;
+  color: var(--color-black);
   font-family: var(--font-family-base);
   font-size: 32px;
   font-style: normal;
@@ -1334,10 +1341,11 @@ a {
     line-height: 22px;
     max-width: 185px;
     margin: 0;
-    span {
-      font-size: 16px;
-      line-height: 19px;
-    }
+  }
+
+  .promotion-banner p span {
+    font-size: 16px;
+    line-height: 19px;
   }
 }
 
@@ -1475,7 +1483,7 @@ a {
 .mobile-menu__separator {
   width: 100%;
   height: 1px;
-  background: #d0cece;
+  background: var(--color-separator);
 }
 
 .mobile-menu__link {
@@ -1570,7 +1578,7 @@ a {
 .footer-wrapper {
   display: flex;
   width: 100vw;
-  background: white;
+  background: var(--color-white);
   margin: 0 auto;
   height: auto;
   align-items: center;
@@ -1623,7 +1631,7 @@ a {
   font-family: var(--font-family-base);
   margin: 0;
   padding: 0;
-  color: #1d1c1c;
+  color: var(--color-text-gray);
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -1631,7 +1639,7 @@ a {
 }
 
 .links-content li {
-  color: #1d1c1c;
+  color: var(--color-text-gray);
   font-family: var(--font-family-base);
   font-size: 16px;
   font-style: normal;
@@ -1653,7 +1661,7 @@ a {
   font-family: var(--font-family-base);
   margin: 0;
   padding: 0;
-  color: #1d1c1c;
+  color: var(--color-text-gray);
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -1661,7 +1669,7 @@ a {
 }
 
 .links-content-services li {
-  color: #1d1c1c;
+  color: var(--color-text-gray);
   font-family: var(--font-family-base);
   font-size: 16px;
   font-style: normal;
@@ -1699,7 +1707,7 @@ a {
   font-family: var(--font-family-accent);
   margin: 0;
   padding: 0;
-  color: #1d1c1c;
+  color: var(--color-text-gray);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -1725,7 +1733,7 @@ a {
 }
 
 .mobile-cta__description {
-  color: #1d1c1c;
+  color: var(--color-text-gray);
   font-family: var(--font-family-base);
   font-size: 16px;
   font-style: normal;
@@ -2124,7 +2132,7 @@ a.mobile-cta__button:hover {
     margin: 0;
     font-size: 16px;
     line-height: 16px;
-    color: #1d1c1c;
+    color: var(--color-text-gray);
     font-family: var(--font-family-base);
   }
 
@@ -2251,7 +2259,7 @@ a.mobile-cta__button:hover {
     margin: 0;
     font-size: 16px;
     line-height: 26px;
-    color: #1d1c1c;
+    color: var(--color-text-gray);
     font-family: var(--font-family-base);
     font-weight: 600;
   }
@@ -2961,7 +2969,7 @@ a.mobile-cta__button:hover {
   display: flex;
   width: 100vw;
   height: auto;
-  background: #1d1c1c;
+  background: var(--color-text-gray);
   margin: 0 auto;
   overflow: hidden;
 }
@@ -3004,7 +3012,7 @@ a.mobile-cta__button:hover {
   font-family: var(--font-family-base);
   margin: 0;
   padding: 0;
-  color: #eb2227;
+  color: var(--color-brand-red-primary);
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
@@ -3675,7 +3683,7 @@ a.mobile-cta__button:hover {
 .carousel-wrapper {
   display: flex;
   width: 100vw;
-  background: #eeeeee;
+  background: var(--color-carousel-bg);
   height: auto;
   margin: 0 auto;
   /* align-items: center; */
@@ -3707,7 +3715,7 @@ a.mobile-cta__button:hover {
   top: 0;
   bottom: 0;
   width: 100px;
-  background: #eeeeee;
+  background: var(--color-carousel-bg);
   z-index: 8; /* above cards, below overlay */
   pointer-events: none;
 }
@@ -3715,7 +3723,7 @@ a.mobile-cta__button:hover {
 .carousel-content {
   display: flex;
   flex-direction: column;
-  background: #eb2227;
+  background: var(--color-brand-red-primary);
   border-radius: 3px;
   padding: 50px;
   align-items: start;
@@ -3738,14 +3746,14 @@ a.mobile-cta__button:hover {
   flex-direction: column;
   align-items: start;
   justify-content: space-between;
-  background: #eb2227; /* same as parent */
+  background: var(--color-brand-red-primary); /* same as parent */
 }
 
 .carousel-overlay h2 {
   font-family: var(--font-family-base);
   margin: 0;
   padding: 0;
-  color: #fff;
+  color: var(--color-white);
   font-size: 40px;
   font-style: normal;
   font-weight: 600;
@@ -3813,7 +3821,7 @@ a.mobile-cta__button:hover {
   width: 372.338px;
   height: 603px;
   flex-shrink: 0;
-  background: white;
+  background: var(--color-white);
   display: flex;
   flex-direction: column;
 }
@@ -3837,7 +3845,7 @@ a.mobile-cta__button:hover {
   font-family: var(--font-family-base);
   margin: 0;
   padding: 0;
-  color: #000;
+  color: var(--color-black);
   font-size: 28px;
   font-style: normal;
   font-weight: 700;
@@ -3848,7 +3856,7 @@ a.mobile-cta__button:hover {
   font-family: var(--font-family-base);
   margin: 0;
   padding: 0;
-  color: #000;
+  color: var(--color-black);
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -4137,7 +4145,7 @@ a.mobile-cta__button:hover {
     flex-direction: column;
     padding: 60px 30px;
     gap: 30px;
-    background: #eb2227;
+    background: var(--color-brand-red-primary);
   }
 
   .carousel-wrapper-mobile .carousel-container::before {
@@ -4154,7 +4162,7 @@ a.mobile-cta__button:hover {
   }
 
   .carousel-wrapper-mobile h2 {
-    color: #fff;
+    color: var(--color-white);
     font-family: var(--font-family-base);
     font-size: 24px;
     font-style: normal;
@@ -4162,7 +4170,7 @@ a.mobile-cta__button:hover {
     line-height: normal;
   }
   .carousel-content h2 {
-    color: #fff;
+    color: var(--color-white);
     font-family: var(--font-family-base);
     font-size: 24px;
     font-style: normal;
@@ -4217,7 +4225,7 @@ a.mobile-cta__button:hover {
     width: 320px;
     min-width: 320px;
     /* height: 420px; */
-    background: #fff;
+    background: var(--color-white);
     flex-shrink: 0;
   }
 
@@ -4241,7 +4249,7 @@ a.mobile-cta__button:hover {
     font-family: var(--font-family-base);
     margin: 0;
     padding: 0;
-    color: #000;
+    color: var(--color-black);
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
@@ -4252,7 +4260,7 @@ a.mobile-cta__button:hover {
     font-family: var(--font-family-base);
     margin: 0;
     padding: 0;
-    color: #000;
+    color: var(--color-black);
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
@@ -4321,7 +4329,7 @@ a.mobile-cta__button:hover {
   }
 
   .carousel-content-container-mobile h2 {
-    color: #000;
+    color: var(--color-black);
     font-family: var(--font-family-base);
     font-size: 18px;
     font-style: normal;
@@ -4330,7 +4338,7 @@ a.mobile-cta__button:hover {
   }
 
   .carousel-content-container-mobile p {
-    color: #000;
+    color: var(--color-black);
     font-family: var(--font-family-base);
     font-size: 14px;
     font-style: normal;
@@ -4364,7 +4372,7 @@ a.mobile-cta__button:hover {
   display: flex;
   width: 100vw;
   height: auto;
-  background: #1d1c1c;
+  background: var(--color-text-gray);
   margin: 0 auto;
   overflow: hidden;
   max-height: 767px;
@@ -4475,7 +4483,7 @@ a.mobile-cta__button:hover {
 }
 
 .service-template-text p span {
-  color: #ed1f24;
+  color: var(--color-brand-red-accent);
   font-family: var(--font-family-base);
   font-size: 20px;
   font-style: normal;
@@ -4664,15 +4672,15 @@ a.mobile-cta__button:hover {
   align-items: center;
   justify-content: start;
   gap: 12px;
+}
 
-  p {
-    color: var(--color-black);
-    font-family: var(--font-family-base);
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 8px; /* 50% */
-  }
+.package-cta > div:nth-child(2) p {
+  color: var(--color-black);
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 8px; /* 50% */
 }
 
 .package-header {
@@ -4731,45 +4739,45 @@ a.mobile-cta__button:hover {
 }
 
 .package-features__summary > div:first-child {
-  background: #ae2556;
+  background: var(--color-pitstop-purple);
   padding: 27px 40px;
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: center;
   gap: 15px;
+}
 
-  h4 {
-    color: var(--color-white);
-    font-family: var(--font-family-base);
-    font-size: 20px;
-    font-style: normal;
-    margin: 0;
-    padding: 0;
-    font-weight: 700;
-    line-height: 28px; /* 140% */
-  }
+.package-features__summary > div:first-child h4 {
+  color: var(--color-white);
+  font-family: var(--font-family-base);
+  font-size: 20px;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  line-height: 28px; /* 140% */
+}
 
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
+.package-features__summary > div:first-child ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
 
-    li {
-      color: var(--color-white);
-      font-family: var(--font-family-base);
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 28px;
-    }
-  }
+.package-features__summary > div:first-child ul li {
+  color: var(--color-white);
+  font-family: var(--font-family-base);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
 }
 
 .package-features__summary > div:nth-child(2) {
-  background: white;
+  background: var(--color-white);
   padding: 27px 40px;
   display: flex;
   flex-direction: column;
@@ -4777,46 +4785,46 @@ a.mobile-cta__button:hover {
   justify-content: center;
   gap: 15px;
   height: 100%;
+}
 
-  h4 {
-    color: #000;
-    font-family: var(--font-family-base);
-    font-size: 20px;
-    font-style: normal;
-    margin: 0;
-    padding: 0;
-    font-weight: 600;
-    line-height: 29px; /* 145% */
-  }
+.package-features__summary > div:nth-child(2) h4 {
+  color: var(--color-black);
+  font-family: var(--font-family-base);
+  font-size: 20px;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  line-height: 29px; /* 145% */
+}
 
-  p {
-    color: #000;
-    font-family: var(--font-family-base);
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 29px;
-    margin: 0;
-    padding: 0;
-  }
+.package-features__summary > div:nth-child(2) p {
+  color: var(--color-black);
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 29px;
+  margin: 0;
+  padding: 0;
+}
 
-  ul {
-    list-style: disc;
-    margin: 0;
-    padding: 0;
-    padding-left: 20px;
-    display: flex;
-    flex-direction: column;
+.package-features__summary > div:nth-child(2) ul {
+  list-style: disc;
+  margin: 0;
+  padding: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
 
-    li {
-      color: #000;
-      font-family: var(--font-family-base);
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 29px;
-    }
-  }
+.package-features__summary > div:nth-child(2) ul li {
+  color: var(--color-black);
+  font-family: var(--font-family-base);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 29px;
 }
 
 .package-cta {
@@ -5258,7 +5266,7 @@ a.mobile-cta__button:hover {
 }
 
 .form-dropdown-item.selected {
-  background: #f0f0f0;
+  background: var(--color-gray-background);
 }
 
 /* Date and Time Input Styles */
@@ -5366,7 +5374,7 @@ a.mobile-cta__button:hover {
 }
 
 .calendar-day:hover {
-  background: #f0f0f0;
+  background: var(--color-gray-background);
 }
 
 .calendar-day.disabled {
@@ -5449,7 +5457,7 @@ a.mobile-cta__button:hover {
 }
 
 .time-option:hover {
-  background: #f0f0f0;
+  background: var(--color-gray-background);
 }
 
 .time-option.selected {
@@ -5755,7 +5763,7 @@ button.time-picker-confirm:hover {
   }
 
   .form-content h2 {
-    color: #000;
+    color: var(--color-black);
     font-family: var(--font-family-base);
     font-size: 22px;
     font-style: normal;
@@ -5769,7 +5777,7 @@ button.time-picker-confirm:hover {
   }
 
   .form-label {
-    color: #000;
+    color: var(--color-black);
     font-family: var(--font-family-base);
     font-size: 15px;
     font-style: normal;
@@ -5784,13 +5792,13 @@ button.time-picker-confirm:hover {
     flex-shrink: 0;
     border-radius: 2px;
     border: 1px solid #d9d9d9;
-    background: #fff;
+    background: var(--color-white);
   }
 
   .form-input,
   .form-dropdown-input,
   .form-dropdown-text {
-    color: #000;
+    color: var(--color-black);
     font-family: var(--font-family-base);
     font-size: 16px;
     font-style: normal;
@@ -5882,7 +5890,7 @@ button.time-picker-confirm:hover {
   }
 
   .form-content h2 {
-    color: #000;
+    color: var(--color-black);
     font-family: var(--font-family-base);
     font-size: 22px;
     font-style: normal;
@@ -5896,7 +5904,7 @@ button.time-picker-confirm:hover {
   }
 
   .form-label {
-    color: #000;
+    color: var(--color-black);
     font-family: var(--font-family-base);
     font-size: 15px;
     font-style: normal;
@@ -5911,13 +5919,13 @@ button.time-picker-confirm:hover {
     flex-shrink: 0;
     border-radius: 2px;
     border: 1px solid #d9d9d9;
-    background: #fff;
+    background: var(--color-white);
   }
 
   .form-input,
   .form-dropdown-input,
   .form-dropdown-text {
-    color: #000;
+    color: var(--color-black);
     font-family: var(--font-family-base);
     font-size: 16px;
     font-style: normal;
@@ -6550,7 +6558,7 @@ body.search-page .search-wrapper {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  background: #eb2227;
+  background: var(--color-brand-red-primary);
 }
 
 body.search-page .search-container {
@@ -6570,7 +6578,7 @@ body.search-page .search-input {
   border: none;
   border-bottom: 1px solid #ffffff;
   outline: none;
-  color: #ffffff;
+  color: var(--color-white);
   font-family: var(--font-family-base);
   font-size: 48px;
   font-weight: 300;
