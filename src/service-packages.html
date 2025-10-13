@@ -426,6 +426,7 @@
       <section class="hero-template-wrapper">
         <div class="hero-template-container">
           <div class="image-container">
+            <img src="assets/img/bar.svg" class="bar-top" />
             <img
               src="./assets/img/services/car.svg"
               class="hero-template-img"
@@ -461,42 +462,77 @@
           <h2>Choose Your Service Package</h2>
           <div class="toggle-wrapper">
             <div class="package-container">
-              <div class="package-header">
+              <div
+                class="package-header"
+                data-color="#ae2556"
+                data-summary='["Oil & Filter Change", "15 point check", "Reset Service Light"]'
+                data-checks='["Cambelt due date", "Washers & wipers", "Coolant level", "Battery Check", "horn Power steering", "fluid Brake", "fluid Transmission", "oil level", "Air filter", "All belts (excluding cambelt)", "Brake pads, rotors (visual)", "Brake hoses & lines", "CV boots & joints Exterior", "lights Tyre pressure"]'
+              >
                 <img src="assets/img/services/express.svg" />
                 <div class="package-header__text">
                   <p>from</p>
                   <h4>$249</h4>
                 </div>
               </div>
-              <div class="package-header">
+              <div
+                class="package-header"
+                data-color="#0EA7AD"
+                data-summary='["Oil & Filter Change", "20 point check", "Reset Service Light"]'
+                data-plus='["Additional premium features included", "Extended warranty coverage"]'
+                data-checks='["Cambelt due date", "Washers & wipers", "Coolant level", "Battery Check"]'
+              >
                 <img src="assets/img/services/extensive.svg" />
                 <div class="package-header__text">
                   <p>from</p>
                   <h4>$249</h4>
                 </div>
               </div>
-              <div class="package-header">
+              <div
+                class="package-header"
+                data-color="#D19C2D"
+                data-summary='["Oil & Filter Change", "Premium check", "Reset Service Light"]'
+                data-plus='["Advanced diagnostics", "Priority service booking"]'
+                data-checks='["Cambelt due date", "Washers & wipers", "Coolant level"]'
+              >
                 <img src="assets/img/services/elite.svg" />
                 <div class="package-header__text">
                   <p>from</p>
                   <h4>$249</h4>
                 </div>
               </div>
-              <div class="package-header">
+              <div
+                class="package-header"
+                data-color="#4B276C"
+                data-summary='["Euro Car Service", "Specialist check", "Reset Service Light"]'
+                data-plus='["Specialized service for European vehicles", "Trained technicians"]'
+                data-checks='["Cambelt due date", "Brake fluid"]'
+              >
                 <img src="assets/img/services/euro-cars.svg" />
                 <div class="package-header__text">
                   <p>from</p>
                   <h4>$249</h4>
                 </div>
               </div>
-              <div class="package-header">
+              <div
+                class="package-header"
+                data-color="#118ACB"
+                data-summary='["Van Service", "Heavy duty check", "Reset Service Light"]'
+                data-plus='["Commercial vehicle service", "Extended warranty coverage"]'
+                data-checks='["Cambelt due date", "Suspension check"]'
+              >
                 <img src="assets/img/services/vans.svg" />
                 <div class="package-header__text">
                   <p>from</p>
                   <h4>$249</h4>
                 </div>
               </div>
-              <div class="package-header">
+              <div
+                class="package-header"
+                data-color="#0D4E98"
+                data-summary='["EV Service", "Electric check", "Battery diagnostic"]'
+                data-plus='["Electric vehicle specialists", "Certified EV technicians"]'
+                data-checks='["Battery health", "Charging system"]'
+              >
                 <img src="assets/img/services/ev.svg" />
                 <div class="package-header__text">
                   <p>from</p>
@@ -516,9 +552,14 @@
                     </ul>
                   </div>
                   <div>
+                    <div class="package-plus-section" style="display: none">
+                      <h4>Plus:</h4>
+                      <ul></ul>
+                    </div>
                     <h4>Checks carried out with this service:</h4>
                     <ul>
-                      <li>Cambelt due date</li>
+                      <li></li>
+                      <!-- <li>Cambelt due date</li>
                       <li>Washers & wipers</li>
                       <li>Coolant level</li>
                       <li>Battery Check</li>
@@ -531,7 +572,7 @@
                       <li>Brake pads, rotors (visual)</li>
                       <li>Brake hoses & lines</li>
                       <li>CV boots & joints Exterior</li>
-                      <li>lights Tyre pressure</li>
+                      <li>lights Tyre pressure</li> -->
                     </ul>
                     <p>* where accessible or applicable</p>
                   </div>
@@ -576,6 +617,47 @@
                   <img src="assets/img/services/finance-now-logo.svg" />
                 </a>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MOBILE VERSION -->
+
+      <section class="mobile-hero-template-wrapper">
+        <div class="mobile-hero-template-container">
+          <div class="image-container">
+            <img src="assets/img/bar.svg" class="bar-top" />
+            <img
+              src="./assets/img/services/car.svg"
+              class="mobile-hero-template-img"
+            />
+          </div>
+          <div class="mobile-service-template-content">
+            <div class="mobile-service-template-text">
+              <div>
+                <h2>Service Packages</h2>
+                <h3>
+                  At Pit Stop, we've got your vehicle servicing and car repair
+                  needs covered.
+                </h3>
+              </div>
+              <img src="assets/img/services/ezy-service.svg" />
+              <div class="mobile-toggle-wrapper">
+                <p>Choose Your Service Package</p>
+              </div>
+              <p>
+                From car servicing, car repairs, warrant of fitness, brakes,
+                exhausts and mufflers, shock absorbers and tyres, and more, you
+                know you've come to the right place when you visit your local
+                Pit Stop! We have seven ezy services for you to choose from -
+                there's one to suit your vehicle.
+              </p>
+              <p>
+                If you are unsure what ezy service is right for your vehicle,
+                call your local Pit Stop store on <span>0800 748 786</span> and
+                we will be happy to advise you.
+              </p>
             </div>
           </div>
         </div>
@@ -703,6 +785,7 @@
     <script src="js/header-navigation.js"></script>
     <script src="js/services-toggle.js"></script>
     <script src="js/carousel-arrows.js"></script>
+    <script src="js/service-packages-toggle.js"></script>
     <script src="js/booking-form.js"></script>
     <script src="js/mobile-menu-toggle.js"></script>
     <script
