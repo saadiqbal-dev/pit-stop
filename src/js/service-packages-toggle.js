@@ -77,5 +77,80 @@
     if (packageHeaders[0]) {
       packageHeaders[0].click();
     }
+
+    // Mobile Accordion Functionality
+    const mobileAccordionItems = document.querySelectorAll('.mobile-accordion-item');
+
+    mobileAccordionItems.forEach(item => {
+      const header = item.querySelector('.mobile-package-header');
+      const content = item.querySelector('.mobile-package-content');
+
+      if (!header || !content) return;
+
+      header.addEventListener('click', function() {
+        const isOpen = content.style.display === 'flex';
+
+        // Close all other accordion items
+        mobileAccordionItems.forEach(otherItem => {
+          const otherContent = otherItem.querySelector('.mobile-package-content');
+          if (otherContent) {
+            otherContent.style.display = 'none';
+            otherItem.classList.remove('active');
+          }
+        });
+
+        // Toggle current item
+        if (!isOpen) {
+          content.style.display = 'flex';
+          item.classList.add('active');
+
+          // Populate content with data from data attributes
+          const color = header.dataset.color;
+          const summaryItems = JSON.parse(header.dataset.summary || '[]');
+          const checksItems = JSON.parse(header.dataset.checks || '[]');
+          const plusContent = header.dataset.plus || '';
+
+          // Find elements within this specific accordion item
+          const summaryList = content.querySelector('.package-features__summary > div:first-child ul');
+          const summaryColorDiv = content.querySelector('.package-features__summary > div:first-child');
+          const secondDiv = content.querySelector('.package-features__summary > div:nth-child(2)');
+          const checksList = secondDiv ? secondDiv.querySelector('h4:not(.package-plus-section h4) ~ ul') : null;
+          const plusSection = content.querySelector('.package-plus-section');
+          const plusList = plusSection ? plusSection.querySelector('ul') : null;
+
+          // Update background color of summary section
+          if (color && summaryColorDiv) {
+            summaryColorDiv.style.backgroundColor = color;
+          }
+
+          // Update service summary list
+          if (summaryItems.length > 0 && summaryList) {
+            summaryList.innerHTML = summaryItems
+              .map(item => `<li>${item}</li>`)
+              .join('');
+          }
+
+          // Update Plus section (show/hide based on content)
+          if (plusSection && plusList) {
+            if (plusContent) {
+              const plusItems = JSON.parse(plusContent);
+              plusList.innerHTML = plusItems
+                .map(item => `<li>${item}</li>`)
+                .join('');
+              plusSection.style.display = 'block';
+            } else {
+              plusSection.style.display = 'none';
+            }
+          }
+
+          // Update checks list
+          if (checksItems.length > 0 && checksList) {
+            checksList.innerHTML = checksItems
+              .map(item => `<li>${item}</li>`)
+              .join('');
+          }
+        }
+      });
+    });
   });
 })();

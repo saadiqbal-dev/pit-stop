@@ -2635,6 +2635,10 @@ a.mobile-cta__button:hover {
   height: 1px;
 }
 
+.bar-top {
+  display: none;
+}
+
 .package-header {
   display: flex;
   align-items: center;
