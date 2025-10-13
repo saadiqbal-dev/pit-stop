@@ -161,6 +161,8 @@
         e.stopPropagation(); // Prevent accordion from closing
 
         const detailsSection = this.nextElementSibling;
+        const accordionItem = this.closest('.mobile-accordion-item');
+        const findMoreButton = accordionItem ? accordionItem.querySelector('.mobile-find-more') : null;
 
         if (detailsSection && detailsSection.classList.contains('mobile-service-details')) {
           const isHidden = detailsSection.style.display === 'none';
@@ -168,9 +170,41 @@
           if (isHidden) {
             detailsSection.style.display = 'block';
             this.textContent = '- Read Less';
+            // Show Find Out More button
+            if (findMoreButton) {
+              findMoreButton.style.display = 'block';
+            }
           } else {
             detailsSection.style.display = 'none';
             this.textContent = '+ Read More';
+            // Hide Find Out More button
+            if (findMoreButton) {
+              findMoreButton.style.display = 'none';
+            }
+          }
+        }
+      });
+    });
+
+    // Mobile Description Toggle Functionality
+    const descriptionToggles = document.querySelectorAll('.mobile-description-toggle');
+
+    descriptionToggles.forEach(toggle => {
+      toggle.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent accordion from closing
+
+        const shortText = this.previousElementSibling;
+        const fullText = this.nextElementSibling;
+
+        if (fullText && fullText.classList.contains('description-full')) {
+          const isHidden = fullText.style.display === 'none';
+
+          if (isHidden) {
+            fullText.style.display = 'inline';
+            this.textContent = 'Show Less';
+          } else {
+            fullText.style.display = 'none';
+            this.textContent = 'Read Full Details';
           }
         }
       });
