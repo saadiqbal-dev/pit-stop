@@ -152,5 +152,28 @@
         }
       });
     });
+
+    // Mobile Read More Toggle Functionality
+    const readMoreToggles = document.querySelectorAll('.mobile-read-more-toggle');
+
+    readMoreToggles.forEach(toggle => {
+      toggle.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent accordion from closing
+
+        const detailsSection = this.nextElementSibling;
+
+        if (detailsSection && detailsSection.classList.contains('mobile-service-details')) {
+          const isHidden = detailsSection.style.display === 'none';
+
+          if (isHidden) {
+            detailsSection.style.display = 'block';
+            this.textContent = '- Read Less';
+          } else {
+            detailsSection.style.display = 'none';
+            this.textContent = '+ Read More';
+          }
+        }
+      });
+    });
   });
 })();
