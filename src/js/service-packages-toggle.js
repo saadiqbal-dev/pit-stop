@@ -168,7 +168,7 @@
           const isHidden = detailsSection.style.display === 'none';
 
           if (isHidden) {
-            detailsSection.style.display = 'block';
+            detailsSection.style.display = 'flex';
             this.textContent = '- Read Less';
             // Show Find Out More button
             if (findMoreButton) {

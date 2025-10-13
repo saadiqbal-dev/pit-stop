@@ -6378,7 +6378,10 @@ body.search-page .search-input::placeholder {
   }
 
   .mobile-service-details {
-    margin-top: 15px;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
   }
 
   .mobile-description-toggle {
