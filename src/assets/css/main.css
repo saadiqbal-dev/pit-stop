@@ -16,12 +16,12 @@
 /* CSS Reset - Pitstop */
 
 /* Prevent layout shift from scrollbar */
-html {
-  /* Hide banner when closed (via banner-init.js) */
-  html.banner-closed #top-banner {
-    display: none !important;
-  }
+/* Hide banner when closed (via banner-init.js) */
+html.banner-closed #top-banner {
+  display: none !important;
+}
 
+html {
   overflow-y: scroll; /* Always show scrollbar to prevent layout shift */
   overflow-x: hidden; /* Prevent horizontal scroll */
 }
