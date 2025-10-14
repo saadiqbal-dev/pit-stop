@@ -1624,7 +1624,7 @@ a.mobile-cta__button:hover {
    ================================================================================ */
 
 .hero-wrapper {
-  background-image: url("../img/hero-bg.png");
+  background-image: url("../img/hero-bg.webp");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100vw;
@@ -6029,7 +6029,7 @@ body.search-page .search-input::placeholder {
     font-size: 14px;
   }
   .hero-wrapper {
-    background-image: url("../img/hero-bg-mobile.jpg");
+    background-image: url("../img/hero-bg-mobile.webp");
   }
 
   .hero__content {
