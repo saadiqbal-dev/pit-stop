@@ -2400,6 +2400,12 @@ a.mobile-cta__button:hover {
   max-height: 767px;
 }
 
+.image-container-reviews {
+  display: flex;
+  overflow: hidden;
+  height: 100%;
+}
+
 .image-container-review {
   display: flex;
   overflow: hidden;
