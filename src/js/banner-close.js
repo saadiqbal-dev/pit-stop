@@ -1,6 +1,7 @@
 /**
  * Top Banner Close Functionality
  * Handles closing the top banner and persisting state in localStorage
+ * Note: Initial visibility check is done in banner-init.js loaded in <head>
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,14 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!banner || !closeButton) return;
 
-    // Check if banner was previously closed
-    if (localStorage.getItem(STORAGE_KEY) === 'true') {
-        banner.style.display = 'none';
-    }
-
     closeButton.addEventListener('click', (e) => {
         e.preventDefault();
-        banner.style.display = 'none';
+        document.documentElement.classList.add('banner-closed');
         localStorage.setItem(STORAGE_KEY, 'true');
     });
 });

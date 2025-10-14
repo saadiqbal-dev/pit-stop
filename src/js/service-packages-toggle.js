@@ -173,6 +173,7 @@
 
     readMoreToggles.forEach(toggle => {
       toggle.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default anchor navigation
         e.stopPropagation(); // Prevent accordion from closing
 
         const detailsSection = this.nextElementSibling;
@@ -206,6 +207,7 @@
 
     descriptionToggles.forEach(toggle => {
       toggle.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default anchor navigation
         e.stopPropagation(); // Prevent accordion from closing
 
         const shortText = this.previousElementSibling;
