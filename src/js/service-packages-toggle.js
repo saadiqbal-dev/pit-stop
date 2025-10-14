@@ -27,6 +27,7 @@
 
       // Get data from clicked package
       const color = clickedHeader.dataset.color;
+      const packageSlug = clickedHeader.dataset.slug;
       const summaryItems = JSON.parse(clickedHeader.dataset.summary || '[]');
       const checksItems = JSON.parse(clickedHeader.dataset.checks || '[]');
       const plusContent = clickedHeader.dataset.plus || '';
@@ -65,6 +66,20 @@
         checksList.innerHTML = checksItems
           .map(item => `<li>${item}</li>`)
           .join('');
+      }
+
+      // Update CTA button links
+      if (packageSlug) {
+        const bookNowButton = document.querySelector('.package-cta .long-red-button');
+        const findOutMoreButton = document.querySelector('.package-cta .long-outline-button');
+
+        if (bookNowButton) {
+          bookNowButton.href = `booking.html?package=${packageSlug}`;
+        }
+
+        if (findOutMoreButton) {
+          findOutMoreButton.href = `${packageSlug}.html`;
+        }
       }
     }
 

@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pitstop - Home</title>
+
+    <!-- Combined CSS File -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header-wrapper">
+      <div class="banner" id="top-banner">
+        <div class="banner-content">
+          <a><img src="assets/img/afterpay.svg" /></a>
+          <p>Easy Vehicle Repair Finance with <span>Afterpay</span></p>
+        </div>
+        <a class="banner-close" id="banner-close"
+          ><img src="assets/img/close.svg"
+        /></a>
+      </div>
+      <!-- Top band: full width background -->
+      <div class="header__top-band">
+        <div class="header__inner">
+          <!-- Top Section with Logo and Controls -->
+          <div class="header__top">
+            <!-- Logo -->
+            <a href="index.html" class="header__logo">
+              <img src="assets/img/logo-desktop.svg" alt="Logo" />
+            </a>
+
+            <!-- Right Controls -->
+            <div class="header__right-controls">
+              <!-- Search Icon -->
+              <a href="search.html" class="header__search-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="33"
+                  height="32"
+                  viewBox="0 0 33 32"
+                  fill="none"
+                >
+                  <path
+                    d="M12.3666 24.0182C15.3372 24.0182 18.1579 23.0005 20.3784 21.1395L31.2408 31.7092C31.4509 31.9128 31.706 32 31.961 32C32.2161 32 32.4861 31.9128 32.6962 31.7092C33.1013 31.3167 33.1013 30.677 32.6962 30.299L21.8337 19.7292C25.8996 15.0186 25.6596 7.96729 21.0985 3.53294C18.773 1.25034 15.6673 0 12.3666 0C9.06581 0 5.9601 1.26488 3.63458 3.5184C-1.21153 8.21445 -1.21153 15.8328 3.63458 20.5143C5.97511 22.7824 9.06581 24.0182 12.3666 24.0182ZM5.08991 4.95775C7.02535 3.05316 9.62094 2.0209 12.3666 2.0209C15.1122 2.0209 17.7078 3.05316 19.6432 4.95775C23.6641 8.8687 23.6641 15.2222 19.6432 19.104C17.7078 21.0086 15.1122 22.0409 12.3666 22.0409C9.62094 22.0409 7.02535 21.0086 5.08991 19.104C1.06899 15.1931 1.06899 8.83962 5.08991 4.95775Z"
+                    fill="black"
+                  />
+                </svg>
+              </a>
+
+              <!-- Phone Button -->
+              <a href="#" class="btn btn-primary header__phone-button"
+                >Click for 0800 No.</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dropdown overlay -->
+      <div class="header__dropdown-overlay"></div>
+
+      <!-- Nav band: full width background -->
+      <div class="header__nav-band">
+        <div class="header__inner">
+          <!-- Navigation Section -->
+          <nav class="header__nav">
+            <ul class="header__nav-menu">
+              <li
+                class="header__nav-item header__nav-item--dropdown"
+                data-dropdown="services"
+              >
+                <a href="#" class="header__nav-link">SERVICES</a>
+                <span class="header__dropdown-arrow">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="15"
+                    height="8"
+                    viewBox="0 0 15 8"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_71_492)">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M14.0243 0L7.51031 6.14436L0.96885 0L0 0.914842L7.49656 7.99351L15 0.914842L14.0311 0H14.0243Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_71_492">
+                        <rect width="15" height="8" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+                <div
+                  class="header__dropdown-menu header__dropdown-menu--services"
+                  id="services-dropdown"
+                >
+                  <div class="header__dropdown-inner">
+                    <!-- Left Side: Dynamic Links Container -->
+                    <div class="header__dropdown-links-container">
+                      <ul class="header__dropdown-list">
+                        <li class="header__dropdown-item">
+                          <a href="#" class="header__dropdown-link">WOF</a>
+                        </li>
+                        <li class="header__dropdown-item">
+                          <a
+                            href="service-packages.html"
+                            class="header__dropdown-link"
+                            >Service Packages</a
+                          >
+                        </li>
+                        <li class="header__dropdown-item">
+                          <a href="#" class="header__dropdown-link">Brakes</a>
+                        </li>
+                        <li class="header__dropdown-item">
+                          <a href="#" class="header__dropdown-link"
+                            >EV & Hybrid Service Packages</a
+                          >
+                        </li>
+                        <li class="header__dropdown-item">
+                          <a href="#" class="header__dropdown-link"
+                            >Suspension</a
+                          >
+                        </li>
+                        <li class="header__dropdown-item">
+                          <a href="#" class="header__dropdown-link">Tyres</a>
+                        </li>
+                        <li class="header__dropdown-item">
+                          <a href="#" class="header__dropdown-link"
+                            >Diagnosis</a
+                          >
+                        </li>
+                        <li class="header__dropdown-item">
+                          <a href="#" class="header__dropdown-link">Exhausts</a>
+                        </li>
+                        <li class="header__dropdown-item">
+                          <a href="#" class="header__dropdown-link"
+                            >Batteries</a
+                          >
+                        </li>
+                        <li class="header__dropdown-item">
+                          <a href="#" class="header__dropdown-link">Tow Bars</a>
+                        </li>
+                        <li class="header__dropdown-item">
+                          <a href="#" class="header__dropdown-link">ADAS</a>
+                        </li>
+                        <li class="header__dropdown-item">
+                          <a href="#" class="header__dropdown-link"
+                            >Fleet Servicing</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+
+                    <!-- Right Side: Static Content -->
+                    <div class="header__dropdown-static-content">
+                      <div class="header__dropdown-divider"></div>
+                      <div class="header__dropdown-cta-section">
+                        <a
+                          href="booking.html"
+                          class="btn btn-primary header__dropdown-cta-button"
+                          >Book A Service</a
+                        >
+                        <a href="#" class="header__dropdown-link">Rewards</a>
+                        <a href="#" class="header__dropdown-link">Contact Us</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="header__nav-item">
+                <a href="find-a-store.html" class="header__nav-link"
+                  >FIND A STORE</a
+                >
+              </li>
+
+              <li class="header__nav-item">
+                <a href="booking.html" class="header__nav-link"
+                  >FREE WOF CHECK</a
+                >
+              </li>
+
+              <li
+                class="header__nav-item header__nav-item--dropdown"
+                data-dropdown="about"
+              >
+                <a href="#" class="header__nav-link">ABOUT</a>
+                <span class="header__dropdown-arrow">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="15"
+                    height="8"
+                    viewBox="0 0 15 8"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_71_492_3)">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M14.0243 0L7.51031 6.14436L0.96885 0L0 0.914842L7.49656 7.99351L15 0.914842L14.0311 0H14.0243Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_71_492_3">
+                        <rect width="15" height="8" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+                <div
+                  class="header__dropdown-menu header__dropdown-menu--about"
+                  id="about-dropdown"
+                >
+                  <div class="header__dropdown-inner">
+                    <ul class="header__dropdown-list">
+                      <li class="header__dropdown-item">
+                        <a href="#" class="header__dropdown-link">About</a>
+                      </li>
+                      <li class="header__dropdown-item">
+                        <a href="#" class="header__dropdown-link"
+                          >Franchising</a
+                        >
+                      </li>
+                      <li class="header__dropdown-item">
+                        <a href="#" class="header__dropdown-link">Jobs</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+
+              <li class="header__nav-item">
+                <a href="#" class="header__nav-link">FINANCE</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Header -->
+    <section class="mobile-header">
+      <div class="mobile-header__content">
+        <a href="index.html" class="mobile-header__logo">
+          <img src="assets/img/logo-desktop.svg" alt="Logo" />
+        </a>
+        <div class="mobile-header__controls">
+          <a href="search.html" class="mobile-header__search-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              fill="none"
+            >
+              <path
+                d="M12.3666 24.0182C15.3372 24.0182 18.1579 23.0005 20.3784 21.1395L31.2408 31.7092C31.4509 31.9128 31.706 32 31.961 32C32.2161 32 32.4861 31.9128 32.6962 31.7092C33.1013 31.3167 33.1013 30.677 32.6962 30.299L21.8337 19.7292C25.8996 15.0186 25.6596 7.96729 21.0985 3.53294C18.773 1.25034 15.6673 0 12.3666 0C9.06581 0 5.9601 1.26488 3.63458 3.5184C-1.21153 8.21445 -1.21153 15.8328 3.63458 20.5143C5.97511 22.7824 9.06581 24.0182 12.3666 24.0182ZM5.08991 4.95775C7.02535 3.05316 9.62094 2.0209 12.3666 2.0209C15.1122 2.0209 17.7078 3.05316 19.6432 4.95775C23.6641 8.8687 23.6641 15.2222 19.6432 19.104C17.7078 21.0086 15.1122 22.0409 12.3666 22.0409C9.62094 22.0409 7.02535 21.0086 5.08991 19.104C1.06899 15.1931 1.06899 8.83962 5.08991 4.95775Z"
+                fill="black"
+              />
+            </svg>
+          </a>
+          <a href="#" class="mobile-header__hamburger" id="mobile-menu-toggle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="43"
+              height="29"
+              viewBox="0 0 43 29"
+              fill="none"
+            >
+              <path
+                d="M1.20349 29C0.774373 29 0.374697 28.7685 0.160584 28.3968C-0.0535281 28.025 -0.0535281 27.5621 0.160584 27.1903C0.374697 26.8185 0.774373 26.5871 1.20349 26.5871H41.7956C42.2247 26.5871 42.6244 26.8185 42.8385 27.1903C43.0526 27.5621 43.0526 28.025 42.8385 28.3968C42.6244 28.7685 42.2247 29 41.7956 29H1.20349ZM1.20349 14.9245C0.774373 14.9245 0.374697 14.693 0.160584 14.3213C-0.0535281 13.9495 -0.0535281 13.4866 0.160584 13.1148C0.374697 12.743 0.774373 12.5116 1.20349 12.5116H41.7956C42.2247 12.5116 42.6244 12.743 42.8385 13.1148C43.0526 13.4866 43.0526 13.9495 42.8385 14.3213C42.6244 14.693 42.2247 14.9245 41.7956 14.9245H1.20349ZM1.20349 2.41294C0.774373 2.41294 0.374697 2.18148 0.160584 1.80971C-0.0535281 1.43794 -0.0535281 0.975008 0.160584 0.603236C0.375589 0.231464 0.775265 0 1.20349 0H41.7956C42.2247 0 42.6244 0.231464 42.8385 0.603236C43.0526 0.975008 43.0526 1.43794 42.8385 1.80971C42.6244 2.18148 42.2247 2.41294 41.7956 2.41294H1.20349Z"
+                fill="black"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+      <div class="mobile-menu__header">
+        <a href="index.html" class="mobile-menu__logo">
+          <img src="assets/img/logo-desktop.svg" alt="Logo" />
+        </a>
+        <a href="#" class="mobile-menu__close" id="mobile-menu-close">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="33"
+            height="33"
+            viewBox="0 0 33 33"
+            fill="none"
+          >
+            <g clip-path="url(#clip0_2036_1092)">
+              <path
+                d="M30.8196 32.6262C31.1414 32.948 31.6145 33.0748 32.0536 32.9565C32.4927 32.8391 32.839 32.4928 32.9573 32.0528C33.0756 31.6137 32.9488 31.1405 32.6271 30.8188L2.18015 0.373788C1.85841 0.0520496 1.38526 -0.0747534 0.946182 0.043533C0.507103 0.160873 0.160763 0.507215 0.0424767 0.947241C-0.0758095 1.38632 0.0509911 1.85946 0.37273 2.1812L30.8196 32.6262Z"
+                fill="black"
+              />
+              <path
+                d="M0.373768 30.8198C0.0520287 31.1415 -0.0747757 31.6147 0.0435104 32.0537C0.160851 32.4928 0.507195 32.8391 0.94722 32.9574C1.3863 33.0757 1.85944 32.9489 2.18118 32.6272L32.6262 2.18027C32.9479 1.85853 33.0747 1.38633 32.9565 0.94631C32.8391 0.507231 32.4928 0.160888 32.0537 0.0435482C31.6146 -0.0747381 31.1415 0.0520649 30.8197 0.373804L0.374714 30.8188L0.373768 30.8198Z"
+                fill="black"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_2036_1092">
+                <rect
+                  width="33"
+                  height="33"
+                  fill="white"
+                  transform="matrix(-1 0 0 1 33 0)"
+                />
+              </clipPath>
+            </defs>
+          </svg>
+        </a>
+      </div>
+      <nav class="mobile-menu__nav">
+        <div class="mobile-menu__separator"></div>
+
+        <a href="find-a-store.html" class="mobile-menu__link">Find a Store</a>
+        <div class="mobile-menu__separator"></div>
+
+        <div class="mobile-menu__dropdown">
+          <div
+            class="mobile-menu__link mobile-menu__link--dropdown"
+            data-mobile-dropdown="services"
+          >
+            <span>Services</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="8"
+              viewBox="0 0 14 8"
+              fill="none"
+              class="mobile-menu__arrow"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12.466 0L6.67583 6.14436L0.8612 0L0 0.914842L6.66361 7.99351L13.3333 0.914842L12.4721 0H12.466Z"
+                fill="black"
+              />
+            </svg>
+          </div>
+          <div class="mobile-menu__dropdown-content">
+            <a href="#" class="mobile-menu__dropdown-link">WOF</a>
+            <a href="service-packages.html" class="mobile-menu__dropdown-link"
+              >Service Packages</a
+            >
+            <a href="#" class="mobile-menu__dropdown-link">Brakes</a>
+            <a href="#" class="mobile-menu__dropdown-link"
+              >EV & Hybrid Service Packages</a
+            >
+            <a href="#" class="mobile-menu__dropdown-link">Suspension</a>
+            <a href="#" class="mobile-menu__dropdown-link">Tyres</a>
+            <a href="#" class="mobile-menu__dropdown-link">Diagnostics</a>
+            <a href="#" class="mobile-menu__dropdown-link">Exhausts</a>
+            <a href="#" class="mobile-menu__dropdown-link">Batteries</a>
+            <a href="#" class="mobile-menu__dropdown-link">Tow Bars</a>
+            <a href="#" class="mobile-menu__dropdown-link">ADAS</a>
+            <a href="#" class="mobile-menu__dropdown-link">Fleet Servicing</a>
+          </div>
+        </div>
+        <div class="mobile-menu__separator"></div>
+
+        <a href="booking.html" class="mobile-menu__link">Book Online</a>
+        <div class="mobile-menu__separator"></div>
+
+        <a href="#" class="mobile-menu__link">Finance</a>
+        <div class="mobile-menu__separator"></div>
+
+        <a href="#" class="mobile-menu__link">Rewards</a>
+        <div class="mobile-menu__separator"></div>
+
+        <div class="mobile-menu__dropdown">
+          <div
+            class="mobile-menu__link mobile-menu__link--dropdown"
+            data-mobile-dropdown="about"
+          >
+            <span>About</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="8"
+              viewBox="0 0 14 8"
+              fill="none"
+              class="mobile-menu__arrow"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12.466 0L6.67583 6.14436L0.8612 0L0 0.914842L6.66361 7.99351L13.3333 0.914842L12.4721 0H12.466Z"
+                fill="black"
+              />
+            </svg>
+          </div>
+          <div class="mobile-menu__dropdown-content">
+            <a href="#" class="mobile-menu__dropdown-link">About Us</a>
+            <a href="#" class="mobile-menu__dropdown-link">Franchising</a>
+            <a href="#" class="mobile-menu__dropdown-link">Jobs</a>
+          </div>
+        </div>
+        <div class="mobile-menu__separator"></div>
+
+        <a href="#" class="mobile-menu__link">Contact</a>
+        <div class="mobile-menu__separator"></div>
+      </nav>
+      <div class="mobile-menu__footer">
+        <img
+          src="assets/img/bar.svg"
+          alt="Bar decoration"
+          class="mobile-menu__bar"
+        />
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Your main content goes here -->
+      <section class="package-hero">
+        <img src="assets/img/bar-union.svg" class="top-bar" />
+        <div class="package-hero__content-left">
+          <div class="package-hero__text-content">
+            <img src="assets/img/services/extensive.svg" />
+            <div class="package-hero__text-details">
+              <h2>Our Extensive Vehicle Service</h2>
+              <h3>Starting from $239 includes oil and oil filter</h3>
+              <p>
+                Pit Stop's Extensive Ezy service package is our top choice among
+                customers, offering reliable, all-round vehicle maintenance and
+                safety checks at a highly affordable price.
+              </p>
+              <p>
+                The service includes a thorough 25-point vehicle inspection, up
+                to 4.5 litres of 5W30 grade oil, a standard oil filter
+                replacement, top-ups of essential fluids, and a full computer
+                and system health check — everything your car needs to stay in
+                top condition.
+              </p>
+            </div>
+            <a href="booking.html" class="long-red-button">Book Now</a>
+          </div>
+          <img src="assets/img/services/extensive/img-1.png" />
+        </div>
+        <div class="package-hero__content-right">
+          <div class="package-hero__text-details">
+            <h3>What Extensive Vehicle Checks Are Performed?</h3>
+            <p>
+              When you book a Pit Stop Extensive Ezy Service package with Pit
+              Stop, a experienced vehicle technician will carry out the work on
+              your car. Here are some of the checks that you can expect with the
+              Extensive Ezy Service.
+            </p>
+            <ul>
+              <li>Change the oil with up to 4.5 litres of 5w30 grade oil.</li>
+              <li>Replace oil filter.</li>
+              <li>
+                Check and top up all essential fluids e.g. clutch, brake & power
+                steering fluid.
+              </li>
+              <li>Check and top up washer and engine coolant levels</li>
+              <li>Check cambelt due date. Check battery.</li>
+              <li>Check air filter.</li>
+              <li>Check CV boots & joints.</li>
+              <li>Check brake pads, rotors & drums.</li>
+              <li>Computer & systems health check.</li>
+              <li>Lubricate door hinges.</li>
+              <li>Road test & report.</li>
+            </ul>
+          </div>
+          <img src="assets/img/services/extensive/img-2.png" />
+        </div>
+        <div class="package-hero__content-left">
+          <div class="package-hero__text-details">
+            <h3>Extensive Service Package Key Benefits</h3>
+            <p>
+              The Extensive Ezy service package is designed to help prolong your
+              vehicle's life, safety, and performance. It includes up to 4.5
+              litres of 5W30 grade oil, a standard oil filter, and essential
+              fluid top-ups to keep your engine running smoothly.
+            </p>
+            <p>
+              A comprehensive 25-point service check and a full computer and
+              system health check ensure your vehicle is thoroughly inspected
+              and maintained. All work is carried out by experienced Pit Stop
+              technicians, giving you peace of mind and professional care you
+              can trust. For added convenience, easy vehicle repair and
+              servicing finance is available through Afterpay.
+            </p>
+            <p>
+              To see the full list of features click below or call
+              <span>0800 748 786</span>
+              and our store managers will be happy to advise you.
+            </p>
+          </div>
+          <img src="assets/img/services/extensive/img-3.png" />
+        </div>
+      </section>
+
+      <section class="footer-wrapper">
+        <div class="footer-container">
+          <div class="footer-content">
+            <img
+              src="assets/img/logo-desktop.svg"
+              alt="Logo"
+              class="footer-logo"
+            />
+
+            <!-- Mobile CTA Section (After Logo) -->
+            <div class="mobile-cta mobile-cta--top">
+              <div class="mobile-cta__text">
+                <h3>Get in touch</h3>
+                <p class="mobile-cta__description">
+                  If you'd like to contact us, we'd be delighted to hear from
+                  you.
+                </p>
+              </div>
+              <a href="#" class="btn btn-primary mobile-cta__button"
+                >Contact Us</a
+              >
+              <div class="mobile-cta__social-icons">
+                <img src="assets/img/FB.svg" alt="FB Logo" />
+                <img
+                  src="assets/img/instagram-mobile.svg"
+                  alt="instagram mobile"
+                />
+                <img src="assets/img/youtube.svg" alt="youtube logo" />
+              </div>
+            </div>
+
+            <div class="links-container">
+              <div class="links-content">
+                <h3>Home</h3>
+                <ul class="services-link">
+                  <li>Franchising</li>
+                  <li>About Us</li>
+                  <li>Contact Us</li>
+                  <li>Services</li>
+                  <li>Locations</li>
+                </ul>
+              </div>
+              <div class="links-content-services">
+                <h3>Products and Services</h3>
+                <ul class="services-link">
+                  <li>Service Packages</li>
+                  <li>WOF</li>
+                  <li>Brakes</li>
+                  <li>Car Repairs</li>
+                  <li>Tyres</li>
+                  <li>EV & Hybrid Service Packages</li>
+                  <li>Exhausts</li>
+                  <li>Diagnostics</li>
+                  <li>ADAS Calibration</li>
+                  <li>Towbars</li>
+                  <li>Shock Absorbers</li>
+                  <li>Batteries</li>
+                  <li>Safety Check</li>
+                  <li>Fleet Servicing</li>
+                </ul>
+              </div>
+              <div class="links-content">
+                <h3>Get Repair Finance</h3>
+                <ul class="services-link">
+                  <li>Apply for Repair Finance from our finance providers</li>
+                  <li>AfterPay</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="copyright-footer">
+            <div class="copyright-content">
+              <p>
+                &copy; 2025 PitStop Ltd. All rights reserved. |
+                <a>Privacy Policy</a> | Terms of Trade
+              </p>
+            </div>
+            <div class="social-icons">
+              <img src="assets/img/FB-Desktop.svg" alt="FB Logo" />
+              <img src="assets/img/instagram.svg" alt="instagram Logo" />
+              <img src="assets/img/youtube-Desktop.svg" alt="youtube logo" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- JavaScript Files -->
+    <script src="js/banner-close.js"></script>
+    <script src="js/header-navigation.js"></script>
+    <script src="js/services-toggle.js"></script>
+    <script src="js/carousel-arrows.js"></script>
+    <script src="js/home-location-dropdown.js"></script>
+    <script src="js/mobile-menu-toggle.js"></script>
+  </body>
+</html>
