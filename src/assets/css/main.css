@@ -2781,10 +2781,50 @@ a.mobile-cta__button:hover {
 
 .package-cta > div:first-child {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 25px;
+  gap: 36px;
+}
+
+.package-cta > div:first-child > div:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.package-cta > div:first-child > div:nth-child(2) p {
+  color: #000;
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 29px; /* 181.25% */
+  margin: 0;
+  padding: 0;
+}
+
+.package-cta > div:first-child > div:nth-child(2) h4 {
+  color: var(--color-black);
+  text-align: right;
+  font-family: var(--font-family-base);
+  font-size: 36px;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  line-height: 29px; /* 80.556% */
+}
+
+.package-cta > div:first-child > div:nth-child(3) {
+  display: flex;
+  flex-direction: row;
+  gap: 21px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .package-cta > div:nth-child(2) {
@@ -3048,9 +3088,22 @@ a.mobile-cta__button:hover {
 .package-cta {
   background: var(--color-white);
   box-shadow: 0 0 12.8px 6px rgba(0, 0, 0, 0.07);
-  padding: 55px 47px;
+  padding: 35px 47px;
   display: flex;
   flex-direction: column;
+}
+
+.package-cta__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  align-items: center;
+  justify-content: center;
+}
+.black-divider {
+  width: 100%;
+  height: 1px;
+  background: #000;
 }
 /* ========== RESPONSIVE DESIGN ========== */
 
@@ -4199,7 +4252,7 @@ body.search-page .search-input::placeholder {
     padding: 20px;
   }
   .package-cta {
-    padding: 25px 20px;
+    padding: 20px;
   }
 
   .service-template-content {
