@@ -2998,6 +2998,10 @@ a.mobile-cta__button:hover {
   line-height: 28px;
 }
 
+.package-features__summary > div:first-child ul li strong {
+  font-weight: 700;
+}
+
 .package-features__summary > div:nth-child(2) {
   background: var(--color-white);
   padding: 27px 40px;
@@ -4992,7 +4996,7 @@ body.search-page .search-input::placeholder {
   }
 
   .service-template-content {
-    padding: 20px 60px;
+    padding: 40px 60px;
   }
 
   .service-content {
