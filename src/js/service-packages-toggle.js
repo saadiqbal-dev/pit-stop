@@ -28,6 +28,7 @@
       // Get data from clicked package
       const color = clickedHeader.dataset.color;
       const packageSlug = clickedHeader.dataset.slug;
+      const packagePrice = clickedHeader.dataset.price;
       const summaryItems = JSON.parse(clickedHeader.dataset.summary || '[]');
       const checksItems = JSON.parse(clickedHeader.dataset.checks || '[]');
       const plusContent = clickedHeader.dataset.plus || '';
@@ -79,6 +80,14 @@
 
         if (findOutMoreButton) {
           findOutMoreButton.href = `${packageSlug}.html`;
+        }
+      }
+
+      // Update price in package-cta
+      if (packagePrice) {
+        const ctaPriceElement = document.querySelector('.package-cta .package-header__text h4');
+        if (ctaPriceElement) {
+          ctaPriceElement.textContent = `$${packagePrice}`;
         }
       }
     }
