@@ -921,7 +921,8 @@ a {
   top: 100%;
   left: 0;
   width: 100vw;
-  height: var(--dropdown-height);
+  /* min-height: var(--dropdown-height); */
+  height: fit-content;
   z-index: var(--dropdown-z-index);
   opacity: 0;
   display: flex;
