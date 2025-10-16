@@ -3768,7 +3768,7 @@ body.find-a-store-page {
 body.search-page .search-wrapper {
   display: flex;
   width: 100vw;
-  height: calc(100svh - 286px);
+  min-height: 100vh;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
