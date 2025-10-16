@@ -1,0 +1,53 @@
+/* ================================================================================
+   TABLE OF CONTENTS - Pitstop Main CSS
+   ================================================================================
+
+   Quick Navigation Guide:
+   Use Cmd/Ctrl+F to jump to sections by searching for the section markers below
+
+   1. FOUNDATION (~Lines 50-800)
+      1.1 External Imports (Fonts)
+      1.2 CSS Reset
+      1.3 CSS Variables
+      1.4 Base Styles (Typography, Buttons, Forms, Components, Utilities)
+
+   2. LAYOUT COMPONENTS (~Lines 800-1800)
+      2.1 Banner
+      2.2 Header (Desktop)
+      2.3 Header Dropdowns
+      2.4 Mobile Header
+      2.5 Mobile Menu Overlay
+      2.6 Footer
+
+   3. PAGE SECTIONS (~Lines 1800-3800)
+      3.1 Hero Section
+      3.2 Search Bar Component
+      3.3 Video Section
+      3.4 Services Section
+      3.5 Carousel Section
+      3.6 Reviews Section
+      3.7 Service Toggle Section
+
+   4. PAGE TEMPLATES (~Lines 3800-4200)
+      4.1 Booking Form Page
+      4.2 Find a Store Page
+      4.3 Search Page (Full Page)
+      4.4 Service Package Template Page
+
+   5. CONSOLIDATED RESPONSIVE DESIGN (~Lines 4200-8000)
+      5.1 Desktop Small  - @media (max-width: 1536px)
+      5.2 Laptop Large   - @media (max-width: 1440px)
+      5.3 Laptop Medium  - @media (max-width: 1366px)
+      5.4 Laptop         - @media (max-width: 1280px)
+      5.5 Tablet Landscape - @media (max-width: 1024px)
+      5.6 Tablet Portrait - @media (max-width: 768px)
+      5.7 Mobile         - @media (max-width: 480px)
+
+   ================================================================================ */
+
+
+/* ================================================================================
+   1. FOUNDATION
+   ================================================================================ */
+
+/* ---------- 1.1 External Imports ---------- */
