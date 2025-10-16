@@ -4,6 +4,6 @@
  */
 (function() {
   if (localStorage.getItem('topBannerClosed') === 'true') {
-    document.documentElement.classList.add('banner-closed');
+    document.documentElement.classList.add('ps-banner-closed');
   }
 })();

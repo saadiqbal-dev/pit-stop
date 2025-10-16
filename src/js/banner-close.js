@@ -4,16 +4,16 @@
  * Note: Initial visibility check is done in banner-init.js loaded in <head>
  */
 
-document.addEventListener('DOMContentLoaded', () => {
-    const banner = document.getElementById('top-banner');
-    const closeButton = document.getElementById('banner-close');
-    const STORAGE_KEY = 'topBannerClosed';
+document.addEventListener("DOMContentLoaded", () => {
+  const banner = document.getElementById("top-banner");
+  const closeButton = document.getElementById("banner-close");
+  const STORAGE_KEY = "topBannerClosed";
 
-    if (!banner || !closeButton) return;
+  if (!banner || !closeButton) return;
 
-    closeButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.documentElement.classList.add('banner-closed');
-        localStorage.setItem(STORAGE_KEY, 'true');
-    });
+  closeButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    document.documentElement.classList.add("ps-banner-closed");
+    localStorage.setItem(STORAGE_KEY, "true");
+  });
 });
