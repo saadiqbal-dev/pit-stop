@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Style placeholder asterisks in red
   function stylePlaceholderAsterisks() {
-    const inputs = document.querySelectorAll('.booking-form .form-input[placeholder*="*"]');
+    const inputs = document.querySelectorAll('.booking-form .ps-form-input[placeholder*="*"]');
 
     inputs.forEach(input => {
       const placeholder = input.getAttribute('placeholder');
@@ -70,9 +70,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Service Dropdown
   const serviceDropdown = document.querySelector('.service-dropdown');
-  const serviceInput = serviceDropdown.querySelector('.form-dropdown-input');
-  const serviceText = serviceDropdown.querySelector('.form-dropdown-text');
-  const serviceItems = serviceDropdown.querySelectorAll('.form-dropdown-item');
+  const serviceInput = serviceDropdown.querySelector('.ps-form-dropdown-input');
+  const serviceText = serviceDropdown.querySelector('.ps-form-dropdown-text');
+  const serviceItems = serviceDropdown.querySelectorAll('.ps-form-dropdown-item');
 
   // Toggle service dropdown
   serviceInput.addEventListener('click', function(e) {
@@ -93,10 +93,10 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Location Dropdown
-  const locationDropdown = document.querySelectorAll('.form-dropdown')[1];
-  const locationInput = locationDropdown.querySelector('.form-dropdown-input');
-  const locationText = locationDropdown.querySelector('.form-dropdown-text');
-  const locationItems = locationDropdown.querySelectorAll('.form-dropdown-item');
+  const locationDropdown = document.querySelectorAll('.ps-form-dropdown')[1];
+  const locationInput = locationDropdown.querySelector('.ps-form-dropdown-input');
+  const locationText = locationDropdown.querySelector('.ps-form-dropdown-text');
+  const locationItems = locationDropdown.querySelectorAll('.ps-form-dropdown-item');
 
   // Preselect location from URL param
   if (regionParam) {
@@ -139,8 +139,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Calendar Popup
-  const dateInput = document.querySelector('.form-date-input');
-  const wofDateInput = document.querySelector('.form-wof-date-input');
+  const dateInput = document.querySelector('.ps-form-date-input');
+  const wofDateInput = document.querySelector('.ps-form-wof-date-input');
   let activeCalendarInput = null;
 
   // Create calendar popup
@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function() {
   calendarOverlay.addEventListener('click', closeCalendar);
 
   // Time Picker
-  const timeInput = document.querySelector('.form-time-input');
+  const timeInput = document.querySelector('.ps-form-time-input');
 
   // Create time picker popup
   const timeOverlay = document.createElement('div');
