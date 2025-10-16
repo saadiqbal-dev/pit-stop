@@ -306,7 +306,7 @@ body {
 /* ---------- Buttons ---------- */
 
 /* Base Button Styles - Works on both <a> and <button> */
-.btn {
+.ps-btn {
   display: inline-block;
   font-family: var(--font-family-accent);
   font-size: var(--font-size-base);
@@ -322,56 +322,56 @@ body {
   white-space: nowrap;
 }
 
-.btn:hover {
+.ps-btn:hover {
   text-decoration: none;
   /* transform: translateY(-2px); */
 }
 
-.btn:focus {
+.ps-btn:focus {
   /* outline: 2px solid var(--color-brand-red-accent); */
   /* outline-offset: 2px; */
 }
 
-.btn:active {
+.ps-btn:active {
   transform: translateY(0);
 }
 
-.btn:disabled,
-.btn.disabled {
+.ps-btn:disabled,
+.ps-btn.disabled {
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;
 }
 
 /* Button Variants */
-.btn-primary {
+.ps-btn-primary {
   background: var(--color-brand-red-accent);
   color: var(--color-white);
 }
 
-.btn-primary:hover {
+.ps-btn-primary:hover {
   background: var(--color-brand-red-accent-hover);
   color: var(--color-white);
 }
 
-.btn-secondary {
+.ps-btn-secondary {
   background: var(--color-white);
   color: var(--color-black);
   border: var(--border-thin) solid var(--color-black);
 }
 
-.btn-secondary:hover {
+.ps-btn-secondary:hover {
   background: var(--color-black);
   color: var(--color-white);
 }
 
-.btn-outline {
+.ps-btn-outline {
   background: transparent;
   color: var(--color-white);
   border: var(--border-thin) solid var(--color-white);
 }
 
-.btn-outline-black {
+.ps-btn-outline-black {
   background: transparent;
   color: var(--color-black);
   border: var(--border-thin) solid var(--color-black);
@@ -379,40 +379,40 @@ body {
   line-height: 28px;
 }
 
-.btn-outline-black:hover {
+.ps-btn-outline-black:hover {
   background: var(--color-brand-red-accent-hover);
   color: var(--color-white);
   border: var(--border-thin) solid var(--color-brand-red-accent-hover);
 }
 
-.btn-outline:hover {
+.ps-btn-outline:hover {
   background: var(--color-white);
   color: var(--color-black);
 }
 
-.btn-outline-dark {
+.ps-btn-outline-dark {
   background: transparent;
   color: var(--color-black);
   border: var(--border-thin) solid var(--color-black);
 }
 
-.btn-outline-dark:hover {
+.ps-btn-outline-dark:hover {
   background: var(--color-black);
   color: var(--color-white);
 }
 
 /* Button Sizes */
-.btn-sm {
+.ps-btn-sm {
   font-size: var(--font-size-sm);
   padding: var(--spacing-xs) var(--spacing-md);
 }
 
-.btn-lg {
+.ps-btn-lg {
   font-size: var(--font-size-lg);
   padding: var(--spacing-md) var(--spacing-3xl);
 }
 
-.btn-block {
+.ps-btn-block {
   display: block;
   width: 100%;
 }
@@ -668,7 +668,7 @@ body {
   opacity: 0.8;
 }
 
-/* Header phone button - extends .btn .btn-primary from base.css */
+/* Header phone button - extends .ps-btn .ps-btn-primary from base.css */
 .ps-header__phone-button {
   width: 175px;
   height: 40px;
@@ -919,7 +919,7 @@ body {
   align-items: flex-start;
 }
 
-/* Dropdown CTA button - extends .btn .btn-primary from base.css */
+/* Dropdown CTA button - extends .ps-btn .ps-btn-primary from base.css */
 .ps-header__dropdown-cta-button {
   padding: var(--spacing-sm) 20.5px;
   white-space: nowrap;
@@ -1489,7 +1489,7 @@ a.mobile-cta__button:hover {
   line-height: var(--line-height-xl);
 }
 
-/* Hero button - extends .btn .btn-outline from base.css */
+/* Hero button - extends .ps-btn .ps-btn-outline from base.css */
 .hero__button {
   margin-top: 20px;
 }
@@ -1707,7 +1707,7 @@ a.mobile-cta__button:hover {
   background: rgba(237, 31, 36, 0.1);
 }
 
-/* Search button - extends .btn .btn-primary from base.css */
+/* Search button - extends .ps-btn .ps-btn-primary from base.css */
 .search-button {
   border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
   padding: var(--spacing-sm) 20.5px;
@@ -1929,7 +1929,7 @@ a.mobile-cta__button:hover {
   left: 0;
 }
 
-/* Services button - extends .btn .btn-primary from base.css */
+/* Services button - extends .ps-btn .ps-btn-primary from base.css */
 .services-button {
   padding: 4px 30.5px;
   font-weight: 400;
