@@ -35,7 +35,7 @@
             <!-- Right Controls -->
             <div class="ps-header__right-controls">
               <!-- Search Icon -->
-              <a href="search.html" class="ps-header__search-icon">
+              <a href="#" class="ps-header__search-icon" id="search-toggle">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="33"
@@ -260,7 +260,7 @@
           <img src="assets/img/logo-desktop.svg" alt="Logo" />
         </a>
         <div class="ps-mobile-header__controls">
-          <a href="search.html" class="ps-mobile-header__search-icon">
+          <a href="#" class="ps-mobile-header__search-icon" id="mobile-search-toggle">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="38"
@@ -431,6 +431,15 @@
           class="mobile-menu__bar"
         />
       </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+      <section class="search-wrapper">
+        <div class="search-container">
+          <input type="text" placeholder="Search" class="search-input" />
+        </div>
+      </section>
     </div>
 
     <!-- Main Content -->
@@ -905,6 +914,7 @@
     <script src="js/banner-close.js"></script>
     <script src="js/header-navigation.js"></script>
     <script src="js/header-phone-button.js"></script>
+    <script src="js/search-overlay.js"></script>
     <script src="js/services-toggle.js"></script>
     <script src="js/carousel-arrows.js"></script>
     <script src="js/booking-form.js"></script>
