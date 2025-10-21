@@ -1084,6 +1084,10 @@ body {
   flex-shrink: 0;
 }
 
+#mobile-banner {
+  display: none;
+}
+
 /* ================================================================================
    2.5 MOBILE MENU OVERLAY
    ================================================================================ */
@@ -6396,7 +6400,8 @@ body.search-page .search-input::placeholder {
     transform: scale(0.8);
   }
 
-  .services-card {
+  #mobile-banner {
+    display: block;
   }
 
   .services-button {
