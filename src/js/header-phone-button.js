@@ -47,9 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
     new PhoneButton(headerButton);
   }
 
-  // Footer phone button
-  const footerButton = document.querySelector('.footer-phone-button');
-  if (footerButton) {
-    new PhoneButton(footerButton);
-  }
+  // Footer phone buttons (both desktop and mobile)
+  const footerButtons = document.querySelectorAll('.footer-phone-button');
+  footerButtons.forEach((button) => {
+    new PhoneButton(button);
+  });
 });
