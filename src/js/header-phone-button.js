@@ -1,11 +1,11 @@
 /**
- * Header Phone Button Click-to-Reveal Functionality
- * Handles click-to-reveal for the phone number button
+ * Phone Button Click-to-Reveal Functionality
+ * Handles click-to-reveal for phone number buttons (header and footer)
  */
 
-class HeaderPhoneButton {
-  constructor() {
-    this.phoneButton = document.querySelector('.ps-header__phone-button');
+class PhoneButton {
+  constructor(buttonElement) {
+    this.phoneButton = buttonElement;
     this.phoneNumber = '0800 748 786';
     this.telLink = 'tel:0800748786';
     this.state = 0; // 0: initial, 1: number revealed, 2: clickable tel link
@@ -39,7 +39,17 @@ class HeaderPhoneButton {
   }
 }
 
-// Initialize phone button when DOM is loaded
+// Initialize all phone buttons when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-  new HeaderPhoneButton();
+  // Header phone button
+  const headerButton = document.querySelector('.ps-header__phone-button');
+  if (headerButton) {
+    new PhoneButton(headerButton);
+  }
+
+  // Footer phone button
+  const footerButton = document.querySelector('.footer-phone-button');
+  if (footerButton) {
+    new PhoneButton(footerButton);
+  }
 });

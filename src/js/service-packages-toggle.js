@@ -116,9 +116,9 @@
       header.addEventListener("click", handlePackageClick);
     });
 
-    // Set first package as active by default and trigger content load
-    if (packageHeaders[0]) {
-      packageHeaders[0].click();
+    // Set Extensive package (second package) as active by default and trigger content load
+    if (packageHeaders[1]) {
+      packageHeaders[1].click();
     }
 
     // Mobile Accordion Functionality
@@ -151,22 +151,7 @@
           content.style.display = "flex";
           item.classList.add("active");
 
-          // Scroll to the top of the accordion item (with 50px offset)
-          setTimeout(() => {
-            const yOffset = -60;
-            const element = item;
-            const y =
-              element.getBoundingClientRect().top +
-              window.pageYOffset +
-              yOffset;
-
-            window.scrollTo({
-              top: y,
-              behavior: "smooth",
-            });
-          }, 100);
-
-          // Populate content with data from data attributes
+          // Populate content with data from data attributes (do this BEFORE scrolling)
           const color = header.dataset.color;
           const summaryItems = JSON.parse(header.dataset.summary || "[]");
           const checksItems = JSON.parse(header.dataset.checks || "[]");
@@ -219,6 +204,14 @@
               .map((item) => `<li>${item}</li>`)
               .join("");
           }
+
+          // Scroll to 100px below the top of the page on mobile
+          setTimeout(() => {
+            window.scrollTo({
+              top: 100,
+              behavior: "smooth",
+            });
+          }, 100);
         }
       });
     });
