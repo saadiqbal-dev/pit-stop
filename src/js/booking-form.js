@@ -92,20 +92,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Location Dropdown
+  // Location Dropdown with nested structure
   const locationDropdown = document.querySelectorAll('.ps-form-dropdown')[1];
   const locationInput = locationDropdown.querySelector('.ps-form-dropdown-input');
   const locationText = locationDropdown.querySelector('.ps-form-dropdown-text');
-  const locationItems = locationDropdown.querySelectorAll('.ps-form-dropdown-item');
+  const parentItems = locationDropdown.querySelectorAll('.ps-form-dropdown-item--parent');
+
+  // Get URL parameters for location
+  const locationParam = urlParams.get('location');
 
   // Preselect location from URL param
-  if (regionParam) {
-    const selectedItem = Array.from(locationItems).find(item => item.getAttribute('data-value') === regionParam);
-    if (selectedItem) {
-      locationText.textContent = selectedItem.textContent;
-      locationText.classList.remove('placeholder');
-      selectedItem.classList.add('selected');
-    }
+  if (locationParam) {
+    parentItems.forEach(parentItem => {
+      const subitems = parentItem.querySelectorAll('.ps-form-dropdown-subitem');
+      const selectedSubitem = Array.from(subitems).find(item => item.getAttribute('data-value') === locationParam);
+      if (selectedSubitem) {
+        locationText.textContent = selectedSubitem.textContent;
+        locationText.classList.remove('placeholder');
+        selectedSubitem.classList.add('selected');
+      }
+    });
   } else {
     locationText.classList.add('placeholder');
   }
@@ -116,15 +122,58 @@ document.addEventListener('DOMContentLoaded', function() {
     locationDropdown.classList.toggle('active');
   });
 
-  // Handle location selection
-  locationItems.forEach(item => {
-    item.addEventListener('click', function(e) {
+  // Handle parent region toggle
+  parentItems.forEach(parentItem => {
+    const toggle = parentItem.querySelector('.ps-form-dropdown-item-toggle');
+    const subitems = parentItem.querySelectorAll('.ps-form-dropdown-subitem:not(.ps-form-dropdown-subitem--empty)');
+
+    // Toggle sublist on parent click
+    toggle.addEventListener('click', function(e) {
       e.stopPropagation();
-      locationItems.forEach(i => i.classList.remove('selected'));
-      this.classList.add('selected');
-      locationText.textContent = this.textContent;
-      locationText.classList.remove('placeholder');
-      locationDropdown.classList.remove('active');
+
+      // Close other sublists
+      parentItems.forEach(item => {
+        if (item !== parentItem) {
+          item.classList.remove('active');
+          const itemToggle = item.querySelector('.ps-form-dropdown-item-toggle');
+          itemToggle.textContent = itemToggle.textContent.replace('-', '+');
+        }
+      });
+
+      // Toggle current sublist
+      parentItem.classList.toggle('active');
+
+      // Change + to - when expanded
+      if (parentItem.classList.contains('active')) {
+        toggle.textContent = toggle.textContent.replace('+', '-');
+      } else {
+        toggle.textContent = toggle.textContent.replace('-', '+');
+      }
+    });
+
+    // Handle subitem selection
+    subitems.forEach(subitem => {
+      subitem.addEventListener('click', function(e) {
+        e.stopPropagation();
+
+        // Remove selection from all subitems
+        locationDropdown.querySelectorAll('.ps-form-dropdown-subitem').forEach(item => {
+          item.classList.remove('selected');
+        });
+
+        // Add selection to clicked subitem
+        this.classList.add('selected');
+        locationText.textContent = this.textContent;
+        locationText.classList.remove('placeholder');
+        locationDropdown.classList.remove('active');
+
+        // Reset all parent items
+        parentItems.forEach(item => {
+          const itemToggle = item.querySelector('.ps-form-dropdown-item-toggle');
+          item.classList.remove('active');
+          itemToggle.textContent = itemToggle.textContent.replace('-', '+');
+        });
+      });
     });
   });
 
@@ -135,6 +184,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     if (!locationDropdown.contains(e.target)) {
       locationDropdown.classList.remove('active');
+      // Reset all toggles
+      parentItems.forEach(item => {
+        const toggle = item.querySelector('.ps-form-dropdown-item-toggle');
+        item.classList.remove('active');
+        toggle.textContent = toggle.textContent.replace('-', '+');
+      });
     }
   });
 
