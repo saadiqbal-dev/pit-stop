@@ -205,12 +205,38 @@
               .join("");
           }
 
-          // Scroll to 100px below the top of the page on mobile
-          setTimeout(() => {
-            window.scrollTo({
-              top: 100,
-              behavior: "smooth",
+          // Smoothly bring the clicked accordion header just below the visible header
+          const getStickyHeaderOffset = () => {
+            let offset = 0;
+            const selectors = [
+              ".mobile-header",
+              ".ps-header__nav-band",
+              ".ps-header__top-band",
+              "#top-banner",
+            ];
+            selectors.forEach((sel) => {
+              const el = document.querySelector(sel);
+              if (!el || el.offsetHeight === 0) return;
+              const style = window.getComputedStyle(el);
+              const pos = style.position;
+              const rect = el.getBoundingClientRect();
+              // Count only bars that are currently affixed to the top of the viewport
+              if (
+                (pos === "fixed" || pos === "sticky") &&
+                rect.top <= 0 &&
+                rect.bottom > 0
+              ) {
+                offset = Math.max(offset, rect.height);
+              }
             });
+            return offset;
+          };
+
+          // Defer until after layout updates from opening the accordion
+          setTimeout(() => {
+            const headerOffset = getStickyHeaderOffset() + 110;
+            header.style.scrollMarginTop = `${headerOffset}px`;
+            header.scrollIntoView({ block: "start", behavior: "smooth" });
           }, 100);
         }
       });
