@@ -376,7 +376,7 @@ body {
   color: var(--color-black);
   border: var(--border-thin) solid var(--color-black);
   padding: 8px 30.5px;
-  line-height: 28px;
+  line-height: 22px;
 }
 
 .ps-btn-outline-black:hover {
@@ -1458,6 +1458,13 @@ a.mobile-cta__button:hover {
   display: flex;
 }
 
+.height-50 {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .hero__content {
   padding: 200px var(--padding-x-desktop);
   display: flex;
@@ -1492,6 +1499,10 @@ a.mobile-cta__button:hover {
 /* Hero button - extends .ps-btn .ps-btn-outline from base.css */
 .hero__button {
   margin-top: 20px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
 }
 
 .long-red-button {
@@ -2442,6 +2453,17 @@ a.mobile-cta__button:hover {
 .reviews-google {
   height: 100%;
   flex-shrink: 0;
+}
+
+.embedsocial-reviews-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  align-self: flex-start;
+}
+
+#es-header {
+  margin: 0 !important;
 }
 
 /* =========== service toggle */
@@ -5195,7 +5217,7 @@ body.search-page .search-input::placeholder {
   }
 
   .ps-header__nav {
-    padding: 15px 40px;
+    padding: 0px 40px;
   }
 
   .ps-header__logo {
@@ -5238,7 +5260,7 @@ body.search-page .search-input::placeholder {
   }
 
   .promotion-banner {
-    max-height: 70px;
+    max-height: 100px;
   }
   .promotion-banner img {
     width: auto;
@@ -5482,7 +5504,7 @@ body.search-page .search-input::placeholder {
     line-height: 24px;
   }
   .reviews-wrapper {
-    max-height: 520px;
+    max-height: 100%;
   }
 
   .reviews-content {
@@ -5697,6 +5719,14 @@ body.search-page .search-input::placeholder {
   .package-hero__text-details ul li {
     font-size: 17px;
     line-height: 25px;
+  }
+
+  .ps-header__nav-menu {
+    justify-content: space-around;
+    padding: 10px 35px;
+  }
+  .ps-header__nav-item {
+    padding: 10px 35px;
   }
 }
 
@@ -6907,6 +6937,18 @@ body.search-page .search-input::placeholder {
     font-style: normal;
     font-weight: 600;
     line-height: 32px; /* 200% */
+  }
+  .promotion-banner {
+    padding: 7px 34px 24px 24px;
+    max-height: 177px;
+    gap: 34px;
+  }
+
+  .promotion-banner__content {
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
   }
 }
 

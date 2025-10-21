@@ -24,6 +24,19 @@ class HeaderNavigation {
       const link = item.querySelector(".ps-header__nav-link");
       const dropdownMenu = item.querySelector(".ps-header__dropdown-menu");
 
+      // Hover handling for desktop
+      item.addEventListener("mouseenter", () => {
+        if (!this.isTouchDevice) {
+          this.openDropdown(item);
+        }
+      });
+
+      item.addEventListener("mouseleave", () => {
+        if (!this.isTouchDevice) {
+          this.closeDropdown(item);
+        }
+      });
+
       // Click handling for entire nav item area
       item.addEventListener("click", (e) => {
         // Prevent clicks on dropdown menu itself from toggling
