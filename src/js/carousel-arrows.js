@@ -9,8 +9,39 @@ const carouselArrows = (() => {
   let gap = 50;
   let currentCarouselType = null; // 'desktop' or 'mobile'
   let resizeTimeout = null;
+  let autoScrollInterval = null;
+  let autoScrollDelay = 3500; // 3.5 seconds
+
+  const startAutoScroll = () => {
+    stopAutoScroll(); // Clear any existing interval
+    autoScrollInterval = setInterval(() => {
+      if (!carouselTrack) return;
+
+      const maxScroll = Math.max(
+        0,
+        carouselTrack.scrollWidth - carouselTrack.clientWidth
+      );
+      const atEnd = carouselTrack.scrollLeft >= maxScroll - 1;
+
+      if (atEnd) {
+        // Loop back to start
+        carouselTrack.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        // Scroll to next card
+        slideNext();
+      }
+    }, autoScrollDelay);
+  };
+
+  const stopAutoScroll = () => {
+    if (autoScrollInterval) {
+      clearInterval(autoScrollInterval);
+      autoScrollInterval = null;
+    }
+  };
 
   const cleanup = () => {
+    stopAutoScroll();
     if (prevButton) {
       prevButton.removeEventListener("click", slidePrev);
     }
@@ -114,8 +145,21 @@ const carouselArrows = (() => {
   };
 
   const attachEventListeners = () => {
-    prevButton.addEventListener("click", slidePrev);
-    nextButton.addEventListener("click", slideNext);
+    const handleUserInteraction = () => {
+      stopAutoScroll();
+      setTimeout(() => {
+        startAutoScroll();
+      }, 1000); // Restart auto-scroll 1 second after user interaction
+    };
+
+    prevButton.addEventListener("click", () => {
+      slidePrev();
+      handleUserInteraction();
+    });
+    nextButton.addEventListener("click", () => {
+      slideNext();
+      handleUserInteraction();
+    });
 
     prevButton.style.cursor = "pointer";
     nextButton.style.cursor = "pointer";
@@ -123,6 +167,13 @@ const carouselArrows = (() => {
     carouselTrack.addEventListener("scroll", updateButtonStates, {
       passive: true,
     });
+
+    // Pause auto-scroll on hover
+    carouselTrack.addEventListener("mouseenter", stopAutoScroll);
+    carouselTrack.addEventListener("mouseleave", startAutoScroll);
+
+    // Start auto-scroll
+    startAutoScroll();
   };
 
   const slidePrev = () => {
