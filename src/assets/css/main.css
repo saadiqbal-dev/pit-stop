@@ -7360,7 +7360,7 @@ body.search-page .search-input::placeholder {
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
-    line-height: 32px; /* 200% */
+    line-height: 26px; /* 200% */
   }
   .promotion-banner {
     padding: 7px 34px 24px 24px;
