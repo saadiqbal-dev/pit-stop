@@ -973,6 +973,19 @@ body {
   font-weight: 700;
 }
 
+.ps-banner-close {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.ps-banner-close img {
+  width: 20px;
+  height: 20px;
+}
+
 .promotion-banner {
   width: 100vw;
   display: flex;
@@ -988,6 +1001,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 20px;
 }
 
 .promotion-banner img {
@@ -997,8 +1011,6 @@ body {
   aspect-ratio: 209/200;
   margin-top: 105px;
   z-index: 10;
-
-  /* position: absolute; */
 }
 
 .promotion-banner p {
@@ -1009,6 +1021,15 @@ body {
   font-weight: 700;
   line-height: 40px; /* 130% */
   max-width: 547px;
+  margin: 0;
+}
+
+.promotion-banner__mobile-break {
+  display: none;
+}
+
+.promotion-banner__desktop-image {
+  display: block;
 }
 
 /* Responsive Breakpoints */
@@ -1084,10 +1105,6 @@ body {
   width: 32.191px;
   height: 21.711px;
   flex-shrink: 0;
-}
-
-#mobile-banner {
-  display: none;
 }
 
 /* ================================================================================
@@ -6420,10 +6437,6 @@ body.search-page .search-input::placeholder {
     transform: scale(0.8);
   }
 
-  #mobile-banner {
-    display: block;
-  }
-
   .services-button {
     font-size: 12px;
     padding: 4px 20px;
@@ -7331,6 +7344,20 @@ body.search-page .search-input::placeholder {
     align-items: center;
     justify-content: center;
   }
+
+  .promotion-banner__desktop-image {
+    display: none;
+  }
+
+  .promotion-banner__mobile-break {
+    display: inline;
+  }
+
+  .promotion-banner .services-button {
+    height: 40px;
+    padding: 8px 16px;
+    font-size: 12px;
+  }
 }
 
 /* Mobile - 480px */
@@ -7350,11 +7377,11 @@ body.search-page .search-input::placeholder {
     align-items: center;
     justify-content: center;
   }
-  .promotion-banner img {
-    width: auto;
-    height: 145px;
-    margin-top: 0px;
+
+  .promotion-banner__desktop-image {
+    display: none;
   }
+
   .promotion-banner p {
     font-size: 20px;
     line-height: 22px;
@@ -7366,6 +7393,17 @@ body.search-page .search-input::placeholder {
     font-size: 16px;
     line-height: 19px;
   }
+
+  .promotion-banner__mobile-break {
+    display: inline;
+  }
+
+  .promotion-banner .services-button {
+    height: 40px;
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
   .ps-footer-container {
     padding: 30px 30px;
     gap: 40px;
