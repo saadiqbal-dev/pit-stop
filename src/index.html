@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <!-- Banner initialization script (must load before banner HTML) -->
     <script src="js/banner-init.js"></script>
+    <!-- Google Places API (load without callback, we'll init manually) -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG8BjFwOMXNYu-xwJQc4JxK2njsyxcbM8&libraries=places"
+      async
+      defer
+    ></script>
   </head>
   <body>
     <!-- Header -->
@@ -470,14 +476,19 @@
     <main>
       <!-- Promotion Banner (Above Hero) -->
       <div class="promotion-banner">
-        <img src="assets/img/brake.svg" class="promotion-banner__desktop-image" />
+        <img
+          src="assets/img/brake.svg"
+          class="promotion-banner__desktop-image"
+        />
         <div class="promotion-banner__content">
           <p>
             REDUCED PRICE BRAKE SPECIAL
             <span class="promotion-banner__mobile-break"><br /></span>
             <span> Save up to $100 on brake service </span>
           </p>
-          <a class="ps-btn ps-btn-primary services-button height-50">Book Now</a>
+          <a class="ps-btn ps-btn-primary services-button height-50"
+            >Book Now</a
+          >
         </div>
       </div>
 
@@ -505,309 +516,373 @@
       </section>
       <section class="search-wrapper">
         <div class="search-content">
-          <h2>There's a Pit Stop Near You!</h2>
+          <div class="search-heading">
+            <h2>There's a Pit Stop Near You!</h2>
+          </div>
 
-          <div class="search-input">
-            <div class="search-dropdown">
-              <div class="search-dropdown-input">
-                <span class="search-dropdown-text placeholder"
-                  >Enter your Location</span
-                >
+          <div class="search-controls">
+            <div class="search-input">
+              <!-- Google Places Autocomplete Input + Submit Button -->
+              <input
+                type="text"
+                id="location-autocomplete"
+                class="input-bar"
+                placeholder="Enter your Location"
+              />
+              <a href="#" class="ps-btn ps-btn-primary search-button">Submit</a>
+            </div>
+
+            <!-- Regions Dropdown Button -->
+            <div class="regions-dropdown-wrapper">
+              <button class="ps-btn ps-btn-primary regions-toggle-button">
+                REGIONS
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="15"
                   height="8"
                   viewBox="0 0 15 8"
                   fill="none"
-                  class="search-dropdown-arrow"
+                  class="regions-dropdown-arrow"
                 >
                   <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
                     d="M14.0243 0L7.51031 6.14436L0.96885 0L0 0.914842L7.49656 7.99351L15 0.914842L14.0311 0H14.0243Z"
-                    fill="#9C7D7D"
+                    fill="currentColor"
                   />
                 </svg>
-              </div>
-              <ul class="search-dropdown-list">
-                <li
-                  class="search-dropdown-item search-dropdown-item--parent"
-                  data-value="northland"
-                >
-                  <span class="search-dropdown-item-toggle">+ Northland</span>
-                  <ul class="search-dropdown-sublist">
-                    <li class="search-dropdown-subitem" data-value="kerikeri">
-                      Kerikeri
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="warkworth">
-                      Warkworth
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="whangarei">
-                      Whangarei
-                    </li>
-                  </ul>
-                </li>
-                <li
-                  class="search-dropdown-item search-dropdown-item--parent"
-                  data-value="auckland"
-                >
-                  <span class="search-dropdown-item-toggle">+ Auckland</span>
-                  <ul class="search-dropdown-sublist">
-                    <li class="search-dropdown-subitem" data-value="albany">
-                      Albany
-                    </li>
-                    <li
-                      class="search-dropdown-subitem"
-                      data-value="auckland-airport"
-                    >
-                      Auckland Airport
-                    </li>
-                    <li
-                      class="search-dropdown-subitem"
-                      data-value="botany-downs"
-                    >
-                      Botany Downs
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="browns-bay">
-                      Browns Bay
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="glen-innes">
-                      Glen Innes
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="glenfield">
-                      Glenfield
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="greenlane">
-                      Greenlane
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="grey-lynn">
-                      Grey Lynn
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="henderson">
-                      Henderson
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="manukau">
-                      Manukau
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="new-lynn">
-                      New Lynn
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="newmarket">
-                      Newmarket
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="onehunga">
-                      Onehunga
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="otahuhu">
-                      Otahuhu
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="pukekohe">
-                      Pukekohe
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="silverdale">
-                      Silverdale
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="takanini">
-                      Takanini
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="westgate">
-                      Westgate
-                    </li>
-                  </ul>
-                </li>
-                <li
-                  class="search-dropdown-item search-dropdown-item--parent"
-                  data-value="bay-of-plenty"
-                >
-                  <span class="search-dropdown-item-toggle"
-                    >+ Bay Of Plenty</span
-                  >
-                  <ul class="search-dropdown-sublist">
-                    <li class="search-dropdown-subitem" data-value="rotorua">
-                      Rotorua
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="tauranga">
-                      Tauranga
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="whakatane">
-                      Whakatane
-                    </li>
-                  </ul>
-                </li>
-                <li
-                  class="search-dropdown-item search-dropdown-item--parent"
-                  data-value="waikato"
-                >
-                  <span class="search-dropdown-item-toggle">+ Waikato</span>
-                  <ul class="search-dropdown-sublist">
-                    <li class="search-dropdown-subitem" data-value="cambridge">
-                      Cambridge
-                    </li>
-                    <li
-                      class="search-dropdown-subitem"
-                      data-value="hamilton-central"
-                    >
-                      Hamilton – Central
-                    </li>
-                    <li
-                      class="search-dropdown-subitem"
-                      data-value="hamilton-te-rapa"
-                    >
-                      Hamilton – Te Rapa
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="taupo">
-                      Taupo
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="te-awamutu">
-                      Te Awamutu
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="tokoroa">
-                      Tokoroa
-                    </li>
-                  </ul>
-                </li>
-                <li
-                  class="search-dropdown-item search-dropdown-item--parent"
-                  data-value="east-coast"
-                >
-                  <span class="search-dropdown-item-toggle">+ East Coast</span>
-                  <ul class="search-dropdown-sublist">
-                    <li class="search-dropdown-subitem" data-value="gisborne">
-                      Gisborne
-                    </li>
-                  </ul>
-                </li>
-                <li
-                  class="search-dropdown-item search-dropdown-item--parent"
-                  data-value="hawkes-bay"
-                >
-                  <span class="search-dropdown-item-toggle">+ Hawkes Bay</span>
-                  <ul class="search-dropdown-sublist">
-                    <li class="search-dropdown-subitem" data-value="hastings">
-                      Hastings
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="napier">
-                      Napier
-                    </li>
-                  </ul>
-                </li>
-                <li
-                  class="search-dropdown-item search-dropdown-item--parent search-dropdown-item--empty"
-                  data-value="taranaki"
-                >
-                  <span class="search-dropdown-item-toggle">+ Taranaki</span>
-                  <ul class="search-dropdown-sublist">
-                    <li
-                      class="search-dropdown-subitem search-dropdown-subitem--empty"
-                    >
-                      No branches in this region
-                    </li>
-                  </ul>
-                </li>
-                <li
-                  class="search-dropdown-item search-dropdown-item--parent"
-                  data-value="manawatu-wanganui"
-                >
-                  <span class="search-dropdown-item-toggle"
-                    >+ Manawatu-Wanganui</span
-                  >
-                  <ul class="search-dropdown-sublist">
-                    <li class="search-dropdown-subitem" data-value="levin">
-                      Levin
-                    </li>
-                    <li
-                      class="search-dropdown-subitem"
-                      data-value="palmerston-north"
-                    >
-                      Palmerston North
-                    </li>
-                  </ul>
-                </li>
-                <li
-                  class="search-dropdown-item search-dropdown-item--parent"
-                  data-value="wellington"
-                >
-                  <span class="search-dropdown-item-toggle">+ Wellington</span>
-                  <ul class="search-dropdown-sublist">
-                    <li class="search-dropdown-subitem" data-value="lower-hutt">
-                      Lower Hutt
-                    </li>
-                    <li
-                      class="search-dropdown-subitem"
-                      data-value="paraparaumu"
-                    >
-                      Paraparaumu
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="petone">
-                      Petone
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="porirua">
-                      Porirua
-                    </li>
-                  </ul>
-                </li>
-                <li
-                  class="search-dropdown-item search-dropdown-item--parent"
-                  data-value="nelson"
-                >
-                  <span class="search-dropdown-item-toggle">+ Nelson</span>
-                  <ul class="search-dropdown-sublist">
-                    <li class="search-dropdown-subitem" data-value="nelson">
-                      Nelson
-                    </li>
-                  </ul>
-                </li>
-                <li
-                  class="search-dropdown-item search-dropdown-item--parent"
-                  data-value="canterbury"
-                >
-                  <span class="search-dropdown-item-toggle">+ Canterbury</span>
-                  <ul class="search-dropdown-sublist">
-                    <li class="search-dropdown-subitem" data-value="burnside">
-                      Burnside
-                    </li>
-                    <li
-                      class="search-dropdown-subitem"
-                      data-value="christchurch-city"
-                    >
-                      Christchurch City
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="hornby">
-                      Hornby
-                    </li>
-                    <li class="search-dropdown-subitem" data-value="sydenham">
-                      Sydenham
-                    </li>
-                  </ul>
-                </li>
-                <li
-                  class="search-dropdown-item search-dropdown-item--parent"
-                  data-value="otago"
-                >
-                  <span class="search-dropdown-item-toggle">+ Otago</span>
-                  <ul class="search-dropdown-sublist">
-                    <li class="search-dropdown-subitem" data-value="dunedin">
-                      Dunedin
-                    </li>
-                  </ul>
-                </li>
-                <li
-                  class="search-dropdown-item search-dropdown-item--parent search-dropdown-item--empty"
-                  data-value="southland"
-                >
-                  <span class="search-dropdown-item-toggle">+ Southland</span>
-                  <ul class="search-dropdown-sublist">
-                    <li
-                      class="search-dropdown-subitem search-dropdown-subitem--empty"
-                    >
-                      No branches in this region
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
+              </button>
 
-            <a href="#" class="ps-btn ps-btn-primary search-button">Submit</a>
+              <!-- Regions Dropdown Menu -->
+              <div class="search-dropdown">
+                <ul class="search-dropdown-list">
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent"
+                    data-value="northland"
+                  >
+                    <span class="search-dropdown-item-toggle">+ Northland</span>
+                    <ul class="search-dropdown-sublist">
+                      <li class="search-dropdown-subitem" data-value="kerikeri">
+                        Kerikeri
+                      </li>
+                      <li
+                        class="search-dropdown-subitem"
+                        data-value="warkworth"
+                      >
+                        Warkworth
+                      </li>
+                      <li
+                        class="search-dropdown-subitem"
+                        data-value="whangarei"
+                      >
+                        Whangarei
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent"
+                    data-value="auckland"
+                  >
+                    <span class="search-dropdown-item-toggle">+ Auckland</span>
+                    <ul class="search-dropdown-sublist">
+                      <li class="search-dropdown-subitem" data-value="albany">
+                        Albany
+                      </li>
+                      <li
+                        class="search-dropdown-subitem"
+                        data-value="auckland-airport"
+                      >
+                        Auckland Airport
+                      </li>
+                      <li
+                        class="search-dropdown-subitem"
+                        data-value="botany-downs"
+                      >
+                        Botany Downs
+                      </li>
+                      <li
+                        class="search-dropdown-subitem"
+                        data-value="browns-bay"
+                      >
+                        Browns Bay
+                      </li>
+                      <li
+                        class="search-dropdown-subitem"
+                        data-value="glen-innes"
+                      >
+                        Glen Innes
+                      </li>
+                      <li
+                        class="search-dropdown-subitem"
+                        data-value="glenfield"
+                      >
+                        Glenfield
+                      </li>
+                      <li
+                        class="search-dropdown-subitem"
+                        data-value="greenlane"
+                      >
+                        Greenlane
+                      </li>
+                      <li
+                        class="search-dropdown-subitem"
+                        data-value="grey-lynn"
+                      >
+                        Grey Lynn
+                      </li>
+                      <li
+                        class="search-dropdown-subitem"
+                        data-value="henderson"
+                      >
+                        Henderson
+                      </li>
+                      <li class="search-dropdown-subitem" data-value="manukau">
+                        Manukau
+                      </li>
+                      <li class="search-dropdown-subitem" data-value="new-lynn">
+                        New Lynn
+                      </li>
+                      <li
+                        class="search-dropdown-subitem"
+                        data-value="newmarket"
+                      >
+                        Newmarket
+                      </li>
+                      <li class="search-dropdown-subitem" data-value="onehunga">
+                        Onehunga
+                      </li>
+                      <li class="search-dropdown-subitem" data-value="otahuhu">
+                        Otahuhu
+                      </li>
+                      <li class="search-dropdown-subitem" data-value="pukekohe">
+                        Pukekohe
+                      </li>
+                      <li
+                        class="search-dropdown-subitem"
+                        data-value="silverdale"
+                      >
+                        Silverdale
+                      </li>
+                      <li class="search-dropdown-subitem" data-value="takanini">
+                        Takanini
+                      </li>
+                      <li class="search-dropdown-subitem" data-value="westgate">
+                        Westgate
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent"
+                    data-value="bay-of-plenty"
+                  >
+                    <span class="search-dropdown-item-toggle"
+                      >+ Bay Of Plenty</span
+                    >
+                    <ul class="search-dropdown-sublist">
+                      <li class="search-dropdown-subitem" data-value="rotorua">
+                        Rotorua
+                      </li>
+                      <li class="search-dropdown-subitem" data-value="tauranga">
+                        Tauranga
+                      </li>
+                      <li
+                        class="search-dropdown-subitem"
+                        data-value="whakatane"
+                      >
+                        Whakatane
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent"
+                    data-value="waikato"
+                  >
+                    <span class="search-dropdown-item-toggle">+ Waikato</span>
+                    <ul class="search-dropdown-sublist">
+                      <li
+                        class="search-dropdown-subitem"
+                        data-value="cambridge"
+                      >
+                        Cambridge
+                      </li>
+                      <li
+                        class="search-dropdown-subitem"
+                        data-value="hamilton-central"
+                      >
+                        Hamilton – Central
+                      </li>
+                      <li
+                        class="search-dropdown-subitem"
+                        data-value="hamilton-te-rapa"
+                      >
+                        Hamilton – Te Rapa
+                      </li>
+                      <li class="search-dropdown-subitem" data-value="taupo">
+                        Taupo
+                      </li>
+                      <li
+                        class="search-dropdown-subitem"
+                        data-value="te-awamutu"
+                      >
+                        Te Awamutu
+                      </li>
+                      <li class="search-dropdown-subitem" data-value="tokoroa">
+                        Tokoroa
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent"
+                    data-value="east-coast"
+                  >
+                    <span class="search-dropdown-item-toggle"
+                      >+ East Coast</span
+                    >
+                    <ul class="search-dropdown-sublist">
+                      <li class="search-dropdown-subitem" data-value="gisborne">
+                        Gisborne
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent"
+                    data-value="hawkes-bay"
+                  >
+                    <span class="search-dropdown-item-toggle"
+                      >+ Hawkes Bay</span
+                    >
+                    <ul class="search-dropdown-sublist">
+                      <li class="search-dropdown-subitem" data-value="hastings">
+                        Hastings
+                      </li>
+                      <li class="search-dropdown-subitem" data-value="napier">
+                        Napier
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent search-dropdown-item--empty"
+                    data-value="taranaki"
+                  >
+                    <span class="search-dropdown-item-toggle">+ Taranaki</span>
+                    <ul class="search-dropdown-sublist">
+                      <li
+                        class="search-dropdown-subitem search-dropdown-subitem--empty"
+                      >
+                        No branches in this region
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent"
+                    data-value="manawatu-wanganui"
+                  >
+                    <span class="search-dropdown-item-toggle"
+                      >+ Manawatu-Wanganui</span
+                    >
+                    <ul class="search-dropdown-sublist">
+                      <li class="search-dropdown-subitem" data-value="levin">
+                        Levin
+                      </li>
+                      <li
+                        class="search-dropdown-subitem"
+                        data-value="palmerston-north"
+                      >
+                        Palmerston North
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent"
+                    data-value="wellington"
+                  >
+                    <span class="search-dropdown-item-toggle"
+                      >+ Wellington</span
+                    >
+                    <ul class="search-dropdown-sublist">
+                      <li
+                        class="search-dropdown-subitem"
+                        data-value="lower-hutt"
+                      >
+                        Lower Hutt
+                      </li>
+                      <li
+                        class="search-dropdown-subitem"
+                        data-value="paraparaumu"
+                      >
+                        Paraparaumu
+                      </li>
+                      <li class="search-dropdown-subitem" data-value="petone">
+                        Petone
+                      </li>
+                      <li class="search-dropdown-subitem" data-value="porirua">
+                        Porirua
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent"
+                    data-value="nelson"
+                  >
+                    <span class="search-dropdown-item-toggle">+ Nelson</span>
+                    <ul class="search-dropdown-sublist">
+                      <li class="search-dropdown-subitem" data-value="nelson">
+                        Nelson
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent"
+                    data-value="canterbury"
+                  >
+                    <span class="search-dropdown-item-toggle"
+                      >+ Canterbury</span
+                    >
+                    <ul class="search-dropdown-sublist">
+                      <li class="search-dropdown-subitem" data-value="burnside">
+                        Burnside
+                      </li>
+                      <li
+                        class="search-dropdown-subitem"
+                        data-value="christchurch-city"
+                      >
+                        Christchurch City
+                      </li>
+                      <li class="search-dropdown-subitem" data-value="hornby">
+                        Hornby
+                      </li>
+                      <li class="search-dropdown-subitem" data-value="sydenham">
+                        Sydenham
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent"
+                    data-value="otago"
+                  >
+                    <span class="search-dropdown-item-toggle">+ Otago</span>
+                    <ul class="search-dropdown-sublist">
+                      <li class="search-dropdown-subitem" data-value="dunedin">
+                        Dunedin
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent search-dropdown-item--empty"
+                    data-value="southland"
+                  >
+                    <span class="search-dropdown-item-toggle">+ Southland</span>
+                    <ul class="search-dropdown-sublist">
+                      <li
+                        class="search-dropdown-subitem search-dropdown-subitem--empty"
+                      >
+                        No branches in this region
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1298,7 +1373,8 @@
     <script src="js/search-overlay.js"></script>
     <script src="js/services-toggle.js"></script>
     <script src="js/carousel-arrows.js"></script>
-    <script src="js/home-location-dropdown.js"></script>
+    <script src="js/home-location-autocomplete.js"></script>
+    <script src="js/home-regions-dropdown.js"></script>
     <script src="js/service-cards-links.js"></script>
     <script src="js/mobile-menu-toggle.js"></script>
   </body>
