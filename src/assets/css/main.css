@@ -2049,13 +2049,8 @@ a.mobile-cta__button:hover {
   background: var(--color-carousel-bg);
   height: auto;
   margin: 0 auto;
-  /* align-items: center; */
   justify-content: center;
   overflow-x: hidden;
-}
-
-.carousel-wrapper-mobile {
-  display: none;
 }
 
 .carousel-container {
@@ -4085,14 +4080,12 @@ body.search-page .search-input::placeholder {
     height: 575px;
   }
 
-  .carousel-text-desktop h2,
-  .carousel-content-container-mobile h2 {
+  .carousel-text-desktop h2 {
     font-size: 27px;
     line-height: 31px;
   }
 
-  .carousel-content-container p,
-  .carousel-content-container-mobile p {
+  .carousel-content-container p {
     font-size: 19px;
     line-height: 29px;
   }
@@ -4494,13 +4487,13 @@ body.search-page .search-input::placeholder {
   }
 
   .carousel-text-desktop h2,
-  .carousel-content-container-mobile h2 {
+  .carousel-text-desktop h2 {
     font-size: 26px;
     line-height: 30px;
   }
 
   .carousel-content-container p,
-  .carousel-content-container-mobile p {
+  .carousel-content-container p {
     font-size: 18px;
     line-height: 28px;
   }
@@ -4875,13 +4868,13 @@ body.search-page .search-input::placeholder {
   }
 
   .carousel-text-desktop h2,
-  .carousel-content-container-mobile h2 {
+  .carousel-text-desktop h2 {
     font-size: 25px;
     line-height: 29px;
   }
 
   .carousel-content-container p,
-  .carousel-content-container-mobile p {
+  .carousel-content-container p {
     font-size: 17px;
     line-height: 27px;
   }
@@ -5325,13 +5318,13 @@ body.search-page .search-input::placeholder {
   }
 
   .carousel-text-desktop h2,
-  .carousel-content-container-mobile h2 {
+  .carousel-text-desktop h2 {
     font-size: 24px;
     line-height: 28px;
   }
 
   .carousel-content-container p,
-  .carousel-content-container-mobile p {
+  .carousel-content-container p {
     font-size: 17px;
     line-height: 26px;
   }
@@ -5833,13 +5826,13 @@ body.search-page .search-input::placeholder {
   }
 
   .carousel-text-desktop h2,
-  .carousel-content-container-mobile h2 {
+  .carousel-text-desktop h2 {
     font-size: 22px;
     line-height: 26px;
   }
 
   .carousel-content-container p,
-  .carousel-content-container-mobile p {
+  .carousel-content-container p {
     font-size: 16px;
     line-height: 24px;
   }
@@ -6412,145 +6405,82 @@ body.search-page .search-input::placeholder {
   .services-svg {
     width: 80%;
   }
-  .carousel-wrapper-desktop {
-    display: none;
-  }
-
-  .carousel-wrapper-mobile {
-    display: flex;
-    padding: 0;
-  }
-
-  .carousel-wrapper-mobile .carousel-container {
-    flex-direction: column;
+  /* Unified Carousel - Mobile Responsive */
+  .carousel-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
     padding: 60px 30px;
     gap: 30px;
     background: var(--color-brand-red-primary);
   }
 
-  .carousel-wrapper-mobile .carousel-container::before {
+  .carousel-container::before {
     display: none;
   }
 
-  .carousel-wrapper-mobile .carousel-content {
+  .carousel-content {
     padding: 0px;
     max-width: 100%;
+    min-height: auto;
     height: fit-content;
     align-items: start;
     justify-content: start;
     gap: 30px;
+    border-radius: 0;
+    display: contents;
   }
 
-  .carousel-wrapper-mobile h2 {
-    color: var(--color-white);
-    font-family: var(--font-family-base);
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-  }
-  .carousel-content h2 {
-    color: var(--color-white);
-    font-family: var(--font-family-base);
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+  .carousel-overlay {
+    width: 100%;
+    gap: 30px;
+    display: contents;
   }
 
-  .carousel-arrows-mobile {
+  .carousel-overlay > svg:first-child {
+    grid-row: 1;
+  }
+
+  .carousel-overlay h2 {
+    font-size: 24px;
+    line-height: normal;
+    grid-row: 2;
+  }
+
+  .carousel-arrows {
+    gap: 6px;
+    grid-row: 4;
     display: flex;
     align-items: start;
     justify-content: start;
-    gap: 6px;
   }
 
-  .carousel-arrows-mobile svg {
+  .carousel-arrows svg {
     width: 56px;
     height: 56px;
     flex-shrink: 0;
-    cursor: pointer;
   }
 
-  .carousel-arrows-mobile svg:first-child circle {
-    stroke: white;
-  }
-
-  .carousel-arrows-mobile svg:first-child path {
-    fill: white;
-  }
-
-  .carousel-cards-container-mobile {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+  .carousel-cards-container {
     gap: 24px;
-    height: fit-content;
     margin-left: 0;
-    overflow-x: auto;
-    /* overflow-y: visible; */
-    flex-wrap: nowrap;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
     width: 100%;
+    grid-row: 3;
   }
 
-  .carousel-cards-container-mobile::-webkit-scrollbar {
-    display: none;
-  }
-
-  .carousel-card-mobile {
-    display: flex;
-    flex-direction: column;
+  .carousel-card {
     width: 320px;
     min-width: 320px;
-    /* height: 420px; */
-    background: var(--color-white);
-    flex-shrink: 0;
+    height: auto;
   }
 
-  .carousel-card-mobile img {
-    width: 100%;
+  .carousel-card img {
     height: 200px;
-    object-fit: cover;
-    display: block;
   }
 
-  .carousel-content-container-mobile {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
+  .carousel-content-container {
     padding: 20px;
     gap: 20px;
-  }
-
-  .carousel-content-container-mobile h2 {
-    font-family: var(--font-family-base);
-    margin: 0;
-    padding: 0;
-    color: var(--color-black);
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 24px;
-  }
-
-  .carousel-content-container-mobile p {
-    font-family: var(--font-family-base);
-    margin: 0;
-    padding: 0;
-    color: var(--color-black);
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 22px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   .carousel-text-desktop h2 {
@@ -7680,70 +7610,47 @@ body.search-page .search-input::placeholder {
   .services-svg {
     width: 80%;
   }
-  .carousel-wrapper-mobile .carousel-container {
+
+  /* Unified Carousel - 480px adjustments */
+  .carousel-container {
     padding: 40px 30px;
     gap: 20px;
   }
-  .carousel-wrapper-mobile .carousel-content {
+
+  .carousel-content {
     gap: 10px;
   }
 
-  .carousel-wrapper-mobile .carousel-content h2 {
+  .carousel-overlay h2 {
     font-size: 22px;
     line-height: 26px;
     margin: 0;
   }
 
-  .carousel-arrows-mobile {
+  .carousel-arrows {
     gap: 19px;
-    /* margin-top: 15px; */
   }
 
-  .carousel-arrows-mobile svg {
+  .carousel-arrows svg {
     width: 56px;
     height: 56px;
     flex-shrink: 0;
   }
 
-  .carousel-cards-container-mobile {
+  .carousel-cards-container {
     gap: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
   }
 
-  .carousel-card-mobile {
+  .carousel-card {
     width: 280px;
     min-width: 280px;
-    /* height: 380px; */
   }
 
-  .carousel-content-container-mobile {
+  .carousel-content-container {
     padding: 18px;
     gap: 18px;
-  }
-
-  .carousel-content-container-mobile h2 {
-    color: var(--color-black);
-    font-family: var(--font-family-base);
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 22px;
-  }
-
-  .carousel-content-container-mobile p {
-    color: var(--color-black);
-    font-family: var(--font-family-base);
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   .carousel-text-desktop h2 {

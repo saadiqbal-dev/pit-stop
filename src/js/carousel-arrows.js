@@ -7,7 +7,6 @@ const carouselArrows = (() => {
   let cardWidth = 0;
   let visibleCards = 3;
   let gap = 50;
-  let currentCarouselType = null; // 'desktop' or 'mobile'
   let resizeTimeout = null;
   let autoScrollInterval = null;
   let autoScrollDelay = 3500; // 3.5 seconds
@@ -54,55 +53,23 @@ const carouselArrows = (() => {
   };
 
   const init = () => {
-    // Check which carousel is visible
-    const desktopCarousel = document.querySelector(".carousel-wrapper-desktop");
-    const mobileCarousel = document.querySelector(".carousel-wrapper-mobile");
-    let isMobile = false;
-    let newCarouselType = null;
-
-    // Determine which carousel is visible
-    if (
-      mobileCarousel &&
-      window.getComputedStyle(mobileCarousel).display !== "none"
-    ) {
-      carouselTrack = mobileCarousel.querySelector(
-        ".carousel-cards-container-mobile"
-      );
-      isMobile = true;
-      newCarouselType = "mobile";
-    } else if (
-      desktopCarousel &&
-      window.getComputedStyle(desktopCarousel).display !== "none"
-    ) {
-      carouselTrack = desktopCarousel.querySelector(
-        ".carousel-cards-container"
-      );
-      isMobile = false;
-      newCarouselType = "desktop";
-    }
-
-    // Only reinitialize if carousel type changed
-    if (newCarouselType === currentCarouselType && prevButton && nextButton) {
-      setupCarousel();
-      updateButtonStates();
-      return;
-    }
+    // Get the unified carousel
+    const carouselWrapper = document.querySelector(".carousel-wrapper");
+    if (!carouselWrapper) return;
 
     // Clean up previous event listeners
     cleanup();
-    currentCarouselType = newCarouselType;
 
+    // Get carousel track
+    carouselTrack = carouselWrapper.querySelector(".carousel-cards-container");
     if (!carouselTrack) return;
 
-    const cardSelector = isMobile ? ".carousel-card-mobile" : ".carousel-card";
-    carouselCards = Array.from(carouselTrack.querySelectorAll(cardSelector));
+    // Get carousel cards
+    carouselCards = Array.from(carouselTrack.querySelectorAll(".carousel-card"));
     if (carouselCards.length === 0) return;
 
-    const arrowsContainer = isMobile ? mobileCarousel : desktopCarousel;
-    const arrowsSelector = isMobile
-      ? ".carousel-arrows-mobile svg"
-      : ".carousel-arrows svg";
-    const arrows = arrowsContainer.querySelectorAll(arrowsSelector);
+    // Get arrow buttons
+    const arrows = carouselWrapper.querySelectorAll(".carousel-arrows svg");
     prevButton = arrows[0];
     nextButton = arrows[1];
 
@@ -140,7 +107,7 @@ const carouselArrows = (() => {
   const handleResize = () => {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
-      init(); // Reinitialize to check if carousel type changed
+      init(); // Reinitialize to recalculate dimensions
     }, 150);
   };
 
