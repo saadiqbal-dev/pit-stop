@@ -1,0 +1,227 @@
+.free-wof-hero-section {
+  display: flex;
+  width: 100vw;
+  height: auto;
+  background: var(--color-black);
+  margin: 0 auto;
+  overflow: hidden;
+  max-height: 767px;
+}
+
+.free-wof-hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  /* max-width: 1920px; */
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.free-wof-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.free-wof-hero-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 145px 100px;
+  align-items: start;
+  justify-content: center;
+  gap: 50px;
+  margin-left: auto;
+  max-width: 960px;
+}
+
+.free-wof-hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+}
+
+.free-wof-hero-text h1 {
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-base);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 58px; /* 209.206% */
+}
+
+.free-wof-hero-text p {
+  color: #fff;
+  font-family: var(--font-family-base);
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 38px; /* 418.411% */
+}
+
+.free-wof-hero-button {
+  width: 199px;
+  height: 50.467px;
+  flex-shrink: 0;
+}
+
+.free-wof-video {
+  display: flex;
+  width: 100vw;
+}
+
+.free-wof-video {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  width: 100vw;
+  margin: 0 auto;
+}
+
+.free-wof-video-container {
+  padding: 110px 100px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.free-wof-video-wrapper {
+  position: relative;
+  width: 856px;
+  height: 482px;
+  flex-shrink: 0;
+}
+
+.free-wof-video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.free-wof-video-content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 60px;
+  padding-left: 171px;
+}
+
+.free-wof-video-content img {
+  width: 171px;
+  height: 21px;
+  flex-shrink: 0;
+  aspect-ratio: 57/7;
+}
+
+.free-wof-video-content div > p {
+  color: #000;
+  font-family: var(--font-family-base);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+.free-wof-video-content div > p > span > a {
+  color: #eb2227;
+  font-family: var(--font-family-base);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
+.free-wof-faq {
+  display: flex;
+  width: 100vw;
+  background: #eeeeee99;
+  margin: 0 auto;
+}
+
+.faq-heading {
+  padding: 0;
+  margin: 0;
+  color: #000;
+  text-align: center;
+  font-family: var(--font-family-accent);
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 84.606px; /* 141.011% */
+}
+
+.free-wof-faq div:first-child {
+  max-width: 868px;
+  display: flex;
+  flex-direction: column;
+  gap: 76px;
+  padding: 64px 100px;
+}
+
+.red-divider {
+  height: 4px;
+  width: 100%;
+  background: #eb2227;
+}
+
+/* Responsive breakpoints for video section */
+@media (max-width: 1024px) {
+  .free-wof-video-container {
+    flex-direction: column;
+    padding: 60px 40px;
+    gap: 40px;
+  }
+
+  .free-wof-video-wrapper {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .free-wof-video-container {
+    padding: 40px 20px;
+  }
+
+  .free-wof-hero-content {
+    padding: 60px 40px;
+  }
+
+  .free-wof-hero-text h1 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .free-wof-hero-text p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .free-wof-video-content p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

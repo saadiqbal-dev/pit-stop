@@ -7,9 +7,33 @@
 
     <!-- Combined CSS File -->
     <link rel="stylesheet" href="assets/css/main.css" />
-    <!-- Banner initialization script (must load before banner HTML) -->
+    <link
+      rel="stylesheet"
+      href="assets/css/free-wof.css"
+      <!--
+      Banner
+      initialization
+      script
+      (must
+      load
+      before
+      banner
+      HTML)
+      --
+    />
     <script src="js/banner-init.js"></script>
     <!-- Google Places API (load without callback, we'll init manually) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG8BjFwOMXNYu-xwJQc4JxK2njsyxcbM8&libraries=places"
       async
@@ -492,8 +516,79 @@
         </div>
       </div>
 
-      <section class="free-wof-video"></section>
-      <section class="free-wof-faq"></section>
+      <section class="free-wof-hero-section">
+        <div class="free-wof-hero-container">
+          <div class="free-wof-hero-content">
+            <div class="free-wof-hero-text">
+              <h1>Free WOF Check</h1>
+              <p>with any PitStop Ezy Service</p>
+            </div>
+            <a href="#" class="long-red-button free-wof-hero-button"
+              >Book Now</a
+            >
+          </div>
+          <div class="free-wof-hero-image">
+            <img src="assets/img/wof-hero.jpg" />
+          </div>
+        </div>
+      </section>
+
+      <section class="free-wof-video">
+        <div class="free-wof-video-container">
+          <div class="free-wof-video-wrapper">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube-nocookie.com/embed/nABM6jVVIHc"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="free-wof-video-content">
+            <img src="assets/img/bar-short.svg" />
+            <div
+              class="d-flex flex-column align-items-start justify-content-center gap-4"
+            >
+              <p>
+                <strong
+                  >For a limited time only we're offering a FREE WOF check with
+                  any Pit Stop ezy service.</strong
+                >
+              </p>
+              <p>
+                Choose from our range of service packages starting from just
+                $199 and get a great vehicle service and a FREE WOF check!
+              </p>
+
+              <p>
+                This is a limited time offer so don't miss out and book your
+                service using the form below or click here to find your
+                <span>
+                  <a href="find-a-store.html">nearest Pit Stop location.</a>
+                </span>
+              </p>
+              <p>
+                For more details on our Vehicle
+                <span
+                  ><a href="service-packages.html"
+                    >Services click here.</a
+                  ></span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="free-wof-faq align-items-center justify-content-center">
+        <div class="d-flex align-items-center justify-content-center w-100">
+          <h2 class="faq-heading">FAQs</h2>
+          <div class="red-divider w-100"></div>
+          <div></div>
+        </div>
+      </section>
       <section class="free-wof-form"></section>
 
       <section class="ps-footer-wrapper">
@@ -596,6 +691,13 @@
         </div>
       </section>
     </main>
+
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
 
     <!-- JavaScript Files -->
     <script src="js/banner-close.js"></script>
