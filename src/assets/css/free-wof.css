@@ -356,31 +356,219 @@
   cursor: pointer !important;
 }
 
-/* Responsive breakpoints for video section */
-@media (max-width: 1024px) {
+/* Responsive breakpoints */
+
+/* 1440px - Laptop Large */
+@media (max-width: 1440px) {
+  .free-wof-hero-content {
+    padding: 130px 90px;
+    gap: 45px;
+  }
+
+  .free-wof-hero-text h1 {
+    font-size: 44px;
+    line-height: 54px;
+  }
+
+  .free-wof-hero-text p {
+    font-size: 22px;
+    line-height: 36px;
+  }
+
   .free-wof-video-container {
-    flex-direction: column;
-    padding: 60px 40px;
+    padding: 100px 90px;
+  }
+
+  .free-wof-video-wrapper {
+    width: 625px;
+    height: 350px;
+  }
+
+  .free-wof-video-content {
+    padding-left: 150px;
+    gap: 55px;
+  }
+
+  .free-wof-faq {
+    padding: 70px 0;
+  }
+
+  .faq-container {
+    padding: 0 90px;
+  }
+
+  .faq-heading {
+    font-size: 44px;
+    line-height: 54px;
+    margin-bottom: 70px;
+  }
+
+  .free-wof-form {
+    padding: 70px 90px;
+  }
+
+  .free-wof-form-container {
+    padding: 55px;
+  }
+
+  .free-wof-form-heading {
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 35px;
+  }
+}
+
+/* 1280px - Laptop */
+@media (max-width: 1280px) {
+  .free-wof-hero-content {
+    padding: 115px 80px;
+    gap: 40px;
+  }
+
+  .free-wof-hero-text h1 {
+    font-size: 42px;
+    line-height: 52px;
+  }
+
+  .free-wof-hero-text p {
+    font-size: 21px;
+    line-height: 34px;
+  }
+
+  .free-wof-video-container {
+    padding: 90px 80px;
+  }
+
+  .free-wof-video-wrapper {
+    width: 720px;
+    height: 405px;
+  }
+
+  .free-wof-video-content {
+    padding-left: 130px;
+    gap: 50px;
+  }
+
+  .free-wof-faq {
+    padding: 65px 0;
+  }
+
+  .faq-container {
+    padding: 0 80px;
+  }
+
+  .faq-heading {
+    font-size: 42px;
+    line-height: 52px;
+    margin-bottom: 65px;
+  }
+
+  .free-wof-form {
+    padding: 65px 80px;
+  }
+
+  .free-wof-form-container {
+    padding: 50px;
+  }
+
+  .free-wof-form-heading {
+    font-size: 21px;
+    line-height: 28px;
+    margin-bottom: 32px;
+  }
+}
+
+/* 1024px - Tablet Landscape */
+@media (max-width: 1024px) {
+  .free-wof-hero-container {
+    grid-template-columns: 1fr;
+  }
+
+  .free-wof-hero-content {
+    padding: 80px 60px;
+    gap: 35px;
+    max-width: 100%;
+  }
+
+  .free-wof-hero-text h1 {
+    font-size: 38px;
+    line-height: 48px;
+  }
+
+  .free-wof-hero-text p {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .free-wof-video-container {
+    grid-template-columns: 1fr;
+    padding: 70px 60px;
     gap: 40px;
   }
 
   .free-wof-video-wrapper {
+    width: 100%;
     max-width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+
+  .free-wof-video-content {
+    padding-left: 0;
+    gap: 40px;
+  }
+
+  .free-wof-faq {
+    padding: 60px 0;
+  }
+
+  .faq-container {
+    padding: 0 60px;
+  }
+
+  .faq-heading {
+    font-size: 38px;
+    line-height: 48px;
+    margin-bottom: 60px;
+  }
+
+  .faq-question {
+    padding: 28px 0;
+  }
+
+  .faq-answer {
+    padding: 0 0 28px 0;
+  }
+
+  .free-wof-form {
+    padding: 60px 60px;
+  }
+
+  .free-wof-form-container {
+    padding: 45px;
+  }
+
+  .free-wof-form-heading {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 30px;
   }
 }
 
+/* 768px - Tablet Portrait/Mobile Large */
 @media (max-width: 768px) {
-  .free-wof-video-container {
-    padding: 40px 20px;
+  .free-wof-hero-section {
+    max-height: none;
   }
 
   .free-wof-hero-content {
-    padding: 60px 40px;
+    padding: 100px 40px;
+    gap: 30px;
   }
 
   .free-wof-hero-text h1 {
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 32px;
+    line-height: 42px;
   }
 
   .free-wof-hero-text p {
@@ -388,9 +576,32 @@
     line-height: 28px;
   }
 
-  .free-wof-video-content p {
-    font-size: 16px;
-    line-height: 24px;
+  .free-wof-hero-button {
+    width: 180px;
+    height: 46px;
+  }
+
+  .free-wof-video-container {
+    padding: 50px 40px;
+    gap: 35px;
+  }
+
+  .free-wof-video-content {
+    gap: 35px;
+  }
+
+  .free-wof-video-content div > p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .free-wof-video-content div > p > span > a {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .free-wof-faq {
+    padding: 50px 0;
   }
 
   .faq-container {
@@ -398,13 +609,120 @@
   }
 
   .faq-heading {
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 32px;
+    line-height: 42px;
+    margin-bottom: 50px;
+  }
+
+  .faq-question {
+    padding: 24px 0;
   }
 
   .faq-question span {
-    font-size: 20px;
-    line-height: 32px;
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .faq-answer {
+    padding: 0 0 24px 0;
+  }
+
+  .faq-answer p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .free-wof-form {
+    padding: 50px 40px;
+  }
+
+  .free-wof-form-container {
+    padding: 40px;
+  }
+
+  .free-wof-form-heading {
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 28px;
+  }
+
+  .free-wof-booking-form {
+    gap: 20px;
+  }
+}
+
+/* Mobile - 480px and below */
+@media (max-width: 480px) {
+  .free-wof-hero-content {
+    padding: 100px 20px;
+    gap: 25px;
+  }
+
+  .free-wof-hero-text h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .free-wof-hero-text p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .free-wof-hero-button {
+    width: 160px;
+    height: 42px;
+  }
+
+  .free-wof-video-container {
+    padding: 40px 20px;
+    gap: 30px;
+  }
+
+  .free-wof-video-content {
+    gap: 30px;
+  }
+
+  .free-wof-video-content img {
+    width: 140px;
+    height: auto;
+  }
+
+  .free-wof-video-content div > p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .free-wof-video-content div > p > span > a {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .free-wof-faq {
+    padding: 40px 0;
+  }
+
+  .faq-container {
+    padding: 0 20px;
+  }
+
+  .faq-heading {
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 40px;
+  }
+
+  .faq-question {
+    padding: 20px 0;
+    gap: 15px;
+  }
+
+  .faq-question span {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .faq-answer {
+    padding: 0 0 20px 0;
   }
 
   .faq-answer p {
@@ -412,13 +730,27 @@
     line-height: 24px;
   }
 
-  .faq-icon-plus {
+  .faq-icon-plus,
+  .faq-icon-close {
     width: 24px;
     height: 24px;
   }
 
-  .faq-icon-close {
-    width: 32px;
-    height: 32px;
+  .free-wof-form {
+    padding: 40px 20px;
+  }
+
+  .free-wof-form-container {
+    padding: 30px 20px;
+  }
+
+  .free-wof-form-heading {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 24px;
+  }
+
+  .free-wof-booking-form {
+    gap: 18px;
   }
 }
