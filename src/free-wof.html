@@ -584,136 +584,9 @@
       </section>
       <section class="free-wof-faq">
         <div class="faq-container">
-          <h2 class="faq-heading">FAQs</h2>
+          <h2 class="faq-heading"></h2>
           <div>
-            <!-- FAQ Item 1 -->
-            <div class="faq-item">
-              <div class="faq-divider"></div>
-              <div class="faq-question">
-                <span>Is the WOF check really free?</span>
-                <img
-                  src="assets/img/faq-plus.svg"
-                  alt="Expand"
-                  class="faq-icon faq-icon-plus"
-                />
-                <img
-                  src="assets/img/faq-close.svg"
-                  alt="Collapse"
-                  class="faq-icon faq-icon-close"
-                />
-              </div>
-              <div class="faq-answer">
-                <p>
-                  Yes, the free WOF check is included with any Pit Stop Ezy
-                  service, which starts from $124.00 for EV service and $199.00
-                  for petrol or diesel vehicle, during the promotional period.
-                  <a href="service-packages.html">Click here</a> to see our full
-                  range of Ezy Services.
-                </p>
-              </div>
-            </div>
-
-            <!-- FAQ Item 2 -->
-            <div class="faq-item">
-              <div class="faq-divider"></div>
-              <div class="faq-question">
-                <span>When does this offer end?</span>
-                <img
-                  src="assets/img/faq-plus.svg"
-                  alt="Expand"
-                  class="faq-icon faq-icon-plus"
-                />
-                <img
-                  src="assets/img/faq-close.svg"
-                  alt="Collapse"
-                  class="faq-icon faq-icon-close"
-                />
-              </div>
-              <div class="faq-answer">
-                <p>
-                  This is a limited time offer. Please contact your nearest Pit
-                  Stop location for specific end dates.
-                </p>
-              </div>
-            </div>
-
-            <!-- FAQ Item 3 -->
-            <div class="faq-item">
-              <div class="faq-divider"></div>
-              <div class="faq-question">
-                <span>How do I book the service and free WOF?</span>
-                <img
-                  src="assets/img/faq-plus.svg"
-                  alt="Expand"
-                  class="faq-icon faq-icon-plus"
-                />
-                <img
-                  src="assets/img/faq-close.svg"
-                  alt="Collapse"
-                  class="faq-icon faq-icon-close"
-                />
-              </div>
-              <div class="faq-answer">
-                <p>
-                  You can book your service using the form below, or
-                  <a href="find-a-store.html"
-                    >find your nearest Pit Stop location</a
-                  >
-                  to book directly.
-                </p>
-              </div>
-            </div>
-
-            <!-- FAQ Item 4 -->
-            <div class="faq-item">
-              <div class="faq-divider"></div>
-              <div class="faq-question">
-                <span>Can I book now for a later date?</span>
-                <img
-                  src="assets/img/faq-plus.svg"
-                  alt="Expand"
-                  class="faq-icon faq-icon-plus"
-                />
-                <img
-                  src="assets/img/faq-close.svg"
-                  alt="Collapse"
-                  class="faq-icon faq-icon-close"
-                />
-              </div>
-              <div class="faq-answer">
-                <p>
-                  Yes, you can book in advance for a date that suits you. Simply
-                  select your preferred date when booking.
-                </p>
-              </div>
-            </div>
-
-            <!-- FAQ Item 5 -->
-            <div class="faq-item">
-              <div class="faq-divider"></div>
-              <div class="faq-question">
-                <span>Where is my nearest Pit Stop?</span>
-                <img
-                  src="assets/img/faq-plus.svg"
-                  alt="Expand"
-                  class="faq-icon faq-icon-plus"
-                />
-                <img
-                  src="assets/img/faq-close.svg"
-                  alt="Collapse"
-                  class="faq-icon faq-icon-close"
-                />
-              </div>
-              <div class="faq-answer">
-                <p>
-                  Use our <a href="find-a-store.html">store locator</a> to find
-                  the Pit Stop location nearest to you.
-                </p>
-              </div>
-            </div>
-
-            <!-- Final divider -->
-            <div class="faq-divider"></div>
+            <!-- FAQ items will be dynamically loaded from data/faq-data.json -->
           </div>
         </div>
       </section>
@@ -826,6 +699,35 @@
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
+
+    <!-- FAQ Data -->
+    <script type="application/json" id="faq-data">
+      {
+        "heading": "FAQs",
+        "items": [
+          {
+            "question": "Is the WOF check really free?",
+            "answer": "Yes, the free WOF check is included with any Pit Stop Ezy service, which starts from $124.00 for EV service and $199.00 for petrol or diesel vehicle, during the promotional period. <a href='service-packages.html'>Click here</a> to see our full range of Ezy Services."
+          },
+          {
+            "question": "When does this offer end?",
+            "answer": "This is a limited time offer. Please contact your nearest Pit Stop location for specific end dates."
+          },
+          {
+            "question": "How do I book the service and free WOF?",
+            "answer": "You can book your service using the form below, or <a href='find-a-store.html'>find your nearest Pit Stop location</a> to book directly."
+          },
+          {
+            "question": "Can I book now for a later date?",
+            "answer": "Yes, you can book in advance for a date that suits you. Simply select your preferred date when booking."
+          },
+          {
+            "question": "Where is my nearest Pit Stop?",
+            "answer": "Use our <a href='find-a-store.html'>store locator</a> to find the Pit Stop location nearest to you."
+          }
+        ]
+      }
+    </script>
 
     <!-- JavaScript Files -->
     <script src="js/banner-close.js"></script>
