@@ -292,6 +292,70 @@
   text-decoration: underline;
 }
 
+/* Free WOF Form Section */
+.free-wof-form {
+  display: flex;
+  width: 100%;
+  padding: 80px 100px;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+
+.free-wof-form-container {
+  width: 100%;
+  max-width: 900px;
+  background: var(--color-white);
+  box-shadow: var(--shadow-card);
+  padding: 25px;
+  border-radius: 0;
+}
+
+.free-wof-form-heading {
+  color: #000;
+  font-family: var(--font-family-base);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+  margin: 0 0 40px 0;
+  padding: 0;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.free-wof-booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.free-wof-booking-form .ps-form-group {
+  width: 100%;
+}
+
+.free-wof-booking-form .ps-form-input,
+.free-wof-booking-form .ps-form-textarea {
+  width: 100%;
+}
+
+.free-wof-submit-button {
+  width: 100% !important;
+}
+
+.free-wof-booking-form .ps-form-dropdown-text.placeholder {
+  color: #999 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline !important;
+  background: transparent !important;
+}
+
+.free-wof-booking-form .ps-form-dropdown-input {
+  cursor: pointer !important;
+}
+
 /* Responsive breakpoints for video section */
 @media (max-width: 1024px) {
   .free-wof-video-container {

@@ -1,61 +1,62 @@
 // Booking Form functionality
-document.addEventListener('DOMContentLoaded', function() {
+$(document).ready(function() {
   // Style placeholder asterisks in red
   function stylePlaceholderAsterisks() {
-    const inputs = document.querySelectorAll('.booking-form .ps-form-input[placeholder*="*"]');
+    const $inputs = $('.booking-form .ps-form-input[placeholder*="*"]');
 
-    inputs.forEach(input => {
-      const placeholder = input.getAttribute('placeholder');
+    $inputs.each(function() {
+      const input = this;
+      const placeholder = $(input).attr('placeholder');
       if (placeholder && placeholder.includes('*')) {
         // Split placeholder text and asterisk
         const parts = placeholder.split('*');
         const textPart = parts[0].trim();
 
         // Create wrapper
-        const wrapper = document.createElement('div');
-        wrapper.style.position = 'relative';
-        wrapper.style.width = '100%';
-
-        // Replace input with wrapper
-        input.parentNode.insertBefore(wrapper, input);
-        wrapper.appendChild(input);
-
-        // Remove placeholder completely
-        input.setAttribute('placeholder', '');
-
-        // Create custom placeholder overlay
-        const overlay = document.createElement('div');
-        overlay.className = 'custom-placeholder';
-        overlay.style.position = 'absolute';
-        overlay.style.top = '0';
-        overlay.style.left = '0';
-        overlay.style.padding = '8px 18px';
-        overlay.style.pointerEvents = 'none';
-        overlay.style.color = '#999';
-        overlay.style.fontFamily = '"Open Sans"';
-        overlay.style.fontSize = '16px';
-        overlay.style.display = input.value ? 'none' : 'flex';
-        overlay.style.alignItems = 'center';
-        overlay.innerHTML = `${textPart} <span style="color: #eb2227; margin-left: 2px;">*</span>`;
-
-        wrapper.appendChild(overlay);
-
-        // Hide overlay when input has value or is focused
-        input.addEventListener('focus', function() {
-          overlay.style.display = 'none';
+        const $wrapper = $('<div></div>').css({
+          'position': 'relative',
+          'width': '100%'
         });
 
-        input.addEventListener('blur', function() {
-          if (!input.value) {
-            overlay.style.display = 'flex';
+        // Replace input with wrapper
+        $(input).wrap($wrapper);
+        const $wrappedInput = $(input);
+
+        // Remove placeholder completely
+        $wrappedInput.attr('placeholder', '');
+
+        // Create custom placeholder overlay
+        const $overlay = $('<div class="custom-placeholder"></div>').css({
+          'position': 'absolute',
+          'top': '0',
+          'left': '0',
+          'padding': '8px 18px',
+          'pointer-events': 'none',
+          'color': '#999',
+          'font-family': '"Open Sans"',
+          'font-size': '16px',
+          'display': $wrappedInput.val() ? 'none' : 'flex',
+          'align-items': 'center'
+        }).html(`${textPart} <span style="color: #eb2227; margin-left: 2px;">*</span>`);
+
+        $wrappedInput.parent().append($overlay);
+
+        // Hide overlay when input has value or is focused
+        $wrappedInput.on('focus', function() {
+          $overlay.css('display', 'none');
+        });
+
+        $wrappedInput.on('blur', function() {
+          if (!$wrappedInput.val()) {
+            $overlay.css('display', 'flex');
           }
         });
 
-        input.addEventListener('input', function() {
-          if (input.value) {
-            overlay.style.display = 'none';
+        $wrappedInput.on('input', function() {
+          if ($wrappedInput.val()) {
+            $overlay.css('display', 'none');
           } else {
-            overlay.style.display = 'flex';
+            $overlay.css('display', 'flex');
           }
         });
       }
@@ -69,160 +70,161 @@ document.addEventListener('DOMContentLoaded', function() {
   const regionParam = urlParams.get('region');
 
   // Service Dropdown
-  const serviceDropdown = document.querySelector('.service-dropdown');
-  const serviceInput = serviceDropdown.querySelector('.ps-form-dropdown-input');
-  const serviceText = serviceDropdown.querySelector('.ps-form-dropdown-text');
-  const serviceItems = serviceDropdown.querySelectorAll('.ps-form-dropdown-item');
+  const $serviceDropdown = $('.service-dropdown');
+  if (!$serviceDropdown.length) return;
+
+  const $serviceInput = $serviceDropdown.find('.ps-form-dropdown-input');
+  const $serviceText = $serviceDropdown.find('.ps-form-dropdown-text');
+  const $serviceItems = $serviceDropdown.find('.ps-form-dropdown-item');
 
   // Toggle service dropdown
-  serviceInput.addEventListener('click', function(e) {
+  $serviceInput.on('click', function(e) {
     e.stopPropagation();
-    serviceDropdown.classList.toggle('active');
+    $serviceDropdown.toggleClass('active');
   });
 
   // Handle service selection
-  serviceItems.forEach(item => {
-    item.addEventListener('click', function(e) {
-      e.stopPropagation();
-      serviceItems.forEach(i => i.classList.remove('selected'));
-      this.classList.add('selected');
-      serviceText.textContent = this.textContent;
-      serviceText.classList.remove('placeholder');
-      serviceDropdown.classList.remove('active');
-    });
+  $serviceItems.on('click', function(e) {
+    e.stopPropagation();
+    $serviceItems.removeClass('selected');
+    $(this).addClass('selected');
+    $serviceText.text($(this).text());
+    $serviceText.removeClass('placeholder');
+    $serviceDropdown.removeClass('active');
   });
 
   // Location Dropdown with nested structure
-  const locationDropdown = document.querySelectorAll('.ps-form-dropdown')[1];
-  const locationInput = locationDropdown.querySelector('.ps-form-dropdown-input');
-  const locationText = locationDropdown.querySelector('.ps-form-dropdown-text');
-  const parentItems = locationDropdown.querySelectorAll('.ps-form-dropdown-item--parent');
+  const $locationDropdown = $('.ps-form-dropdown').eq(1);
+  if (!$locationDropdown.length) return;
+
+  const $locationInput = $locationDropdown.find('.ps-form-dropdown-input');
+  const $locationText = $locationDropdown.find('.ps-form-dropdown-text');
+  const $parentItems = $locationDropdown.find('.ps-form-dropdown-item--parent');
 
   // Get URL parameters for location
   const locationParam = urlParams.get('location');
 
   // Preselect location from URL param
   if (locationParam) {
-    parentItems.forEach(parentItem => {
-      const subitems = parentItem.querySelectorAll('.ps-form-dropdown-subitem');
-      const selectedSubitem = Array.from(subitems).find(item => item.getAttribute('data-value') === locationParam);
-      if (selectedSubitem) {
-        locationText.textContent = selectedSubitem.textContent;
-        locationText.classList.remove('placeholder');
-        selectedSubitem.classList.add('selected');
-      }
+    $parentItems.each(function() {
+      const $subitems = $(this).find('.ps-form-dropdown-subitem');
+      $subitems.each(function() {
+        if ($(this).attr('data-value') === locationParam) {
+          $locationText.text($(this).text());
+          $locationText.removeClass('placeholder');
+          $(this).addClass('selected');
+        }
+      });
     });
   } else {
-    locationText.classList.add('placeholder');
+    $locationText.addClass('placeholder');
   }
 
   // Toggle location dropdown
-  locationInput.addEventListener('click', function(e) {
+  $locationInput.on('click', function(e) {
     e.stopPropagation();
-    locationDropdown.classList.toggle('active');
+    $locationDropdown.toggleClass('active');
   });
 
   // Handle parent region toggle
-  parentItems.forEach(parentItem => {
-    const toggle = parentItem.querySelector('.ps-form-dropdown-item-toggle');
-    const subitems = parentItem.querySelectorAll('.ps-form-dropdown-subitem:not(.ps-form-dropdown-subitem--empty)');
+  $parentItems.each(function() {
+    const $parentItem = $(this);
+    const $toggle = $parentItem.find('.ps-form-dropdown-item-toggle');
+    const $subitems = $parentItem.find('.ps-form-dropdown-subitem:not(.ps-form-dropdown-subitem--empty)');
 
     // Toggle sublist on parent click
-    toggle.addEventListener('click', function(e) {
+    $toggle.on('click', function(e) {
       e.stopPropagation();
 
       // Close other sublists
-      parentItems.forEach(item => {
-        if (item !== parentItem) {
-          item.classList.remove('active');
-          const itemToggle = item.querySelector('.ps-form-dropdown-item-toggle');
-          itemToggle.textContent = itemToggle.textContent.replace('-', '+');
+      $parentItems.each(function() {
+        if (!$(this).is($parentItem)) {
+          $(this).removeClass('active');
+          const $itemToggle = $(this).find('.ps-form-dropdown-item-toggle');
+          $itemToggle.text($itemToggle.text().replace('-', '+'));
         }
       });
 
       // Toggle current sublist
-      parentItem.classList.toggle('active');
+      $parentItem.toggleClass('active');
 
       // Change + to - when expanded
-      if (parentItem.classList.contains('active')) {
-        toggle.textContent = toggle.textContent.replace('+', '-');
+      if ($parentItem.hasClass('active')) {
+        $toggle.text($toggle.text().replace('+', '-'));
       } else {
-        toggle.textContent = toggle.textContent.replace('-', '+');
+        $toggle.text($toggle.text().replace('-', '+'));
       }
     });
 
     // Handle subitem selection
-    subitems.forEach(subitem => {
-      subitem.addEventListener('click', function(e) {
-        e.stopPropagation();
+    $subitems.on('click', function(e) {
+      e.stopPropagation();
 
-        // Remove selection from all subitems
-        locationDropdown.querySelectorAll('.ps-form-dropdown-subitem').forEach(item => {
-          item.classList.remove('selected');
-        });
+      // Remove selection from all subitems
+      $locationDropdown.find('.ps-form-dropdown-subitem').removeClass('selected');
 
-        // Add selection to clicked subitem
-        this.classList.add('selected');
-        locationText.textContent = this.textContent;
-        locationText.classList.remove('placeholder');
-        locationDropdown.classList.remove('active');
+      // Add selection to clicked subitem
+      $(this).addClass('selected');
+      $locationText.text($(this).text());
+      $locationText.removeClass('placeholder');
+      $locationDropdown.removeClass('active');
 
-        // Reset all parent items
-        parentItems.forEach(item => {
-          const itemToggle = item.querySelector('.ps-form-dropdown-item-toggle');
-          item.classList.remove('active');
-          itemToggle.textContent = itemToggle.textContent.replace('-', '+');
-        });
+      // Reset all parent items
+      $parentItems.each(function() {
+        const $itemToggle = $(this).find('.ps-form-dropdown-item-toggle');
+        $(this).removeClass('active');
+        $itemToggle.text($itemToggle.text().replace('-', '+'));
       });
     });
   });
 
   // Close dropdowns when clicking outside
-  document.addEventListener('click', function(e) {
-    if (!serviceDropdown.contains(e.target)) {
-      serviceDropdown.classList.remove('active');
+  $(document).on('click', function(e) {
+    if (!$serviceDropdown.is(e.target) && $serviceDropdown.has(e.target).length === 0) {
+      $serviceDropdown.removeClass('active');
     }
-    if (!locationDropdown.contains(e.target)) {
-      locationDropdown.classList.remove('active');
+    if (!$locationDropdown.is(e.target) && $locationDropdown.has(e.target).length === 0) {
+      $locationDropdown.removeClass('active');
       // Reset all toggles
-      parentItems.forEach(item => {
-        const toggle = item.querySelector('.ps-form-dropdown-item-toggle');
-        item.classList.remove('active');
-        toggle.textContent = toggle.textContent.replace('-', '+');
+      $parentItems.each(function() {
+        const $toggle = $(this).find('.ps-form-dropdown-item-toggle');
+        $(this).removeClass('active');
+        $toggle.text($toggle.text().replace('-', '+'));
       });
     }
   });
 
   // Calendar Popup
-  const dateInput = document.querySelector('.ps-form-date-input');
-  const wofDateInput = document.querySelector('.ps-form-wof-date-input');
+  const $dateInput = $('.ps-form-date-input');
+  const $wofDateInput = $('.ps-form-wof-date-input');
+  if (!$dateInput.length) return;
+
   let activeCalendarInput = null;
 
   // Create calendar popup
-  const calendarOverlay = document.createElement('div');
-  calendarOverlay.className = 'calendar-overlay';
-  document.body.appendChild(calendarOverlay);
+  const $calendarOverlay = $('<div class="calendar-overlay"></div>');
+  $('body').append($calendarOverlay);
 
-  const calendarPopup = document.createElement('div');
-  calendarPopup.className = 'calendar-popup';
-  calendarPopup.innerHTML = `
-    <div class="calendar-header">
-      <button type="button" class="calendar-prev">&lt;</button>
-      <span class="calendar-month-year"></span>
-      <button type="button" class="calendar-next">&gt;</button>
+  const $calendarPopup = $(`
+    <div class="calendar-popup">
+      <div class="calendar-header">
+        <button type="button" class="calendar-prev">&lt;</button>
+        <span class="calendar-month-year"></span>
+        <button type="button" class="calendar-next">&gt;</button>
+      </div>
+      <div class="calendar-weekdays">
+        <div class="calendar-weekday">Sun</div>
+        <div class="calendar-weekday">Mon</div>
+        <div class="calendar-weekday">Tue</div>
+        <div class="calendar-weekday">Wed</div>
+        <div class="calendar-weekday">Thu</div>
+        <div class="calendar-weekday">Fri</div>
+        <div class="calendar-weekday">Sat</div>
+      </div>
+      <div class="calendar-days"></div>
     </div>
-    <div class="calendar-weekdays">
-      <div class="calendar-weekday">Sun</div>
-      <div class="calendar-weekday">Mon</div>
-      <div class="calendar-weekday">Tue</div>
-      <div class="calendar-weekday">Wed</div>
-      <div class="calendar-weekday">Thu</div>
-      <div class="calendar-weekday">Fri</div>
-      <div class="calendar-weekday">Sat</div>
-    </div>
-    <div class="calendar-days"></div>
-  `;
-  document.body.appendChild(calendarPopup);
+  `);
+  $('body').append($calendarPopup);
 
   let currentDate = new Date();
   let selectedDate = null;
@@ -231,149 +233,130 @@ document.addEventListener('DOMContentLoaded', function() {
     const year = date.getFullYear();
     const month = date.getMonth();
 
-    const monthYear = calendarPopup.querySelector('.calendar-month-year');
-    monthYear.textContent = `${date.toLocaleString('default', { month: 'long' })} ${year}`;
+    $calendarPopup.find('.calendar-month-year').text(`${date.toLocaleString('default', { month: 'long' })} ${year}`);
 
     const firstDay = new Date(year, month, 1).getDay();
     const lastDate = new Date(year, month + 1, 0).getDate();
 
-    const daysContainer = calendarPopup.querySelector('.calendar-days');
-    daysContainer.innerHTML = '';
+    const $daysContainer = $calendarPopup.find('.calendar-days');
+    $daysContainer.empty();
 
     // Add empty cells for days before first day of month
     for (let i = 0; i < firstDay; i++) {
-      const emptyDay = document.createElement('div');
-      emptyDay.className = 'calendar-day disabled';
-      daysContainer.appendChild(emptyDay);
+      $daysContainer.append('<div class="calendar-day disabled"></div>');
     }
 
     // Add days of month
     const today = new Date();
     for (let day = 1; day <= lastDate; day++) {
-      const dayElement = document.createElement('div');
-      dayElement.className = 'calendar-day';
-      dayElement.textContent = day;
-
-      const currentDateObj = new Date(year, month, day);
+      const $dayElement = $('<div class="calendar-day"></div>').text(day);
 
       // Mark today
       if (day === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
-        dayElement.classList.add('today');
+        $dayElement.addClass('today');
       }
 
       // Mark selected date
       if (selectedDate && day === selectedDate.getDate() && month === selectedDate.getMonth() && year === selectedDate.getFullYear()) {
-        dayElement.classList.add('selected');
+        $dayElement.addClass('selected');
       }
 
-      dayElement.addEventListener('click', function() {
+      $dayElement.on('click', function() {
         selectedDate = new Date(year, month, day);
         if (activeCalendarInput) {
           const formattedDate = `${day.toString().padStart(2, '0')}/${(month + 1).toString().padStart(2, '0')}/${year}`;
-          activeCalendarInput.value = formattedDate;
+          activeCalendarInput.val(formattedDate);
         }
         closeCalendar();
       });
 
-      daysContainer.appendChild(dayElement);
+      $daysContainer.append($dayElement);
     }
   }
 
-  function openCalendar(input) {
-    activeCalendarInput = input;
+  function openCalendar($input) {
+    activeCalendarInput = $input;
     selectedDate = null;
     currentDate = new Date();
     renderCalendar(currentDate);
-    calendarOverlay.classList.add('active');
-    calendarPopup.classList.add('active');
+    $calendarOverlay.addClass('active');
+    $calendarPopup.addClass('active');
   }
 
   function closeCalendar() {
-    calendarOverlay.classList.remove('active');
-    calendarPopup.classList.remove('active');
+    $calendarOverlay.removeClass('active');
+    $calendarPopup.removeClass('active');
     activeCalendarInput = null;
   }
 
   // Calendar navigation
-  calendarPopup.querySelector('.calendar-prev').addEventListener('click', function() {
+  $calendarPopup.find('.calendar-prev').on('click', function() {
     currentDate.setMonth(currentDate.getMonth() - 1);
     renderCalendar(currentDate);
   });
 
-  calendarPopup.querySelector('.calendar-next').addEventListener('click', function() {
+  $calendarPopup.find('.calendar-next').on('click', function() {
     currentDate.setMonth(currentDate.getMonth() + 1);
     renderCalendar(currentDate);
   });
 
   // Open calendar on date input click
-  dateInput.addEventListener('click', function() {
-    openCalendar(this);
+  $dateInput.on('click', function() {
+    openCalendar($(this));
   });
 
-  wofDateInput.addEventListener('click', function() {
-    openCalendar(this);
+  $wofDateInput.on('click', function() {
+    openCalendar($(this));
   });
 
   // Close calendar when clicking overlay
-  calendarOverlay.addEventListener('click', closeCalendar);
+  $calendarOverlay.on('click', closeCalendar);
 
   // Time Picker
-  const timeInput = document.querySelector('.ps-form-time-input');
+  const $timeInput = $('.ps-form-time-input');
+  if (!$timeInput.length) return;
 
   // Create time picker popup
-  const timeOverlay = document.createElement('div');
-  timeOverlay.className = 'calendar-overlay';
-  document.body.appendChild(timeOverlay);
+  const $timeOverlay = $('<div class="calendar-overlay"></div>');
+  $('body').append($timeOverlay);
 
-  const timePickerPopup = document.createElement('div');
-  timePickerPopup.className = 'time-picker-popup';
-  timePickerPopup.innerHTML = `
-    <div class="time-picker-header">Select Time</div>
-    <div class="time-picker-content">
-      <div class="time-picker-column">
-        <div class="time-picker-label">Hour</div>
-        <div class="time-picker-select hour-select"></div>
+  const $timePickerPopup = $(`
+    <div class="time-picker-popup">
+      <div class="time-picker-header">Select Time</div>
+      <div class="time-picker-content">
+        <div class="time-picker-column">
+          <div class="time-picker-label">Hour</div>
+          <div class="time-picker-select hour-select"></div>
+        </div>
+        <div class="time-picker-column">
+          <div class="time-picker-label">Minute</div>
+          <div class="time-picker-select minute-select"></div>
+        </div>
+        <div class="time-picker-column">
+          <div class="time-picker-label">Period</div>
+          <div class="time-picker-select period-select"></div>
+        </div>
       </div>
-      <div class="time-picker-column">
-        <div class="time-picker-label">Minute</div>
-        <div class="time-picker-select minute-select"></div>
-      </div>
-      <div class="time-picker-column">
-        <div class="time-picker-label">Period</div>
-        <div class="time-picker-select period-select"></div>
-      </div>
+      <button type="button" class="time-picker-confirm">Confirm</button>
     </div>
-    <button type="button" class="time-picker-confirm">Confirm</button>
-  `;
-  document.body.appendChild(timePickerPopup);
+  `);
+  $('body').append($timePickerPopup);
 
   // Populate time options
-  const hourSelect = timePickerPopup.querySelector('.hour-select');
-  const minuteSelect = timePickerPopup.querySelector('.minute-select');
-  const periodSelect = timePickerPopup.querySelector('.period-select');
+  const $hourSelect = $timePickerPopup.find('.hour-select');
+  const $minuteSelect = $timePickerPopup.find('.minute-select');
+  const $periodSelect = $timePickerPopup.find('.period-select');
 
   for (let i = 1; i <= 12; i++) {
-    const hourOption = document.createElement('div');
-    hourOption.className = 'time-option';
-    hourOption.textContent = i.toString().padStart(2, '0');
-    hourOption.dataset.value = i;
-    hourSelect.appendChild(hourOption);
+    $hourSelect.append($('<div class="time-option"></div>').text(i.toString().padStart(2, '0')).attr('data-value', i));
   }
 
   for (let i = 0; i < 60; i += 15) {
-    const minuteOption = document.createElement('div');
-    minuteOption.className = 'time-option';
-    minuteOption.textContent = i.toString().padStart(2, '0');
-    minuteOption.dataset.value = i;
-    minuteSelect.appendChild(minuteOption);
+    $minuteSelect.append($('<div class="time-option"></div>').text(i.toString().padStart(2, '0')).attr('data-value', i));
   }
 
   ['AM', 'PM'].forEach(period => {
-    const periodOption = document.createElement('div');
-    periodOption.className = 'time-option';
-    periodOption.textContent = period;
-    periodOption.dataset.value = period;
-    periodSelect.appendChild(periodOption);
+    $periodSelect.append($('<div class="time-option"></div>').text(period).attr('data-value', period));
   });
 
   let selectedHour = null;
@@ -381,59 +364,52 @@ document.addEventListener('DOMContentLoaded', function() {
   let selectedPeriod = null;
 
   // Handle time selection
-  hourSelect.querySelectorAll('.time-option').forEach(option => {
-    option.addEventListener('click', function() {
-      hourSelect.querySelectorAll('.time-option').forEach(opt => opt.classList.remove('selected'));
-      this.classList.add('selected');
-      selectedHour = this.dataset.value;
-    });
+  $hourSelect.find('.time-option').on('click', function() {
+    $hourSelect.find('.time-option').removeClass('selected');
+    $(this).addClass('selected');
+    selectedHour = $(this).attr('data-value');
   });
 
-  minuteSelect.querySelectorAll('.time-option').forEach(option => {
-    option.addEventListener('click', function() {
-      minuteSelect.querySelectorAll('.time-option').forEach(opt => opt.classList.remove('selected'));
-      this.classList.add('selected');
-      selectedMinute = this.dataset.value;
-    });
+  $minuteSelect.find('.time-option').on('click', function() {
+    $minuteSelect.find('.time-option').removeClass('selected');
+    $(this).addClass('selected');
+    selectedMinute = $(this).attr('data-value');
   });
 
-  periodSelect.querySelectorAll('.time-option').forEach(option => {
-    option.addEventListener('click', function() {
-      periodSelect.querySelectorAll('.time-option').forEach(opt => opt.classList.remove('selected'));
-      this.classList.add('selected');
-      selectedPeriod = this.dataset.value;
-    });
+  $periodSelect.find('.time-option').on('click', function() {
+    $periodSelect.find('.time-option').removeClass('selected');
+    $(this).addClass('selected');
+    selectedPeriod = $(this).attr('data-value');
   });
 
   function openTimePicker() {
-    timeOverlay.classList.add('active');
-    timePickerPopup.classList.add('active');
+    $timeOverlay.addClass('active');
+    $timePickerPopup.addClass('active');
   }
 
   function closeTimePicker() {
-    timeOverlay.classList.remove('active');
-    timePickerPopup.classList.remove('active');
+    $timeOverlay.removeClass('active');
+    $timePickerPopup.removeClass('active');
   }
 
-  timeInput.addEventListener('click', function() {
+  $timeInput.on('click', function() {
     openTimePicker();
   });
 
-  timePickerPopup.querySelector('.time-picker-confirm').addEventListener('click', function() {
+  $timePickerPopup.find('.time-picker-confirm').on('click', function() {
     if (selectedHour && selectedMinute !== null && selectedPeriod) {
       const timeString = `${selectedHour.toString().padStart(2, '0')}:${selectedMinute.toString().padStart(2, '0')} ${selectedPeriod}`;
-      timeInput.value = timeString;
+      $timeInput.val(timeString);
       closeTimePicker();
     } else {
       alert('Please select hour, minute, and period');
     }
   });
 
-  timeOverlay.addEventListener('click', closeTimePicker);
+  $timeOverlay.on('click', closeTimePicker);
 
   // Form submission
-  const form = document.querySelector('.booking-form');
-  form.addEventListener('submit', function(e) {
+  $('.booking-form').on('submit', function(e) {
     e.preventDefault();
     alert('Form submitted successfully!');
     // Here you can add actual form submission logic
