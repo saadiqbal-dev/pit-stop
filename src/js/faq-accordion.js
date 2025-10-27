@@ -1,27 +1,6 @@
 // FAQ Accordion Functionality - Dynamic from JSON
 $(document).ready(function() {
-  // Try to load from embedded JSON first, then fall back to external file
-  const $embeddedData = $('#faq-data');
-
-  if ($embeddedData.length) {
-    // Load from embedded script tag
-    try {
-      const data = JSON.parse($embeddedData.text());
-      buildFaqAccordion(data);
-    } catch (e) {
-      console.error('Error parsing embedded FAQ data:', e);
-      loadFromExternalFile();
-    }
-  } else {
-    // Load from external JSON file
-    loadFromExternalFile();
-  }
-});
-
-/**
- * Load FAQ data from external JSON file
- */
-function loadFromExternalFile() {
+  // Load FAQ data from external JSON file
   $.getJSON('data/faq-data.json')
     .done(function(data) {
       buildFaqAccordion(data);
@@ -30,7 +9,7 @@ function loadFromExternalFile() {
       console.error('Error loading faq-data.json:', textStatus, error);
       console.error('Make sure the file exists at: data/faq-data.json');
     });
-}
+});
 
 /**
  * Build FAQ accordion from data

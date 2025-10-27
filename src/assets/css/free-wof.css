@@ -440,12 +440,12 @@
   }
 
   .free-wof-video-wrapper {
-    width: 720px;
-    height: 405px;
+    width: 560px;
+    height: 310px;
   }
 
   .free-wof-video-content {
-    padding-left: 130px;
+    padding-left: 70px;
     gap: 50px;
   }
 
