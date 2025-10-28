@@ -11,6 +11,7 @@ class HeaderNavigation {
     this.activeDropdown = null;
     this.isTouchDevice = "ontouchstart" in window;
     this.overlay = document.querySelector(".ps-header__dropdown-overlay");
+    this.closeTimeouts = new Map();
 
     this.init();
   }
@@ -31,11 +32,39 @@ class HeaderNavigation {
         }
       });
 
-      item.addEventListener("mouseleave", () => {
+      item.addEventListener("mouseleave", (e) => {
         if (!this.isTouchDevice) {
-          this.closeDropdown(item);
+          // Delay closing to allow mouse to move to dropdown
+          const timeout = setTimeout(() => {
+            this.closeDropdown(item);
+          }, 150);
+          this.closeTimeouts.set(item, timeout);
         }
       });
+
+      // Keep dropdown open when hovering over the dropdown menu itself
+      if (dropdownMenu) {
+        dropdownMenu.addEventListener("mouseenter", () => {
+          if (!this.isTouchDevice) {
+            // Cancel any pending close for this item
+            const timeout = this.closeTimeouts.get(item);
+            if (timeout) {
+              clearTimeout(timeout);
+              this.closeTimeouts.delete(item);
+            }
+            this.openDropdown(item);
+          }
+        });
+
+        dropdownMenu.addEventListener("mouseleave", () => {
+          if (!this.isTouchDevice) {
+            const timeout = setTimeout(() => {
+              this.closeDropdown(item);
+            }, 150);
+            this.closeTimeouts.set(item, timeout);
+          }
+        });
+      }
 
       // Click handling for entire nav item area
       item.addEventListener("click", (e) => {
@@ -84,7 +113,8 @@ class HeaderNavigation {
 
     // Close all dropdowns when clicking outside
     document.addEventListener("click", (e) => {
-      if (!e.target.closest(".ps-header__nav-item--dropdown")) {
+      if (!e.target.closest(".ps-header__nav-item--dropdown") &&
+          !e.target.closest(".ps-header__dropdown-menu")) {
         this.closeAllDropdowns();
       }
     });
@@ -93,23 +123,6 @@ class HeaderNavigation {
     window.addEventListener("resize", () => {
       this.closeAllDropdowns();
     });
-
-    // Close dropdowns on scroll
-    window.addEventListener(
-      "scroll",
-      () => {
-        this.closeAllDropdowns();
-      },
-      true
-    );
-
-    document.addEventListener(
-      "scroll",
-      () => {
-        this.closeAllDropdowns();
-      },
-      true
-    );
 
     // Close dropdowns when clicking overlay
     if (this.overlay) {
@@ -168,6 +181,13 @@ class HeaderNavigation {
   }
 
   closeDropdown(item) {
+    // Clear any pending timeout for this item
+    const timeout = this.closeTimeouts.get(item);
+    if (timeout) {
+      clearTimeout(timeout);
+      this.closeTimeouts.delete(item);
+    }
+
     item.classList.remove("is-active");
     if (this.activeDropdown === item) {
       this.activeDropdown = null;
