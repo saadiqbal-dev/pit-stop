@@ -79,17 +79,17 @@ function initFaqAccordion() {
     $faqItems.each(function() {
       if (!$(this).is($faqItem)) {
         $(this).removeClass('active');
-        $(this).find('.faq-answer').slideUp(400);
+        $(this).find('.faq-answer').slideUp(500, 'swing');
       }
     });
 
     // Toggle current FAQ item
     if (isActive) {
       $faqItem.removeClass('active');
-      $faqAnswer.slideUp(400);
+      $faqAnswer.slideUp(500, 'swing');
     } else {
       $faqItem.addClass('active');
-      $faqAnswer.slideDown(400);
+      $faqAnswer.slideDown(500, 'swing');
     }
   });
 }
