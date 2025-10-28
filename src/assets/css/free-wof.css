@@ -358,6 +358,24 @@
 
 /* Responsive breakpoints */
 
+@media (max-width: 1800px) {
+  .free-wof-video-wrapper {
+    position: relative;
+    width: 800px;
+    height: 450px;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 1536px) {
+  .free-wof-video-wrapper {
+    position: relative;
+    width: 670px;
+    height: 370px;
+    flex-shrink: 0;
+  }
+}
+
 /* 1440px - Laptop Large */
 @media (max-width: 1440px) {
   .free-wof-hero-content {
@@ -501,7 +519,9 @@
   }
 
   .free-wof-video-container {
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
+    display: flex;
+    flex-direction: column-reverse;
     padding: 70px 60px;
     gap: 40px;
   }
