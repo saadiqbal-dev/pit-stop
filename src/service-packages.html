@@ -487,89 +487,53 @@
           <h2>Choose Your Service Package</h2>
           <div class="toggle-wrapper">
             <div class="package-container">
-              <div
-                class="package-header"
-                data-color="#ae2556"
-                data-slug="express"
-                data-price="249"
-                data-summary='["Oil & Filter Change", "<strong>15</strong> point check", "Reset Service Light"]'
-                data-checks='["Cambelt due date", "Washers & wipers", "Coolant level", "Battery", "Check horn", "Power steering fluid", "Brake fluid", "Transmission oil level", "Air filter", "All belts (excluding cambelt)", "Brake pads, rotors (visual)", "Brake hoses & lines", "CV boots & joints", "Exterior lights", "Tyre pressure"]'
-              >
+              <!-- Express Package -->
+              <div class="package-header" data-bs-toggle="tab" data-bs-target="#express-tab" data-color="#ae2556" data-slug="express" data-price="249">
                 <img src="assets/img/services/express.svg" />
                 <div class="package-header__text">
                   <p>from</p>
                   <h4>$249</h4>
                 </div>
               </div>
-              <div
-                class="package-header"
-                data-color="#0EA7AD"
-                data-slug="extensive"
-                data-price="299"
-                data-summary='["Oil & Filter Change", "<strong>25</strong> point check", "Reset Service Light"]'
-                data-plus='["Computer & Systems Health Check", "Essential Fluid Top Up", "Treat Tyres & Lube Door Hinges", "Check Spark Plugs (at required interval)", "Road Test Vehicle", "Check Battery Pack Ventilation Filter (Hybrid only)"]'
-                data-checks='["Cambelt due date", "Washers & wipers", "Coolant level", "Battery check", "Horn check", "Power steering fluid", "Brake fluid", "Transmission oil level", "Air filter", "All belts (excl. cambelt)", "Brake pads, rotors & drums", "Brake hoses & lines", "CV boots & joints", "Exterior lights", "Tyre pressures", "Clutch fluid", "Differential oil level", "Fuel filter *", "Cabin filter *", "Steering components", "Suspension check", "Exhaust system condition", "Front & rear wheel bearings", "Dash warning lights"]'
-              >
+
+              <!-- Extensive Package -->
+              <div class="package-header active" data-bs-toggle="tab" data-bs-target="#extensive-tab" data-color="#0EA7AD" data-slug="extensive" data-price="299">
                 <img src="assets/img/services/extensive.svg" />
                 <div class="package-header__text">
                   <p>from</p>
                   <h4>$299</h4>
                 </div>
               </div>
-              <div
-                class="package-header"
-                data-color="#D19C2D"
-                data-slug="elite"
-                data-price="429"
-                data-summary='["Oil & Filter Change", "<strong>25</strong> point check", "Reset Service Light"]'
-                data-plus='["Computer & Systems Health Check", "Essential Fluid Top Up", "Treat Tyres & Lube Door Hinges", "Check Spark Plugs (at required interval)", "Road Test Vehicle", "Check Battery Pack Ventilation Filter (Hybrid only)", "Replace Air Filter and Cabin Filter", "Flush Brake Fluid"]'
-                data-checks='["Cambelt due date", "Washers & wipers", "Coolant level", "Battery check", "Horn check", "Power steering fluid", "Brake fluid", "Transmission oil level", "Air filter", "All belts (excl. cambelt)", "Brake pads, rotors & drums", "Brake hoses & lines", "CV boots & joints", "Exterior lights", "Tyre pressures", "Clutch fluid", "Differential oil level", "Fuel filter *", "Cabin filter *", "Steering components", "Suspension check", "Exhaust system condition", "Front & rear wheel bearings", "Dash warning lights"]'
-              >
+
+              <!-- Elite Package -->
+              <div class="package-header" data-bs-toggle="tab" data-bs-target="#elite-tab" data-color="#D19C2D" data-slug="elite" data-price="429">
                 <img src="assets/img/services/elite.svg" />
                 <div class="package-header__text">
                   <p>from</p>
                   <h4>$429</h4>
                 </div>
               </div>
-              <div
-                class="package-header"
-                data-color="#4B276C"
-                data-slug="euro-cars"
-                data-price="349"
-                data-summary='["Euro Car Service", "Specialist check", "Reset Service Light"]'
-                data-plus='["Specialized service for European vehicles", "Trained technicians"]'
-                data-checks='["Cambelt due date", "Brake fluid"]'
-              >
+
+              <!-- Euro Cars Package -->
+              <div class="package-header" data-bs-toggle="tab" data-bs-target="#euro-tab" data-color="#4B276C" data-slug="euro-cars" data-price="349">
                 <img src="assets/img/services/euro-cars.svg" />
                 <div class="package-header__text">
                   <p>from</p>
                   <h4>$349</h4>
                 </div>
               </div>
-              <div
-                class="package-header"
-                data-color="#118ACB"
-                data-slug="vans"
-                data-price="389"
-                data-summary='["Van Service", "Heavy duty check", "Reset Service Light"]'
-                data-plus='["Commercial vehicle service", "Extended warranty coverage"]'
-                data-checks='["Cambelt due date", "Suspension check"]'
-              >
+
+              <!-- Vans Package -->
+              <div class="package-header" data-bs-toggle="tab" data-bs-target="#vans-tab" data-color="#118ACB" data-slug="vans" data-price="389">
                 <img src="assets/img/services/vans.svg" />
                 <div class="package-header__text">
                   <p>from</p>
                   <h4>$389</h4>
                 </div>
               </div>
-              <div
-                class="package-header"
-                data-color="#0D4E98"
-                data-slug="ev"
-                data-price="169"
-                data-summary='["EV Service", "Electric check", "Battery diagnostic"]'
-                data-plus='["Electric vehicle specialists", "Certified EV technicians"]'
-                data-checks='["Battery health", "Charging system"]'
-              >
+
+              <!-- EV Package -->
+              <div class="package-header" data-bs-toggle="tab" data-bs-target="#ev-tab" data-color="#0D4E98" data-slug="ev" data-price="169">
                 <img src="assets/img/services/ev.svg" />
                 <div class="package-header__text">
                   <p>from</p>
@@ -577,41 +541,255 @@
                 </div>
               </div>
             </div>
-            <div class="package-content">
-              <div class="package-features">
-                <div class="package-features__summary">
-                  <div>
-                    <h4>Service Summary:</h4>
-                    <ul>
-                      <li>Oil & Filter Change</li>
-                      <li><strong>15</strong> point check</li>
-                      <li>Reset Service Light</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <div class="package-plus-section" style="display: none">
-                      <h4>Plus:</h4>
-                      <ul></ul>
+
+            <div class="package-content tab-content">
+              <!-- Express Tab Content -->
+              <div class="tab-pane fade" id="express-tab">
+                <div class="package-features">
+                  <div class="package-features__summary">
+                    <div style="background-color: #ae2556;">
+                      <h4>Service Summary:</h4>
+                      <ul>
+                        <li>Oil & Filter Change</li>
+                        <li><strong>15</strong> point check</li>
+                        <li>Reset Service Light</li>
+                      </ul>
                     </div>
-                    <h4>Checks carried out with this service:</h4>
-                    <ul>
-                      <li></li>
-                    </ul>
-                    <p>* where accessible or applicable</p>
+                    <div>
+                      <h4>Checks carried out with this service:</h4>
+                      <ul>
+                        <li>Cambelt due date</li>
+                        <li>Washers & wipers</li>
+                        <li>Coolant level</li>
+                        <li>Battery</li>
+                        <li>Check horn</li>
+                        <li>Power steering fluid</li>
+                        <li>Brake fluid</li>
+                        <li>Transmission oil level</li>
+                        <li>Air filter</li>
+                        <li>All belts (excluding cambelt)</li>
+                        <li>Brake pads, rotors (visual)</li>
+                        <li>Brake hoses & lines</li>
+                        <li>CV boots & joints</li>
+                        <li>Exterior lights</li>
+                        <li>Tyre pressure</li>
+                      </ul>
+                      <p>* where accessible or applicable</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Extensive Tab Content -->
+              <div class="tab-pane fade show active" id="extensive-tab">
+                <div class="package-features">
+                  <div class="package-features__summary">
+                    <div style="background-color: #0EA7AD;">
+                      <h4>Service Summary:</h4>
+                      <ul>
+                        <li>Oil & Filter Change</li>
+                        <li><strong>25</strong> point check</li>
+                        <li>Reset Service Light</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4>Plus:</h4>
+                      <ul>
+                        <li>Computer & Systems Health Check</li>
+                        <li>Essential Fluid Top Up</li>
+                        <li>Treat Tyres & Lube Door Hinges</li>
+                        <li>Check Spark Plugs (at required interval)</li>
+                        <li>Road Test Vehicle</li>
+                        <li>Check Battery Pack Ventilation Filter (Hybrid only)</li>
+                      </ul>
+                      <h4>Checks carried out with this service:</h4>
+                      <ul>
+                        <li>Cambelt due date</li>
+                        <li>Washers & wipers</li>
+                        <li>Coolant level</li>
+                        <li>Battery check</li>
+                        <li>Horn check</li>
+                        <li>Power steering fluid</li>
+                        <li>Brake fluid</li>
+                        <li>Transmission oil level</li>
+                        <li>Air filter</li>
+                        <li>All belts (excl. cambelt)</li>
+                        <li>Brake pads, rotors & drums</li>
+                        <li>Brake hoses & lines</li>
+                        <li>CV boots & joints</li>
+                        <li>Exterior lights</li>
+                        <li>Tyre pressures</li>
+                        <li>Clutch fluid</li>
+                        <li>Differential oil level</li>
+                        <li>Fuel filter *</li>
+                        <li>Cabin filter *</li>
+                        <li>Steering components</li>
+                        <li>Suspension check</li>
+                        <li>Exhaust system condition</li>
+                        <li>Front & rear wheel bearings</li>
+                        <li>Dash warning lights</li>
+                      </ul>
+                      <p>* where accessible or applicable</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Elite Tab Content -->
+              <div class="tab-pane fade" id="elite-tab">
+                <div class="package-features">
+                  <div class="package-features__summary">
+                    <div style="background-color: #D19C2D;">
+                      <h4>Service Summary:</h4>
+                      <ul>
+                        <li>Oil & Filter Change</li>
+                        <li><strong>25</strong> point check</li>
+                        <li>Reset Service Light</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4>Plus:</h4>
+                      <ul>
+                        <li>Computer & Systems Health Check</li>
+                        <li>Essential Fluid Top Up</li>
+                        <li>Treat Tyres & Lube Door Hinges</li>
+                        <li>Check Spark Plugs (at required interval)</li>
+                        <li>Road Test Vehicle</li>
+                        <li>Check Battery Pack Ventilation Filter (Hybrid only)</li>
+                        <li>Replace Air Filter and Cabin Filter</li>
+                        <li>Flush Brake Fluid</li>
+                      </ul>
+                      <h4>Checks carried out with this service:</h4>
+                      <ul>
+                        <li>Cambelt due date</li>
+                        <li>Washers & wipers</li>
+                        <li>Coolant level</li>
+                        <li>Battery check</li>
+                        <li>Horn check</li>
+                        <li>Power steering fluid</li>
+                        <li>Brake fluid</li>
+                        <li>Transmission oil level</li>
+                        <li>Air filter</li>
+                        <li>All belts (excl. cambelt)</li>
+                        <li>Brake pads, rotors & drums</li>
+                        <li>Brake hoses & lines</li>
+                        <li>CV boots & joints</li>
+                        <li>Exterior lights</li>
+                        <li>Tyre pressures</li>
+                        <li>Clutch fluid</li>
+                        <li>Differential oil level</li>
+                        <li>Fuel filter *</li>
+                        <li>Cabin filter *</li>
+                        <li>Steering components</li>
+                        <li>Suspension check</li>
+                        <li>Exhaust system condition</li>
+                        <li>Front & rear wheel bearings</li>
+                        <li>Dash warning lights</li>
+                      </ul>
+                      <p>* where accessible or applicable</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Euro Cars Tab Content -->
+              <div class="tab-pane fade" id="euro-tab">
+                <div class="package-features">
+                  <div class="package-features__summary">
+                    <div style="background-color: #4B276C;">
+                      <h4>Service Summary:</h4>
+                      <ul>
+                        <li>Euro Car Service</li>
+                        <li>Specialist check</li>
+                        <li>Reset Service Light</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4>Plus:</h4>
+                      <ul>
+                        <li>Specialized service for European vehicles</li>
+                        <li>Trained technicians</li>
+                      </ul>
+                      <h4>Checks carried out with this service:</h4>
+                      <ul>
+                        <li>Cambelt due date</li>
+                        <li>Brake fluid</li>
+                      </ul>
+                      <p>* where accessible or applicable</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Vans Tab Content -->
+              <div class="tab-pane fade" id="vans-tab">
+                <div class="package-features">
+                  <div class="package-features__summary">
+                    <div style="background-color: #118ACB;">
+                      <h4>Service Summary:</h4>
+                      <ul>
+                        <li>Van Service</li>
+                        <li>Heavy duty check</li>
+                        <li>Reset Service Light</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4>Plus:</h4>
+                      <ul>
+                        <li>Commercial vehicle service</li>
+                        <li>Extended warranty coverage</li>
+                      </ul>
+                      <h4>Checks carried out with this service:</h4>
+                      <ul>
+                        <li>Cambelt due date</li>
+                        <li>Suspension check</li>
+                      </ul>
+                      <p>* where accessible or applicable</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- EV Tab Content -->
+              <div class="tab-pane fade" id="ev-tab">
+                <div class="package-features">
+                  <div class="package-features__summary">
+                    <div style="background-color: #0D4E98;">
+                      <h4>Service Summary:</h4>
+                      <ul>
+                        <li>EV Service</li>
+                        <li>Electric check</li>
+                        <li>Battery diagnostic</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4>Plus:</h4>
+                      <ul>
+                        <li>Electric vehicle specialists</li>
+                        <li>Certified EV technicians</li>
+                      </ul>
+                      <h4>Checks carried out with this service:</h4>
+                      <ul>
+                        <li>Battery health</li>
+                        <li>Charging system</li>
+                      </ul>
+                      <p>* where accessible or applicable</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+
             <div class="package-cta">
               <div class="package-cta__buttons">
                 <div class="ps-black-divider"></div>
                 <div class="package-header__text">
                   <p>from</p>
-                  <h4>$249</h4>
+                  <h4 id="cta-price">$299</h4>
                 </div>
                 <div>
-                  <a href="booking.html" class="long-red-button">Book Now</a>
-                  <a href="#" class="long-outline-button">Find Out More</a>
+                  <a href="booking.html" class="long-red-button" id="cta-book-now">Book Now</a>
+                  <a href="#" class="long-outline-button" id="cta-find-more">Find Out More</a>
                 </div>
               </div>
               <div>
