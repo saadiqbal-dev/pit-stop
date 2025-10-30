@@ -3119,6 +3119,31 @@ a.mobile-cta__button:hover {
   gap: 15px;
 }
 
+/* Package-specific color classes */
+.package-summary--express {
+  background-color: #ae2556 !important;
+}
+
+.package-summary--extensive {
+  background-color: #0EA7AD !important;
+}
+
+.package-summary--elite {
+  background-color: #D19C2D !important;
+}
+
+.package-summary--euro {
+  background-color: #4B276C !important;
+}
+
+.package-summary--vans {
+  background-color: #118ACB !important;
+}
+
+.package-summary--ev {
+  background-color: #0D4E98 !important;
+}
+
 .package-features__summary > div:first-child h4 {
   color: var(--color-white);
   font-family: var(--font-family-base);

@@ -89,41 +89,6 @@
           content.style.display = "flex";
           item.classList.add("active");
 
-          // Populate content dynamically (keeping old logic for mobile for now)
-          const color = header.dataset.color;
-          const summaryItems = JSON.parse(header.dataset.summary || "[]");
-          const checksItems = JSON.parse(header.dataset.checks || "[]");
-          const plusContent = header.dataset.plus || "";
-
-          const summaryList = content.querySelector(".package-features__summary > div:first-child ul");
-          const summaryColorDiv = content.querySelector(".package-features__summary > div:first-child");
-          const secondDiv = content.querySelector(".package-features__summary > div:nth-child(2)");
-          const checksList = secondDiv ? secondDiv.querySelector("h4:not(.package-plus-section h4) ~ ul") : null;
-          const plusSection = content.querySelector(".package-plus-section");
-          const plusList = plusSection ? plusSection.querySelector("ul") : null;
-
-          if (color && summaryColorDiv) {
-            summaryColorDiv.style.backgroundColor = color;
-          }
-
-          if (summaryItems.length > 0 && summaryList) {
-            summaryList.innerHTML = summaryItems.map((item) => `<li>${item}</li>`).join("");
-          }
-
-          if (plusSection && plusList) {
-            if (plusContent) {
-              const plusItems = JSON.parse(plusContent);
-              plusList.innerHTML = plusItems.map((item) => `<li>${item}</li>`).join("");
-              plusSection.style.display = "block";
-            } else {
-              plusSection.style.display = "none";
-            }
-          }
-
-          if (checksItems.length > 0 && checksList) {
-            checksList.innerHTML = checksItems.map((item) => `<li>${item}</li>`).join("");
-          }
-
           // Smooth scroll to header after opening
           const getStickyHeaderOffset = () => {
             let offset = 0;
