@@ -3051,14 +3051,19 @@ a.mobile-cta__button:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 55px;
+  gap: clamp(20px, 4vw, 55px);
   width: 100%;
   max-width: 540px;
   background: var(--color-white);
   box-shadow: 0 0 12.8px 6px rgba(0, 0, 0, 0.07);
-  padding: 31px 28px;
+  padding: clamp(15px, 2.5vw, 31px) clamp(15px, 2vw, 28px);
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.package-header img {
+  width: clamp(100px, 13vw, 200px);
+  height: auto;
 }
 
 .package-header p {
@@ -3084,7 +3089,7 @@ a.mobile-cta__button:hover {
   color: var(--color-black);
   text-align: right;
   font-family: var(--font-family-base);
-  font-size: 36px;
+  font-size: clamp(20px, 2vw, 36px);
   font-style: normal;
   margin: 0;
   padding: 0;
@@ -3125,23 +3130,23 @@ a.mobile-cta__button:hover {
 }
 
 .package-summary--extensive {
-  background-color: #0EA7AD !important;
+  background-color: #0ea7ad !important;
 }
 
 .package-summary--elite {
-  background-color: #D19C2D !important;
+  background-color: #d19c2d !important;
 }
 
 .package-summary--euro {
-  background-color: #4B276C !important;
+  background-color: #4b276c !important;
 }
 
 .package-summary--vans {
-  background-color: #118ACB !important;
+  background-color: #118acb !important;
 }
 
 .package-summary--ev {
-  background-color: #0D4E98 !important;
+  background-color: #0d4e98 !important;
 }
 
 .package-features__summary > div:first-child h4 {
@@ -4515,10 +4520,6 @@ body.search-page .search-input::placeholder {
     line-height: 42px;
   }
 
-  .package-header img {
-    width: 200px;
-  }
-
   .service-content-review {
     padding: 70px 100px;
   }
@@ -4545,9 +4546,6 @@ body.search-page .search-input::placeholder {
   }
   .package-header__text h4 {
     font-size: 36px;
-  }
-  .package-header {
-    padding: 20px;
   }
   .package-features__summary > div:first-child {
     padding: 20px;
@@ -4934,13 +4932,6 @@ body.search-page .search-input::placeholder {
     line-height: 40px;
   }
 
-  .package-header {
-    gap: 40px;
-  }
-
-  .package-header img {
-    width: 150px;
-  }
   .package-hero {
     gap: 80px;
     padding: 80px;
@@ -5331,15 +5322,6 @@ body.search-page .search-input::placeholder {
   .find-loading-text {
     font-size: 25px;
     line-height: 38px;
-  }
-
-  .package-header {
-    gap: 35px;
-    padding: 20px;
-  }
-
-  .package-header img {
-    width: 130px;
   }
 
   .service-template-content {
@@ -6326,20 +6308,6 @@ body.search-page .search-input::placeholder {
     line-height: 32px;
   }
 
-  .package-header {
-    gap: 35px;
-    padding: 20px;
-  }
-
-  .package-header img {
-    width: 130px;
-  }
-
-  .package-header__text h4 {
-    font-size: 16px;
-    line-height: 24px;
-  }
-
   .package-cta > div:first-child {
     display: flex;
     flex-direction: column;
@@ -6420,6 +6388,20 @@ body.search-page .search-input::placeholder {
   }
   .ps-header__dropdown-menu--services .ps-header__dropdown-inner {
     padding: 20px;
+  }
+}
+
+@media (max-width: 910px) {
+  .package-header {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    gap: 0px;
+    padding: 15px;
+
+    h4 {
+      font-size: 24px;
+    }
   }
 }
 
