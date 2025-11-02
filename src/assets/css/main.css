@@ -6396,6 +6396,20 @@ body.search-page .search-input::placeholder {
   }
 }
 
+@media (max-width: 1220px) {
+  .package-header {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    gap: 0px;
+    padding: 15px;
+
+    h4 {
+      font-size: 24px;
+    }
+  }
+}
+
 @media (max-width: 910px) {
   .package-header {
     flex-direction: column;
@@ -6408,7 +6422,7 @@ body.search-page .search-input::placeholder {
       font-size: 24px;
     }
   }
-  .search-overlay .search-container {
+  .search-overlay .search-input {
     max-width: 600px;
     margin-top: 100px;
   }
