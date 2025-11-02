@@ -5365,6 +5365,11 @@ body.search-page .search-input::placeholder {
     font-size: 34px;
     line-height: 42px;
   }
+
+  .search-overlay .search-container {
+    max-width: 800px;
+    margin-top: 100px;
+  }
 }
 
 /* Laptop - 1280px */
@@ -6402,6 +6407,10 @@ body.search-page .search-input::placeholder {
     h4 {
       font-size: 24px;
     }
+  }
+  .search-overlay .search-container {
+    max-width: 600px;
+    margin-top: 100px;
   }
 }
 
