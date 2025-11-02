@@ -3062,7 +3062,7 @@ a.mobile-cta__button:hover {
 }
 
 .package-header img {
-  width: clamp(100px, 13vw, 200px);
+  width: clamp(100px, 13vw, 320px);
   height: auto;
 }
 
