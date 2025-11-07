@@ -6,7 +6,7 @@
     <title>Pitstop - Home</title>
 
     <!-- Combined CSS File -->
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="main.css" />
     <!-- Banner initialization script (must load before banner HTML) -->
     <script src="js/banner-init.js"></script>
     <!-- Google Places API (load without callback, we'll init manually) -->
@@ -514,378 +514,555 @@
           >
         </div>
       </section>
+
       <section class="search-wrapper">
         <div class="search-content">
           <div class="search-heading">
             <h2>There's a Pit Stop Near You!</h2>
           </div>
-
           <div class="search-controls">
             <div class="search-input">
               <!-- Google Places Autocomplete Input + Submit Button -->
-              <input
-                type="text"
-                id="location-autocomplete"
-                class="input-bar"
-                placeholder="Enter your Location"
-              />
-              <a href="#" class="ps-btn ps-btn-primary search-button">Submit</a>
+              <form
+                action="https://www.pitstop.co.nz/regions"
+                id="LocationForm"
+              >
+                <input
+                  type="hidden"
+                  name="_token"
+                  value="n1nkMTw5tj9ROVYzbtLGGMcTpwtOYFrwDyHVHRpu"
+                  autocomplete="off"
+                />
+                <input type="hidden" name="_method" value="POST" />
+                <input
+                  type="text"
+                  placeholder="Type in your location"
+                  name="keywords"
+                  class="input-bar"
+                  id="LocationSearch"
+                />
+                <input type="hidden" name="locality" value="" />
+
+                <a href="#" class="ps-btn ps-btn-primary search-button"
+                  >Submit</a
+                >
+              </form>
             </div>
 
             <!-- Regions Dropdown Button -->
-            <div class="regions-dropdown-wrapper">
-              <button class="ps-btn ps-btn-primary regions-toggle-button">
-                REGIONS
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="15"
-                  height="8"
-                  viewBox="0 0 15 8"
-                  fill="none"
-                  class="regions-dropdown-arrow"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M14.0243 0L7.51031 6.14436L0.96885 0L0 0.914842L7.49656 7.99351L15 0.914842L14.0311 0H14.0243Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </button>
+          </div>
+          <div class="regions-dropdown-wrapper">
+            <button class="ps-btn ps-btn-primary regions-toggle-button">
+              Region
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="8"
+                viewBox="0 0 15 8"
+                fill="none"
+                class="regions-dropdown-arrow"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M14.0243 0L7.51031 6.14436L0.96885 0L0 0.914842L7.49656 7.99351L15 0.914842L14.0311 0H14.0243Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
 
-              <!-- Regions Dropdown Menu -->
-              <div class="search-dropdown">
-                <ul class="search-dropdown-list">
-                  <li
-                    class="search-dropdown-item search-dropdown-item--parent"
-                    data-value="northland"
-                  >
-                    <span class="search-dropdown-item-toggle">+ Northland</span>
-                    <ul class="search-dropdown-sublist">
-                      <li class="search-dropdown-subitem" data-value="kerikeri">
+            <!-- Regions Dropdown Menu -->
+            <div class="search-dropdown">
+              <ul class="search-dropdown-list">
+                <li
+                  class="search-dropdown-item search-dropdown-item--parent"
+                  data-value="northland"
+                >
+                  <span class="search-dropdown-item-toggle">+ Northland</span>
+
+                  <ul class="search-dropdown-sublist">
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/kerikeri"
+                        title="Kerikeri"
+                      >
                         Kerikeri
-                      </li>
-                      <li
-                        class="search-dropdown-subitem"
-                        data-value="warkworth"
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/warkworth"
+                        title="Warkworth"
                       >
                         Warkworth
-                      </li>
-                      <li
-                        class="search-dropdown-subitem"
-                        data-value="whangarei"
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/whangarei"
+                        title="Whangarei"
                       >
                         Whangarei
-                      </li>
-                    </ul>
-                  </li>
-                  <li
-                    class="search-dropdown-item search-dropdown-item--parent"
-                    data-value="auckland"
-                  >
-                    <span class="search-dropdown-item-toggle">+ Auckland</span>
-                    <ul class="search-dropdown-sublist">
-                      <li class="search-dropdown-subitem" data-value="albany">
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="search-dropdown-item search-dropdown-item--parent"
+                  data-value="northland"
+                >
+                  <span class="search-dropdown-item-toggle">+ Auckland</span>
+
+                  <ul class="search-dropdown-sublist">
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/albany"
+                        title="Albany"
+                      >
                         Albany
-                      </li>
-                      <li
-                        class="search-dropdown-subitem"
-                        data-value="auckland-airport"
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/auckland-airport"
+                        title="Auckland Airport"
                       >
                         Auckland Airport
-                      </li>
-                      <li
-                        class="search-dropdown-subitem"
-                        data-value="botany-downs"
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/botany-downs"
+                        title="Botany Downs"
                       >
                         Botany Downs
-                      </li>
-                      <li
-                        class="search-dropdown-subitem"
-                        data-value="browns-bay"
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/browns-bay"
+                        title="Browns Bay"
                       >
                         Browns Bay
-                      </li>
-                      <li
-                        class="search-dropdown-subitem"
-                        data-value="glen-innes"
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/glen-innes"
+                        title="Glen Innes"
                       >
                         Glen Innes
-                      </li>
-                      <li
-                        class="search-dropdown-subitem"
-                        data-value="glenfield"
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/glenfield"
+                        title="Glenfield"
                       >
                         Glenfield
-                      </li>
-                      <li
-                        class="search-dropdown-subitem"
-                        data-value="greenlane"
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/greenlane"
+                        title="Greenlane"
                       >
                         Greenlane
-                      </li>
-                      <li
-                        class="search-dropdown-subitem"
-                        data-value="grey-lynn"
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/grey-lynn"
+                        title="Grey Lynn"
                       >
                         Grey Lynn
-                      </li>
-                      <li
-                        class="search-dropdown-subitem"
-                        data-value="henderson"
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/henderson"
+                        title="Henderson"
                       >
                         Henderson
-                      </li>
-                      <li class="search-dropdown-subitem" data-value="manukau">
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/manukau"
+                        title="Manukau"
+                      >
                         Manukau
-                      </li>
-                      <li class="search-dropdown-subitem" data-value="new-lynn">
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/new-lynn"
+                        title="New Lynn"
+                      >
                         New Lynn
-                      </li>
-                      <li
-                        class="search-dropdown-subitem"
-                        data-value="newmarket"
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/newmarket"
+                        title="Newmarket"
                       >
                         Newmarket
-                      </li>
-                      <li class="search-dropdown-subitem" data-value="onehunga">
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/onehunga"
+                        title="Onehunga"
+                      >
                         Onehunga
-                      </li>
-                      <li class="search-dropdown-subitem" data-value="otahuhu">
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/otahuhu"
+                        title="Otahuhu"
+                      >
                         Otahuhu
-                      </li>
-                      <li class="search-dropdown-subitem" data-value="pukekohe">
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/pukekohe"
+                        title="Pukekohe"
+                      >
                         Pukekohe
-                      </li>
-                      <li
-                        class="search-dropdown-subitem"
-                        data-value="silverdale"
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/silverdale"
+                        title="Silverdale"
                       >
                         Silverdale
-                      </li>
-                      <li class="search-dropdown-subitem" data-value="takanini">
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/takanini"
+                        title="Takanini"
+                      >
                         Takanini
-                      </li>
-                      <li class="search-dropdown-subitem" data-value="westgate">
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/westgate"
+                        title="Westgate"
+                      >
                         Westgate
-                      </li>
-                    </ul>
-                  </li>
-                  <li
-                    class="search-dropdown-item search-dropdown-item--parent"
-                    data-value="bay-of-plenty"
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="search-dropdown-item search-dropdown-item--parent"
+                  data-value="northland"
+                >
+                  <span class="search-dropdown-item-toggle"
+                    >+ Bay Of Plenty</span
                   >
-                    <span class="search-dropdown-item-toggle"
-                      >+ Bay Of Plenty</span
-                    >
-                    <ul class="search-dropdown-sublist">
-                      <li class="search-dropdown-subitem" data-value="rotorua">
+
+                  <ul class="search-dropdown-sublist">
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/rotorua"
+                        title="Rotorua"
+                      >
                         Rotorua
-                      </li>
-                      <li class="search-dropdown-subitem" data-value="tauranga">
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/tauranga"
+                        title="Tauranga"
+                      >
                         Tauranga
-                      </li>
-                      <li
-                        class="search-dropdown-subitem"
-                        data-value="whakatane"
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/whakatane"
+                        title="Whakatane"
                       >
                         Whakatane
-                      </li>
-                    </ul>
-                  </li>
-                  <li
-                    class="search-dropdown-item search-dropdown-item--parent"
-                    data-value="waikato"
-                  >
-                    <span class="search-dropdown-item-toggle">+ Waikato</span>
-                    <ul class="search-dropdown-sublist">
-                      <li
-                        class="search-dropdown-subitem"
-                        data-value="cambridge"
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="search-dropdown-item search-dropdown-item--parent"
+                  data-value="northland"
+                >
+                  <span class="search-dropdown-item-toggle">+ Waikato</span>
+
+                  <ul class="search-dropdown-sublist">
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/cambridge"
+                        title="Cambridge"
                       >
                         Cambridge
-                      </li>
-                      <li
-                        class="search-dropdown-subitem"
-                        data-value="hamilton-central"
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/hamilton-central"
+                        title="Hamilton – Central"
                       >
                         Hamilton – Central
-                      </li>
-                      <li
-                        class="search-dropdown-subitem"
-                        data-value="hamilton-te-rapa"
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/hamilton-te-rapa"
+                        title="Hamilton – Te Rapa"
                       >
                         Hamilton – Te Rapa
-                      </li>
-                      <li class="search-dropdown-subitem" data-value="taupo">
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/taupo"
+                        title="Taupo"
+                      >
                         Taupo
-                      </li>
-                      <li
-                        class="search-dropdown-subitem"
-                        data-value="te-awamutu"
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/te-awamutu"
+                        title="Te Awamutu"
                       >
                         Te Awamutu
-                      </li>
-                      <li class="search-dropdown-subitem" data-value="tokoroa">
-                        Tokoroa
-                      </li>
-                    </ul>
-                  </li>
-                  <li
-                    class="search-dropdown-item search-dropdown-item--parent"
-                    data-value="east-coast"
-                  >
-                    <span class="search-dropdown-item-toggle"
-                      >+ East Coast</span
-                    >
-                    <ul class="search-dropdown-sublist">
-                      <li class="search-dropdown-subitem" data-value="gisborne">
-                        Gisborne
-                      </li>
-                    </ul>
-                  </li>
-                  <li
-                    class="search-dropdown-item search-dropdown-item--parent"
-                    data-value="hawkes-bay"
-                  >
-                    <span class="search-dropdown-item-toggle"
-                      >+ Hawkes Bay</span
-                    >
-                    <ul class="search-dropdown-sublist">
-                      <li class="search-dropdown-subitem" data-value="hastings">
-                        Hastings
-                      </li>
-                      <li class="search-dropdown-subitem" data-value="napier">
-                        Napier
-                      </li>
-                    </ul>
-                  </li>
-                  <li
-                    class="search-dropdown-item search-dropdown-item--parent search-dropdown-item--empty"
-                    data-value="taranaki"
-                  >
-                    <span class="search-dropdown-item-toggle">+ Taranaki</span>
-                    <ul class="search-dropdown-sublist">
-                      <li
-                        class="search-dropdown-subitem search-dropdown-subitem--empty"
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/tokoroa"
+                        title="Tokoroa"
                       >
-                        No branches in this region
-                      </li>
-                    </ul>
-                  </li>
-                  <li
-                    class="search-dropdown-item search-dropdown-item--parent"
-                    data-value="manawatu-wanganui"
+                        Tokoroa
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="search-dropdown-item search-dropdown-item--parent"
+                  data-value="northland"
+                >
+                  <span class="search-dropdown-item-toggle">+ East Coast</span>
+
+                  <ul class="search-dropdown-sublist">
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/gisborne"
+                        title="Gisborne"
+                      >
+                        Gisborne
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="search-dropdown-item search-dropdown-item--parent"
+                  data-value="northland"
+                >
+                  <span class="search-dropdown-item-toggle">+ Hawkes Bay</span>
+
+                  <ul class="search-dropdown-sublist">
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/hastings"
+                        title="Hastings"
+                      >
+                        Hastings
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/napier"
+                        title="Napier"
+                      >
+                        Napier
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="search-dropdown-item search-dropdown-item--parent"
+                  data-value="northland"
+                >
+                  <span class="search-dropdown-item-toggle">+ Taranaki</span>
+
+                  <ul class="search-dropdown-sublist">
+                    <p><a href="#">No branches in this regions</a></p>
+                  </ul>
+                </li>
+                <li
+                  class="search-dropdown-item search-dropdown-item--parent"
+                  data-value="northland"
+                >
+                  <span class="search-dropdown-item-toggle"
+                    >+ Manawatu-Wanganui</span
                   >
-                    <span class="search-dropdown-item-toggle"
-                      >+ Manawatu-Wanganui</span
-                    >
-                    <ul class="search-dropdown-sublist">
-                      <li class="search-dropdown-subitem" data-value="levin">
+
+                  <ul class="search-dropdown-sublist">
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/levin"
+                        title="Levin"
+                      >
                         Levin
-                      </li>
-                      <li
-                        class="search-dropdown-subitem"
-                        data-value="palmerston-north"
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/palmerston-north"
+                        title="Palmerston North"
                       >
                         Palmerston North
-                      </li>
-                    </ul>
-                  </li>
-                  <li
-                    class="search-dropdown-item search-dropdown-item--parent"
-                    data-value="wellington"
-                  >
-                    <span class="search-dropdown-item-toggle"
-                      >+ Wellington</span
-                    >
-                    <ul class="search-dropdown-sublist">
-                      <li
-                        class="search-dropdown-subitem"
-                        data-value="lower-hutt"
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="search-dropdown-item search-dropdown-item--parent"
+                  data-value="northland"
+                >
+                  <span class="search-dropdown-item-toggle">+ Wellington</span>
+
+                  <ul class="search-dropdown-sublist">
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/lower-hutt"
+                        title="Lower Hutt"
                       >
                         Lower Hutt
-                      </li>
-                      <li
-                        class="search-dropdown-subitem"
-                        data-value="paraparaumu"
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/paraparaumu"
+                        title="Paraparaumu"
                       >
                         Paraparaumu
-                      </li>
-                      <li class="search-dropdown-subitem" data-value="petone">
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/petone"
+                        title="Petone"
+                      >
                         Petone
-                      </li>
-                      <li class="search-dropdown-subitem" data-value="porirua">
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/porirua"
+                        title="Porirua"
+                      >
                         Porirua
-                      </li>
-                    </ul>
-                  </li>
-                  <li
-                    class="search-dropdown-item search-dropdown-item--parent"
-                    data-value="nelson"
-                  >
-                    <span class="search-dropdown-item-toggle">+ Nelson</span>
-                    <ul class="search-dropdown-sublist">
-                      <li class="search-dropdown-subitem" data-value="nelson">
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="search-dropdown-item search-dropdown-item--parent"
+                  data-value="northland"
+                >
+                  <span class="search-dropdown-item-toggle">+ Nelson</span>
+
+                  <ul class="search-dropdown-sublist">
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/nelson"
+                        title="Nelson"
+                      >
                         Nelson
-                      </li>
-                    </ul>
-                  </li>
-                  <li
-                    class="search-dropdown-item search-dropdown-item--parent"
-                    data-value="canterbury"
-                  >
-                    <span class="search-dropdown-item-toggle"
-                      >+ Canterbury</span
-                    >
-                    <ul class="search-dropdown-sublist">
-                      <li class="search-dropdown-subitem" data-value="burnside">
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="search-dropdown-item search-dropdown-item--parent"
+                  data-value="northland"
+                >
+                  <span class="search-dropdown-item-toggle">+ Canterbury</span>
+
+                  <ul class="search-dropdown-sublist">
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/burnside"
+                        title="Burnside"
+                      >
                         Burnside
-                      </li>
-                      <li
-                        class="search-dropdown-subitem"
-                        data-value="christchurch-city"
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/christchurch-city"
+                        title="Christchurch City"
                       >
                         Christchurch City
-                      </li>
-                      <li class="search-dropdown-subitem" data-value="hornby">
-                        Hornby
-                      </li>
-                      <li class="search-dropdown-subitem" data-value="sydenham">
-                        Sydenham
-                      </li>
-                    </ul>
-                  </li>
-                  <li
-                    class="search-dropdown-item search-dropdown-item--parent"
-                    data-value="otago"
-                  >
-                    <span class="search-dropdown-item-toggle">+ Otago</span>
-                    <ul class="search-dropdown-sublist">
-                      <li class="search-dropdown-subitem" data-value="dunedin">
-                        Dunedin
-                      </li>
-                    </ul>
-                  </li>
-                  <li
-                    class="search-dropdown-item search-dropdown-item--parent search-dropdown-item--empty"
-                    data-value="southland"
-                  >
-                    <span class="search-dropdown-item-toggle">+ Southland</span>
-                    <ul class="search-dropdown-sublist">
-                      <li
-                        class="search-dropdown-subitem search-dropdown-subitem--empty"
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/hornby"
+                        title="Hornby"
                       >
-                        No branches in this region
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
+                        Hornby
+                      </a>
+                    </li>
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/sydenham"
+                        title="Sydenham"
+                      >
+                        Sydenham
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="search-dropdown-item search-dropdown-item--parent"
+                  data-value="northland"
+                >
+                  <span class="search-dropdown-item-toggle">+ Otago</span>
+
+                  <ul class="search-dropdown-sublist">
+                    <li class="search-dropdown-subitem">
+                      <a
+                        href="https://www.pitstop.co.nz/branch/dunedin"
+                        title="Dunedin"
+                      >
+                        Dunedin
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="search-dropdown-item search-dropdown-item--parent"
+                  data-value="northland"
+                >
+                  <span class="search-dropdown-item-toggle">+ Southland</span>
+
+                  <ul class="search-dropdown-sublist">
+                    <p><a href="#">No branches in this regions</a></p>
+                  </ul>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
+
       <section class="section-video-wrapper">
         <div class="section-video-content">
           <iframe
