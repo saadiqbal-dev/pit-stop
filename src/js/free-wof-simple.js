@@ -61,8 +61,28 @@ $(document).ready(function () {
       }
     });
 
-    // Show form
-    $("#free-wof-form").show();
+    // Show form first
+    const $form = $("#free-wof-form");
+    $form.show();
+
+    // Wait for form to be fully rendered, then scroll to it
+    setTimeout(function () {
+      if ($form.length && $form.is(":visible")) {
+        const formPosition = $form.offset().top;
+        const targetScroll = formPosition - 100;
+        console.log("Form position:", formPosition, "Target scroll:", targetScroll); // Debug
+
+        $("html, body").animate(
+          {
+            scrollTop: targetScroll,
+          },
+          800,
+          function() {
+            console.log("Scroll complete. Current scroll position:", $(window).scrollTop());
+          }
+        );
+      }
+    }, 200);
   });
 
   // Close dropdown when clicking outside
