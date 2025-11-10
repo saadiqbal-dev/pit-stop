@@ -61,28 +61,22 @@ $(document).ready(function () {
       }
     });
 
-    // Show form first
-    const $form = $("#free-wof-form");
-    $form.show();
+    // Region routing logic
+    // Define regions that should navigate to service pages (for future use)
+    const regionRoutes = {
+      // Example: "Auckland": "/services/auckland",
+      // For now, all regions show the form
+      Kerikeri: "https://www.pitstop.co.nz/branch/kerikeri",
+    };
 
-    // Wait for form to be fully rendered, then scroll to it
-    setTimeout(function () {
-      if ($form.length && $form.is(":visible")) {
-        const formPosition = $form.offset().top;
-        const targetScroll = formPosition - 100;
-        console.log("Form position:", formPosition, "Target scroll:", targetScroll); // Debug
-
-        $("html, body").animate(
-          {
-            scrollTop: targetScroll,
-          },
-          800,
-          function() {
-            console.log("Scroll complete. Current scroll position:", $(window).scrollTop());
-          }
-        );
-      }
-    }, 200);
+    // Check if this region should navigate
+    if (regionRoutes[locationText]) {
+      // Navigate to service page
+      window.location.href = regionRoutes[locationText];
+    } else {
+      // Show form for this region with animation
+      $("#free-wof-form").slideDown(500);
+    }
   });
 
   // Close dropdown when clicking outside
@@ -97,5 +91,4 @@ $(document).ready(function () {
       });
     }
   });
-
 });
