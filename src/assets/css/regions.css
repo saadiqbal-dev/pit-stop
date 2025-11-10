@@ -69,11 +69,12 @@
   .regions-dropdown-wrapper .search-dropdown-item-toggle,
   .regions-dropdown-wrapper .search-dropdown-subitem {
     text-align: left;
+  }
+
+  .regions-dropdown-wrapper .search-dropdown-subitem a {
+    text-align: left;
     text-decoration: none;
-    a {
-      text-align: left;
-      text-decoration: none;
-      color: #000;
-    }
+    color: #000;
+    display: block;
   }
 }

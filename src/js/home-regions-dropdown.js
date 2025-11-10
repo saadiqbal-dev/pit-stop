@@ -67,6 +67,15 @@ document.addEventListener("DOMContentLoaded", function () {
       subitem.addEventListener("click", function (e) {
         e.stopPropagation();
 
+        // Check if we're on the free-wof page
+        const isFreeWofPage = window.location.pathname.includes('free-wof.html');
+
+        // If clicking on a link inside subitem, prevent default only on free-wof page
+        const clickedLink = e.target.closest('a');
+        if (clickedLink && isFreeWofPage) {
+          e.preventDefault();
+        }
+
         // Remove selection from all subitems
         document
           .querySelectorAll(".search-dropdown-subitem")
@@ -80,11 +89,12 @@ document.addEventListener("DOMContentLoaded", function () {
         selectedRegion = parentItem.getAttribute("data-value");
 
         // Update button text to show selected location
+        const locationText = clickedLink ? clickedLink.textContent.trim() : this.textContent.trim();
         const buttonTextNode = Array.from(regionsButton.childNodes).find(
           (node) => node.nodeType === Node.TEXT_NODE
         );
         if (buttonTextNode) {
-          buttonTextNode.textContent = this.textContent.trim() + " ";
+          buttonTextNode.textContent = locationText + " ";
         }
 
         // Close dropdown
@@ -99,12 +109,14 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
 
-        // Auto-redirect to booking page with selected region
-        window.location.href =
-          "booking.html?location=" +
-          selectedLocation +
-          "&region=" +
-          selectedRegion;
+        // Only redirect if NOT on free-wof page
+        if (!isFreeWofPage) {
+          window.location.href =
+            "booking.html?location=" +
+            selectedLocation +
+            "&region=" +
+            selectedRegion;
+        }
       });
     });
   });
