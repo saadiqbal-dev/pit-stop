@@ -8,6 +8,9 @@ class HeaderNavigation {
     this.dropdownItems = document.querySelectorAll(
       ".ps-header__nav-item--dropdown"
     );
+    this.regularNavItems = document.querySelectorAll(
+      ".ps-header__nav-item:not(.ps-header__nav-item--dropdown)"
+    );
     this.activeDropdown = null;
     this.isTouchDevice = "ontouchstart" in window;
     this.overlay = document.querySelector(".ps-header__dropdown-overlay");
@@ -111,6 +114,8 @@ class HeaderNavigation {
       }
     });
 
+    this.bindRegularNavItems();
+
     // Close all dropdowns when clicking outside
     document.addEventListener("click", (e) => {
       if (!e.target.closest(".ps-header__nav-item--dropdown") &&
@@ -130,6 +135,38 @@ class HeaderNavigation {
         this.closeAllDropdowns();
       });
     }
+  }
+
+  bindRegularNavItems() {
+    this.regularNavItems.forEach((item) => {
+      const link = item.querySelector(".ps-header__nav-link");
+
+      if (!link) {
+        return;
+      }
+
+      item.addEventListener("click", (e) => {
+        if (e.defaultPrevented) {
+          return;
+        }
+
+        if (e.target.closest("a, button")) {
+          return;
+        }
+
+        const href = link.getAttribute("href");
+
+        if (!href) {
+          return;
+        }
+
+        if (link.target && link.target !== "_self") {
+          window.open(href, link.target);
+        } else {
+          window.location.href = href;
+        }
+      });
+    });
   }
 
   openDropdown(item) {
