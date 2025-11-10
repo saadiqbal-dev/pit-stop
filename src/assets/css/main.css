@@ -2069,17 +2069,27 @@ a.mobile-cta__button:hover {
 /* Regions Toggle Button */
 .regions-toggle-button {
   display: flex;
+  background: var(--color-background-light);
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   gap: var(--spacing-sm);
   padding: var(--spacing-sm) var(--spacing-xl);
   border-radius: var(--radius-lg);
   cursor: pointer;
+  border: 2px solid #cecaca;
   width: 100%;
   font-family: var(--font-family-accent);
   font-size: var(--font-size-base);
-  font-weight: 600;
-  text-transform: uppercase;
+  font-weight: 400;
+  color: #9c7d7d;
+  height: 50px;
+  max-width: 347px;
+}
+
+.regions-toggle-button:hover,
+.regions-toggle-button:active {
+  background: var(--color-background-light);
+  color: #9c7d7d;
 }
 
 /* Regions Dropdown Arrow */
