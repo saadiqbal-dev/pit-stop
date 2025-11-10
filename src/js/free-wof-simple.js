@@ -77,6 +77,8 @@ $(document).ready(function () {
       // Show form for this region with animation
       $("#free-wof-form").slideDown(500);
     }
+
+    return false;
   });
 
   // Close dropdown when clicking outside
