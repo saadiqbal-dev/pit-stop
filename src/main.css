@@ -7890,13 +7890,13 @@ body.search-page .search-input::placeholder {
   }
 
   .services-card {
-    padding: 18px 20px 35px 20px;
+    padding: 18px 20px 63px 20px;
     gap: 14px;
   }
 
   .services-card h2 {
     font-size: 28px;
-    line-height: 26px;
+    line-height: 42px;
   }
 
   .services-card h2 + img {
@@ -7904,8 +7904,12 @@ body.search-page .search-input::placeholder {
   }
 
   .services-button {
-    font-size: 16px;
+    min-width: 147px;
     padding: 4px 25px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px; /* 200% */
   }
 
   .services-svg {
