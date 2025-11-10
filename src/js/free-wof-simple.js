@@ -75,7 +75,16 @@ $(document).ready(function () {
       window.location.href = regionRoutes[locationText];
     } else {
       // Show form for this region with animation
-      $("#free-wof-form").slideDown(500);
+      $("#free-wof-form").slideDown(500, function () {
+        // Scroll to top of form after animation completes
+        const formElement = document.getElementById("free-wof-form");
+        if (formElement) {
+          formElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      });
     }
 
     return false;
