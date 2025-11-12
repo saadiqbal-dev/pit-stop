@@ -53,6 +53,7 @@ html {
   background: var(--color-black);
   margin: 0 auto;
   overflow: hidden;
+  min-height: 700px;
   max-height: 767px;
 }
 
@@ -550,6 +551,9 @@ html {
     padding: 115px 80px;
     /* gap: 40px; */
   }
+  .free-wof-hero-section {
+    min-height: 600px;
+  }
 
   .free-wof-hero-text h1 {
     font-size: 42px;
@@ -689,6 +693,7 @@ html {
 @media (max-width: 768px) {
   .free-wof-hero-section {
     max-height: none;
+    min-height: 100%;
   }
 
   .free-wof-hero-content {
