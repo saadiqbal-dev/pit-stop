@@ -211,6 +211,11 @@ html {
   aspect-ratio: 57/7;
 }
 
+.free-wof-video-content div {
+  width: 100%;
+  max-width: 590px;
+}
+
 .free-wof-video-content div > p {
   color: #000;
   font-family: var(--font-family-base);
@@ -638,6 +643,9 @@ html {
     flex-direction: column-reverse;
     padding: 70px 60px;
     gap: 40px;
+  }
+  .free-wof-video-content div {
+    max-width: 100%;
   }
 
   .free-wof-video-wrapper {
