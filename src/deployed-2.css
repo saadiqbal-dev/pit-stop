@@ -6774,7 +6774,7 @@ html {
 .free-wof-faq {
   width: 100%;
   padding: 80px 0;
-  background: #fff;
+  /* background: #fff; */
 }
 .faq-container {
   max-width: 868px;
