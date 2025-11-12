@@ -476,6 +476,10 @@ html {
     aspect-ratio: 16/9;
     flex-shrink: 0;
   }
+  .free-wof-video-content {
+    padding-left: 100px;
+    gap: 55px;
+  }
 }
 
 /* 1440px - Laptop Large */
