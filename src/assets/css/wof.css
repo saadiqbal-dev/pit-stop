@@ -972,6 +972,7 @@ html {
 .content-wrapper {
   max-width: 696px;
   gap: 15px;
+  width: 100%;
 }
 
 /* Regions selector Button */
