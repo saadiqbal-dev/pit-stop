@@ -2065,6 +2065,9 @@ a.mobile-cta__button:hover {
   position: relative;
   width: 100%;
 }
+.max-width-347 {
+  max-width: 347px;
+}
 
 /* Regions Toggle Button */
 .regions-toggle-button {
@@ -7026,6 +7029,11 @@ body.search-page .search-input::placeholder {
     justify-content: start;
     width: 100%;
     gap: 10px;
+  }
+
+  .max-width-347 {
+    max-width: 100% !important;
+    width: 100% !important;
   }
 
   .find-container h2 {
