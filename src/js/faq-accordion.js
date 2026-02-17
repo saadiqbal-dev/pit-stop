@@ -24,7 +24,7 @@ function initFaqAccordion() {
   console.log('FAQ accordion initialized with ' + $faqItems.length + ' items');
 
   // Handle FAQ question click (using event delegation for dynamic content)
-  $('.faq-container').on('click', '.faq-question', function() {
+  $('.faq-container, .faq-container-base').on('click', '.faq-question', function() {
     const $question = $(this);
     const $faqItem = $question.parent();
     const isActive = $faqItem.hasClass('active');
