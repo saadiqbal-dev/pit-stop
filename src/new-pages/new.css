@@ -1,0 +1,146 @@
+/* Reusable full-width two-column section */
+.fw-content {
+  background: #fff;
+  min-height: 307px;
+}
+
+.fw-text {
+  max-width: 750px;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.fw-text h1 {
+  color: #000;
+  font-family: var(--font-family-base);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 50px; /* 125% */
+  padding: 0;
+  margin: 0;
+}
+
+.fw-text p {
+  color: #000;
+  font-family: var(--font-family-base);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 29px; /* 145% */
+  padding: 0;
+  margin: 0;
+}
+
+.fw-image {
+  display: block;
+  width: 100%;
+  height: 307px;
+  object-fit: cover;
+}
+
+.max-w-container {
+  background: #f4f5f7;
+}
+
+.fw-content {
+  padding: 60px 30px;
+}
+.s-cards {
+  max-width: 1920px;
+  width: 100%;
+  padding: 60px 30px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.s-cards h2 {
+  margin-bottom: 19px;
+  font-family: var(--font-family-base);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 29px; /* 111.538% */
+}
+
+.s-card {
+  padding: 63px 94px;
+  border-radius: 20px;
+}
+
+.s-card h3 {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-family-base);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 29px;
+}
+
+.s-card p {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-family-base);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 29px;
+}
+
+.s-card ul,
+li {
+  margin-left: -5px;
+  font-family: var(--font-family-base);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 29px;
+}
+
+.s-cards .col:nth-child(even) {
+  background: #272626;
+}
+
+.s-cards .col:nth-child(odd) {
+  background: #ed1f24;
+}
+
+.fw-bold-text {
+  max-width: 956px;
+}
+
+.fw-bold-content {
+  padding: 60px 30px;
+}
+
+.fw-bold-text h3 {
+  color: #003001;
+  font-family: var(--font-family-base);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px; /* 150% */
+  max-width: 516px;
+}
+
+@media (min-width: 1200px) {
+  .fw-content {
+    min-height: 748px;
+    padding: 100px;
+  }
+  .fw-bold-content {
+    padding: 220px;
+  }
+  .fw-bold-text {
+    max-width: 956px;
+  }
+
+  .fw-image {
+    height: 748px;
+  }
+  .s-cards {
+    max-width: 1920px;
+    width: 100%;
+    padding: 100px;
+    gap: 20px;
+  }
+}
