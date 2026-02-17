@@ -122,6 +122,56 @@ li {
   max-width: 516px;
 }
 
+.faq-heading-base {
+  color: #000;
+  font-family: var(--font-family-accent);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 85px;
+  margin: 0 0 40px 0;
+  padding: 0;
+  text-align: left;
+}
+.faq-container-base {
+  max-width: 1068px;
+  margin: 0 auto;
+  padding: 0 100px;
+  width: 100%;
+}
+
+.cta-section {
+  background: #eb2227;
+  padding: 151px 0;
+}
+
+.cta-container {
+  max-width: 752px;
+  margin: 0 auto;
+}
+
+.cta-container p {
+  color: #fff;
+  text-align: center;
+  font-family: var(--font-family-base);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px; /* 140% */
+}
+
+.cta-btn {
+  border-radius: 3px;
+  background: #fff;
+  height: 40px;
+  color: #ed1f24;
+  text-align: center;
+  font-family: var(--font-family-accent);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal; /* 200% */
+}
+
 @media (min-width: 1200px) {
   .fw-content {
     min-height: 748px;
