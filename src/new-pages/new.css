@@ -66,7 +66,7 @@
 }
 
 .s-card {
-  padding: 63px 94px;
+  padding: 30px;
   border-radius: 20px;
 }
 
@@ -125,10 +125,10 @@ li {
 .faq-heading-base {
   color: #000;
   font-family: var(--font-family-accent);
-  font-size: 40px;
+  font-size: 36px;
   font-style: normal;
   font-weight: 700;
-  line-height: 85px;
+  line-height: normal;
   margin: 0 0 40px 0;
   padding: 0;
   text-align: left;
@@ -136,13 +136,13 @@ li {
 .faq-container-base {
   max-width: 1068px;
   margin: 0 auto;
-  padding: 0 100px;
+  padding: 0;
   width: 100%;
 }
 
 .cta-section {
   background: #eb2227;
-  padding: 151px 0;
+  padding: 151px 30px;
 }
 
 .cta-container {
@@ -172,18 +172,69 @@ li {
   line-height: normal; /* 200% */
 }
 
+.cta-btn:hover {
+  background: #fff;
+
+  color: #ed1f24;
+}
+
 @media (min-width: 1200px) {
+  .fw-content {
+    min-height: 648px;
+    padding: 80px;
+  }
+  .fw-bold-content {
+    padding: 80px;
+  }
+  .fw-bold-text {
+    max-width: 956px;
+  }
+  .s-card {
+    padding: 40px;
+    border-radius: 20px;
+  }
+  .fw-image {
+    height: 648px;
+  }
+  .s-cards {
+    max-width: 1920px;
+    width: 100%;
+    padding: 80px;
+    gap: 20px;
+  }
+  .faq-container-base {
+    max-width: 1068px;
+    margin: 0 auto;
+    padding: 0 100px;
+    width: 100%;
+  }
+  .faq-heading-base {
+    color: #000;
+    font-family: var(--font-family-accent);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 85px;
+    margin: 0 0 40px 0;
+    padding: 0;
+    text-align: left;
+  }
+}
+@media (min-width: 1500px) {
   .fw-content {
     min-height: 748px;
     padding: 100px;
   }
   .fw-bold-content {
-    padding: 220px;
+    padding: 220px 220px 180px 220px;
   }
   .fw-bold-text {
     max-width: 956px;
   }
-
+  .s-card {
+    padding: 63px 94px;
+    border-radius: 20px;
+  }
   .fw-image {
     height: 748px;
   }
@@ -192,5 +243,22 @@ li {
     width: 100%;
     padding: 100px;
     gap: 20px;
+  }
+  .faq-container-base {
+    max-width: 1068px;
+    margin: 0 auto;
+    padding: 0 100px;
+    width: 100%;
+  }
+  .faq-heading-base {
+    color: #000;
+    font-family: var(--font-family-accent);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 85px;
+    margin: 0 0 40px 0;
+    padding: 0;
+    text-align: left;
   }
 }
