@@ -2113,6 +2113,7 @@ a.mobile-cta__button:hover {
 /* Services heading - extends base h2 */
 .services-heading-container h2 {
   font-family: var(--font-family-base);
+  font-weight: 700;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -2191,6 +2192,7 @@ a.mobile-cta__button:hover {
 /* Service card title - extends base h2 */
 .services-card h2 {
   font-family: var(--font-family-base);
+  font-weight: 700;
   margin: 0;
   padding: 0;
   text-align: center;
