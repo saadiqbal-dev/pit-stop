@@ -129,6 +129,10 @@ li {
   padding: 60px 30px;
 }
 
+.fw-bold-content.dark-bg {
+  background: #272626;
+}
+
 .fw-bold-text h3 {
   color: #003001;
   font-family: var(--font-family-base);
@@ -136,6 +140,10 @@ li {
   font-weight: 700;
   line-height: 48px; /* 150% */
   max-width: 516px;
+}
+
+.dark-bg .fw-bold-text h3 {
+  color: #fff;
 }
 
 .faq-heading-base {
