@@ -194,6 +194,10 @@ li {
   color: #ed1f24;
 }
 
+.img-container {
+  height: 128px;
+}
+
 @media (min-width: 1200px) {
   .fw-content {
     min-height: 648px;
@@ -209,8 +213,23 @@ li {
     padding: 40px;
     border-radius: 20px;
   }
+  .s-card:nth-child(1):nth-last-child(2),
+  .s-card:nth-child(2):nth-last-child(1) {
+    padding: 40px;
+  }
   .fw-image {
-    height: 648px;
+    height: 100%;
+  }
+  .img-container {
+    height: 100px;
+    max-width: 157px;
+    max-height: 128px;
+  }
+
+  .img-container img {
+    height: 100%;
+    max-height: 100px;
+    max-width: 157px;
   }
   .s-cards {
     max-width: 1920px;
@@ -248,8 +267,12 @@ li {
     max-width: 956px;
   }
   .s-card {
-    padding: 63px 94px;
+    padding: 50px 57px;
     border-radius: 20px;
+  }
+  .s-card:nth-child(1):nth-last-child(2),
+  .s-card:nth-child(2):nth-last-child(1) {
+    padding: 63px 94px;
   }
   .fw-image {
     height: 748px;
