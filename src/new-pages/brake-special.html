@@ -1,0 +1,1711 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pitstop - Home</title>
+
+    <!-- Combined CSS File -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/wof.css" />
+    <link rel="stylesheet" href="./new.css" />
+    <!--
+      Banner
+      initialization
+      script
+      (must
+      load
+      before
+      banner
+      HTML)
+      --
+    />
+    <script src="js/banner-init.js"></script>
+    <!-- Google Places API (load without callback, we'll init manually) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG8BjFwOMXNYu-xwJQc4JxK2njsyxcbM8&libraries=places"
+      async
+      defer
+    ></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="ps-header-wrapper">
+      <div class="ps-banner" id="top-banner">
+        <div class="ps-banner-content">
+          <a><img src="../assets/img/afterpay.svg" /></a>
+          <p>Easy Vehicle Repair Finance with <span>Afterpay</span></p>
+        </div>
+        <a class="ps-banner-close" id="banner-close"
+          ><img src="../assets/img/close.svg"
+        /></a>
+      </div>
+      <!-- Top band: full width background -->
+      <div class="ps-header__top-band">
+        <div class="ps-header__inner">
+          <!-- Top Section with Logo and Controls -->
+          <div class="ps-header__top">
+            <!-- Logo -->
+            <a href="../index.html" class="ps-header__logo">
+              <img src="../assets/img/logo-desktop.svg" alt="Logo" />
+            </a>
+
+            <!-- Right Controls -->
+            <div class="ps-header__right-controls">
+              <!-- Search Icon -->
+              <a href="#" class="ps-header__search-icon" id="search-toggle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="33"
+                  height="32"
+                  viewBox="0 0 33 32"
+                  fill="none"
+                >
+                  <path
+                    d="M12.3666 24.0182C15.3372 24.0182 18.1579 23.0005 20.3784 21.1395L31.2408 31.7092C31.4509 31.9128 31.706 32 31.961 32C32.2161 32 32.4861 31.9128 32.6962 31.7092C33.1013 31.3167 33.1013 30.677 32.6962 30.299L21.8337 19.7292C25.8996 15.0186 25.6596 7.96729 21.0985 3.53294C18.773 1.25034 15.6673 0 12.3666 0C9.06581 0 5.9601 1.26488 3.63458 3.5184C-1.21153 8.21445 -1.21153 15.8328 3.63458 20.5143C5.97511 22.7824 9.06581 24.0182 12.3666 24.0182ZM5.08991 4.95775C7.02535 3.05316 9.62094 2.0209 12.3666 2.0209C15.1122 2.0209 17.7078 3.05316 19.6432 4.95775C23.6641 8.8687 23.6641 15.2222 19.6432 19.104C17.7078 21.0086 15.1122 22.0409 12.3666 22.0409C9.62094 22.0409 7.02535 21.0086 5.08991 19.104C1.06899 15.1931 1.06899 8.83962 5.08991 4.95775Z"
+                    fill="black"
+                  />
+                </svg>
+              </a>
+
+              <!-- Phone Button -->
+              <a href="#" class="ps-btn ps-btn-primary ps-header__phone-button"
+                >Click for 0800 No.</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dropdown overlay -->
+      <div class="ps-header__dropdown-overlay"></div>
+
+      <!-- Nav band: full width background -->
+      <div class="ps-header__nav-band">
+        <div class="ps-header__inner">
+          <!-- Navigation Section -->
+          <nav class="ps-header__nav">
+            <ul class="ps-header__nav-menu">
+              <li
+                class="ps-header__nav-item ps-header__nav-item--dropdown"
+                data-dropdown="services"
+              >
+                <a href="#" class="ps-header__nav-link">SERVICES</a>
+                <span class="ps-header__dropdown-arrow">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="15"
+                    height="8"
+                    viewBox="0 0 15 8"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_71_492)">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M14.0243 0L7.51031 6.14436L0.96885 0L0 0.914842L7.49656 7.99351L15 0.914842L14.0311 0H14.0243Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_71_492">
+                        <rect width="15" height="8" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+                <div
+                  class="ps-header__dropdown-menu ps-header__dropdown-menu--services"
+                  id="services-dropdown"
+                >
+                  <div class="ps-header__dropdown-inner">
+                    <!-- Left Side: Dynamic Links Container -->
+                    <div class="ps-header__dropdown-links-container">
+                      <ul class="ps-header__dropdown-list">
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link">WOF</a>
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a
+                            href="service-packages.html"
+                            class="ps-header__dropdown-link"
+                            >Service Packages</a
+                          >
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link"
+                            >Brakes</a
+                          >
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link"
+                            >EV & Hybrid Service Packages</a
+                          >
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link"
+                            >Suspension</a
+                          >
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link">Tyres</a>
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link"
+                            >Diagnosis</a
+                          >
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link"
+                            >Exhausts</a
+                          >
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link"
+                            >Batteries</a
+                          >
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link"
+                            >Tow Bars</a
+                          >
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link">ADAS</a>
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link"
+                            >Fleet Servicing</a
+                          >
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link"
+                            >Fleet Servicing</a
+                          >
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link"
+                            >Fleet Servicing</a
+                          >
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link"
+                            >Fleet Servicing</a
+                          >
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link"
+                            >Fleet Servicing</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+
+                    <!-- Right Side: Static Content -->
+                    <div class="ps-header__dropdown-static-content">
+                      <div class="ps-header__dropdown-divider"></div>
+                      <div class="ps-header__dropdown-cta-section">
+                        <a
+                          href="booking.html"
+                          class="ps-btn ps-btn-primary ps-header__dropdown-cta-button"
+                          >Book A Service</a
+                        >
+                        <a href="#" class="ps-header__dropdown-link">Rewards</a>
+                        <a href="#" class="ps-header__dropdown-link"
+                          >Contact Us</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="ps-header__nav-item">
+                <a href="find-a-store.html" class="ps-header__nav-link"
+                  >FIND A STORE</a
+                >
+              </li>
+
+              <li class="ps-header__nav-item">
+                <a href="booking.html" class="ps-header__nav-link"
+                  >FREE WOF CHECK</a
+                >
+              </li>
+
+              <li
+                class="ps-header__nav-item ps-header__nav-item--dropdown"
+                data-dropdown="about"
+              >
+                <a href="#" class="ps-header__nav-link">ABOUT</a>
+                <span class="ps-header__dropdown-arrow">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="15"
+                    height="8"
+                    viewBox="0 0 15 8"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_71_492_3)">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M14.0243 0L7.51031 6.14436L0.96885 0L0 0.914842L7.49656 7.99351L15 0.914842L14.0311 0H14.0243Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_71_492_3">
+                        <rect width="15" height="8" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+                <div
+                  class="ps-header__dropdown-menu ps-header__dropdown-menu--about"
+                  id="about-dropdown"
+                >
+                  <div class="ps-header__dropdown-inner">
+                    <ul class="ps-header__dropdown-list">
+                      <li class="ps-header__dropdown-item">
+                        <a href="#" class="ps-header__dropdown-link">About</a>
+                      </li>
+                      <li class="ps-header__dropdown-item">
+                        <a href="#" class="ps-header__dropdown-link"
+                          >Franchising</a
+                        >
+                      </li>
+                      <li class="ps-header__dropdown-item">
+                        <a href="#" class="ps-header__dropdown-link">Jobs</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+
+              <li class="ps-header__nav-item">
+                <a href="#" class="ps-header__nav-link">FINANCE</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Header -->
+    <section class="mobile-header">
+      <div class="ps-mobile-header__content">
+        <a href="index.html" class="ps-mobile-header__logo">
+          <img src="../assets/img/logo-desktop.svg" alt="Logo" />
+        </a>
+        <div class="ps-mobile-header__controls">
+          <a
+            href="#"
+            class="ps-mobile-header__search-icon"
+            id="mobile-search-toggle"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              fill="none"
+            >
+              <path
+                d="M12.3666 24.0182C15.3372 24.0182 18.1579 23.0005 20.3784 21.1395L31.2408 31.7092C31.4509 31.9128 31.706 32 31.961 32C32.2161 32 32.4861 31.9128 32.6962 31.7092C33.1013 31.3167 33.1013 30.677 32.6962 30.299L21.8337 19.7292C25.8996 15.0186 25.6596 7.96729 21.0985 3.53294C18.773 1.25034 15.6673 0 12.3666 0C9.06581 0 5.9601 1.26488 3.63458 3.5184C-1.21153 8.21445 -1.21153 15.8328 3.63458 20.5143C5.97511 22.7824 9.06581 24.0182 12.3666 24.0182ZM5.08991 4.95775C7.02535 3.05316 9.62094 2.0209 12.3666 2.0209C15.1122 2.0209 17.7078 3.05316 19.6432 4.95775C23.6641 8.8687 23.6641 15.2222 19.6432 19.104C17.7078 21.0086 15.1122 22.0409 12.3666 22.0409C9.62094 22.0409 7.02535 21.0086 5.08991 19.104C1.06899 15.1931 1.06899 8.83962 5.08991 4.95775Z"
+                fill="black"
+              />
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="ps-mobile-header__hamburger"
+            id="mobile-menu-toggle"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="43"
+              height="29"
+              viewBox="0 0 43 29"
+              fill="none"
+            >
+              <path
+                d="M1.20349 29C0.774373 29 0.374697 28.7685 0.160584 28.3968C-0.0535281 28.025 -0.0535281 27.5621 0.160584 27.1903C0.374697 26.8185 0.774373 26.5871 1.20349 26.5871H41.7956C42.2247 26.5871 42.6244 26.8185 42.8385 27.1903C43.0526 27.5621 43.0526 28.025 42.8385 28.3968C42.6244 28.7685 42.2247 29 41.7956 29H1.20349ZM1.20349 14.9245C0.774373 14.9245 0.374697 14.693 0.160584 14.3213C-0.0535281 13.9495 -0.0535281 13.4866 0.160584 13.1148C0.374697 12.743 0.774373 12.5116 1.20349 12.5116H41.7956C42.2247 12.5116 42.6244 12.743 42.8385 13.1148C43.0526 13.4866 43.0526 13.9495 42.8385 14.3213C42.6244 14.693 42.2247 14.9245 41.7956 14.9245H1.20349ZM1.20349 2.41294C0.774373 2.41294 0.374697 2.18148 0.160584 1.80971C-0.0535281 1.43794 -0.0535281 0.975008 0.160584 0.603236C0.375589 0.231464 0.775265 0 1.20349 0H41.7956C42.2247 0 42.6244 0.231464 42.8385 0.603236C43.0526 0.975008 43.0526 1.43794 42.8385 1.80971C42.6244 2.18148 42.2247 2.41294 41.7956 2.41294H1.20349Z"
+                fill="black"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+      <div class="mobile-menu__header">
+        <a href="../index.html" class="mobile-menu__logo">
+          <img src="../assets/img/logo-desktop.svg" alt="Logo" />
+        </a>
+        <a href="#" class="mobile-menu__close" id="mobile-menu-close">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="33"
+            height="33"
+            viewBox="0 0 33 33"
+            fill="none"
+          >
+            <g clip-path="url(#clip0_2036_1092)">
+              <path
+                d="M30.8196 32.6262C31.1414 32.948 31.6145 33.0748 32.0536 32.9565C32.4927 32.8391 32.839 32.4928 32.9573 32.0528C33.0756 31.6137 32.9488 31.1405 32.6271 30.8188L2.18015 0.373788C1.85841 0.0520496 1.38526 -0.0747534 0.946182 0.043533C0.507103 0.160873 0.160763 0.507215 0.0424767 0.947241C-0.0758095 1.38632 0.0509911 1.85946 0.37273 2.1812L30.8196 32.6262Z"
+                fill="black"
+              />
+              <path
+                d="M0.373768 30.8198C0.0520287 31.1415 -0.0747757 31.6147 0.0435104 32.0537C0.160851 32.4928 0.507195 32.8391 0.94722 32.9574C1.3863 33.0757 1.85944 32.9489 2.18118 32.6272L32.6262 2.18027C32.9479 1.85853 33.0747 1.38633 32.9565 0.94631C32.8391 0.507231 32.4928 0.160888 32.0537 0.0435482C31.6146 -0.0747381 31.1415 0.0520649 30.8197 0.373804L0.374714 30.8188L0.373768 30.8198Z"
+                fill="black"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_2036_1092">
+                <rect
+                  width="33"
+                  height="33"
+                  fill="white"
+                  transform="matrix(-1 0 0 1 33 0)"
+                />
+              </clipPath>
+            </defs>
+          </svg>
+        </a>
+      </div>
+      <nav class="mobile-menu__nav">
+        <div class="mobile-menu__separator"></div>
+
+        <a href="find-a-store.html" class="mobile-menu__link">Find a Store</a>
+        <div class="mobile-menu__separator"></div>
+
+        <div class="mobile-menu__dropdown">
+          <div
+            class="mobile-menu__link mobile-menu__link--dropdown"
+            data-mobile-dropdown="services"
+          >
+            <span>Services</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="8"
+              viewBox="0 0 14 8"
+              fill="none"
+              class="mobile-menu__arrow"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12.466 0L6.67583 6.14436L0.8612 0L0 0.914842L6.66361 7.99351L13.3333 0.914842L12.4721 0H12.466Z"
+                fill="black"
+              />
+            </svg>
+          </div>
+          <div class="mobile-menu__dropdown-content">
+            <a href="#" class="mobile-menu__dropdown-link">WOF</a>
+            <a href="service-packages.html" class="mobile-menu__dropdown-link"
+              >Service Packages</a
+            >
+            <a href="#" class="mobile-menu__dropdown-link">Brakes</a>
+            <a href="#" class="mobile-menu__dropdown-link"
+              >EV & Hybrid Service Packages</a
+            >
+            <a href="#" class="mobile-menu__dropdown-link">Suspension</a>
+            <a href="#" class="mobile-menu__dropdown-link">Tyres</a>
+            <a href="#" class="mobile-menu__dropdown-link">Diagnostics</a>
+            <a href="#" class="mobile-menu__dropdown-link">Exhausts</a>
+            <a href="#" class="mobile-menu__dropdown-link">Batteries</a>
+            <a href="#" class="mobile-menu__dropdown-link">Tow Bars</a>
+            <a href="#" class="mobile-menu__dropdown-link">ADAS</a>
+            <a href="#" class="mobile-menu__dropdown-link">Fleet Servicing</a>
+          </div>
+        </div>
+        <div class="mobile-menu__separator"></div>
+
+        <a href="booking.html" class="mobile-menu__link">Book Online</a>
+        <div class="mobile-menu__separator"></div>
+
+        <a href="#" class="mobile-menu__link">Finance</a>
+        <div class="mobile-menu__separator"></div>
+
+        <a href="#" class="mobile-menu__link">Rewards</a>
+        <div class="mobile-menu__separator"></div>
+
+        <div class="mobile-menu__dropdown">
+          <div
+            class="mobile-menu__link mobile-menu__link--dropdown"
+            data-mobile-dropdown="about"
+          >
+            <span>About</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="8"
+              viewBox="0 0 14 8"
+              fill="none"
+              class="mobile-menu__arrow"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12.466 0L6.67583 6.14436L0.8612 0L0 0.914842L6.66361 7.99351L13.3333 0.914842L12.4721 0H12.466Z"
+                fill="black"
+              />
+            </svg>
+          </div>
+          <div class="mobile-menu__dropdown-content">
+            <a href="#" class="mobile-menu__dropdown-link">About Us</a>
+            <a href="#" class="mobile-menu__dropdown-link">Franchising</a>
+            <a href="#" class="mobile-menu__dropdown-link">Jobs</a>
+          </div>
+        </div>
+        <div class="mobile-menu__separator"></div>
+
+        <a href="#" class="mobile-menu__link">Contact</a>
+        <div class="mobile-menu__separator"></div>
+      </nav>
+      <div class="mobile-menu__footer">
+        <img
+          src="../assets/img/bar.svg"
+          alt="Bar decoration"
+          class="mobile-menu__bar"
+        />
+      </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+      <section class="search-wrapper">
+        <div class="search-container">
+          <input type="text" placeholder="Search" class="search-input" />
+        </div>
+      </section>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Promotion Banner (Above Hero) -->
+      <div class="promotion-banner-free-wof">
+        <img
+          src="../assets/img/free-wof.svg"
+          class="promotion-banner__desktop-image-free-wof"
+        />
+        <div class="promotion-banner__content">
+          <p>
+            FREE WOF CHECK
+            <br />
+            <span> With any Pit Stop Ezy service </span>
+          </p>
+          <a class="ps-btn ps-btn-primary services-button height-50"
+            >Book Now</a
+          >
+        </div>
+      </div>
+
+      <section class="free-wof-hero-section">
+        <div class="free-wof-hero-container">
+          <div class="free-wof-hero-content">
+            <img src="../assets/img/bar-single.svg" />
+            <div class="free-wof-hero-text">
+              <h1>Reduced Price Brake Special</h1>
+              <p>Including Fitting & GST</p>
+            </div>
+            <a
+              href="#free-wof-form"
+              class="long-red-button free-wof-hero-button"
+              >Book Now</a
+            >
+          </div>
+          <div class="free-wof-hero-image">
+            <img src="../assets/img/brake-special.png" />
+          </div>
+        </div>
+      </section>
+      <section
+        class="w-100 mx-auto d-flex break-section flex-column align-items-center justify-content-center gap-5 px-4 px-md-5 py-3 py-md-5 my-5"
+      >
+        <div
+          class="gap-80 d-flex flex-column flex-lg-row align-items-center justify-content-center"
+        >
+          <div class="col d-flex justify-content-lg-end justify-content-center">
+            <img class="brake-img" src="../assets/img/brake-icon 1.svg" />
+          </div>
+          <div
+            class="col d-flex flex-column justify-content-start brake-content"
+          >
+            <h2>Reduced Price Brake Special - Save Up To $100!</h2>
+            <h3>
+              Pit Stop is offering reduced price brake specials for Cars, 4x4's,
+              SUV's and Utes! This is a limited time only offer, so don't miss
+              out on this great deal.
+            </h3>
+            <p>
+              <strong>Conditions:</strong> Our offer is not available for
+              commercial or special/performance vehicles, or pads/rotors that
+              cannot be supplied by our participating parts providers in
+              conjunction with this offer. Our offer is strictly limited to the
+              supply and fitment of brake pads and rotors, any other parts,
+              fluids consumables freight or labour required to ensure the safe
+              operation of your braking system, will be charged in addition.
+              Please check with your Pit Stop store manager for further details
+              and confirmation that our offer can be applied to your vehicle.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="d-flex flex-column align-items-center justify-content-center card-brake"
+      >
+        <div
+          class="d-flex flex-column align-items-center justify-content-center w-100"
+        >
+          <p>
+            Our Brake Service includes Front or Rear Brake Pads plus Rotor on
+            all Vehicles
+          </p>
+          <div>
+            <!-- cards here -->
+            <p>test</p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="region-selector d-flex flex-column align-items-center justify-content-center"
+      >
+        <div
+          class="container d-flex region-container align-items-center justify-content-center gap-md-5 gap-3"
+        >
+          <img class="svg-image" src="../assets/img/document.svg" />
+          <div
+            class="d-flex flex-column content-wrapper align-items-start justify-content-start"
+          >
+            <h2>Book your Free WOF and Ezy Service here.</h2>
+            <div class="regions-dropdown-wrapper">
+              <button class="ps-btn ps-btn-primary regions-selector-button">
+                Choose Region
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="15"
+                  height="8"
+                  viewBox="0 0 15 8"
+                  fill="none"
+                  class="regions-dropdown-arrow"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M14.0243 0L7.51031 6.14436L0.96885 0L0 0.914842L7.49656 7.99351L15 0.914842L14.0311 0H14.0243Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+
+              <!-- Regions Dropdown Menu -->
+              <div class="search-dropdown">
+                <ul class="search-dropdown-list">
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent"
+                    data-value="northland"
+                  >
+                    <span class="search-dropdown-item-toggle">+ Northland</span>
+
+                    <ul class="search-dropdown-sublist">
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Kerikeri"> Kerikeri </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Warkworth"> Warkworth </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Whangarei"> Whangarei </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent"
+                    data-value="northland"
+                  >
+                    <span class="search-dropdown-item-toggle">+ Auckland</span>
+
+                    <ul class="search-dropdown-sublist">
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Albany"> Albany </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Auckland Airport">
+                          Auckland Airport
+                        </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Botany Downs"> Botany Downs </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Browns Bay"> Browns Bay </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Glen Innes"> Glen Innes </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Glenfield"> Glenfield </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Greenlane"> Greenlane </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Grey Lynn"> Grey Lynn </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Henderson"> Henderson </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Manukau"> Manukau </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="New Lynn"> New Lynn </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Newmarket"> Newmarket </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Onehunga"> Onehunga </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Otahuhu"> Otahuhu </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Pukekohe"> Pukekohe </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Silverdale"> Silverdale </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Takanini"> Takanini </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Westgate"> Westgate </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent"
+                    data-value="northland"
+                  >
+                    <span class="search-dropdown-item-toggle"
+                      >+ Bay Of Plenty</span
+                    >
+
+                    <ul class="search-dropdown-sublist">
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Rotorua"> Rotorua </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Tauranga"> Tauranga </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Whakatane"> Whakatane </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent"
+                    data-value="northland"
+                  >
+                    <span class="search-dropdown-item-toggle">+ Waikato</span>
+
+                    <ul class="search-dropdown-sublist">
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Cambridge"> Cambridge </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Hamilton – Central">
+                          Hamilton – Central
+                        </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Hamilton – Te Rapa">
+                          Hamilton – Te Rapa
+                        </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Taupo"> Taupo </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Te Awamutu"> Te Awamutu </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Tokoroa"> Tokoroa </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent"
+                    data-value="northland"
+                  >
+                    <span class="search-dropdown-item-toggle"
+                      >+ East Coast</span
+                    >
+
+                    <ul class="search-dropdown-sublist">
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Gisborne"> Gisborne </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent"
+                    data-value="northland"
+                  >
+                    <span class="search-dropdown-item-toggle"
+                      >+ Hawkes Bay</span
+                    >
+
+                    <ul class="search-dropdown-sublist">
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Hastings"> Hastings </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Napier"> Napier </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent"
+                    data-value="northland"
+                  >
+                    <span class="search-dropdown-item-toggle">+ Taranaki</span>
+
+                    <ul class="search-dropdown-sublist">
+                      <p><a href="#">No branches in this regions</a></p>
+                    </ul>
+                  </li>
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent"
+                    data-value="northland"
+                  >
+                    <span class="search-dropdown-item-toggle"
+                      >+ Manawatu-Wanganui</span
+                    >
+
+                    <ul class="search-dropdown-sublist">
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Levin"> Levin </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Palmerston North">
+                          Palmerston North
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent"
+                    data-value="northland"
+                  >
+                    <span class="search-dropdown-item-toggle"
+                      >+ Wellington</span
+                    >
+
+                    <ul class="search-dropdown-sublist">
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Lower Hutt"> Lower Hutt </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Paraparaumu"> Paraparaumu </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Petone"> Petone </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Porirua"> Porirua </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent"
+                    data-value="northland"
+                  >
+                    <span class="search-dropdown-item-toggle">+ Nelson</span>
+
+                    <ul class="search-dropdown-sublist">
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Nelson"> Nelson </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent"
+                    data-value="northland"
+                  >
+                    <span class="search-dropdown-item-toggle"
+                      >+ Canterbury</span
+                    >
+
+                    <ul class="search-dropdown-sublist">
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Burnside"> Burnside </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Christchurch City">
+                          Christchurch City
+                        </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Hornby"> Hornby </a>
+                      </li>
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Sydenham"> Sydenham </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent"
+                    data-value="northland"
+                  >
+                    <span class="search-dropdown-item-toggle">+ Otago</span>
+
+                    <ul class="search-dropdown-sublist">
+                      <li class="search-dropdown-subitem">
+                        <a href="#" title="Dunedin"> Dunedin </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="search-dropdown-item search-dropdown-item--parent"
+                    data-value="northland"
+                  >
+                    <span class="search-dropdown-item-toggle">+ Southland</span>
+
+                    <ul class="search-dropdown-sublist">
+                      <p><a href="#">No branches in this regions</a></p>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="free-wof-form" id="free-wof-form">
+        <div class="free-wof-form-container" id="form-anchor">
+          <h2 class="free-wof-form-heading">
+            BOOK YOUR SERVICE & FREE WOF CHECKUP
+          </h2>
+          <form class="booking-form free-wof-booking-form">
+            <div class="ps-form-group">
+              <input
+                type="text"
+                class="ps-form-input"
+                placeholder="Name *"
+                required
+              />
+            </div>
+            <div class="ps-form-group">
+              <input
+                type="email"
+                class="ps-form-input"
+                placeholder="Email *"
+                required
+              />
+            </div>
+            <div class="ps-form-group">
+              <input
+                type="tel"
+                class="ps-form-input"
+                placeholder="Phone Number *"
+                required
+              />
+            </div>
+            <div class="ps-form-group">
+              <input
+                type="text"
+                class="ps-form-input"
+                placeholder="Vehicle Registration *"
+                required
+              />
+            </div>
+            <div class="ps-form-group">
+              <input
+                type="text"
+                class="ps-form-input"
+                placeholder="Vehicle Make *"
+                required
+              />
+            </div>
+            <div class="ps-form-group">
+              <input
+                type="text"
+                class="ps-form-input"
+                placeholder="Vehicle Model *"
+                required
+              />
+            </div>
+            <div class="ps-form-group">
+              <input
+                type="text"
+                class="ps-form-input"
+                placeholder="Vehicle Year *"
+                required
+              />
+            </div>
+            <div class="ps-form-group">
+              <label class="ps-form-label"
+                >Type of Service <span class="required-asterisk">*</span></label
+              >
+              <div class="ps-form-dropdown service-dropdown">
+                <div class="ps-form-dropdown-input">
+                  <span class="ps-form-dropdown-text placeholder"
+                    >Select Service</span
+                  >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="15"
+                    height="8"
+                    viewBox="0 0 15 8"
+                    fill="none"
+                    class="ps-form-dropdown-arrow"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M14.0243 0L7.51031 6.14436L0.96885 0L0 0.914842L7.49656 7.99351L15 0.914842L14.0311 0H14.0243Z"
+                      fill="#9C7D7D"
+                    />
+                  </svg>
+                </div>
+                <ul class="ps-form-dropdown-list">
+                  <li class="ps-form-dropdown-item" data-value="wof">WOF</li>
+                  <li
+                    class="ps-form-dropdown-item"
+                    data-value="service-packages"
+                  >
+                    Service Packages
+                  </li>
+                  <li class="ps-form-dropdown-item" data-value="brakes">
+                    Brakes
+                  </li>
+                  <li class="ps-form-dropdown-item" data-value="ev-hybrid">
+                    EV & Hybrid Service Packages
+                  </li>
+                  <li class="ps-form-dropdown-item" data-value="suspension">
+                    Suspension
+                  </li>
+                  <li class="ps-form-dropdown-item" data-value="tyres">
+                    Tyres
+                  </li>
+                  <li class="ps-form-dropdown-item" data-value="diagnostics">
+                    Diagnostics
+                  </li>
+                  <li class="ps-form-dropdown-item" data-value="exhausts">
+                    Exhausts
+                  </li>
+                  <li class="ps-form-dropdown-item" data-value="batteries">
+                    Batteries
+                  </li>
+                  <li class="ps-form-dropdown-item" data-value="tow-bars">
+                    Tow Bars
+                  </li>
+                  <li class="ps-form-dropdown-item" data-value="adas">ADAS</li>
+                  <li class="ps-form-dropdown-item" data-value="fleet">
+                    Fleet Servicing
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="ps-form-group">
+              <label class="ps-form-label"
+                >Pit Stop Location
+                <span class="required-asterisk">*</span></label
+              >
+              <div class="ps-form-dropdown">
+                <div class="ps-form-dropdown-input">
+                  <span class="ps-form-dropdown-text placeholder"
+                    >Select your Preferred Region</span
+                  >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="15"
+                    height="8"
+                    viewBox="0 0 15 8"
+                    fill="none"
+                    class="ps-form-dropdown-arrow"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M14.0243 0L7.51031 6.14436L0.96885 0L0 0.914842L7.49656 7.99351L15 0.914842L14.0311 0H14.0243Z"
+                      fill="#9C7D7D"
+                    />
+                  </svg>
+                </div>
+                <ul class="ps-form-dropdown-list">
+                  <li
+                    class="ps-form-dropdown-item ps-form-dropdown-item--parent"
+                    data-value="northland"
+                  >
+                    <span class="ps-form-dropdown-item-toggle"
+                      >+ Northland</span
+                    >
+                    <ul class="ps-form-dropdown-sublist">
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="kerikeri"
+                      >
+                        Kerikeri
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="warkworth"
+                      >
+                        Warkworth
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="whangarei"
+                      >
+                        Whangarei
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="ps-form-dropdown-item ps-form-dropdown-item--parent"
+                    data-value="auckland"
+                  >
+                    <span class="ps-form-dropdown-item-toggle">+ Auckland</span>
+                    <ul class="ps-form-dropdown-sublist">
+                      <li class="ps-form-dropdown-subitem" data-value="albany">
+                        Albany
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="auckland-airport"
+                      >
+                        Auckland Airport
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="botany-downs"
+                      >
+                        Botany Downs
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="browns-bay"
+                      >
+                        Browns Bay
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="glen-innes"
+                      >
+                        Glen Innes
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="glenfield"
+                      >
+                        Glenfield
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="greenlane"
+                      >
+                        Greenlane
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="grey-lynn"
+                      >
+                        Grey Lynn
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="henderson"
+                      >
+                        Henderson
+                      </li>
+                      <li class="ps-form-dropdown-subitem" data-value="manukau">
+                        Manukau
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="new-lynn"
+                      >
+                        New Lynn
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="newmarket"
+                      >
+                        Newmarket
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="onehunga"
+                      >
+                        Onehunga
+                      </li>
+                      <li class="ps-form-dropdown-subitem" data-value="otahuhu">
+                        Otahuhu
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="pukekohe"
+                      >
+                        Pukekohe
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="silverdale"
+                      >
+                        Silverdale
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="takanini"
+                      >
+                        Takanini
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="westgate"
+                      >
+                        Westgate
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="ps-form-dropdown-item ps-form-dropdown-item--parent"
+                    data-value="bay-of-plenty"
+                  >
+                    <span class="ps-form-dropdown-item-toggle"
+                      >+ Bay Of Plenty</span
+                    >
+                    <ul class="ps-form-dropdown-sublist">
+                      <li class="ps-form-dropdown-subitem" data-value="rotorua">
+                        Rotorua
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="tauranga"
+                      >
+                        Tauranga
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="whakatane"
+                      >
+                        Whakatane
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="ps-form-dropdown-item ps-form-dropdown-item--parent"
+                    data-value="waikato"
+                  >
+                    <span class="ps-form-dropdown-item-toggle">+ Waikato</span>
+                    <ul class="ps-form-dropdown-sublist">
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="cambridge"
+                      >
+                        Cambridge
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="hamilton-central"
+                      >
+                        Hamilton – Central
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="hamilton-te-rapa"
+                      >
+                        Hamilton – Te Rapa
+                      </li>
+                      <li class="ps-form-dropdown-subitem" data-value="taupo">
+                        Taupo
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="te-awamutu"
+                      >
+                        Te Awamutu
+                      </li>
+                      <li class="ps-form-dropdown-subitem" data-value="tokoroa">
+                        Tokoroa
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="ps-form-dropdown-item ps-form-dropdown-item--parent"
+                    data-value="east-coast"
+                  >
+                    <span class="ps-form-dropdown-item-toggle"
+                      >+ East Coast</span
+                    >
+                    <ul class="ps-form-dropdown-sublist">
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="gisborne"
+                      >
+                        Gisborne
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="ps-form-dropdown-item ps-form-dropdown-item--parent"
+                    data-value="hawkes-bay"
+                  >
+                    <span class="ps-form-dropdown-item-toggle"
+                      >+ Hawkes Bay</span
+                    >
+                    <ul class="ps-form-dropdown-sublist">
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="hastings"
+                      >
+                        Hastings
+                      </li>
+                      <li class="ps-form-dropdown-subitem" data-value="napier">
+                        Napier
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="ps-form-dropdown-item ps-form-dropdown-item--parent ps-form-dropdown-item--empty"
+                    data-value="taranaki"
+                  >
+                    <span class="ps-form-dropdown-item-toggle">+ Taranaki</span>
+                    <ul class="ps-form-dropdown-sublist">
+                      <li
+                        class="ps-form-dropdown-subitem ps-form-dropdown-subitem--empty"
+                      >
+                        No branches in this region
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="ps-form-dropdown-item ps-form-dropdown-item--parent"
+                    data-value="manawatu-wanganui"
+                  >
+                    <span class="ps-form-dropdown-item-toggle"
+                      >+ Manawatu-Wanganui</span
+                    >
+                    <ul class="ps-form-dropdown-sublist">
+                      <li class="ps-form-dropdown-subitem" data-value="levin">
+                        Levin
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="palmerston-north"
+                      >
+                        Palmerston North
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="ps-form-dropdown-item ps-form-dropdown-item--parent"
+                    data-value="wellington"
+                  >
+                    <span class="ps-form-dropdown-item-toggle"
+                      >+ Wellington</span
+                    >
+                    <ul class="ps-form-dropdown-sublist">
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="lower-hutt"
+                      >
+                        Lower Hutt
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="paraparaumu"
+                      >
+                        Paraparaumu
+                      </li>
+                      <li class="ps-form-dropdown-subitem" data-value="petone">
+                        Petone
+                      </li>
+                      <li class="ps-form-dropdown-subitem" data-value="porirua">
+                        Porirua
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="ps-form-dropdown-item ps-form-dropdown-item--parent"
+                    data-value="nelson"
+                  >
+                    <span class="ps-form-dropdown-item-toggle">+ Nelson</span>
+                    <ul class="ps-form-dropdown-sublist">
+                      <li class="ps-form-dropdown-subitem" data-value="nelson">
+                        Nelson
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="ps-form-dropdown-item ps-form-dropdown-item--parent"
+                    data-value="canterbury"
+                  >
+                    <span class="ps-form-dropdown-item-toggle"
+                      >+ Canterbury</span
+                    >
+                    <ul class="ps-form-dropdown-sublist">
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="burnside"
+                      >
+                        Burnside
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="christchurch-city"
+                      >
+                        Christchurch City
+                      </li>
+                      <li class="ps-form-dropdown-subitem" data-value="hornby">
+                        Hornby
+                      </li>
+                      <li
+                        class="ps-form-dropdown-subitem"
+                        data-value="sydenham"
+                      >
+                        Sydenham
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="ps-form-dropdown-item ps-form-dropdown-item--parent"
+                    data-value="otago"
+                  >
+                    <span class="ps-form-dropdown-item-toggle">+ Otago</span>
+                    <ul class="ps-form-dropdown-sublist">
+                      <li class="ps-form-dropdown-subitem" data-value="dunedin">
+                        Dunedin
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="ps-form-dropdown-item ps-form-dropdown-item--parent ps-form-dropdown-item--empty"
+                    data-value="southland"
+                  >
+                    <span class="ps-form-dropdown-item-toggle"
+                      >+ Southland</span
+                    >
+                    <ul class="ps-form-dropdown-sublist">
+                      <li
+                        class="ps-form-dropdown-subitem ps-form-dropdown-subitem--empty"
+                      >
+                        No branches in this region
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="ps-form-group">
+              <label class="ps-form-label"
+                >Preferred Date of Service
+                <span class="required-asterisk">*</span></label
+              >
+              <input
+                type="text"
+                class="ps-form-input ps-form-date-input"
+                placeholder="Please Select"
+                readonly
+                required
+              />
+            </div>
+            <div class="ps-form-group">
+              <label class="ps-form-label"
+                >Preferred Time of Service
+                <span class="required-asterisk">*</span></label
+              >
+              <input
+                type="text"
+                class="ps-form-input ps-form-time-input"
+                placeholder="Please Select"
+                readonly
+                required
+              />
+            </div>
+            <div class="ps-form-group">
+              <label class="ps-form-label">WOF Expiry Date</label>
+              <input
+                type="text"
+                class="ps-form-input ps-form-wof-date-input"
+                placeholder="Please Select"
+                readonly
+              />
+            </div>
+            <div class="ps-form-group">
+              <label class="ps-form-label">Additional Comments</label>
+              <textarea
+                class="ps-form-input ps-form-textarea"
+                placeholder="Please enter any additional comments you'd like us to know"
+                rows="4"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="services-button ps-btn ps-btn-primary ps-form-submit-button free-wof-submit-button"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </section>
+      <section class="free-wof-faq">
+        <div class="faq-container">
+          <h2 class="faq-heading">FAQs</h2>
+          <div>
+            <div class="faq-item">
+              <div class="faq-divider"></div>
+              <div class="faq-question">
+                <span>Is the WOF check really free?</span
+                ><img
+                  src="../assets/img/faq-plus.svg"
+                  alt="Expand"
+                  class="faq-icon faq-icon-plus"
+                /><img
+                  src="../assets/img/faq-close.svg"
+                  alt="Collapse"
+                  class="faq-icon faq-icon-close"
+                />
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Yes, the free WOF check is included with any Pit Stop Ezy
+                  service, which starts from $169&nbsp;for an EV service and
+                  from $249&nbsp;for petrol or diesel vehicles, during the
+                  promotional period. Click here to see our full range of Ezy
+                  Services.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-divider"></div>
+              <div class="faq-question">
+                <span>When does this offer end?</span
+                ><img
+                  src="../assets/img/faq-plus.svg"
+                  alt="Expand"
+                  class="faq-icon faq-icon-plus"
+                /><img
+                  src="../assets/img/faq-close.svg"
+                  alt="Collapse"
+                  class="faq-icon faq-icon-close"
+                />
+              </div>
+              <div class="faq-answer">
+                <p>
+                  This offer is due to end soon.&nbsp; The end date is&nbsp;to
+                  be announced. Don&rsquo;t miss out!
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-divider"></div>
+              <div class="faq-question">
+                <span>How do I book the service and free WOF?</span
+                ><img
+                  src="../assets/img/faq-plus.svg"
+                  alt="Expand"
+                  class="faq-icon faq-icon-plus"
+                /><img
+                  src="../assets/img/faq-close.svg"
+                  alt="Collapse"
+                  class="faq-icon faq-icon-close"
+                />
+              </div>
+              <div class="faq-answer">
+                <p>
+                  You can book online using the webform on this page or you call
+                  you local branch. Click
+                  <a href="find-a-store.html">here</a> to find your nearest Pit
+                  Stop branch.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-divider"></div>
+              <div class="faq-question">
+                <span>Can I book now for a later date?</span
+                ><img
+                  src="../assets/img/faq-plus.svg"
+                  alt="Expand"
+                  class="faq-icon faq-icon-plus"
+                /><img
+                  src="../assets/img/faq-close.svg"
+                  alt="Collapse"
+                  class="faq-icon faq-icon-close"
+                />
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Yes, you can book now and select any date before the end of
+                  the the promotional period.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-divider"></div>
+              <div class="faq-question">
+                <span>Where is my nearest Pit Stop?</span
+                ><img
+                  src="../assets/img/faq-plus.svg"
+                  alt="Expand"
+                  class="faq-icon faq-icon-plus"
+                /><img
+                  src="../assets/img/faq-close.svg"
+                  alt="Collapse"
+                  class="faq-icon faq-icon-close"
+                />
+              </div>
+              <div class="faq-answer">
+                <p>
+                  We have Pit Stop branches all across New Zealand. You can
+                  click <a href="find-a-store.html">here</a> to find your
+                  nearest Pit Stop branch.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-divider"></div>
+          </div>
+        </div>
+      </section>
+      <section class="ps-footer-wrapper">
+        <div class="ps-footer-container">
+          <div class="ps-footer-content">
+            <div class="ps-footer-logo-section">
+              <img
+                src="../assets/img/logo-desktop.svg"
+                alt="Logo"
+                class="ps-footer-logo"
+              />
+              <a
+                href="#"
+                class="ps-btn ps-btn-primary footer-phone-button desktop-footer-phone"
+                >Click for 0800 No.</a
+              >
+            </div>
+
+            <!-- Mobile CTA Section (After Logo) -->
+            <div class="mobile-cta mobile-cta--top">
+              <div class="mobile-cta__text">
+                <h3>Get in touch</h3>
+                <p class="mobile-cta__description">
+                  If you'd like to contact us, we'd be delighted to hear from
+                  you.
+                </p>
+              </div>
+              <a
+                href="#"
+                class="ps-btn ps-btn-primary mobile-cta__button footer-phone-button"
+                >Click for 0800 No.</a
+              >
+              <div class="mobile-cta__social-icons">
+                <img src="../assets/img/FB.svg" alt="FB Logo" />
+                <img
+                  src="../assets/img/instagram-mobile.svg"
+                  alt="instagram mobile"
+                />
+                <img src="../assets/img/youtube.svg" alt="youtube logo" />
+              </div>
+            </div>
+
+            <div class="links-container">
+              <div class="links-content">
+                <h3>Home</h3>
+                <ul class="services-link">
+                  <li><a href="#">Franchising</a></li>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="find-a-store.html">Locations</a></li>
+                </ul>
+              </div>
+              <div class="links-content-services">
+                <h3>Products and Services</h3>
+                <ul class="services-link">
+                  <li><a href="service-packages.html">Service Packages</a></li>
+                  <li><a href="#">WOF</a></li>
+                  <li><a href="#">Brakes</a></li>
+                  <li><a href="#">Car Repairs</a></li>
+                  <li><a href="#">Tyres</a></li>
+                  <li><a href="#">EV & Hybrid Service Packages</a></li>
+                  <li><a href="#">Exhausts</a></li>
+                  <li><a href="#">Diagnostics</a></li>
+                  <li><a href="#">ADAS Calibration</a></li>
+                  <li><a href="#">Towbars</a></li>
+                  <li><a href="#">Shock Absorbers</a></li>
+                  <li><a href="#">Batteries</a></li>
+                  <li><a href="#">Safety Check</a></li>
+                  <li><a href="#">Fleet Servicing</a></li>
+                </ul>
+              </div>
+              <div class="links-content">
+                <h3>Get Repair Finance</h3>
+                <ul class="services-link">
+                  <li>
+                    <a href="#"
+                      >Apply for Repair Finance from our finance providers</a
+                    >
+                  </li>
+                  <li><a href="#">AfterPay</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="copyright-footer">
+            <div class="copyright-content">
+              <p>
+                &copy; 2025 PitStop Ltd. All rights reserved. |
+                <a>Privacy Policy</a> | Terms of Trade | Website Design and
+                Development by Storm IMC
+              </p>
+            </div>
+            <div class="social-icons">
+              <img src="../assets/img/FB-Desktop.svg" alt="FB Logo" />
+              <img src="../assets/img/instagram.svg" alt="instagram Logo" />
+              <img src="../assets/img/youtube-Desktop.svg" alt="youtube logo" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- JavaScript Files -->
+    <script src="../js/banner-close.js"></script>
+    <script src="../js/header-navigation.js"></script>
+    <script src="../js/header-phone-button.js"></script>
+    <script src="../js/search-overlay.js"></script>
+    <script src="../js/mobile-menu-toggle.js"></script>
+    <script src="../js/faq-accordion.js"></script>
+    <script src="../js/booking-form.js"></script>
+    <script src="../js/free-wof-simple.js"></script>
+  </body>
+</html>

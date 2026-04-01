@@ -309,3 +309,92 @@ li {
     text-align: left;
   }
 }
+
+/* new brake special page */
+
+.brake-img {
+  width: 300px;
+  height: auto;
+}
+
+.brake-content {
+  max-width: 630px !important;
+  width: 100% !important;
+  gap: 26px;
+}
+
+.brake-content h2 {
+  color: #000;
+  font-family: var(--font-family-base);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 42px; /* 125% */
+  margin: 0;
+}
+.brake-content h3 {
+  color: #000;
+  font-family: var(--font-family-base);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+  margin: 0;
+}
+
+.brake-content p {
+  color: #000;
+  font-family: var(--font-family-base);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+  margin: 0;
+}
+
+.gap-80 {
+  gap: 10px;
+}
+
+.break-section {
+  padding: 60px 30px !important;
+}
+
+@media (min-width: 768px) {
+  .brake-img {
+    width: 442px;
+    height: 418px;
+  }
+  .gap-80 {
+    gap: 40px;
+  }
+  .brake-content h2 {
+    color: #000;
+    font-family: var(--font-family-base);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 50px; /* 125% */
+    margin: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .brake-img {
+    width: 542px;
+    height: 518px;
+    aspect-ratio: 113/108;
+  }
+
+  .gap-80 {
+    gap: 80px;
+  }
+}
+
+.card-brake {
+  max-width: 1920px;
+  width: 100%;
+  padding: 10px 30px 170px 30px;
+  gap: 67px;
+  margin: 0 auto;
+}
