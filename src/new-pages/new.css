@@ -406,7 +406,7 @@ li {
   font-weight: 400;
   line-height: 29px;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 67px;
 }
 
 /* Brake Cards Grid */
@@ -424,7 +424,7 @@ li {
   background: #fff;
   box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.12);
   /* border-radius: 20px; */
-  padding: 35px 50px 66px 50px;
+  padding: 35px 40px 66px 40px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -438,18 +438,14 @@ li {
   box-shadow: 0 0 7.5px 5px rgba(0, 0, 0, 0.3);
 }
 
-.brake-card::after {
-  content: "";
+.brake-card__bar {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   max-width: 509px;
-  height: 21px;
-  background-image: url("../assets/img/long-bar.svg");
-  background-repeat: no-repeat;
-  background-position: bottom left;
-  background-size: contain;
+  height: 21px !important;
+  margin: 0 !important;
 }
 
 .brake-card h3 {
@@ -463,9 +459,9 @@ li {
   margin-bottom: 51px;
 }
 
-.brake-card img {
+.brake-card__vehicle {
   max-width: 267.995px;
-  height: auto;
+  height: 106px;
   width: 100%;
   margin-bottom: 45px;
 }
