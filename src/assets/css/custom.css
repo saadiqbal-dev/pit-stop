@@ -1,0 +1,73 @@
+.all-services p a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+  color: #eb3423;
+}
+.hidden {
+  display: none !important;
+}
+.cta-package-page__content {
+  max-width: 905px;
+}
+
+.search-dropdown-subitem a {
+  color: var(--color-black);
+  font-family: var(--font-family-accent);
+  font-size: var(--font-size-base);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--line-height-md);
+  padding: var(--spacing-xs) var(--spacing-xl);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-dropdown-subitem a:hover {
+  color: var(--color-black);
+}
+
+.package-cta a.red,
+.package-cta a.red:hover,
+.package-cta a.red:focus {
+  text-decoration: none;
+  color: #eb3423;
+}
+
+.field-group .caption span {
+  color: #eb3423;
+}
+
+@media (max-width: 1366px) {
+  .search-dropdown-subitem a {
+    font-size: 14px;
+  }
+}
+@media (max-width: 1280px) {
+  .search-dropdown-subitem a {
+    font-size: 14px;
+    padding: 6px 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .search-dropdown-subitem a {
+    font-size: 13px;
+    padding: 6px 18px;
+  }
+}
+@media (max-width: 768px) {
+  .search-dropdown-subitem a {
+    font-size: 12px;
+    padding: 6px 16px;
+  }
+}
+
+@media (max-width: 1121px) {
+   .promotion-banner p {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 280px;
+  }
+}
