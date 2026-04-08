@@ -829,10 +829,10 @@ li {
   text-align: left;
 
   font-family: var(--font-family-accent);
-  font-size: 40px;
+  font-size: 26px;
   font-style: normal;
   font-weight: 700;
-  line-height: 84.606px; /* 211.516% */
+  line-height: 36px; /* 211.516% */
 }
 
 .faq-item {
@@ -972,8 +972,8 @@ li {
   }
 
   .faq-heading {
-    font-size: 44px;
-    line-height: 54px;
+    font-size: 26px;
+    line-height: 36px;
     margin-bottom: 70px;
   }
 }
@@ -1007,8 +1007,8 @@ li {
   }
 
   .faq-heading {
-    font-size: 42px;
-    line-height: 52px;
+    font-size: 26px;
+    line-height: 36px;
     margin-bottom: 65px;
   }
 }
@@ -1043,8 +1043,8 @@ li {
   }
 
   .faq-heading {
-    font-size: 38px;
-    line-height: 48px;
+    font-size: 26px;
+    line-height: 36px;
     margin-bottom: 60px;
   }
 
@@ -1102,8 +1102,8 @@ li {
   }
 
   .faq-heading {
-    font-size: 32px;
-    line-height: 42px;
+    font-size: 26px;
+    line-height: 36px;
     margin-bottom: 50px;
   }
 
@@ -1199,7 +1199,7 @@ li {
   }
 
   .faq-heading {
-    font-size: 28px;
+    font-size: 26px;
     line-height: 36px;
     margin-bottom: 40px;
   }
