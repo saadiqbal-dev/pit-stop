@@ -420,7 +420,7 @@ li {
 
 .brake-card {
   width: 100%;
-  max-height: 430px;
+  min-height: 430px;
   height: 100%;
   /* aspect-ratio: 54/43; */
   background: #fff;
@@ -430,7 +430,7 @@ li {
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   position: relative;
   overflow: hidden;
   transition: box-shadow 0.3s ease;
@@ -458,7 +458,7 @@ li {
   font-style: normal;
   font-weight: 700;
   line-height: 32px; /* 164.286% */
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 
 .brake-card__vehicle {
@@ -521,11 +521,11 @@ li {
     color: #000;
     text-align: center;
     font-family: var(--font-family-base);
-    font-size: 28px;
+    font-size: 26px;
     font-style: normal;
     font-weight: 700;
-    line-height: 46px; /* 164.286% */
-    margin-bottom: 51px;
+    line-height: 36px; /* 164.286% */
+    /* margin-bottom: 51px; */
   }
 
   .brake-card__vehicle {
@@ -705,7 +705,7 @@ li {
   font-size: 48px;
   font-style: normal;
   font-weight: 700;
-  line-height: 80px;
+  line-height: 58px;
 }
 
 .free-wof-hero-text p {
@@ -869,6 +869,7 @@ li {
   user-select: none;
   width: 100%;
   gap: 20px;
+  padding: 20px 0;
 }
 
 .faq-question span {
@@ -876,8 +877,8 @@ li {
   font-family: "Open Sans";
   font-size: 24px;
   font-style: normal;
-  font-weight: 700;
-  line-height: 88.733px;
+  font-weight: 500;
+  line-height: 34px;
   flex: 1;
   margin: 0;
   padding: 0;
@@ -930,7 +931,7 @@ li {
   font-family: var(--font-family-base);
   font-size: 20px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 28px;
   margin: 0;
   padding: 0;
@@ -1225,5 +1226,18 @@ li {
   .faq-icon-close {
     width: 24px;
     height: 24px;
+  }
+}
+
+@media (max-width: 1720px) {
+  .brake-card h3 {
+    /* margin-bottom: 15px; */
+  }
+}
+
+@media (max-width: 768px) {
+  .brake-card {
+    max-height: 380px;
+    min-height: 350px;
   }
 }
