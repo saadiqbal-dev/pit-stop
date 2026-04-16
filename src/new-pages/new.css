@@ -206,6 +206,41 @@ li {
   height: 128px;
 }
 
+/* Towbar location dropdown */
+.towbar-location-select {
+  max-width: 560px;
+  border-color: #cecaca;
+  border: 2px solid #cecaca;
+  border-radius: 5px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.towbar-location-select .form-select:focus {
+  border-color: #cecaca;
+  box-shadow: none;
+}
+
+.form-select {
+  color: #000;
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 29px; /* 181.25% */
+  padding: 0 0 0 24px;
+}
+
+.s-cards .row {
+  flex-wrap: wrap;
+}
+
+.s-cards .row > .col {
+  flex: 1 1 300px;
+}
+
 @media (min-width: 1200px) {
   .fw-content {
     min-height: 648px;
