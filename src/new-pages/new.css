@@ -24,7 +24,7 @@
 
 @media (max-width: 768px) {
   .fw-text {
-    gap: 20px;
+    gap: 0px;
   }
   .fw-text h1 {
     color: #000;
