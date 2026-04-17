@@ -46,6 +46,16 @@
   margin: 0;
 }
 
+.fw-text ul {
+  color: #000;
+  font-family: var(--font-family-base);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 29px;
+  padding: 0 0 0 20px;
+  margin: 0;
+}
+
 .fw-image {
   display: block;
   width: 100%;
@@ -220,6 +230,13 @@ li {
   max-width: none;
 }
 
+@media (max-width: 768px) {
+  .dark-bg .fw-bold-text:has(p) h3 {
+    font-size: 26px;
+    line-height: 36px;
+  }
+}
+
 .fw-bold-text:has(p) p {
   color: #000;
 }
@@ -233,7 +250,7 @@ li {
   align-items: center !important;
 }
 
-.fw-bold-text:has(ul, ol) h3 {
+.dark-bg .fw-bold-text:has(ul, ol) h3 {
   color: #fff;
   font-size: 26px;
   font-style: normal;
@@ -249,6 +266,23 @@ li {
 }
 
 .fw-bold-text:has(ul, ol) li {
+  color: #fff;
+}
+
+/* --- fw-bold-text: h3 + 3+ p tags → dark theme (overrides light) --- */
+.fw-bold-content.dark-bg:has(p + p + p) {
+  background: #272626;
+}
+
+.fw-bold-content:has(p + p + p) {
+  align-items: center !important;
+}
+
+.dark-bg .fw-bold-text:has(p + p + p) h3 {
+  color: #fff;
+}
+
+.fw-bold-text:has(p + p + p) p {
   color: #fff;
 }
 
@@ -478,7 +512,7 @@ li {
 @media (min-width: 1500px) {
   .fw-content {
     min-height: 748px;
-    padding: 100px;
+    padding: 100px 80px 100px 100px;
   }
   .fw-bold-content:has(p) {
     padding: 100px 90px;
@@ -1129,7 +1163,7 @@ li {
   margin: 0;
   width: 100%;
   overflow: hidden;
-  max-width: 644px;
+  max-width: 650px;
   width: 100%;
   transition:
     max-height 0.4s ease,
@@ -1151,6 +1185,17 @@ li {
   line-height: 28px;
   margin: 0;
   padding: 0;
+}
+
+.faq-answer ol {
+  color: #000;
+  font-family: var(--font-family-base);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+  margin: 0;
+  padding: 0 0 0 20px;
 }
 
 .faq-answer a {
