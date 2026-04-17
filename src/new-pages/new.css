@@ -133,6 +133,17 @@ li {
   background: #272626;
 }
 
+.fw-bold-text h2 {
+  color: #000;
+  font-family: var(--font-family-base);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 50px; /* 125% */
+  padding: 0;
+  margin: 0;
+}
+
 .fw-bold-text h3 {
   color: #003001;
   font-family: var(--font-family-base);
@@ -142,8 +153,64 @@ li {
   max-width: 516px;
 }
 
+.fw-bold-text h4 {
+  color: #fff;
+  font-family: var(--font-family-base);
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 29px; /* 111.538% */
+  padding: 0;
+  margin: 0;
+}
+
+.fw-bold-text p {
+  color: #fff;
+  font-family: var(--font-family-base);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 29px; /* 145% */
+  padding: 0;
+  margin: 0;
+}
+
+.fw-bold-text ul,
+li {
+  color: #fff;
+  font-family: var(--font-family-base);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 29px; /* 145% */
+  padding: 0 0 0 20px;
+  margin: 0;
+}
+
 .dark-bg .fw-bold-text h3 {
   color: #fff;
+}
+
+/* When fw-bold-text has h2, switch to light theme */
+.fw-bold-content.dark-bg:has(h2) {
+  background: #fff;
+}
+
+.fw-bold-content:has(h2) {
+  align-items: start !important;
+}
+
+.fw-bold-text:has(h2):has(p, ul) h2 {
+  color: #000;
+}
+
+.fw-bold-text:has(h2):has(p, ul) p {
+  color: #000;
+}
+
+.fw-bold-text:has(h2):has(p, ul) ul,
+.fw-bold-text:has(h2):has(p, ul) li {
+  color: #000;
 }
 
 .faq-heading-base {
@@ -234,11 +301,57 @@ li {
 }
 
 .s-cards .row {
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 100%;
 }
 
 .s-cards .row > .col {
-  flex: 1 1 300px;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .s-cards .row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .s-cards .row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .s-cards .row:has(> .col:nth-child(2):last-child) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Full-height image when sibling column has extended content */
+@media (min-width: 1200px) {
+  .row:has(.fw-bold-text:has(h4, ul)) .fw-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .row:has(.fw-bold-text:has(h4, ul)) .col-xl-6:has(.fw-image) {
+    position: relative;
+    min-height: 100%;
+  }
+}
+
+/* Flip image/text order on mobile when two images would stack back-to-back */
+@media (max-width: 1199.98px) {
+  section:has(> .row > :last-child .fw-image)
+    + section:has(> .row > :first-child .fw-image)
+    > .row {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -298,13 +411,31 @@ li {
     text-align: left;
   }
 }
+
+@media (min-width: 1700px) {
+  .fw-bold-content {
+    padding: 220px 220px 180px 220px;
+  }
+  .fw-bold-content:has(h4) {
+    padding: 90px 80px 70px 120px;
+  }
+  .fw-bold-content:has(h2) {
+    padding: 100px 90px;
+  }
+}
 @media (min-width: 1500px) {
   .fw-content {
     min-height: 748px;
     padding: 100px;
   }
-  .fw-bold-content {
+  /* .fw-bold-content {
     padding: 220px 220px 180px 220px;
+  }
+  .fw-bold-content:has(h4, ul) {
+    padding: 90px 80px 70px 120px;
+  } */
+  .fw-bold-content:has(h2) {
+    padding: 100px 90px;
   }
   .fw-bold-text {
     max-width: 956px;
@@ -857,7 +988,7 @@ li {
   width: 100%;
 }
 
-.faq-heading {
+.faq-container h2 {
   color: #000;
   margin: 0 0 39px 0;
   padding: 0;
@@ -1006,7 +1137,7 @@ li {
     padding: 0 90px;
   }
 
-  .faq-heading {
+  .faq-container h2 {
     font-size: 26px;
     line-height: 36px;
     margin-bottom: 70px;
@@ -1041,7 +1172,7 @@ li {
     padding: 0 80px;
   }
 
-  .faq-heading {
+  .faq-container h2 {
     font-size: 26px;
     line-height: 36px;
     margin-bottom: 65px;
@@ -1077,7 +1208,7 @@ li {
     padding: 0 60px;
   }
 
-  .faq-heading {
+  .faq-container h2 {
     font-size: 26px;
     line-height: 36px;
     margin-bottom: 60px;
@@ -1136,7 +1267,7 @@ li {
     padding: 0 40px;
   }
 
-  .faq-heading {
+  .faq-container h2 {
     font-size: 26px;
     line-height: 36px;
     margin-bottom: 50px;
@@ -1233,7 +1364,7 @@ li {
     padding: 0px;
   }
 
-  .faq-heading {
+  .faq-container h2 {
     font-size: 26px;
     line-height: 36px;
     margin-bottom: 40px;
@@ -1269,5 +1400,15 @@ li {
   .brake-card {
     max-height: 380px;
     min-height: 350px;
+  }
+}
+
+.content-section {
+  padding: 120px 100px;
+}
+
+@media (max-width: 1200px) {
+  .content-section {
+    padding: 60px 30px;
   }
 }
