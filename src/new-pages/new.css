@@ -207,15 +207,17 @@ li {
   margin: 0;
 }
 
-.fw-bold-text ul,
-li {
+.fw-bold-text ul {
+  padding: 0 0 0 20px;
+}
+
+.fw-bold-text li {
   color: #fff;
   font-family: var(--font-family-base);
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 29px; /* 145% */
-  padding: 0 0 0 20px;
   margin: 0;
 }
 
