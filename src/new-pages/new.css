@@ -156,17 +156,7 @@ li {
   background: #272626;
 }
 
-.fw-bold-text h2 {
-  color: #000;
-  font-family: var(--font-family-base);
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 50px; /* 125% */
-  padding: 0;
-  margin: 0;
-}
-
+/* --- fw-bold-text: h3 only (default / quote style) --- */
 .fw-bold-text h3 {
   color: #003001;
   font-family: var(--font-family-base);
@@ -185,15 +175,8 @@ li {
   }
 }
 
-.fw-bold-text h4 {
+.dark-bg .fw-bold-text h3 {
   color: #fff;
-  font-family: var(--font-family-base);
-  font-size: 26px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 29px; /* 111.538% */
-  padding: 0;
-  margin: 0;
 }
 
 .fw-bold-text p {
@@ -221,30 +204,52 @@ li {
   margin: 0;
 }
 
-.dark-bg .fw-bold-text h3 {
-  color: #fff;
-}
-
-/* When fw-bold-text has h2, switch to light theme */
-.fw-bold-content.dark-bg:has(h2) {
+/* --- fw-bold-text: h3 + p → light theme --- */
+.fw-bold-content.dark-bg:has(p) {
   background: #fff;
 }
 
-.fw-bold-content:has(h2) {
+.fw-bold-content:has(p) {
   align-items: start !important;
 }
 
-.fw-bold-text:has(h2):has(p, ul) h2 {
+.dark-bg .fw-bold-text:has(p) h3 {
+  color: #000;
+  font-size: 40px;
+  line-height: 50px;
+  max-width: none;
+}
+
+.fw-bold-text:has(p) p {
   color: #000;
 }
 
-.fw-bold-text:has(h2):has(p, ul) p {
-  color: #000;
+/* --- fw-bold-text: h3 + p + ul/ol → extended content (overrides above) --- */
+.fw-bold-content.dark-bg:has(ul, ol) {
+  background: #272626;
 }
 
-.fw-bold-text:has(h2):has(p, ul) ul,
-.fw-bold-text:has(h2):has(p, ul) li {
-  color: #000;
+.fw-bold-content:has(ul, ol) {
+  align-items: center !important;
+}
+
+.fw-bold-text:has(ul, ol) h3 {
+  color: #fff;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 29px;
+  max-width: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fw-bold-text:has(ul, ol) p {
+  color: #fff;
+}
+
+.fw-bold-text:has(ul, ol) li {
+  color: #fff;
 }
 
 .faq-heading-base {
@@ -374,9 +379,9 @@ li {
   }
 }
 
-/* Full-height image when sibling column has extended content */
+/* Full-height image when sibling column has extended content (h3 + p + ul/ol) */
 @media (min-width: 1200px) {
-  .row:has(.fw-bold-text:has(h4, ul)) .fw-image {
+  .row:has(.fw-bold-text):has(ul, ol) .fw-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -385,7 +390,7 @@ li {
     object-fit: cover;
   }
 
-  .row:has(.fw-bold-text:has(h4, ul)) .col-xl-6:has(.fw-image) {
+  .row:has(.fw-bold-text):has(ul, ol) .col-xl-6:has(.fw-image) {
     position: relative;
     min-height: 100%;
   }
@@ -463,11 +468,11 @@ li {
   .fw-bold-content {
     padding: 220px 220px 180px 220px;
   }
-  .fw-bold-content:has(h4) {
-    padding: 90px 80px 70px 120px;
-  }
-  .fw-bold-content:has(h2) {
+  .fw-bold-content:has(p) {
     padding: 100px 90px;
+  }
+  .fw-bold-content:has(ul, ol) {
+    padding: 90px 80px 70px 120px;
   }
 }
 @media (min-width: 1500px) {
@@ -475,14 +480,11 @@ li {
     min-height: 748px;
     padding: 100px;
   }
-  /* .fw-bold-content {
-    padding: 220px 220px 180px 220px;
-  }
-  .fw-bold-content:has(h4, ul) {
-    padding: 90px 80px 70px 120px;
-  } */
-  .fw-bold-content:has(h2) {
+  .fw-bold-content:has(p) {
     padding: 100px 90px;
+  }
+  .fw-bold-content:has(ul, ol) {
+    padding: 90px 80px 70px 120px;
   }
   .fw-bold-text {
     max-width: 956px;
