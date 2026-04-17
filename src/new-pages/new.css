@@ -310,6 +310,13 @@ li {
   padding: 0 0 0 24px;
 }
 
+@media (max-width: 468px) {
+  .form-select {
+    padding: 0 0 0 12px;
+    font-size: 10.5px;
+  }
+}
+
 .s-cards .row {
   display: grid;
   grid-template-columns: 1fr;
