@@ -108,6 +108,16 @@ li {
   line-height: 29px;
 }
 
+.s-card ol {
+  padding-left: 20px;
+  margin: 0;
+  font-family: var(--font-family-base);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 29px;
+  color: #fff;
+}
+
 .s-card img {
   height: 100%;
   max-height: 128px;
