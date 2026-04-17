@@ -270,6 +270,12 @@ li {
   padding: 151px 30px;
 }
 
+@media (max-width: 480px) {
+  .cta-section {
+    padding: 88px 30px 112px 30px;
+  }
+}
+
 .cta-container {
   max-width: 752px;
   margin: 0 auto;
