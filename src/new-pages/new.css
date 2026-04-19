@@ -313,8 +313,11 @@ li {
   align-items: end !important;
 }
 
-.fw-bold-content:has(.accordion) .fw-bold-text {
-  width: 100%;
+@media (max-width: 1200px) {
+  .fw-bold-content:has(.accordion) .fw-bold-text {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 .fw-bold-text:has(p + p + p) p {
@@ -630,7 +633,7 @@ li {
 @media (min-width: 1500px) {
   .fw-content {
     min-height: 748px;
-    padding: 100px 80px 100px 100px;
+    padding: 100px 110px 100px 100px;
   }
   .fw-bold-content:has(p) {
     padding: 100px 90px;
