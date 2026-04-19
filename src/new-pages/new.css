@@ -147,7 +147,7 @@ section.container-fluid:has(.top-bar) {
 }
 
 .s-card ul,
-li {
+.s-card li {
   margin-left: -5px;
   font-family: var(--font-family-base);
   font-size: 20px;
@@ -490,7 +490,7 @@ li {
   box-shadow: none;
 }
 
-.form-select {
+.towbar-location-select .form-select {
   color: #000;
   font-family: var(--font-family-base);
   font-size: 16px;
@@ -501,7 +501,7 @@ li {
 }
 
 @media (max-width: 468px) {
-  .form-select {
+  .towbar-location-select .form-select {
     padding: 0 0 0 12px;
     font-size: 10.5px;
   }
@@ -964,7 +964,6 @@ li {
 
 /* ================================================================================
    BRAKE SPECIAL PAGE - HERO & SECTIONS
-   (Copied from wof.css for brake-special page independence)
    ================================================================================ */
 
 /* Promotion Banner */
