@@ -8948,7 +8948,7 @@ section.container-fluid:has(.top-bar) {
 
 @media (min-width: 1700px) {
   .fw-bold-content {
-    padding: 220px;
+    padding: 0 220px 0 220px;
   }
   .fw-bold-content:has(p) {
     padding: 100px 90px;
@@ -8969,7 +8969,7 @@ section.container-fluid:has(.top-bar) {
     padding: 90px 80px 70px 120px;
   }
   .fw-bold-text {
-    max-width: 956px;
+    max-width: 750px;
   }
   .s-card {
     padding: 50px 57px;
