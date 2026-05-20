@@ -8963,13 +8963,14 @@ section.container-fluid:has(.top-bar) {
     padding: 100px 110px 100px 100px;
   }
   .fw-bold-content:has(p) {
-    padding: 100px 90px;
+    padding: 100px;
   }
   .fw-bold-content:has(ul, ol) {
     padding: 90px 80px 70px 120px;
   }
   .fw-bold-text {
     max-width: 750px;
+    width: 100%;
   }
   .s-card {
     padding: 50px 57px;
