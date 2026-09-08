@@ -2018,7 +2018,7 @@ a.mobile-cta__button:hover {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  padding: 0 214px;
+  padding: 0 190px;
   align-items: start;
   justify-content: center;
   gap: 50px;
@@ -8344,7 +8344,8 @@ body.search-page .search-input::placeholder {
   margin: 0;
 }
 
-.fw-text h1 {
+.fw-text h1,
+.fw-text h2 {
   color: #000;
   font-family: var(--font-family-base);
   font-size: 40px;
@@ -8359,7 +8360,8 @@ body.search-page .search-input::placeholder {
   .fw-text {
     gap: 0px;
   }
-  .fw-text h1 {
+  .fw-text h1,
+.fw-text h2 {
     color: #000;
     font-size: 26px;
     font-style: normal;
@@ -8534,7 +8536,7 @@ section.container-fluid:has(.top-bar) {
   font-size: clamp(1.5rem, 1.17rem + 0.69vw, 2rem);
   font-weight: 700;
   line-height: clamp(2.4375rem, 2.06rem + 0.78vw, 3rem);
-  max-width: 516px;
+  max-width: 520px;
   margin: 0;
 }
 
@@ -9952,5 +9954,74 @@ section.container-fluid:has(.top-bar) {
 @media (max-width: 1200px) {
   .content-section {
     padding: 60px 30px;
+  }
+}
+
+/* Explicit, reusable background variants for the existing split sections. */
+.fw-content[data-background="light"],
+.fw-bold-content[data-background="light"] {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+.fw-content[data-background="dark"],
+.fw-bold-content[data-background="dark"] {
+  background: #272626;
+  color: var(--color-white);
+}
+
+[data-background] .fw-text h1,
+[data-background] .fw-text h2,
+[data-background] .fw-text p,
+[data-background] .fw-bold-text h2,
+[data-background] .fw-bold-text h3,
+[data-background] .fw-bold-text p {
+  color: inherit;
+}
+
+.fw-bold-text h2 {
+  margin: 0;
+  font-family: var(--font-family-base);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 50px;
+}
+
+@media (max-width: 768px) {
+  .fw-bold-text h2 {
+    font-size: 26px;
+    line-height: 36px;
+  }
+}
+
+/* Centered presentation of the existing service cards. */
+.s-cards[data-presentation="centered"] .img-container {
+  height: 130px;
+  max-height: 130px;
+}
+
+.s-cards[data-presentation="centered"] .img-container img {
+  max-height: 130px;
+}
+
+@media (min-width: 1200px) {
+  .s-cards[data-presentation="centered"] {
+    padding: 94px 100px 130px;
+    gap: 68px;
+  }
+
+  .s-cards[data-presentation="centered"] .s-card {
+    min-height: 472px;
+    padding: 60px 57px;
+  }
+}
+
+.fw-bold-text[data-content-width="compact"] {
+  max-width: 620px;
+}
+
+@media (min-width: 1200px) {
+  .fw-bold-content:has([data-content-width="compact"]) {
+    padding: 80px clamp(80px, 10vw, 190px);
   }
 }

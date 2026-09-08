@@ -71,3 +71,144 @@ a:hover {
     max-width: 280px;
   }
 }
+
+/* Auto Service Experts page */
+.auto-experts-video {
+  padding: 85px clamp(24px, 5.208333vw, 100px) 110px;
+}
+
+.auto-experts-video__inner {
+  max-width: 1720px;
+}
+
+.auto-experts-video__inner h1 {
+  margin: 0 0 50px;
+  color: var(--color-black);
+  font-family: var(--font-family-base);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 50px;
+}
+
+.auto-experts-video__player {
+  --bs-aspect-ratio: 56.2790697674%; /* 968 / 1720 */
+  background: var(--color-black);
+}
+
+.auto-experts-video__player video {
+  display: block;
+  object-fit: cover;
+  border: 0;
+}
+
+.auto-experts-trust {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.auto-experts-trust > .row {
+  height: 760px;
+  max-height: 760px;
+}
+
+.auto-experts-trust > .row > .col-lg-6 {
+  height: 100%;
+  min-height: 0;
+}
+
+.auto-experts-trust .fw-bold-content {
+  padding: 215px clamp(32px, 8.28125vw, 159px) 80px clamp(32px, 12.447917vw, 239px);
+}
+
+.auto-experts-trust__text {
+  width: 100%;
+  max-width: 562px;
+  margin-left: auto;
+  gap: 37px;
+}
+
+.auto-experts-trust__text h2 {
+  margin: 0;
+  color: inherit;
+  font-family: var(--font-family-base);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 50px;
+}
+
+.auto-experts-trust .auto-experts-trust__text p {
+  margin: 0;
+  color: inherit;
+  font-family: var(--font-family-base);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 29px;
+}
+
+.auto-experts-trust__text .ps-btn {
+  padding: 8px 16px;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 3px;
+}
+
+.auto-experts-trust .fw-image {
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1399px) {
+  .auto-experts-trust > .row {
+    height: 600px;
+  }
+
+  .auto-experts-trust .fw-bold-content {
+    padding: 80px 40px;
+  }
+}
+
+@media (max-width: 991px) {
+  .auto-experts-trust > .row {
+    height: auto;
+    max-height: none;
+  }
+
+  .auto-experts-trust > .row > .col-lg-6 {
+    height: auto;
+  }
+
+  .auto-experts-video {
+    padding-top: 48px;
+    padding-bottom: 60px;
+  }
+
+  .auto-experts-video__inner h1 {
+    margin-bottom: 30px;
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  .auto-experts-trust .fw-bold-content {
+    min-height: 0;
+    padding: 60px 30px;
+  }
+
+  .auto-experts-trust__text {
+    margin-left: 0;
+    gap: 24px;
+  }
+
+  .auto-experts-trust__text h2 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  .auto-experts-trust .auto-experts-trust__text p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .auto-experts-trust .fw-image {
+    height: auto;
+  }
+}
