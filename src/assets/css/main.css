@@ -10025,3 +10025,16 @@ section.container-fluid:has(.top-bar) {
     padding: 80px clamp(80px, 10vw, 190px);
   }
 }
+
+/* Keep service-card icons consistent across breakpoints. */
+.s-cards .s-card .img-container {
+  height: 95px;
+  max-height: 95px;
+}
+
+.s-cards .s-card .img-container img {
+  width: auto;
+  height: auto;
+  max-width: 95px;
+  max-height: 95px;
+}
