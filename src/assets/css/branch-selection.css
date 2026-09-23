@@ -28,10 +28,16 @@
 }
 
 .branch-hero .find-dropdown,
-.branch-hero .find-input { width: 100%; }
+.branch-hero .find-input {
+  width: 100%;
+  background: #fff;
+}
 .branch-hero .find-dropdown { z-index: 2; }
 .branch-hero .find-input { border-radius: 3px 0 0 3px; }
-.branch-hero .find-dropdown-list { width: 100%; }
+.branch-hero .find-dropdown-list {
+  width: 100%;
+  background: #fff;
+}
 .branch-hero .find-input:focus-visible { outline: 3px solid white; outline-offset: 3px; }
 
 .branch-listing { background: #f4f5f7; }
