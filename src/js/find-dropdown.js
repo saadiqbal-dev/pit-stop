@@ -50,19 +50,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const selectedLocation = this.getAttribute('data-value');
         const selectedRegion = parentItem.getAttribute('data-value');
 
-        // Hide dropdown and title
-        dropdown.style.display = 'none';
-        if (title) {
-          title.style.display = 'none';
+        // Close the menu, then open the selected booking page.
+        dropdown.classList.remove('active');
+        if (loading) {
+          loading.classList.add('active');
         }
-
-        // Show loading state
-        loading.classList.add('active');
-
-        // Redirect after 2 seconds
-        setTimeout(function() {
-          window.location.href = 'booking.html?location=' + selectedLocation + '&region=' + selectedRegion;
-        }, 2000);
+        window.location.href = 'booking.html?location=' + selectedLocation + '&region=' + selectedRegion;
       });
     });
   });
