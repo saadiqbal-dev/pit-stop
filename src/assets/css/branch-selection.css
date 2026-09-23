@@ -30,14 +30,12 @@
 .branch-hero .find-dropdown,
 .branch-hero .find-input {
   width: 100%;
-  background: #fff;
 }
 .branch-hero .find-dropdown { z-index: 2; }
 .branch-hero .find-input { border-radius: 3px 0 0 3px; }
 .branch-hero .find-dropdown-list {
   top: 0;
   width: 100%;
-  background: #fff;
   z-index: 3;
 }
 .branch-hero .find-input:focus-visible { outline: 3px solid white; outline-offset: 3px; }
