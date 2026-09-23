@@ -52,7 +52,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Hide dropdown and title
         dropdown.style.display = 'none';
-        title.style.display = 'none';
+        if (title) {
+          title.style.display = 'none';
+        }
 
         // Show loading state
         loading.classList.add('active');
