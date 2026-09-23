@@ -1,0 +1,135 @@
+/* Branch selection layout, layered on the existing Pit Stop components. */
+.branch-selection-page {
+  height: auto;
+  font-family: var(--font-family-base);
+  color: #1d1c1c;
+}
+
+.branch-hero {
+  min-height: 630px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: #d3d3d3 url("../img/locations-hero-bg-image.png") -161.474px -329px / 119.335% 160.291% no-repeat;
+}
+
+.branch-hero__content {
+  width: min(753px, calc(100% - 48px));
+  margin-top: 205px;
+  transform: translateX(37.5px);
+}
+
+.branch-hero h1 {
+  margin: 0 0 15px;
+  color: #fff;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 46px;
+}
+
+.branch-hero .find-dropdown,
+.branch-hero .find-input { width: 100%; }
+.branch-hero .find-dropdown { z-index: 2; }
+.branch-hero .find-input { border-radius: 3px 0 0 3px; }
+.branch-hero .find-dropdown-list { width: 100%; }
+.branch-hero .find-input:focus-visible { outline: 3px solid white; outline-offset: 3px; }
+
+.branch-listing { background: #f4f5f7; }
+.branch-listing__inner {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 70px clamp(24px, 5.208333vw, 100px) 110px;
+}
+.branch-region + .branch-region { margin-top: 37px; }
+.branch-region h2 {
+  margin: 0 0 26px;
+  font: 700 22px/32px var(--font-family-accent);
+}
+
+.branch-grid {
+  --bs-gutter-x: 37px;
+  --bs-gutter-y: 50px;
+}
+
+.branch-grid > [class*="col-"] {
+  display: flex;
+}
+
+@media (min-width: 1480px) {
+  .branch-grid > [class*="col-"] {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+}
+.branch-card {
+  background: #fff;
+  padding: 31px 40px 39px;
+  min-height: 319px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-shadow: 0 0 12.8px 6px rgba(0, 0, 0, .07);
+}
+#northland .branch-card { min-height: 283px; }
+#auckland .branch-grid > div:nth-child(-n+4) .branch-card { min-height: 348px; }
+.branch-card h3 {
+  margin: 0 0 20px;
+  font: 700 22px/24px var(--font-family-base);
+}
+.branch-card address {
+  margin: 0;
+  font: normal 400 16px/24px var(--font-family-base);
+}
+.branch-card__button {
+  width: 209px;
+  min-height: 50px;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 32px;
+  padding: 9px 12px;
+}
+
+/* The shared footer is composed from the repository's existing markup. */
+.branch-selection-page .ps-footer-container {
+  min-height: 475px;
+  max-width: 1920px;
+  padding: 50px clamp(24px, 5.208333vw, 100px) 46px;
+  gap: 68px;
+  justify-content: space-between;
+}
+.branch-selection-page .ps-footer-logo-section .desktop-footer-phone { display: none; }
+.branch-selection-page .ps-footer-content { gap: 80px; }
+.branch-selection-page .links-container { gap: 65px; }
+.branch-selection-page .links-content,
+.branch-selection-page .links-content-services { gap: 15px; }
+.branch-selection-page .ps-footer-logo { height: auto; width: 225px; }
+
+@media (max-width: 991px) {
+  .branch-hero {
+    min-height: 430px;
+    background-position: center center;
+    background-size: cover;
+  }
+  .branch-hero__content { margin-top: 125px; transform: none; }
+  .branch-listing__inner { padding-top: 48px; padding-bottom: 80px; }
+  .branch-grid { --bs-gutter-x: 24px; --bs-gutter-y: 24px; }
+  .branch-card, #northland .branch-card,
+  #auckland .branch-grid > div:nth-child(-n+4) .branch-card { min-height: 300px; }
+}
+@media (max-width: 575px) {
+  .branch-hero {
+    min-height: 340px;
+    background-position: center center;
+    background-size: cover;
+  }
+  .branch-hero__content { margin-top: 90px; }
+  .branch-hero h1 { font-size: 24px; line-height: 34px; }
+  .branch-card, #northland .branch-card,
+  #auckland .branch-grid > div:nth-child(-n+4) .branch-card { min-height: 250px; }
+  .branch-card { padding: 28px; }
+  .branch-selection-page .ps-footer-container { gap: 35px; }
+}
