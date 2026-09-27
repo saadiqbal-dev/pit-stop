@@ -12,11 +12,28 @@ body.branch-selection-page {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  /* cover crops the image instead of squeezing it as the screen narrows. */
-  background: #d3d3d3 url("../img/locations-hero-bg-image.webp") center / cover no-repeat;
+  position: relative;
+  background-color: #d3d3d3;
+}
+
+/* Clips the zoomed image here so the hero itself can let the dropdown overflow. */
+.branch-hero__media {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* cover crops rather than squeezes; scale zooms the image 20% around its centre. */
+.branch-hero__media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../img/locations-hero-bg-image.webp") center center / cover no-repeat;
+  transform: scale(1.2);
 }
 
 .branch-hero__content {
+  position: relative;
   width: min(753px, calc(100% - 48px));
   margin-top: 205px;
   transform: translateX(37.5px);
