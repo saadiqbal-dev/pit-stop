@@ -1,5 +1,7 @@
 /* Branch selection layout, layered on the existing Pit Stop components. */
-.branch-selection-page {
+/* body.* matches the specificity of the shared red body.find-a-store-page rule. */
+body.branch-selection-page {
+  background: #fff;
   height: auto;
   font-family: var(--font-family-base);
   color: #1d1c1c;
