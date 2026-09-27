@@ -12,9 +12,8 @@ body.branch-selection-page {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  /* Size is locked to the 1920px design so narrower screens crop the image
-     (centred) instead of squeezing it; wider screens scale up. */
-  background: #d3d3d3 url("../img/locations-hero-bg-image.png") calc(50% + 24.126px) -329px / max(2291.232px, 119.335%) max(1009.833px, 160.291%) no-repeat;
+  /* cover crops the image instead of squeezing it as the screen narrows. */
+  background: #d3d3d3 url("../img/locations-hero-bg-image.webp") center / cover no-repeat;
 }
 
 .branch-hero__content {
@@ -119,11 +118,7 @@ body.branch-selection-page {
 .branch-selection-page .ps-footer-logo { height: auto; width: 225px; }
 
 @media (max-width: 991px) {
-  .branch-hero {
-    min-height: 430px;
-    background-position: center center;
-    background-size: cover;
-  }
+  .branch-hero { min-height: 430px; }
   .branch-hero__content { margin-top: 125px; transform: none; }
   .branch-listing__inner { padding-top: 48px; padding-bottom: 80px; }
   .branch-grid { --bs-gutter-x: 24px; --bs-gutter-y: 24px; }
@@ -131,11 +126,7 @@ body.branch-selection-page {
   #auckland .branch-grid > div:nth-child(-n+4) .branch-card { min-height: 300px; }
 }
 @media (max-width: 575px) {
-  .branch-hero {
-    min-height: 340px;
-    background-position: center center;
-    background-size: cover;
-  }
+  .branch-hero { min-height: 340px; }
   .branch-hero__content { margin-top: 90px; }
   .branch-hero h1 { font-size: 24px; line-height: 34px; }
   .branch-card, #northland .branch-card,
