@@ -61,7 +61,7 @@ html:has(body.franchise-page) {
 
 .franchise-intro {
   background: var(--color-background-light);
-  padding: 40px var(--padding-x-mobile) var(--spacing-4xl);
+  padding: 40px var(--padding-x-mobile);
 }
 
 .franchise-intro h1 {
@@ -102,7 +102,7 @@ html:has(body.franchise-page) {
 
 .franchise-split {
   background: var(--color-white);
-  padding: 0 var(--padding-x-mobile) var(--spacing-4xl);
+  padding: var(--spacing-4xl) var(--padding-x-mobile);
 }
 
 .franchise-split .fw-content {
@@ -194,15 +194,11 @@ html:has(body.franchise-page) {
 
 .franchise-territories {
   background: var(--color-white);
-  padding: 0 var(--padding-x-mobile) var(--spacing-4xl);
+  padding: var(--spacing-4xl) var(--padding-x-mobile);
 }
 
 .franchise-territories--featured {
   background: var(--color-background-light);
-}
-
-.franchise-territories--south {
-  padding-top: 0;
 }
 
 .franchise-territories__inner {
@@ -286,7 +282,7 @@ html:has(body.franchise-page) {
 
 .franchise-testimonials {
   background: var(--color-white);
-  padding: 0 var(--padding-x-mobile) var(--spacing-4xl);
+  padding: var(--spacing-4xl) var(--padding-x-mobile);
 }
 
 .franchise-testimonials__inner {
@@ -321,7 +317,7 @@ html:has(body.franchise-page) {
 
 .franchise-form-section {
   background: var(--color-white);
-  padding: 0 var(--padding-x-mobile) var(--spacing-4xl);
+  padding: 10px var(--padding-x-mobile) 60px;
 }
 
 .franchise-form-card {
@@ -457,7 +453,7 @@ html:has(body.franchise-page) {
 
 @media (min-width: 769px) {
   .franchise-intro {
-    padding: 90px var(--spacing-lg) 64px;
+    padding: 90px var(--spacing-lg) 101px;
   }
 
   .franchise-intro h1 {
@@ -472,7 +468,7 @@ html:has(body.franchise-page) {
   }
 
   .franchise-split {
-    padding: 0 var(--padding-x-tablet) 64px;
+    padding: 64px var(--padding-x-tablet);
   }
 
   .franchise-split .fw-text {
@@ -511,11 +507,11 @@ html:has(body.franchise-page) {
   }
 
   .franchise-territories {
-    padding: 0 var(--padding-x-tablet) 64px;
+    padding: 64px var(--padding-x-tablet) 72px;
   }
 
   .franchise-territories--south {
-    padding-top: 0;
+    padding-top: 48px;
   }
 
   .franchise-territories h2 {
@@ -559,7 +555,7 @@ html:has(body.franchise-page) {
   }
 
   .franchise-testimonials {
-    padding: 0 var(--padding-x-tablet) 64px;
+    padding: 64px var(--padding-x-tablet) 80px;
   }
 
   .franchise-testimonials h2 {
@@ -578,7 +574,7 @@ html:has(body.franchise-page) {
   }
 
   .franchise-form-section {
-    padding: 0 var(--padding-x-tablet) 64px;
+    padding: 80px var(--padding-x-tablet) 100px;
   }
 
   .franchise-form-card {
@@ -618,10 +614,6 @@ html:has(body.franchise-page) {
 /* ---------- Desktop splits (Bootstrap xl, same stack point as about.html) ---------- */
 
 @media (min-width: 1200px) {
-  .franchise-intro {
-    padding-bottom: 0;
-  }
-
   .franchise-split {
     padding: 0;
   }
@@ -675,7 +667,7 @@ html:has(body.franchise-page) {
   }
 
   .franchise-territories--north {
-    padding: 0;
+    padding: 72px 0 0;
   }
 
   .franchise-territories--south {
@@ -847,38 +839,11 @@ html:has(body.franchise-page) {
   }
 }
 
-/* The site FAQ brings its own top padding. Pull that padding back over
-   the form's bottom padding so the two bands do not stack. */
-body.franchise-page .faq {
-  margin-top: -50px;
-}
-
-@media (max-width: 480px) {
-  body.franchise-page .faq {
-    margin-top: -40px;
-  }
-}
-
-@media (min-width: 769px) {
-  body.franchise-page .faq {
-    margin-top: -60px;
-  }
-}
-
-@media (min-width: 1025px) {
-  body.franchise-page .faq {
-    margin-top: -65px;
-  }
-}
-
-@media (min-width: 1281px) {
-  body.franchise-page .faq {
-    margin-top: -70px;
-  }
-}
-
-@media (min-width: 1441px) {
-  body.franchise-page .faq {
-    margin-top: -108px;
+/* Splits stack below the xl breakpoint. Drop the previous section's
+   bottom padding only when the next section opens with a photo.
+   Grey bands (intro, featured) keep both paddings. */
+@media (max-width: 1199.98px) {
+  body.franchise-page main > section:not(.franchise-intro):not(.franchise-territories--featured):has(+ .franchise-section--image-first) {
+    padding-bottom: 0;
   }
 }
