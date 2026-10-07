@@ -317,7 +317,7 @@ html:has(body.franchise-page) {
 
 .franchise-form-section {
   background: var(--color-white);
-  padding: 10px var(--padding-x-mobile) 60px;
+  padding: 50px var(--padding-x-mobile) 60px;
 }
 
 .franchise-form-card {
@@ -574,7 +574,7 @@ html:has(body.franchise-page) {
   }
 
   .franchise-form-section {
-    padding: 80px var(--padding-x-tablet) 100px;
+    padding: 50px var(--padding-x-tablet) 100px;
   }
 
   .franchise-form-card {
