@@ -1,0 +1,961 @@
+/* ================================================================================
+   Franchise Opportunities — page-scoped styles
+   Loaded only by src/franchise.html, after main.css and custom.css.
+   Does not change existing rules. Reuses .ps-btn, .fw-*, .ps-form-* in markup
+   and overrides them here with higher specificity.
+   ================================================================================ */
+
+.franchise-page {
+  --franchise-placeholder: #757575;
+  --franchise-asterisk: #eb3423;
+  --franchise-overlay: rgba(0, 0, 0, 0.6);
+  --franchise-form-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  --franchise-split-copy: 20px;
+  --franchise-heading: 26px;
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+html:has(body.franchise-page) {
+  scroll-behavior: smooth;
+}
+
+.franchise-anchor {
+  scroll-margin-top: 0;
+}
+
+/* ---------- Shared button modifier (extends .ps-btn.ps-btn-primary) ---------- */
+
+.franchise-page .franchise-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 22px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-family-accent);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  line-height: var(--line-height-2xs);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.franchise-page .franchise-btn:hover,
+.franchise-page .franchise-btn:focus,
+.franchise-page .franchise-btn:visited {
+  color: var(--color-white);
+}
+
+.franchise-page .franchise-btn:focus-visible,
+.franchise-page .franchise-intro__link:focus-visible,
+.franchise-page .franchise-faq__question:focus-visible,
+.franchise-page .franchise-form .ps-form-input:focus-visible {
+  outline: 2px solid var(--color-black);
+  outline-offset: 2px;
+}
+
+/* ================================================================================
+   §1 Title + in-page anchors
+   ================================================================================ */
+
+.franchise-intro {
+  background: var(--color-background-light);
+  padding: 40px var(--padding-x-mobile);
+  text-align: center;
+}
+
+.franchise-intro__title {
+  max-width: 750px;
+  margin: 0 auto;
+  color: var(--color-black);
+  font-family: var(--font-family-base);
+  font-size: var(--franchise-heading);
+  font-weight: 700;
+  line-height: 34px;
+}
+
+.franchise-intro__nav {
+  max-width: 910px;
+  margin: var(--spacing-md) auto 0;
+  color: var(--color-black);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  line-height: var(--line-height-xs);
+}
+
+.franchise-intro__link,
+.franchise-intro__link:visited,
+.franchise-intro__link:hover {
+  color: var(--color-black);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.franchise-intro__link:hover {
+  text-decoration: underline;
+}
+
+/* ================================================================================
+   Split sections (§2, §2b, §6, §8) — fw-content / fw-text / fw-image
+   ================================================================================ */
+
+.franchise-split {
+  background: var(--color-white);
+  padding: var(--spacing-4xl) var(--padding-x-mobile);
+}
+
+.franchise-split .fw-content {
+  min-height: 0;
+  padding: 0;
+  background: var(--color-white);
+}
+
+.franchise-split .row {
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
+  gap: var(--spacing-lg);
+}
+
+.franchise-split .fw-text {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--spacing-lg);
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.franchise-split .franchise-split__heading {
+  margin: 0;
+  color: var(--color-black);
+  font-family: var(--font-family-base);
+  font-size: var(--franchise-heading);
+  font-weight: 700;
+  line-height: 29px;
+}
+
+.franchise-split__body {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.franchise-split .franchise-split__copy {
+  margin: 0;
+  color: var(--color-black);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-lg);
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.franchise-split__copy strong {
+  font-weight: 700;
+}
+
+.franchise-split__email,
+.franchise-split__email:visited,
+.franchise-split__email:hover {
+  color: var(--color-black);
+  text-decoration: underline;
+}
+
+.franchise-split .franchise-btn {
+  width: 100%;
+  height: 50px;
+  padding: 0 var(--spacing-md);
+  line-height: var(--line-height-md);
+}
+
+.franchise-split__logo {
+  display: block;
+  width: 170px;
+  height: 72px;
+}
+
+.franchise-split__media {
+  position: relative;
+  min-height: 0;
+}
+
+.franchise-split .franchise-split__image {
+  display: block;
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.franchise-split .franchise-split__image--mobile {
+  display: none;
+}
+
+/* ================================================================================
+   Territory tiles (§3–§5)
+   ================================================================================ */
+
+.franchise-territories {
+  background: var(--color-white);
+  padding: var(--spacing-4xl) var(--padding-x-mobile);
+}
+
+.franchise-territories--featured {
+  background: var(--color-background-light);
+}
+
+.franchise-territories--south {
+  padding-top: 0;
+}
+
+.franchise-territories__inner {
+  width: 100%;
+}
+
+.franchise-territories__heading {
+  margin: 0 0 var(--spacing-lg);
+  color: var(--color-black);
+  font-family: var(--font-family-base);
+  font-size: var(--franchise-heading);
+  font-weight: 700;
+  line-height: 29px;
+}
+
+.franchise-territories__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--spacing-lg);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.franchise-tile {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 370 / 300;
+  margin: 0;
+}
+
+.franchise-tile__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.franchise-tile__overlay {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  height: 82px;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--franchise-overlay);
+}
+
+.franchise-tile__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.franchise-tile__name,
+.franchise-tile__subtitle {
+  margin: 0;
+  color: var(--color-white);
+  font-family: var(--font-family-base);
+}
+
+.franchise-tile__name {
+  font-size: var(--font-size-h6);
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.franchise-tile__subtitle {
+  font-size: var(--font-size-xs);
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.franchise-page .franchise-tile__btn {
+  flex: 0 0 auto;
+  width: 80px;
+  height: 34px;
+  padding: 0 14px;
+  font-size: var(--font-size-xs);
+  line-height: 22px;
+}
+
+/* ================================================================================
+   §7 Testimonials
+   ================================================================================ */
+
+.franchise-testimonials {
+  background: var(--color-white);
+  padding: 0 var(--padding-x-mobile) var(--spacing-4xl);
+}
+
+.franchise-testimonials__inner {
+  width: 100%;
+}
+
+.franchise-testimonials__heading {
+  margin: 0 0 var(--spacing-lg);
+  color: var(--color-black);
+  font-family: var(--font-family-base);
+  font-size: var(--franchise-heading);
+  font-weight: 700;
+  line-height: 29px;
+}
+
+.franchise-videos__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.franchise-video {
+  background: var(--color-black);
+}
+
+.franchise-video iframe {
+  border: 0;
+}
+
+/* ================================================================================
+   §9 Enquiry form
+   ================================================================================ */
+
+.franchise-form-section {
+  background: var(--color-white);
+  padding: 10px var(--padding-x-mobile) 60px;
+}
+
+.franchise-form-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  width: 100%;
+  max-width: 1125px;
+  margin-inline: auto;
+  padding: 28px var(--spacing-lg);
+  background: var(--color-white);
+  box-shadow: var(--franchise-form-shadow);
+}
+
+.franchise-form-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.franchise-form-card__title {
+  margin: 0;
+  color: var(--color-text-gray);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-h6);
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.franchise-form-card__intro {
+  margin: 0;
+  color: var(--color-black);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  line-height: var(--line-height-2xs);
+}
+
+.franchise-page .franchise-form.booking-form {
+  gap: var(--spacing-xl);
+  width: 100%;
+}
+
+.franchise-form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  width: 100%;
+}
+
+.franchise-form .ps-form-group {
+  gap: var(--spacing-sm);
+}
+
+.franchise-field {
+  position: relative;
+}
+
+.franchise-field__placeholder {
+  position: absolute;
+  top: 0;
+  left: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  height: 46px;
+  margin: 0;
+  color: var(--franchise-placeholder);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  line-height: 22px;
+  pointer-events: none;
+}
+
+.franchise-field__asterisk {
+  margin-left: 4px;
+  color: var(--franchise-asterisk);
+}
+
+.franchise-field.is-focused .franchise-field__placeholder,
+.franchise-field.is-filled .franchise-field__placeholder {
+  display: none;
+}
+
+.franchise-form .ps-form-label {
+  font-size: var(--font-size-sm);
+  line-height: 20px;
+}
+
+.franchise-form .required-asterisk {
+  color: var(--franchise-asterisk);
+}
+
+.franchise-form .ps-form-input {
+  height: 46px;
+  padding: 12px var(--spacing-lg);
+  border-radius: var(--radius-sm);
+  line-height: 22px;
+}
+
+.franchise-form .ps-form-input::placeholder {
+  color: var(--franchise-placeholder);
+}
+
+.franchise-form .ps-form-textarea {
+  height: 120px;
+  min-height: 120px;
+  resize: vertical;
+}
+
+.franchise-page .franchise-form__submit {
+  width: 100%;
+  height: 50px;
+  margin: 0;
+  padding: 0 var(--spacing-md);
+  line-height: var(--line-height-md);
+}
+
+/* ================================================================================
+   §10 FAQs
+   ================================================================================ */
+
+.franchise-faq {
+  background: var(--color-background-light);
+  padding: var(--spacing-4xl) var(--padding-x-mobile);
+}
+
+.franchise-faq__inner {
+  width: 100%;
+  max-width: 827px;
+  margin-inline: auto;
+}
+
+.franchise-faq__title {
+  margin: 0 0 var(--spacing-xl);
+  color: var(--color-black);
+  font-family: var(--font-family-accent);
+  font-size: var(--font-size-h6);
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.franchise-faq__list {
+  margin: 0;
+  padding: 0;
+}
+
+.franchise-faq__divider {
+  height: 2px;
+  background: var(--color-black);
+}
+
+.franchise-faq__heading {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.franchise-faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  width: 100%;
+  margin: 0;
+  padding: var(--spacing-lg) 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-black);
+  font-family: var(--font-family-accent);
+  font-size: var(--font-size-lg);
+  font-weight: 400;
+  line-height: var(--line-height-xs);
+  text-align: left;
+  cursor: pointer;
+  user-select: none;
+}
+
+.franchise-faq__question-text {
+  flex: 1 1 auto;
+}
+
+.franchise-faq__icon {
+  display: block;
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.4s ease;
+}
+
+.franchise-faq__icon--close {
+  display: none;
+}
+
+.franchise-faq__item.is-open .franchise-faq__icon--plus {
+  transform: rotate(-45deg);
+}
+
+.franchise-faq__answer {
+  display: none;
+  flex-direction: column;
+  max-width: none;
+  padding: 0 0 var(--spacing-xl);
+  color: var(--color-black);
+  font-family: var(--font-family-accent);
+  font-size: var(--font-size-lg);
+  font-weight: 400;
+  line-height: var(--line-height-xs);
+}
+
+.franchise-faq__answer.is-shown {
+  display: flex;
+}
+
+.franchise-faq__answer p {
+  margin: 0;
+}
+
+/* Keep image-left splits in DOM order. main.css reverses the second
+   back-to-back .fw-image section below 1200px. :has() counts the
+   selectors inside it, so that rule outranks a normal override. */
+@media (max-width: 1199.98px) {
+  body.franchise-page main > section.franchise-split > .row {
+    flex-direction: column !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .franchise-split .franchise-split__image--desktop {
+    display: none;
+  }
+
+  .franchise-split .franchise-split__image--mobile {
+    display: block;
+    object-position: center top;
+  }
+}
+
+@media (max-width: 768px) {
+  .franchise-anchor {
+    scroll-margin-top: 80px;
+  }
+}
+
+/* ---------- Tablet and up (past the 430 layout) ---------- */
+
+@media (min-width: 769px) {
+  .franchise-intro {
+    padding: 90px var(--spacing-lg) 101px;
+  }
+
+  .franchise-intro__title {
+    font-size: var(--font-size-h2);
+    line-height: 50px;
+  }
+
+  .franchise-intro__nav {
+    margin-top: var(--spacing-4xl);
+    font-size: var(--font-size-h6);
+    line-height: 29px;
+  }
+
+  .franchise-split {
+    padding: 64px var(--padding-x-tablet);
+  }
+
+  .franchise-split .fw-text {
+    gap: var(--spacing-xl);
+    max-width: 750px;
+  }
+
+  .franchise-split .franchise-split__copy {
+    font-size: var(--franchise-split-copy);
+    line-height: 29px;
+  }
+
+  .franchise-split__body {
+    gap: 29px;
+  }
+
+  .franchise-split .franchise-split__image {
+    height: 420px;
+    border-radius: 0;
+  }
+
+  .franchise-split .franchise-btn {
+    width: auto;
+    height: 40px;
+    line-height: var(--line-height-2xs);
+  }
+
+  .franchise-split--experts .franchise-btn,
+  .franchise-split--convert .franchise-btn,
+  .franchise-split--contact .franchise-btn {
+    width: 146px;
+  }
+
+  .franchise-split--partnering .franchise-btn {
+    width: 236px;
+  }
+
+  .franchise-territories {
+    padding: 64px var(--padding-x-tablet) 72px;
+  }
+
+  .franchise-territories--south {
+    padding-top: 48px;
+  }
+
+  .franchise-territories__heading {
+    font-size: 30px;
+    line-height: 29px;
+  }
+
+  .franchise-tile {
+    aspect-ratio: 490 / 396;
+  }
+
+  .franchise-territories--islands .franchise-tile {
+    aspect-ratio: 556 / 450;
+  }
+
+  .franchise-tile__overlay {
+    height: 110px;
+    padding: 26px var(--spacing-xl);
+  }
+
+  .franchise-tile__copy {
+    gap: 4px;
+  }
+
+  .franchise-tile__name {
+    font-size: var(--font-size-h5);
+    line-height: var(--line-height-sm);
+  }
+
+  .franchise-tile__subtitle {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-2xs);
+  }
+
+  .franchise-page .franchise-tile__btn {
+    width: 91px;
+    height: 40px;
+    padding: 0 var(--spacing-md);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-2xs);
+  }
+
+  .franchise-testimonials {
+    padding: 64px var(--padding-x-tablet) 80px;
+  }
+
+  .franchise-testimonials__heading {
+    margin-bottom: 22px;
+    line-height: 36px;
+  }
+
+  .franchise-videos__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--spacing-xl);
+    row-gap: 23px;
+  }
+
+  .franchise-form-section {
+    padding: 80px var(--padding-x-tablet) 100px;
+  }
+
+  .franchise-form-card {
+    gap: var(--spacing-xl);
+    padding: 40px 38px 52px;
+  }
+
+  .franchise-form-card__title {
+    font-size: var(--spacing-xl);
+    line-height: var(--line-height-md);
+  }
+
+  .franchise-form-card__intro {
+    font-size: var(--franchise-split-copy);
+    line-height: 29px;
+  }
+
+  .franchise-page .franchise-form__submit {
+    height: 46px;
+    line-height: var(--line-height-2xs);
+  }
+
+  .franchise-faq {
+    padding: 113px var(--spacing-lg) 112px;
+  }
+
+  .franchise-faq__title {
+    margin-bottom: var(--line-height-sm);
+  }
+
+  .franchise-faq__question {
+    gap: var(--spacing-lg);
+    padding: 22px 0;
+    font-size: var(--font-size-h6);
+    line-height: 28px;
+  }
+
+  .franchise-faq__icon {
+    flex-basis: 30px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .franchise-faq__answer {
+    max-width: 714px;
+    padding-bottom: var(--line-height-md);
+    font-size: var(--font-size-h6);
+    line-height: 28px;
+  }
+}
+
+@media (min-width: 992px) {
+  .franchise-territories__grid--featured,
+  .franchise-territories__grid--islands {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .franchise-territories__grid--featured {
+    column-gap: 33px;
+    row-gap: 31px;
+  }
+
+  .franchise-territories__grid--islands {
+    column-gap: 25px;
+    row-gap: 31px;
+  }
+}
+
+/* ---------- Desktop splits (Bootstrap xl, same stack point as about.html) ---------- */
+
+@media (min-width: 1200px) {
+  .franchise-split {
+    padding: 0;
+  }
+
+  .franchise-split .row {
+    align-items: stretch;
+    min-height: 640px;
+    gap: 0;
+  }
+
+  .franchise-split__content {
+    display: flex;
+    align-items: flex-start;
+    padding: 72px clamp(40px, 6vw, 100px);
+  }
+
+  .franchise-split .fw-text {
+    gap: 0;
+    align-items: flex-start;
+  }
+
+  .franchise-split .franchise-split__heading {
+    margin-bottom: 32px;
+  }
+
+  .franchise-split .franchise-btn {
+    margin-top: 40px;
+  }
+
+  .franchise-split__logo {
+    margin-top: 48px;
+  }
+
+  .franchise-split__media {
+    min-height: 100%;
+  }
+
+  .franchise-split .franchise-split__image {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    border-radius: 0;
+  }
+
+  .franchise-territories--featured {
+    padding: 72px 0 86px;
+  }
+
+  .franchise-territories--featured .franchise-territories__heading {
+    width: min(1720px, calc(100% - 200px));
+    margin: 0 auto 69px;
+  }
+
+  .franchise-territories--north {
+    padding: 72px 0 0;
+  }
+
+  .franchise-territories--south {
+    padding: 83px 0 113px;
+  }
+
+  .franchise-territories__inner {
+    width: min(1718px, calc(100% - 202px));
+    margin-inline: auto;
+  }
+
+  .franchise-territories--north .franchise-territories__heading {
+    margin-bottom: 43px;
+  }
+
+  .franchise-territories--south .franchise-territories__heading {
+    margin-bottom: 42px;
+  }
+
+  .franchise-territories__grid--featured {
+    width: min(1536px, calc(100% - 64px));
+    margin-inline: auto;
+    column-gap: 33px;
+  }
+
+  .franchise-testimonials {
+    padding: 114px 0 113px;
+  }
+
+  .franchise-testimonials__inner {
+    width: min(1720px, calc(100% - 200px));
+    margin-inline: auto;
+  }
+
+  .franchise-testimonials__heading {
+    margin-bottom: 22px;
+    font-size: var(--franchise-heading);
+    line-height: 50px;
+  }
+
+  .franchise-form-section {
+    padding: 120px 0 140px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .franchise-territories__grid--featured,
+  .franchise-territories__grid--islands {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ---------- 1920 frame (exact Figma insets) ---------- */
+
+@media (min-width: 1920px) {
+  .franchise-split--experts .row {
+    min-height: 760px;
+  }
+
+  .franchise-split--partnering .row,
+  .franchise-split--convert .row,
+  .franchise-split--contact .row {
+    min-height: 761px;
+  }
+
+  .franchise-split--experts .franchise-split__content {
+    position: relative;
+    /* 50% is half the row, so the 101px inset stays locked to a centered 1920px frame. */
+    padding: 85px 40px 0 calc(50% - 859px);
+  }
+
+  .franchise-split--experts .franchise-split__heading {
+    margin-bottom: 32px;
+  }
+
+  .franchise-split--experts .franchise-btn {
+    margin-top: 50px;
+  }
+
+  .franchise-split--experts .franchise-split__logo {
+    position: absolute;
+    top: 606px;
+    left: calc(100% - 859px);
+    margin-top: 0;
+  }
+
+  .franchise-split--partnering .franchise-split__content {
+    padding: 85px 40px 80px 93px;
+  }
+
+  .franchise-split--partnering .franchise-split__heading {
+    margin-bottom: 38px;
+  }
+
+  .franchise-split--partnering .franchise-btn {
+    margin-top: 49px;
+  }
+
+  .franchise-split--convert .franchise-split__content {
+    padding: 88px 40px 80px calc(50% - 859px);
+  }
+
+  .franchise-split--convert .franchise-split__heading {
+    margin-bottom: 31px;
+    line-height: var(--line-height-sm);
+  }
+
+  .franchise-split--convert .franchise-btn {
+    margin-top: 78px;
+  }
+
+  .franchise-split--contact .franchise-split__content {
+    padding: 82px 40px 80px 93px;
+  }
+
+  .franchise-split--contact .franchise-split__heading {
+    margin-bottom: 38px;
+  }
+
+  .franchise-split--contact .franchise-btn {
+    margin-top: 46px;
+  }
+
+  .franchise-form-section {
+    padding: 185px 0 165px;
+  }
+}
