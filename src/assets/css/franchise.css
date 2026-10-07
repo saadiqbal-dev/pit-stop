@@ -193,16 +193,19 @@ html:has(body.franchise-page) {
    ================================================================================ */
 
 .franchise-territories {
-  background: var(--color-white);
-  padding: var(--spacing-4xl) var(--padding-x-mobile);
-}
-
-.franchise-territories--featured {
   background: var(--color-background-light);
+  padding: var(--spacing-4xl) var(--padding-x-mobile);
 }
 
 .franchise-territories__inner {
   width: 100%;
+}
+
+.franchise-territories__bar {
+  display: block;
+  width: 171px;
+  height: 21px;
+  margin: 0 0 var(--spacing-md);
 }
 
 .franchise-territories h2 {
@@ -214,36 +217,53 @@ html:has(body.franchise-page) {
   line-height: 29px;
 }
 
-.franchise-territories__grid-wrap,
 .franchise-videos__wrap {
-  overflow: hidden;
   width: 100%;
 }
 
 .franchise-territories__grid {
-  --bs-gutter-x: var(--spacing-lg);
-  --bs-gutter-y: var(--spacing-lg);
+  --bs-gutter-x: 0px;
+  --bs-gutter-y: 0px;
+  row-gap: var(--spacing-lg);
+  column-gap: 0;
+  margin: 0;
+}
+
+.franchise-territories__grid > .col {
+  padding: 0;
 }
 
 .franchise-tile {
-  aspect-ratio: 370 / 300;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   margin: 0;
+  background: var(--color-white);
 }
 
 .franchise-tile__img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 540 / 430;
   object-fit: cover;
 }
 
-.franchise-tile__overlay {
-  height: 82px;
+.franchise-tile__band {
+  display: flex;
+  flex: 1 0 auto;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px var(--spacing-md);
+  min-height: 82px;
   padding: var(--spacing-md) var(--spacing-lg);
-  background: var(--franchise-overlay);
+  background: var(--color-white);
 }
 
 .franchise-tile__copy {
+  display: flex;
+  flex-direction: column;
   gap: 2px;
   min-width: 0;
 }
@@ -251,7 +271,7 @@ html:has(body.franchise-page) {
 .franchise-tile__copy h3,
 .franchise-tile__copy p {
   margin: 0;
-  color: var(--color-white);
+  color: var(--color-black);
   font-family: var(--font-family-base);
 }
 
@@ -269,8 +289,10 @@ html:has(body.franchise-page) {
 
 .franchise-page .franchise-tile__btn {
   flex: 0 0 auto;
-  width: 80px;
+  width: auto;
+  min-width: 110px;
   height: 34px;
+  margin-top: 0;
   padding: 0 14px;
   font-size: var(--font-size-xs);
   line-height: 22px;
@@ -281,7 +303,7 @@ html:has(body.franchise-page) {
    ================================================================================ */
 
 .franchise-testimonials {
-  background: var(--color-white);
+  background: var(--color-background-light);
   padding: var(--spacing-4xl) var(--padding-x-mobile);
 }
 
@@ -507,29 +529,21 @@ html:has(body.franchise-page) {
   }
 
   .franchise-territories {
-    padding: 64px var(--padding-x-tablet) 72px;
+    padding: 64px var(--padding-x-tablet);
   }
 
-  .franchise-territories--south {
-    padding-top: 48px;
+  .franchise-territories__grid {
+    column-gap: 50px;
+    row-gap: 50px;
   }
 
-  .franchise-territories h2 {
-    font-size: 30px;
-    line-height: 29px;
+  .franchise-territories__grid > .col {
+    width: calc((100% - 50px) / 2);
   }
 
-  .franchise-tile {
-    aspect-ratio: 490 / 396;
-  }
-
-  .franchise-territories--islands .franchise-tile {
-    aspect-ratio: 556 / 450;
-  }
-
-  .franchise-tile__overlay {
-    height: 110px;
-    padding: 26px var(--spacing-xl);
+  .franchise-tile__band {
+    min-height: 110px;
+    padding: 20px 24px;
   }
 
   .franchise-tile__copy {
@@ -537,17 +551,17 @@ html:has(body.franchise-page) {
   }
 
   .franchise-tile__copy h3 {
-    font-size: var(--font-size-h5);
-    line-height: var(--line-height-sm);
+    font-size: 22px;
+    line-height: 28px;
   }
 
   .franchise-tile__copy p {
     font-size: var(--font-size-base);
-    line-height: var(--line-height-2xs);
+    line-height: 24px;
   }
 
   .franchise-page .franchise-tile__btn {
-    width: 91px;
+    width: 146px;
     height: 40px;
     padding: 0 var(--spacing-md);
     font-size: var(--font-size-base);
@@ -599,18 +613,6 @@ html:has(body.franchise-page) {
 
 }
 
-@media (min-width: 992px) {
-  .franchise-territories__grid--featured {
-    --bs-gutter-x: 33px;
-    --bs-gutter-y: 31px;
-  }
-
-  .franchise-territories__grid--islands {
-    --bs-gutter-x: 25px;
-    --bs-gutter-y: 31px;
-  }
-}
-
 /* ---------- Desktop splits (Bootstrap xl, same stack point as about.html) ---------- */
 
 @media (min-width: 1200px) {
@@ -658,42 +660,76 @@ html:has(body.franchise-page) {
   }
 
   .franchise-territories--featured {
-    padding: 72px 0 86px;
+    padding: 106px 0 0;
   }
 
-  .franchise-territories--featured h2 {
-    width: min(1720px, calc(100% - 200px));
-    margin: 0 auto 69px;
+  .franchise-territories__bar {
+    margin-bottom: 19px;
+    margin-left: 1px;
+  }
+
+  .franchise-territories--featured h2,
+  .franchise-territories--south h2 {
+    margin: 0 0 71px;
+    font-size: 26px;
+    line-height: 29px;
   }
 
   .franchise-territories--north {
-    padding: 72px 0 0;
-  }
-
-  .franchise-territories--south {
-    padding: 83px 0 113px;
-  }
-
-  .franchise-territories__inner {
-    width: min(1718px, calc(100% - 202px));
-    margin-inline: auto;
+    padding: 107px 0 0;
   }
 
   .franchise-territories--north h2 {
-    margin-bottom: 43px;
+    margin: 0 0 49px;
+    font-size: 30px;
+    line-height: 29px;
   }
 
-  .franchise-territories--south h2 {
-    margin-bottom: 42px;
+  .franchise-territories--south {
+    padding: 79px 0 87px;
   }
 
-  .franchise-territories__grid-wrap--featured {
-    width: min(1536px, calc(100% - 64px));
+  .franchise-territories__inner {
+    width: min(1720px, calc(100% - 200px));
     margin-inline: auto;
   }
 
+  .franchise-territories__grid > .col {
+    width: calc((100% - 100px) / 3);
+  }
+
+  .franchise-tile__band {
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 12px;
+    min-height: 110px;
+    padding: 16px 20px;
+  }
+
+  .franchise-tile__copy {
+    flex: 1 1 auto;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  .franchise-tile__copy h3 {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .franchise-tile__copy p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .franchise-page .franchise-tile__btn {
+    width: 146px;
+    height: 40px;
+    margin-top: 0;
+  }
+
   .franchise-testimonials {
-    padding: 114px 0 113px;
+    padding: 88px 0 96px;
   }
 
   .franchise-testimonials__inner {
@@ -702,9 +738,22 @@ html:has(body.franchise-page) {
   }
 
   .franchise-testimonials h2 {
-    margin-bottom: 22px;
+    margin-bottom: 83px;
     font-size: var(--franchise-heading);
     line-height: 50px;
+  }
+
+  .franchise-videos__grid {
+    --bs-gutter-x: 0px;
+    --bs-gutter-y: 0px;
+    column-gap: 80px;
+    row-gap: 86px;
+  }
+
+  .franchise-videos__grid > .col {
+    flex: 0 0 auto;
+    width: calc((100% - 80px) / 2);
+    padding: 0;
   }
 
   .franchise-form-section {
@@ -784,7 +833,32 @@ html:has(body.franchise-page) {
   }
 
   .franchise-form-section {
-    padding: 185px 0 165px;
+    padding: 161px 0 143px;
+  }
+
+  .franchise-tile__band {
+    align-items: flex-start;
+    gap: 0;
+    padding: 23px 30px 25px 36px;
+  }
+
+  .franchise-tile__copy {
+    flex: 0 1 auto;
+    gap: 4px;
+  }
+
+  .franchise-tile__copy h3 {
+    font-size: 26px;
+    line-height: 29px;
+  }
+
+  .franchise-tile__copy p {
+    font-size: 16px;
+    line-height: 29px;
+  }
+
+  .franchise-page .franchise-tile__btn {
+    margin-top: 13px;
   }
 }
 
@@ -817,13 +891,8 @@ html:has(body.franchise-page) {
     padding-right: var(--franchise-gutter);
   }
 
-  body.franchise-page .franchise-territories--featured h2,
   body.franchise-page .franchise-territories__inner,
   body.franchise-page .franchise-testimonials__inner {
-    width: calc(100% - (var(--franchise-gutter) * 2));
-  }
-
-  body.franchise-page .franchise-territories__grid-wrap--featured {
     width: calc(100% - (var(--franchise-gutter) * 2));
   }
 }
