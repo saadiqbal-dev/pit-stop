@@ -58,6 +58,10 @@ Interactions:
 - Horizontal overflow is 0 at 1920, 1440, 1280, 1024, 768, 430, and 390.
 - The partnering row is a row at 1440 and 1280, and a column from 1024 down, the same stack point as `about.html`.
 
+## Wide screens
+
+Above 1920px the header stays a centered 1920px frame. Split photos still run to the viewport edge. Experts and Convert text, and the FANZ logo, keep the same 101px inset from the left of that frame (`calc(50% - 859px)` on the text column, `calc(100% - 859px)` on the logo). Partnering and Contact text were already inset from the center split, and the intro, territory grids, testimonials, form, and FAQ stay centered on the same 1920px limit.
+
 ## Known differences from the Figma frame
 
 - The repo header includes the Afterpay banner, so the desktop header is 270px rather than the frame's 210px. Header and footer markup are the existing site chrome.
