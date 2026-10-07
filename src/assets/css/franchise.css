@@ -48,8 +48,8 @@ html:has(body.franchise-page) {
 }
 
 .franchise-page .franchise-btn:focus-visible,
-.franchise-page .franchise-intro__link:focus-visible,
-.franchise-page .franchise-faq__question:focus-visible,
+.franchise-page .franchise-intro nav a:focus-visible,
+.franchise-page .faq-question:focus-visible,
 .franchise-page .franchise-form .ps-form-input:focus-visible {
   outline: 2px solid var(--color-black);
   outline-offset: 2px;
@@ -62,10 +62,9 @@ html:has(body.franchise-page) {
 .franchise-intro {
   background: var(--color-background-light);
   padding: 40px var(--padding-x-mobile);
-  text-align: center;
 }
 
-.franchise-intro__title {
+.franchise-intro h1 {
   max-width: 750px;
   margin: 0 auto;
   color: var(--color-black);
@@ -75,7 +74,7 @@ html:has(body.franchise-page) {
   line-height: 34px;
 }
 
-.franchise-intro__nav {
+.franchise-intro nav {
   max-width: 910px;
   margin: var(--spacing-md) auto 0;
   color: var(--color-black);
@@ -85,15 +84,15 @@ html:has(body.franchise-page) {
   line-height: var(--line-height-xs);
 }
 
-.franchise-intro__link,
-.franchise-intro__link:visited,
-.franchise-intro__link:hover {
+.franchise-intro nav a,
+.franchise-intro nav a:visited,
+.franchise-intro nav a:hover {
   color: var(--color-black);
   text-decoration: none;
   white-space: nowrap;
 }
 
-.franchise-intro__link:hover {
+.franchise-intro nav a:hover {
   text-decoration: underline;
 }
 
@@ -119,9 +118,6 @@ html:has(body.franchise-page) {
 }
 
 .franchise-split .fw-text {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
   gap: var(--spacing-lg);
   width: 100%;
   max-width: none;
@@ -129,7 +125,7 @@ html:has(body.franchise-page) {
   padding: 0;
 }
 
-.franchise-split .franchise-split__heading {
+.franchise-split .fw-text h2 {
   margin: 0;
   color: var(--color-black);
   font-family: var(--font-family-base);
@@ -139,12 +135,10 @@ html:has(body.franchise-page) {
 }
 
 .franchise-split__body {
-  display: flex;
-  flex-direction: column;
   gap: 28px;
 }
 
-.franchise-split .franchise-split__copy {
+.franchise-split__body p {
   margin: 0;
   color: var(--color-black);
   font-family: var(--font-family-base);
@@ -153,13 +147,13 @@ html:has(body.franchise-page) {
   line-height: 28px;
 }
 
-.franchise-split__copy strong {
+.franchise-split__body strong {
   font-weight: 700;
 }
 
-.franchise-split__email,
-.franchise-split__email:visited,
-.franchise-split__email:hover {
+.franchise-split__body a:not(.ps-btn),
+.franchise-split__body a:not(.ps-btn):visited,
+.franchise-split__body a:not(.ps-btn):hover {
   color: var(--color-black);
   text-decoration: underline;
 }
@@ -215,7 +209,7 @@ html:has(body.franchise-page) {
   width: 100%;
 }
 
-.franchise-territories__heading {
+.franchise-territories h2 {
   margin: 0 0 var(--spacing-lg);
   color: var(--color-black);
   font-family: var(--font-family-base);
@@ -224,18 +218,18 @@ html:has(body.franchise-page) {
   line-height: 29px;
 }
 
-.franchise-territories__grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--spacing-lg);
+.franchise-territories__grid-wrap,
+.franchise-videos__wrap {
+  overflow: hidden;
   width: 100%;
-  margin: 0;
-  padding: 0;
+}
+
+.franchise-territories__grid {
+  --bs-gutter-x: var(--spacing-lg);
+  --bs-gutter-y: var(--spacing-lg);
 }
 
 .franchise-tile {
-  position: relative;
-  overflow: hidden;
   aspect-ratio: 370 / 300;
   margin: 0;
 }
@@ -248,40 +242,30 @@ html:has(body.franchise-page) {
 }
 
 .franchise-tile__overlay {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--spacing-md);
   height: 82px;
   padding: var(--spacing-md) var(--spacing-lg);
   background: var(--franchise-overlay);
 }
 
 .franchise-tile__copy {
-  display: flex;
-  flex-direction: column;
   gap: 2px;
   min-width: 0;
 }
 
-.franchise-tile__name,
-.franchise-tile__subtitle {
+.franchise-tile__copy h3,
+.franchise-tile__copy p {
   margin: 0;
   color: var(--color-white);
   font-family: var(--font-family-base);
 }
 
-.franchise-tile__name {
+.franchise-tile__copy h3 {
   font-size: var(--font-size-h6);
   font-weight: 700;
   line-height: 28px;
 }
 
-.franchise-tile__subtitle {
+.franchise-tile__copy p {
   font-size: var(--font-size-xs);
   font-weight: 400;
   line-height: 20px;
@@ -309,7 +293,7 @@ html:has(body.franchise-page) {
   width: 100%;
 }
 
-.franchise-testimonials__heading {
+.franchise-testimonials h2 {
   margin: 0 0 var(--spacing-lg);
   color: var(--color-black);
   font-family: var(--font-family-base);
@@ -319,9 +303,8 @@ html:has(body.franchise-page) {
 }
 
 .franchise-videos__grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--spacing-lg);
+  --bs-gutter-x: var(--spacing-lg);
+  --bs-gutter-y: var(--spacing-lg);
 }
 
 .franchise-video {
@@ -342,24 +325,18 @@ html:has(body.franchise-page) {
 }
 
 .franchise-form-card {
-  display: flex;
-  flex-direction: column;
   gap: var(--spacing-lg);
-  width: 100%;
   max-width: 1125px;
-  margin-inline: auto;
   padding: 28px var(--spacing-lg);
   background: var(--color-white);
   box-shadow: var(--franchise-form-shadow);
 }
 
 .franchise-form-card__header {
-  display: flex;
-  flex-direction: column;
   gap: var(--spacing-xs);
 }
 
-.franchise-form-card__title {
+.franchise-form-card__header h2 {
   margin: 0;
   color: var(--color-text-gray);
   font-family: var(--font-family-base);
@@ -368,7 +345,7 @@ html:has(body.franchise-page) {
   line-height: 28px;
 }
 
-.franchise-form-card__intro {
+.franchise-form-card__header p {
   margin: 0;
   color: var(--color-black);
   font-family: var(--font-family-base);
@@ -383,10 +360,7 @@ html:has(body.franchise-page) {
 }
 
 .franchise-form__fields {
-  display: flex;
-  flex-direction: column;
   gap: var(--spacing-sm);
-  width: 100%;
 }
 
 .franchise-form .ps-form-group {
@@ -397,7 +371,19 @@ html:has(body.franchise-page) {
   position: relative;
 }
 
-.franchise-field__placeholder {
+.franchise-field label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.franchise-field > span {
   position: absolute;
   top: 0;
   left: var(--spacing-lg);
@@ -413,22 +399,26 @@ html:has(body.franchise-page) {
   pointer-events: none;
 }
 
-.franchise-field__asterisk {
+.franchise-field > span span {
   margin-left: 4px;
   color: var(--franchise-asterisk);
 }
 
-.franchise-field.is-focused .franchise-field__placeholder,
-.franchise-field.is-filled .franchise-field__placeholder {
+.franchise-field.is-focused > span,
+.franchise-field.is-filled > span {
   display: none;
 }
 
-.franchise-form .ps-form-label {
+.franchise-form__details label {
+  color: var(--color-black);
+  font-family: var(--font-family-base);
   font-size: var(--font-size-sm);
+  font-weight: 700;
   line-height: 20px;
+  text-align: start;
 }
 
-.franchise-form .required-asterisk {
+.franchise-form__details label span {
   color: var(--franchise-asterisk);
 }
 
@@ -455,107 +445,6 @@ html:has(body.franchise-page) {
   margin: 0;
   padding: 0 var(--spacing-md);
   line-height: var(--line-height-md);
-}
-
-/* ================================================================================
-   §10 FAQs
-   ================================================================================ */
-
-.franchise-faq {
-  background: var(--color-background-light);
-  padding: var(--spacing-4xl) var(--padding-x-mobile);
-}
-
-.franchise-faq__inner {
-  width: 100%;
-  max-width: 827px;
-  margin-inline: auto;
-}
-
-.franchise-faq__title {
-  margin: 0 0 var(--spacing-xl);
-  color: var(--color-black);
-  font-family: var(--font-family-accent);
-  font-size: var(--font-size-h6);
-  font-weight: 700;
-  line-height: 28px;
-}
-
-.franchise-faq__list {
-  margin: 0;
-  padding: 0;
-}
-
-.franchise-faq__divider {
-  height: 2px;
-  background: var(--color-black);
-}
-
-.franchise-faq__heading {
-  margin: 0;
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-}
-
-.franchise-faq__question {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--spacing-md);
-  width: 100%;
-  margin: 0;
-  padding: var(--spacing-lg) 0;
-  border: 0;
-  background: transparent;
-  color: var(--color-black);
-  font-family: var(--font-family-accent);
-  font-size: var(--font-size-lg);
-  font-weight: 400;
-  line-height: var(--line-height-xs);
-  text-align: left;
-  cursor: pointer;
-  user-select: none;
-}
-
-.franchise-faq__question-text {
-  flex: 1 1 auto;
-}
-
-.franchise-faq__icon {
-  display: block;
-  flex: 0 0 20px;
-  width: 20px;
-  height: 20px;
-  transition: transform 0.4s ease;
-}
-
-.franchise-faq__icon--close {
-  display: none;
-}
-
-.franchise-faq__item.is-open .franchise-faq__icon--plus {
-  transform: rotate(-45deg);
-}
-
-.franchise-faq__answer {
-  display: none;
-  flex-direction: column;
-  max-width: none;
-  padding: 0 0 var(--spacing-xl);
-  color: var(--color-black);
-  font-family: var(--font-family-accent);
-  font-size: var(--font-size-lg);
-  font-weight: 400;
-  line-height: var(--line-height-xs);
-}
-
-.franchise-faq__answer.is-shown {
-  display: flex;
-}
-
-.franchise-faq__answer p {
-  margin: 0;
 }
 
 /* Keep image-left splits in DOM order. main.css reverses the second
@@ -591,12 +480,12 @@ html:has(body.franchise-page) {
     padding: 90px var(--spacing-lg) 101px;
   }
 
-  .franchise-intro__title {
+  .franchise-intro h1 {
     font-size: var(--font-size-h2);
     line-height: 50px;
   }
 
-  .franchise-intro__nav {
+  .franchise-intro nav {
     margin-top: var(--spacing-4xl);
     font-size: var(--font-size-h6);
     line-height: 29px;
@@ -611,7 +500,7 @@ html:has(body.franchise-page) {
     max-width: 750px;
   }
 
-  .franchise-split .franchise-split__copy {
+  .franchise-split__body p {
     font-size: var(--franchise-split-copy);
     line-height: 29px;
   }
@@ -649,7 +538,7 @@ html:has(body.franchise-page) {
     padding-top: 48px;
   }
 
-  .franchise-territories__heading {
+  .franchise-territories h2 {
     font-size: 30px;
     line-height: 29px;
   }
@@ -671,12 +560,12 @@ html:has(body.franchise-page) {
     gap: 4px;
   }
 
-  .franchise-tile__name {
+  .franchise-tile__copy h3 {
     font-size: var(--font-size-h5);
     line-height: var(--line-height-sm);
   }
 
-  .franchise-tile__subtitle {
+  .franchise-tile__copy p {
     font-size: var(--font-size-base);
     line-height: var(--line-height-2xs);
   }
@@ -693,15 +582,19 @@ html:has(body.franchise-page) {
     padding: 64px var(--padding-x-tablet) 80px;
   }
 
-  .franchise-testimonials__heading {
+  .franchise-testimonials h2 {
     margin-bottom: 22px;
     line-height: 36px;
   }
 
   .franchise-videos__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: var(--spacing-xl);
-    row-gap: 23px;
+    --bs-gutter-x: var(--spacing-xl);
+    --bs-gutter-y: 23px;
+  }
+
+  .franchise-videos__grid > .col {
+    flex: 0 0 auto;
+    width: 50%;
   }
 
   .franchise-form-section {
@@ -713,12 +606,12 @@ html:has(body.franchise-page) {
     padding: 40px 38px 52px;
   }
 
-  .franchise-form-card__title {
+  .franchise-form-card__header h2 {
     font-size: var(--spacing-xl);
     line-height: var(--line-height-md);
   }
 
-  .franchise-form-card__intro {
+  .franchise-form-card__header p {
     font-size: var(--franchise-split-copy);
     line-height: 29px;
   }
@@ -728,49 +621,17 @@ html:has(body.franchise-page) {
     line-height: var(--line-height-2xs);
   }
 
-  .franchise-faq {
-    padding: 113px var(--spacing-lg) 112px;
-  }
-
-  .franchise-faq__title {
-    margin-bottom: var(--line-height-sm);
-  }
-
-  .franchise-faq__question {
-    gap: var(--spacing-lg);
-    padding: 22px 0;
-    font-size: var(--font-size-h6);
-    line-height: 28px;
-  }
-
-  .franchise-faq__icon {
-    flex-basis: 30px;
-    width: 30px;
-    height: 30px;
-  }
-
-  .franchise-faq__answer {
-    max-width: 714px;
-    padding-bottom: var(--line-height-md);
-    font-size: var(--font-size-h6);
-    line-height: 28px;
-  }
 }
 
 @media (min-width: 992px) {
-  .franchise-territories__grid--featured,
-  .franchise-territories__grid--islands {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .franchise-territories__grid--featured {
-    column-gap: 33px;
-    row-gap: 31px;
+    --bs-gutter-x: 33px;
+    --bs-gutter-y: 31px;
   }
 
   .franchise-territories__grid--islands {
-    column-gap: 25px;
-    row-gap: 31px;
+    --bs-gutter-x: 25px;
+    --bs-gutter-y: 31px;
   }
 }
 
@@ -795,10 +656,9 @@ html:has(body.franchise-page) {
 
   .franchise-split .fw-text {
     gap: 0;
-    align-items: flex-start;
   }
 
-  .franchise-split .franchise-split__heading {
+  .franchise-split .fw-text h2 {
     margin-bottom: 32px;
   }
 
@@ -825,7 +685,7 @@ html:has(body.franchise-page) {
     padding: 72px 0 86px;
   }
 
-  .franchise-territories--featured .franchise-territories__heading {
+  .franchise-territories--featured h2 {
     width: min(1720px, calc(100% - 200px));
     margin: 0 auto 69px;
   }
@@ -843,18 +703,17 @@ html:has(body.franchise-page) {
     margin-inline: auto;
   }
 
-  .franchise-territories--north .franchise-territories__heading {
+  .franchise-territories--north h2 {
     margin-bottom: 43px;
   }
 
-  .franchise-territories--south .franchise-territories__heading {
+  .franchise-territories--south h2 {
     margin-bottom: 42px;
   }
 
-  .franchise-territories__grid--featured {
+  .franchise-territories__grid-wrap--featured {
     width: min(1536px, calc(100% - 64px));
     margin-inline: auto;
-    column-gap: 33px;
   }
 
   .franchise-testimonials {
@@ -866,7 +725,7 @@ html:has(body.franchise-page) {
     margin-inline: auto;
   }
 
-  .franchise-testimonials__heading {
+  .franchise-testimonials h2 {
     margin-bottom: 22px;
     font-size: var(--franchise-heading);
     line-height: 50px;
@@ -874,13 +733,6 @@ html:has(body.franchise-page) {
 
   .franchise-form-section {
     padding: 120px 0 140px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .franchise-territories__grid--featured,
-  .franchise-territories__grid--islands {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -903,7 +755,7 @@ html:has(body.franchise-page) {
     padding: 85px 40px 0 calc(50% - 859px);
   }
 
-  .franchise-split--experts .franchise-split__heading {
+  .franchise-split--experts .fw-text h2 {
     margin-bottom: 32px;
   }
 
@@ -922,7 +774,7 @@ html:has(body.franchise-page) {
     padding: 85px 40px 80px 93px;
   }
 
-  .franchise-split--partnering .franchise-split__heading {
+  .franchise-split--partnering .fw-text h2 {
     margin-bottom: 38px;
   }
 
@@ -934,7 +786,7 @@ html:has(body.franchise-page) {
     padding: 88px 40px 80px calc(50% - 859px);
   }
 
-  .franchise-split--convert .franchise-split__heading {
+  .franchise-split--convert .fw-text h2 {
     margin-bottom: 31px;
     line-height: var(--line-height-sm);
   }
@@ -947,7 +799,7 @@ html:has(body.franchise-page) {
     padding: 82px 40px 80px 93px;
   }
 
-  .franchise-split--contact .franchise-split__heading {
+  .franchise-split--contact .fw-text h2 {
     margin-bottom: 38px;
   }
 
@@ -957,5 +809,56 @@ html:has(body.franchise-page) {
 
   .franchise-form-section {
     padding: 185px 0 165px;
+  }
+}
+
+/* ---------- Laptop (1200–1919): same side insets as about.html fw-* splits ----------
+   .franchise-split .fw-content { padding: 0 } outranks the 1200px padding above.
+   These rules match main.css:
+   - left text columns: 80px from 1200, 100px 110px 100px 100px from 1500
+   - right text columns: 80px clamp(80px, 10vw, 190px), same as the compact fw-bold split
+   - full-width bands: 80px gutter from 1200, 100px from 1500
+   1920px and up keep the Figma insets. */
+
+@media (min-width: 1200px) and (max-width: 1919.98px) {
+  body.franchise-page {
+    --franchise-gutter: 80px;
+  }
+
+  body.franchise-page .franchise-split--experts .fw-content,
+  body.franchise-page .franchise-split--convert .fw-content {
+    padding: 80px;
+  }
+
+  body.franchise-page .franchise-split--partnering .fw-content,
+  body.franchise-page .franchise-split--contact .fw-content {
+    padding: 80px clamp(80px, 10vw, 190px);
+  }
+
+  body.franchise-page .franchise-intro,
+  body.franchise-page .franchise-form-section {
+    padding-left: var(--franchise-gutter);
+    padding-right: var(--franchise-gutter);
+  }
+
+  body.franchise-page .franchise-territories--featured h2,
+  body.franchise-page .franchise-territories__inner,
+  body.franchise-page .franchise-testimonials__inner {
+    width: calc(100% - (var(--franchise-gutter) * 2));
+  }
+
+  body.franchise-page .franchise-territories__grid-wrap--featured {
+    width: calc(100% - (var(--franchise-gutter) * 2));
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 1919.98px) {
+  body.franchise-page {
+    --franchise-gutter: 100px;
+  }
+
+  body.franchise-page .franchise-split--experts .fw-content,
+  body.franchise-page .franchise-split--convert .fw-content {
+    padding: 100px 110px 100px 100px;
   }
 }
