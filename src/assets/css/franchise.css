@@ -839,11 +839,12 @@ html:has(body.franchise-page) {
   }
 }
 
-/* Splits stack below the xl breakpoint. Drop the previous section's
-   bottom padding only when the next section opens with a photo.
-   Grey bands (intro, featured) keep both paddings. */
+/* Splits stack below the xl breakpoint. A section that ends on a
+   full-width photo drops its bottom padding, so the next section's
+   top padding is the gap under the photo. Grey bands are not marked
+   image-last, so they keep both paddings. */
 @media (max-width: 1199.98px) {
-  body.franchise-page main > section:not(.franchise-intro):not(.franchise-territories--featured):has(+ .franchise-section--image-first) {
+  body.franchise-page .franchise-section--image-last {
     padding-bottom: 0;
   }
 }
