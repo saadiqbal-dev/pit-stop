@@ -917,3 +917,9 @@ html:has(body.franchise-page) {
     padding-bottom: 0;
   }
 }
+
+/* The shared FAQ draws its 1px rule at the top of each item, so the last
+   question has no line under it. Match that rule on this page only. */
+body.franchise-page .faq-item:last-child {
+  border-bottom: 1px solid #000;
+}
