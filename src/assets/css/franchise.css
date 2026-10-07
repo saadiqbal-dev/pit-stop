@@ -61,7 +61,7 @@ html:has(body.franchise-page) {
 
 .franchise-intro {
   background: var(--color-background-light);
-  padding: 40px var(--padding-x-mobile);
+  padding: 40px var(--padding-x-mobile) var(--spacing-4xl);
 }
 
 .franchise-intro h1 {
@@ -102,7 +102,7 @@ html:has(body.franchise-page) {
 
 .franchise-split {
   background: var(--color-white);
-  padding: var(--spacing-4xl) var(--padding-x-mobile);
+  padding: 0 var(--padding-x-mobile) var(--spacing-4xl);
 }
 
 .franchise-split .fw-content {
@@ -185,7 +185,7 @@ html:has(body.franchise-page) {
 }
 
 .franchise-split .franchise-split__image--mobile {
-  display: none;
+  object-position: center top;
 }
 
 /* ================================================================================
@@ -194,7 +194,7 @@ html:has(body.franchise-page) {
 
 .franchise-territories {
   background: var(--color-white);
-  padding: var(--spacing-4xl) var(--padding-x-mobile);
+  padding: 0 var(--padding-x-mobile) var(--spacing-4xl);
 }
 
 .franchise-territories--featured {
@@ -321,7 +321,7 @@ html:has(body.franchise-page) {
 
 .franchise-form-section {
   background: var(--color-white);
-  padding: 10px var(--padding-x-mobile) 60px;
+  padding: 0 var(--padding-x-mobile) var(--spacing-4xl);
 }
 
 .franchise-form-card {
@@ -447,26 +447,6 @@ html:has(body.franchise-page) {
   line-height: var(--line-height-md);
 }
 
-/* Keep image-left splits in DOM order. main.css reverses the second
-   back-to-back .fw-image section below 1200px. :has() counts the
-   selectors inside it, so that rule outranks a normal override. */
-@media (max-width: 1199.98px) {
-  body.franchise-page main > section.franchise-split > .row {
-    flex-direction: column !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .franchise-split .franchise-split__image--desktop {
-    display: none;
-  }
-
-  .franchise-split .franchise-split__image--mobile {
-    display: block;
-    object-position: center top;
-  }
-}
-
 @media (max-width: 768px) {
   .franchise-anchor {
     scroll-margin-top: 80px;
@@ -477,7 +457,7 @@ html:has(body.franchise-page) {
 
 @media (min-width: 769px) {
   .franchise-intro {
-    padding: 90px var(--spacing-lg) 101px;
+    padding: 90px var(--spacing-lg) 64px;
   }
 
   .franchise-intro h1 {
@@ -492,7 +472,7 @@ html:has(body.franchise-page) {
   }
 
   .franchise-split {
-    padding: 64px var(--padding-x-tablet);
+    padding: 0 var(--padding-x-tablet) 64px;
   }
 
   .franchise-split .fw-text {
@@ -531,11 +511,11 @@ html:has(body.franchise-page) {
   }
 
   .franchise-territories {
-    padding: 64px var(--padding-x-tablet) 72px;
+    padding: 0 var(--padding-x-tablet) 64px;
   }
 
   .franchise-territories--south {
-    padding-top: 48px;
+    padding-top: 0;
   }
 
   .franchise-territories h2 {
@@ -579,7 +559,7 @@ html:has(body.franchise-page) {
   }
 
   .franchise-testimonials {
-    padding: 64px var(--padding-x-tablet) 80px;
+    padding: 0 var(--padding-x-tablet) 64px;
   }
 
   .franchise-testimonials h2 {
@@ -598,7 +578,7 @@ html:has(body.franchise-page) {
   }
 
   .franchise-form-section {
-    padding: 80px var(--padding-x-tablet) 100px;
+    padding: 0 var(--padding-x-tablet) 64px;
   }
 
   .franchise-form-card {
@@ -638,6 +618,10 @@ html:has(body.franchise-page) {
 /* ---------- Desktop splits (Bootstrap xl, same stack point as about.html) ---------- */
 
 @media (min-width: 1200px) {
+  .franchise-intro {
+    padding-bottom: 0;
+  }
+
   .franchise-split {
     padding: 0;
   }
@@ -691,7 +675,7 @@ html:has(body.franchise-page) {
   }
 
   .franchise-territories--north {
-    padding: 72px 0 0;
+    padding: 0;
   }
 
   .franchise-territories--south {
@@ -860,5 +844,41 @@ html:has(body.franchise-page) {
   body.franchise-page .franchise-split--experts .fw-content,
   body.franchise-page .franchise-split--convert .fw-content {
     padding: 100px 110px 100px 100px;
+  }
+}
+
+/* The site FAQ brings its own top padding. Pull that padding back over
+   the form's bottom padding so the two bands do not stack. */
+body.franchise-page .faq {
+  margin-top: -50px;
+}
+
+@media (max-width: 480px) {
+  body.franchise-page .faq {
+    margin-top: -40px;
+  }
+}
+
+@media (min-width: 769px) {
+  body.franchise-page .faq {
+    margin-top: -60px;
+  }
+}
+
+@media (min-width: 1025px) {
+  body.franchise-page .faq {
+    margin-top: -65px;
+  }
+}
+
+@media (min-width: 1281px) {
+  body.franchise-page .faq {
+    margin-top: -70px;
+  }
+}
+
+@media (min-width: 1441px) {
+  body.franchise-page .faq {
+    margin-top: -108px;
   }
 }
