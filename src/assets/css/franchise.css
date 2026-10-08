@@ -916,6 +916,11 @@ html:has(body.franchise-page) {
   body.franchise-page .franchise-section--image-last {
     padding-bottom: 0;
   }
+
+  /* Convert still ends on a photo, and keeps 50px under it. */
+  body.franchise-page .franchise-split--convert {
+    padding-bottom: 50px;
+  }
 }
 
 /* The shared FAQ draws its 1px rule at the top of each item, so the last
