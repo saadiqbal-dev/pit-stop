@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Ultimate NZ Car Service Checklist | Pit Stop Blog</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <!-- Combined CSS File -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
+    <link rel="stylesheet" href="assets/css/blog.css" />
+    <!-- Banner initialization script (must load before banner HTML) -->
+    <script src="js/banner-init.js"></script>
+    <!-- Google Places API (load without callback, we'll init manually) -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG8BjFwOMXNYu-xwJQc4JxK2njsyxcbM8&libraries=places"
+      async
+      defer
+    ></script>
+  </head>
+  <body class="blog-article-page">
+    <!-- Header -->
+    <header class="ps-header-wrapper">
+      <div class="ps-banner" id="top-banner">
+        <div class="ps-banner-content">
+          <a><img src="assets/img/afterpay.svg" /></a>
+          <p>Easy Vehicle Repair Finance with <span>Afterpay</span></p>
+        </div>
+        <a class="ps-banner-close" id="banner-close"
+          ><img src="assets/img/close.svg"
+        /></a>
+      </div>
+      <!-- Top band: full width background -->
+      <div class="ps-header__top-band">
+        <div class="ps-header__inner">
+          <!-- Top Section with Logo and Controls -->
+          <div class="ps-header__top">
+            <!-- Logo -->
+            <a href="index.html" class="ps-header__logo">
+              <img src="assets/img/logo-desktop.svg" alt="Logo" />
+            </a>
+
+            <!-- Right Controls -->
+            <div class="ps-header__right-controls">
+              <!-- Search Icon -->
+              <a href="#" class="ps-header__search-icon" id="search-toggle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="33"
+                  height="32"
+                  viewBox="0 0 33 32"
+                  fill="none"
+                >
+                  <path
+                    d="M12.3666 24.0182C15.3372 24.0182 18.1579 23.0005 20.3784 21.1395L31.2408 31.7092C31.4509 31.9128 31.706 32 31.961 32C32.2161 32 32.4861 31.9128 32.6962 31.7092C33.1013 31.3167 33.1013 30.677 32.6962 30.299L21.8337 19.7292C25.8996 15.0186 25.6596 7.96729 21.0985 3.53294C18.773 1.25034 15.6673 0 12.3666 0C9.06581 0 5.9601 1.26488 3.63458 3.5184C-1.21153 8.21445 -1.21153 15.8328 3.63458 20.5143C5.97511 22.7824 9.06581 24.0182 12.3666 24.0182ZM5.08991 4.95775C7.02535 3.05316 9.62094 2.0209 12.3666 2.0209C15.1122 2.0209 17.7078 3.05316 19.6432 4.95775C23.6641 8.8687 23.6641 15.2222 19.6432 19.104C17.7078 21.0086 15.1122 22.0409 12.3666 22.0409C9.62094 22.0409 7.02535 21.0086 5.08991 19.104C1.06899 15.1931 1.06899 8.83962 5.08991 4.95775Z"
+                    fill="black"
+                  />
+                </svg>
+              </a>
+
+              <!-- Phone Button -->
+              <a href="#" class="ps-btn ps-btn-primary ps-header__phone-button"
+                >Click for 0800 No.</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dropdown overlay -->
+      <div class="ps-header__dropdown-overlay"></div>
+
+      <!-- Nav band: full width background -->
+      <div class="ps-header__nav-band">
+        <div class="ps-header__inner">
+          <!-- Navigation Section -->
+          <nav class="ps-header__nav">
+            <ul class="ps-header__nav-menu">
+              <li
+                class="ps-header__nav-item ps-header__nav-item--dropdown"
+                data-dropdown="services"
+              >
+                <a href="#" class="ps-header__nav-link">SERVICES</a>
+                <span class="ps-header__dropdown-arrow">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="15"
+                    height="8"
+                    viewBox="0 0 15 8"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_71_492)">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M14.0243 0L7.51031 6.14436L0.96885 0L0 0.914842L7.49656 7.99351L15 0.914842L14.0311 0H14.0243Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_71_492">
+                        <rect width="15" height="8" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+                <div
+                  class="ps-header__dropdown-menu ps-header__dropdown-menu--services"
+                  id="services-dropdown"
+                >
+                  <div class="ps-header__dropdown-inner">
+                    <!-- Left Side: Dynamic Links Container -->
+                    <div class="ps-header__dropdown-links-container">
+                      <ul class="ps-header__dropdown-list">
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link">WOF</a>
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a
+                            href="service-packages.html"
+                            class="ps-header__dropdown-link"
+                            >Service Packages</a
+                          >
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link"
+                            >Brakes</a
+                          >
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link"
+                            >EV & Hybrid Service Packages</a
+                          >
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link"
+                            >Suspension</a
+                          >
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link">Tyres</a>
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link"
+                            >Diagnosis</a
+                          >
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link"
+                            >Exhausts</a
+                          >
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link"
+                            >Batteries</a
+                          >
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link"
+                            >Tow Bars</a
+                          >
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link">ADAS</a>
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link"
+                            >Fleet Servicing</a
+                          >
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link"
+                            >Fleet Servicing</a
+                          >
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link"
+                            >Fleet Servicing</a
+                          >
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link"
+                            >Fleet Servicing</a
+                          >
+                        </li>
+                        <li class="ps-header__dropdown-item">
+                          <a href="#" class="ps-header__dropdown-link"
+                            >Fleet Servicing</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+
+                    <!-- Right Side: Static Content -->
+                    <div class="ps-header__dropdown-static-content">
+                      <div class="ps-header__dropdown-divider"></div>
+                      <div class="ps-header__dropdown-cta-section">
+                        <a
+                          href="../booking.html"
+                          class="ps-btn ps-btn-primary ps-header__dropdown-cta-button"
+                          >Book A Service</a
+                        >
+                        <a href="#" class="ps-header__dropdown-link">Rewards</a>
+                        <a href="#" class="ps-header__dropdown-link"
+                          >Contact Us</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="ps-header__nav-item">
+                <a href="../find-a-store.html" class="ps-header__nav-link"
+                  >FIND A STORE</a
+                >
+              </li>
+
+              <li class="ps-header__nav-item">
+                <a href="../booking.html" class="ps-header__nav-link"
+                  >FREE WOF CHECK</a
+                >
+              </li>
+
+              <li
+                class="ps-header__nav-item ps-header__nav-item--dropdown"
+                data-dropdown="about"
+              >
+                <a href="#" class="ps-header__nav-link">ABOUT</a>
+                <span class="ps-header__dropdown-arrow">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="15"
+                    height="8"
+                    viewBox="0 0 15 8"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_71_492_3)">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M14.0243 0L7.51031 6.14436L0.96885 0L0 0.914842L7.49656 7.99351L15 0.914842L14.0311 0H14.0243Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_71_492_3">
+                        <rect width="15" height="8" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+                <div
+                  class="ps-header__dropdown-menu ps-header__dropdown-menu--about"
+                  id="about-dropdown"
+                >
+                  <div class="ps-header__dropdown-inner">
+                    <ul class="ps-header__dropdown-list">
+                      <li class="ps-header__dropdown-item">
+                        <a href="#" class="ps-header__dropdown-link">About</a>
+                      </li>
+                      <li class="ps-header__dropdown-item">
+                        <a href="franchise.html" class="ps-header__dropdown-link"
+                          >Franchising</a
+                        >
+                      </li>
+                      <li class="ps-header__dropdown-item">
+                        <a href="#" class="ps-header__dropdown-link">Jobs</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+
+              <li class="ps-header__nav-item">
+                <a href="#" class="ps-header__nav-link">FINANCE</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Header -->
+    <section class="mobile-header">
+      <div class="ps-mobile-header__content">
+        <a href="index.html" class="ps-mobile-header__logo">
+          <img src="assets/img/logo-desktop.svg" alt="Logo" />
+        </a>
+        <div class="ps-mobile-header__controls">
+          <a
+            href="#"
+            class="ps-mobile-header__search-icon"
+            id="mobile-search-toggle"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              fill="none"
+            >
+              <path
+                d="M12.3666 24.0182C15.3372 24.0182 18.1579 23.0005 20.3784 21.1395L31.2408 31.7092C31.4509 31.9128 31.706 32 31.961 32C32.2161 32 32.4861 31.9128 32.6962 31.7092C33.1013 31.3167 33.1013 30.677 32.6962 30.299L21.8337 19.7292C25.8996 15.0186 25.6596 7.96729 21.0985 3.53294C18.773 1.25034 15.6673 0 12.3666 0C9.06581 0 5.9601 1.26488 3.63458 3.5184C-1.21153 8.21445 -1.21153 15.8328 3.63458 20.5143C5.97511 22.7824 9.06581 24.0182 12.3666 24.0182ZM5.08991 4.95775C7.02535 3.05316 9.62094 2.0209 12.3666 2.0209C15.1122 2.0209 17.7078 3.05316 19.6432 4.95775C23.6641 8.8687 23.6641 15.2222 19.6432 19.104C17.7078 21.0086 15.1122 22.0409 12.3666 22.0409C9.62094 22.0409 7.02535 21.0086 5.08991 19.104C1.06899 15.1931 1.06899 8.83962 5.08991 4.95775Z"
+                fill="black"
+              />
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="ps-mobile-header__hamburger"
+            id="mobile-menu-toggle"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="43"
+              height="29"
+              viewBox="0 0 43 29"
+              fill="none"
+            >
+              <path
+                d="M1.20349 29C0.774373 29 0.374697 28.7685 0.160584 28.3968C-0.0535281 28.025 -0.0535281 27.5621 0.160584 27.1903C0.374697 26.8185 0.774373 26.5871 1.20349 26.5871H41.7956C42.2247 26.5871 42.6244 26.8185 42.8385 27.1903C43.0526 27.5621 43.0526 28.025 42.8385 28.3968C42.6244 28.7685 42.2247 29 41.7956 29H1.20349ZM1.20349 14.9245C0.774373 14.9245 0.374697 14.693 0.160584 14.3213C-0.0535281 13.9495 -0.0535281 13.4866 0.160584 13.1148C0.374697 12.743 0.774373 12.5116 1.20349 12.5116H41.7956C42.2247 12.5116 42.6244 12.743 42.8385 13.1148C43.0526 13.4866 43.0526 13.9495 42.8385 14.3213C42.6244 14.693 42.2247 14.9245 41.7956 14.9245H1.20349ZM1.20349 2.41294C0.774373 2.41294 0.374697 2.18148 0.160584 1.80971C-0.0535281 1.43794 -0.0535281 0.975008 0.160584 0.603236C0.375589 0.231464 0.775265 0 1.20349 0H41.7956C42.2247 0 42.6244 0.231464 42.8385 0.603236C43.0526 0.975008 43.0526 1.43794 42.8385 1.80971C42.6244 2.18148 42.2247 2.41294 41.7956 2.41294H1.20349Z"
+                fill="black"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+      <div class="mobile-menu__header">
+        <a href="index.html" class="mobile-menu__logo">
+          <img src="assets/img/logo-desktop.svg" alt="Logo" />
+        </a>
+        <a href="#" class="mobile-menu__close" id="mobile-menu-close">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="33"
+            height="33"
+            viewBox="0 0 33 33"
+            fill="none"
+          >
+            <g clip-path="url(#clip0_2036_1092)">
+              <path
+                d="M30.8196 32.6262C31.1414 32.948 31.6145 33.0748 32.0536 32.9565C32.4927 32.8391 32.839 32.4928 32.9573 32.0528C33.0756 31.6137 32.9488 31.1405 32.6271 30.8188L2.18015 0.373788C1.85841 0.0520496 1.38526 -0.0747534 0.946182 0.043533C0.507103 0.160873 0.160763 0.507215 0.0424767 0.947241C-0.0758095 1.38632 0.0509911 1.85946 0.37273 2.1812L30.8196 32.6262Z"
+                fill="black"
+              />
+              <path
+                d="M0.373768 30.8198C0.0520287 31.1415 -0.0747757 31.6147 0.0435104 32.0537C0.160851 32.4928 0.507195 32.8391 0.94722 32.9574C1.3863 33.0757 1.85944 32.9489 2.18118 32.6272L32.6262 2.18027C32.9479 1.85853 33.0747 1.38633 32.9565 0.94631C32.8391 0.507231 32.4928 0.160888 32.0537 0.0435482C31.6146 -0.0747381 31.1415 0.0520649 30.8197 0.373804L0.374714 30.8188L0.373768 30.8198Z"
+                fill="black"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_2036_1092">
+                <rect
+                  width="33"
+                  height="33"
+                  fill="white"
+                  transform="matrix(-1 0 0 1 33 0)"
+                />
+              </clipPath>
+            </defs>
+          </svg>
+        </a>
+      </div>
+      <nav class="mobile-menu__nav">
+        <div class="mobile-menu__separator"></div>
+
+        <a href="../find-a-store.html" class="mobile-menu__link"
+          >Find a Store</a
+        >
+        <div class="mobile-menu__separator"></div>
+
+        <div class="mobile-menu__dropdown">
+          <div
+            class="mobile-menu__link mobile-menu__link--dropdown"
+            data-mobile-dropdown="services"
+          >
+            <span>Services</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="8"
+              viewBox="0 0 14 8"
+              fill="none"
+              class="mobile-menu__arrow"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12.466 0L6.67583 6.14436L0.8612 0L0 0.914842L6.66361 7.99351L13.3333 0.914842L12.4721 0H12.466Z"
+                fill="black"
+              />
+            </svg>
+          </div>
+          <div class="mobile-menu__dropdown-content">
+            <a href="#" class="mobile-menu__dropdown-link">WOF</a>
+            <a
+              href="service-packages.html"
+              class="mobile-menu__dropdown-link"
+              >Service Packages</a
+            >
+            <a href="#" class="mobile-menu__dropdown-link">Brakes</a>
+            <a href="#" class="mobile-menu__dropdown-link"
+              >EV & Hybrid Service Packages</a
+            >
+            <a href="#" class="mobile-menu__dropdown-link">Suspension</a>
+            <a href="#" class="mobile-menu__dropdown-link">Tyres</a>
+            <a href="#" class="mobile-menu__dropdown-link">Diagnostics</a>
+            <a href="#" class="mobile-menu__dropdown-link">Exhausts</a>
+            <a href="#" class="mobile-menu__dropdown-link">Batteries</a>
+            <a href="#" class="mobile-menu__dropdown-link">Tow Bars</a>
+            <a href="#" class="mobile-menu__dropdown-link">ADAS</a>
+            <a href="#" class="mobile-menu__dropdown-link">Fleet Servicing</a>
+          </div>
+        </div>
+        <div class="mobile-menu__separator"></div>
+
+        <a href="../booking.html" class="mobile-menu__link">Book Online</a>
+        <div class="mobile-menu__separator"></div>
+
+        <a href="#" class="mobile-menu__link">Finance</a>
+        <div class="mobile-menu__separator"></div>
+
+        <a href="#" class="mobile-menu__link">Rewards</a>
+        <div class="mobile-menu__separator"></div>
+
+        <div class="mobile-menu__dropdown">
+          <div
+            class="mobile-menu__link mobile-menu__link--dropdown"
+            data-mobile-dropdown="about"
+          >
+            <span>About</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="8"
+              viewBox="0 0 14 8"
+              fill="none"
+              class="mobile-menu__arrow"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12.466 0L6.67583 6.14436L0.8612 0L0 0.914842L6.66361 7.99351L13.3333 0.914842L12.4721 0H12.466Z"
+                fill="black"
+              />
+            </svg>
+          </div>
+          <div class="mobile-menu__dropdown-content">
+            <a href="#" class="mobile-menu__dropdown-link">About Us</a>
+            <a href="franchise.html" class="mobile-menu__dropdown-link">Franchising</a>
+            <a href="#" class="mobile-menu__dropdown-link">Jobs</a>
+          </div>
+        </div>
+        <div class="mobile-menu__separator"></div>
+
+        <a href="#" class="mobile-menu__link">Contact</a>
+        <div class="mobile-menu__separator"></div>
+      </nav>
+      <div class="mobile-menu__footer">
+        <img
+          src="assets/img/bar.svg"
+          alt="Bar decoration"
+          class="mobile-menu__bar"
+        />
+      </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+      <section class="search-wrapper">
+        <div class="search-container">
+          <input type="text" placeholder="Search" class="search-input" />
+        </div>
+      </section>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Repeatable block: breadcrumb. Last item is the current page. -->
+      <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+        <div class="blog-shell">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li aria-current="page">NZ Car Service Checklist</li>
+          </ol>
+        </div>
+      </nav>
+
+      <article class="blog-article">
+        <div class="blog-article__column">
+          <header class="blog-article__header">
+            <h1>The Ultimate NZ Car Service Checklist:<br>What You Really Need (and When)</h1>
+            <div class="blog-article__standfirst">
+              <p>Keeping your car in top condition isn’t just about avoiding breakdowns — it’s about safety, reliability, and saving money in the long run. In New Zealand, where our roads range from smooth highways to rugged backroads, regular car servicing is essential.</p>
+            </div>
+            <div class="blog-article__byline">
+              <p>By Stacey Bree, Franchise Network Manager</p>
+              <p>Published [DD Month YYYY]</p>
+            </div>
+          </header>
+
+          <img class="blog-article__hero" src="assets/img/blog/article-hero.webp" alt="Pit Stop technician using a stethoscope to listen to an engine under a raised bonnet" width="1666" height="1074">
+
+          <!-- Repeatable block: key takeaways -->
+          <aside class="blog-takeaways" aria-label="Key takeaways">
+            <p>Key takeaways</p>
+            <ul>
+              <li>Service your car every 12 months or [10,000-15,000] km, whichever comes first.</li>
+              <li>Alternate minor and major services. Minor covers oil, filter and safety checks.</li>
+              <li>NZ law requires at least 1.5 mm of tyre tread across the tread pattern.</li>
+            </ul>
+          </aside>
+
+          <!-- Article body: CMS HTML sits in this wrapper and needs no classes of its own. -->
+          <div class="blog-article__body">
+            <p>With so many maintenance schedules and recommendations, it can be hard to know exactly what your car really needs and when. That’s why we’ve created the ultimate NZ car service checklist to help Kiwi drivers stay on top of their vehicle care.</p>
+            <p>Regular servicing matters because cars are complex machines. Over time, parts wear down, fluids degrade, and small issues can escalate into costly repairs if left unchecked. A properly serviced car runs smoother, consumes less fuel, and keeps both you and your passengers safe. In New Zealand’s diverse driving conditions, staying ahead of maintenance is critical for avoiding inconvenient breakdowns and protecting your investment.</p>
+            <h2>How often should I service my car in NZ?</h2>
+            <p>When it comes to servicing, engine oil and fluids are the lifeblood of your vehicle. Engine oil should be replaced regularly according to manufacturer recommendations, while brake fluid, coolant, and transmission fluid all need routine checks to ensure optimal performance. Brakes themselves require careful attention, as worn pads, discs, or handbrakes can compromise safety and are a common reason for vehicles failing their WOF. Tyres are another crucial area to monitor; tread depth, sidewall condition, and correct tyre pressure not only improve handling but are also a legal requirement in New Zealand.</p>
+            <p>Lights and electrical systems play a huge role in vehicle safety. Headlights, indicators, brake lights, hazard lights, and the battery should all be tested regularly to avoid roadside issues. Steering and suspension components, including shocks, struts, and tie rods, should be inspected for wear or looseness, as these parts impact both safety and driving comfort. Visibility is also vital, so wiper blades, windscreens, and windows should always be in good condition, with chips or cracks repaired promptly to maintain clear sightlines.</p>
+            <p>Filters, belts, and hoses are often overlooked but play a critical role in keeping your car running efficiently. Air, cabin, and fuel filters protect your engine and passengers from dust and debris, while belts and hoses ensure mechanical systems function properly. Exhaust and emissions systems should be monitored for leaks or rust, maintaining both performance and compliance with environmental standards. Finally, interior safety features like seat belts, mirrors, and the horn should be in perfect working order to provide protection in any situation.</p>
+            <p>At Pit Stop NZ, our experienced mechanics understand Kiwi vehicles and the roads they travel on. We provide thorough, reliable servicing for all makes and models, helping drivers prevent unexpected breakdowns and costly repairs. Regular servicing with Pit Stop not only keeps your car performing at its best but also gives you the peace of mind that you and your passengers are safe on the road. Book your car service today and drive with confidence, knowing your vehicle is in expert hands.</p>
+          </div>
+        </div>
+      </article>
+
+      <section class="faq" aria-labelledby="blog-article-faq-title">
+        <div class="faq-container">
+          <h2 id="blog-article-faq-title">Vehicle Service FAQs</h2>
+          <div>
+            <!-- Repeatable block: FAQ item -->
+            <div class="faq-item">
+              <div class="faq-divider"></div>
+              <div class="faq-question">
+                <span>Where can I get a brake service or repair done?</span><img src="assets/img/faq-plus.svg" alt="Expand" class="faq-icon faq-icon-plus" /><img src="assets/img/faq-close.svg" alt="Collapse" class="faq-icon faq-icon-close" />
+              </div>
+              <div class="faq-answer">
+                <p>Brake services and repairs are available at all Pit Stop locations nationwide.</p>
+                <p><a href="locations.html">Find your nearest Pit Stop service store here</a> or <a href="booking.html">book online now</a></p>
+              </div>
+            </div>
+            <!-- Repeatable block: FAQ item -->
+            <div class="faq-item">
+              <div class="faq-divider"></div>
+              <div class="faq-question">
+                <span>What is a brake service?</span><img src="assets/img/faq-plus.svg" alt="Expand" class="faq-icon faq-icon-plus" /><img src="assets/img/faq-close.svg" alt="Collapse" class="faq-icon faq-icon-close" />
+              </div>
+              <div class="faq-answer">
+                <p>A brake service is an inspection and, where needed, repair or replacement of your vehicle’s braking components, including brake pads, discs or rotors, brake fluid and related parts. Worn brakes are a common cause of WOF failures and a key safety issue. Pit Stop’s technicians can inspect your brakes, advise what work is required and carry out the repairs at all Pit Stop branches across New Zealand.</p>
+              </div>
+            </div>
+            <!-- Repeatable block: FAQ item -->
+            <div class="faq-item">
+              <div class="faq-divider"></div>
+              <div class="faq-question">
+                <span>How much does a brake service cost?</span><img src="assets/img/faq-plus.svg" alt="Expand" class="faq-icon faq-icon-plus" /><img src="assets/img/faq-close.svg" alt="Collapse" class="faq-icon faq-icon-close" />
+              </div>
+              <div class="faq-answer">
+                <p>Estimates for vehicle repairs and replacement parts can be obtained from your local branch ahead of booking in the work, so we recommend <a href="locations.html">contacting your local branch</a> to discuss the specifics of the work to be completed.</p>
+              </div>
+            </div>
+            <!-- Repeatable block: FAQ item -->
+            <div class="faq-item">
+              <div class="faq-divider"></div>
+              <div class="faq-question">
+                <span>How long will it take to get my brakes done?</span><img src="assets/img/faq-plus.svg" alt="Expand" class="faq-icon faq-icon-plus" /><img src="assets/img/faq-close.svg" alt="Collapse" class="faq-icon faq-icon-close" />
+              </div>
+              <div class="faq-answer">
+                <p>Depending on the details of the work needed, Brake work can sometimes be done on a “while you wait” basis, while for bigger jobs it is best to leave your car with us. A courtesy car can sometimes be made available, so it is best to discuss this with the branch when you book.</p>
+              </div>
+            </div>
+            <!-- Repeatable block: FAQ item -->
+            <div class="faq-item">
+              <div class="faq-divider"></div>
+              <div class="faq-question">
+                <span>Does Pit Stop provide courtesy vehicles?</span><img src="assets/img/faq-plus.svg" alt="Expand" class="faq-icon faq-icon-plus" /><img src="assets/img/faq-close.svg" alt="Collapse" class="faq-icon faq-icon-close" />
+              </div>
+              <div class="faq-answer">
+                <p>Yes, many Pit Stop branches can provide a courtesy vehicle if your repair or service is likely to take longer than is convenient to wait. <a href="locations.html">Contact your nearest Pit Stop branch</a> to check whether a courtesy vehicle is available.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="blog-related" aria-labelledby="blog-related-title">
+        <div class="blog-shell">
+          <h2 id="blog-related-title">You might be interested in...</h2>
+          <!-- Repeatable block: article card -->
+          <div class="row row-cols-1 row-cols-lg-2 blog-related__list">
+            <div class="col">
+              <article class="blog-card">
+                <div class="blog-card__media">
+                  <a href="blog-article.html">
+                    <img src="assets/img/blog/card-wof.webp" alt="Mechanic inspecting a car during a warrant of fitness check" width="1088" height="668" loading="lazy" decoding="async">
+                  </a>
+                </div>
+                <h3><a href="blog-article.html">WOF Fail? Here Are the 10 Most Common Reasons in New Zealand — And How to Avoid Them.</a></h3>
+                <a class="ps-btn ps-btn-primary blog-btn" href="blog-article.html">Find out more</a>
+              </article>
+            </div>
+            <div class="col">
+              <article class="blog-card">
+                <div class="blog-card__media">
+                  <a href="blog-article.html">
+                    <img src="assets/img/blog/card-check-engine.webp" alt="Dashboard with the check engine light on" width="1088" height="668" loading="lazy" decoding="async">
+                  </a>
+                </div>
+                <h3><a href="blog-article.html">Why Your Check Engine Light Is On — The 8 Most Likely Causes (Explained Simply).</a></h3>
+                <a class="ps-btn ps-btn-primary blog-btn" href="blog-article.html">Find out more</a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Repeatable block: CTA band -->
+      <section class="blog-cta" aria-label="Book a service">
+        <p>Keep your car running smoothly with expert servicing, WOFs and repairs from your local Pit Stop team.</p>
+        <a class="ps-btn blog-btn blog-btn--book" href="booking.html">Book Now</a>
+      </section>
+    </main>
+
+
+    <!-- Footer -->
+    <section class="ps-footer-wrapper">
+      <div class="ps-footer-container">
+        <div class="ps-footer-content">
+          <div class="ps-footer-logo-section">
+            <img
+              src="assets/img/logo-desktop.svg"
+              alt="Logo"
+              class="ps-footer-logo"
+            />
+            <a
+              href="#"
+              class="ps-btn ps-btn-primary footer-phone-button desktop-footer-phone"
+              >Click for 0800 No.</a
+            >
+          </div>
+
+          <!-- Mobile CTA Section (After Logo) -->
+          <div class="mobile-cta mobile-cta--top">
+            <div class="mobile-cta__text">
+              <h3>Get in touch</h3>
+              <p class="mobile-cta__description">
+                If you'd like to contact us, we'd be delighted to hear from you.
+              </p>
+            </div>
+            <a
+              href="#"
+              class="ps-btn ps-btn-primary mobile-cta__button footer-phone-button"
+              >Click for 0800 No.</a
+            >
+            <div class="mobile-cta__social-icons">
+              <img src="assets/img/FB.svg" alt="FB Logo" />
+              <img
+                src="assets/img/instagram-mobile.svg"
+                alt="instagram mobile"
+              />
+              <img src="assets/img/youtube.svg" alt="youtube logo" />
+            </div>
+          </div>
+
+          <div class="links-container">
+            <div class="links-content">
+              <h3>Home</h3>
+              <ul class="services-link">
+                <li><a href="franchise.html">Franchising</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="../find-a-store.html">Locations</a></li>
+              </ul>
+            </div>
+            <div class="links-content-services">
+              <h3>Products and Services</h3>
+              <ul class="services-link">
+                <li><a href="service-packages.html">Service Packages</a></li>
+                <li><a href="#">WOF</a></li>
+                <li><a href="#">Brakes</a></li>
+                <li><a href="#">Car Repairs</a></li>
+                <li><a href="#">Tyres</a></li>
+                <li><a href="#">EV & Hybrid Service Packages</a></li>
+                <li><a href="#">Exhausts</a></li>
+                <li><a href="#">Diagnostics</a></li>
+                <li><a href="#">ADAS Calibration</a></li>
+                <li><a href="#">Towbars</a></li>
+                <li><a href="#">Shock Absorbers</a></li>
+                <li><a href="#">Batteries</a></li>
+                <li><a href="#">Safety Check</a></li>
+                <li><a href="#">Fleet Servicing</a></li>
+              </ul>
+            </div>
+            <div class="links-content">
+              <h3>Get Repair Finance</h3>
+              <ul class="services-link">
+                <li>
+                  <a href="#"
+                    >Apply for Repair Finance from our finance providers</a
+                  >
+                </li>
+                <li><a href="#">AfterPay</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="copyright-footer">
+          <div class="copyright-content">
+            <p>
+              &copy; 2025 PitStop Ltd. All rights reserved. |
+              <a>Privacy Policy</a> | Terms of Trade | Website Design and
+              Development by Storm IMC
+            </p>
+          </div>
+          <div class="social-icons">
+            <img src="assets/img/FB-Desktop.svg" alt="FB Logo" />
+            <img src="assets/img/instagram.svg" alt="instagram Logo" />
+            <img src="assets/img/youtube-Desktop.svg" alt="youtube logo" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript Files -->
+    <script src="js/banner-close.js"></script>
+    <script src="js/header-navigation.js"></script>
+    <script src="js/header-phone-button.js"></script>
+    <script src="js/search-overlay.js"></script>
+    <script src="js/mobile-menu-toggle.js"></script>
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/faq-accordion.js"></script>
+  </body>
+</html>
