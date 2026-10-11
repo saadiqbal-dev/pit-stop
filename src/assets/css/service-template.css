@@ -1,0 +1,117 @@
+/* =========================================================
+   Pit Stop service templates (brakes.html 3-col, towbars.html 2-col)
+   Page-scoped. Do not move into main.css.
+   ========================================================= */
+
+/* O1  Yellow recall / repair notice band (optional block) */
+body.service-template .fw-content[data-background="alert"] {
+  background: #ffd800;
+  color: #000;
+  min-height: 0;
+}
+body.service-template .fw-content[data-background="alert"] .fw-text {
+  max-width: 864px;
+  width: 100%;
+  gap: 29px;
+}
+body.service-template .fw-content[data-background="alert"] .fw-text h2 {
+  margin-bottom: 9px; /* 29 gap + 9 = 38px heading-to-body */
+}
+body.service-template .fw-content[data-background="alert"] .fw-text a {
+  color: inherit;
+  text-decoration: underline;
+}
+@media (min-width: 1200px) {
+  body.service-template .fw-content[data-background="alert"] {
+    min-height: 0;
+    padding: 80px 100px 96px;
+  }
+}
+
+/* O2  Black quote block (Figma #000, text 570 wide at x185, vertically centred) */
+body.service-template .fw-bold-content[data-background="black"] {
+  background: #000;
+  color: #fff;
+}
+body.service-template .fw-bold-content[data-background="black"] .fw-bold-text {
+  max-width: 570px;
+  gap: 33px; /* bar -> quote */
+}
+body.service-template .fw-bold-content[data-background="black"] .fw-bold-text h3 {
+  max-width: 570px;
+}
+@media (min-width: 1700px) {
+  body.service-template .fw-bold-content[data-background="black"] {
+    padding: 80px 0 80px 185px;
+  }
+}
+
+/* O3  Split-section rhythm: heading -> first paragraph 33px, paragraphs 29px.
+   Three paragraphs also match main.css .fw-bold-content:has(p + p + p),
+   which centres the column. Keep every text split top-aligned. */
+body.service-template .fw-bold-content:has(p) {
+  align-items: flex-start !important;
+}
+body.service-template .fw-text,
+body.service-template .fw-bold-text {
+  gap: 29px;
+}
+body.service-template .fw-text h1,
+body.service-template .fw-text h2,
+body.service-template .fw-bold-text h2 {
+  margin-bottom: 4px; /* 29 + 4 = 33 */
+}
+
+/* O4  Bulleted list inside .fw-text (warning signs) */
+body.service-template .fw-text ul {
+  padding-left: 23px;
+  margin: 0;
+}
+
+/* O5  Button spacing: last paragraph -> Book Now 48px */
+body.service-template .fw-text > div:last-child {
+  margin-top: 19px; /* 29 gap + 19 = 48 */
+}
+
+/* O6  Desktop row heights (Figma): 761 default, 899/830 where flagged.
+       Image fills its column instead of the fixed 748px. */
+@media (min-width: 1200px) {
+  body.service-template main section > .row > .col-xl-6:has(> .fw-image) {
+    position: relative;
+  }
+  body.service-template main section > .row > .col-xl-6 > .fw-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  body.service-template main section > .row > .fw-content,
+  body.service-template main section > .row > .fw-bold-content {
+    min-height: 761px;
+  }
+  body.service-template main section:first-child > .row > .fw-content {
+    min-height: 760px;
+  }
+  body.service-template section[data-row-height="830"] > .row > [class*="fw-"] {
+    min-height: 830px;
+  }
+  body.service-template section[data-row-height="899"] > .row > [class*="fw-"] {
+    min-height: 899px;
+  }
+  /* The 761px rule above is more specific than O1, and the yellow band is a
+     direct .fw-content child of .row. Keep that band content-sized. */
+  body.service-template main section > .row > .fw-content[data-background="alert"] {
+    min-height: 0;
+  }
+}
+
+/* O7  Book Now weight (Figma Inter SemiBold) */
+body.service-template .services-button {
+  font-weight: 600;
+}
+
+/* O8  FAQ: last item bottom rule (same as franchise.css / blog.css) */
+body.service-template .faq-item:last-child {
+  border-bottom: 1px solid #000;
+}
