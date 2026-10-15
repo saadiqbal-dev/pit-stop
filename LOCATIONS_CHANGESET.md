@@ -4,7 +4,7 @@
 
 - Added `src/locations.html`.
 - Reused the project header from `find-a-store.html` and the project footer structure from the existing site pages.
-- The body carries both `find-a-store-page` and `branch-selection-page`, so the shared find-a-store styles apply and the page CSS layers on top.
+- The body uses only the `branch-selection-page` class. It does not use `find-a-store-page`, which would make the page background red.
 - Added the downloaded branch-selection body sections: hero branch selector, regional headings (Northland and Auckland), 15 responsive branch cards with addresses, and Book Now links to `booking.html?location=…&region=…`.
 - Uses Bootstrap 5.3.3's grid-only stylesheet (`bootstrap-grid.min.css`) from the CDN together with the existing project `main.css` components.
 - The Franchising links in the header, mobile menu, and footer point to `franchise.html` (updated with the franchise page).
@@ -26,7 +26,7 @@
 
 All in `src/assets/css/branch-selection.css`, which is page-scoped. No shared CSS was modified.
 
-- **Page background:** `body.branch-selection-page` sets a white background. This overrides the red background from the shared `body.find-a-store-page` rule, at the same specificity.
+- **Page body:** `body.branch-selection-page` sets `height: auto`, which releases the shared `body { height: 100vh }` rule so the page can grow. It also sets the base font and text colour. The page background stays the default white, so no override is needed.
 - **Hero image:** uses `src/assets/img/locations-hero-bg-image.webp` (mechanic tools). The image sits on an empty `.branch-hero__media` element, drawn with a `::before` layer at `cover`, centred, and scaled to 120%. `.branch-hero__media` clips the zoomed image, so the hero itself can let the dropdown overflow. Below the image is a `#d3d3d3` fallback colour.
 - **Hero height:** 630px by default, 430px at 991px and below, and 340px at 575px and below.
 - **Dropdown:** the selector fills the hero content width. The open options list sits over the selector (`top: 0`, `z-index: 3`) rather than below it. It keeps the shared dropdown background colour.
@@ -38,13 +38,6 @@ All in `src/assets/css/branch-selection.css`, which is page-scoped. No shared CS
 - Grid columns stretch and branch cards use full height, so cards in each row align consistently.
 - Below 576px, cards use 28px padding and a 15px gap between the title, address, and button.
 - **Footer:** page-scoped spacing overrides for the shared footer (`.branch-selection-page .ps-footer-*`). The desktop footer phone is hidden.
-
-## Unused files
-
-The page no longer references these files:
-
-- `src/js/branch-selection.js`: the original dropdown script, replaced by the shared `find-dropdown.js`.
-- `src/assets/img/locations-hero-bg-image.png`: the original hero image, replaced by the `.webp`.
 
 ## Validation
 
