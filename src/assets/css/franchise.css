@@ -61,7 +61,8 @@ html:has(body.franchise) {
 
 .intro {
   background: var(--color-background-light);
-  padding: 40px var(--padding-x-mobile);
+  padding: 40px var(--padding-x-mobile) 31px;
+  text-align: left;
 }
 
 .intro h1 {
@@ -427,6 +428,17 @@ html:has(body.franchise) {
   .page-anchor {
     scroll-margin-top: 80px;
   }
+
+  .intro nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 34px;
+  }
+
+  .intro nav .nav-sep {
+    display: none;
+  }
 }
 
 /* ---------- Tablet and up (past the 430 layout) ---------- */
@@ -434,6 +446,7 @@ html:has(body.franchise) {
 @media (min-width: 769px) {
   .intro {
     padding: 90px var(--spacing-lg) 101px;
+    text-align: center;
   }
 
   .intro h1 {
