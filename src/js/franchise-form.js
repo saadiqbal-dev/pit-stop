@@ -7,13 +7,13 @@
  * Placeholder asterisks use a CSS overlay instead of inline styles.
  */
 $(function () {
-  var $form = $(".franchise-form");
+  var $form = $(".enquiry-form");
 
   if (!$form.length) {
     return;
   }
 
-  $form.find(".franchise-field").each(function () {
+  $form.find(".form-field").each(function () {
     var $field = $(this);
     var $input = $field.find(".ps-form-input");
 

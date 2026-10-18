@@ -23,7 +23,7 @@
       defer
     ></script>
   </head>
-  <body class="blog-article-page">
+  <body class="blog post">
     <!-- Header -->
     <header class="ps-header-wrapper">
       <div class="ps-banner" id="top-banner">
@@ -486,8 +486,8 @@
     <!-- Main Content -->
     <main>
       <!-- Repeatable block: breadcrumb. Last item is the current page. -->
-      <nav class="blog-breadcrumb" aria-label="Breadcrumb">
-        <div class="blog-shell">
+      <nav class="blog-crumbs d-flex align-items-center" aria-label="Breadcrumb">
+        <div class="blog-wrap">
           <ol>
             <li><a href="index.html">Home</a></li>
             <li><a href="blog.html">Blog</a></li>
@@ -496,23 +496,23 @@
         </div>
       </nav>
 
-      <article class="blog-article">
-        <div class="blog-article__column">
-          <header class="blog-article__header">
+      <article>
+        <div class="article-col">
+          <header class="article-head">
             <h1>The Ultimate NZ Car Service Checklist:<br>What You Really Need (and When)</h1>
-            <div class="blog-article__standfirst">
+            <div class="standfirst">
               <p>Keeping your car in top condition isn’t just about avoiding breakdowns — it’s about safety, reliability, and saving money in the long run. In New Zealand, where our roads range from smooth highways to rugged backroads, regular car servicing is essential.</p>
             </div>
-            <div class="blog-article__byline">
+            <div class="byline">
               <p>By Stacey Bree, Franchise Network Manager</p>
               <p>Published [DD Month YYYY]</p>
             </div>
           </header>
 
-          <img class="blog-article__hero" src="assets/img/blog/article-hero.webp" alt="Pit Stop technician using a stethoscope to listen to an engine under a raised bonnet" width="1666" height="1074">
+          <img class="article-hero" src="assets/img/blog/article-hero.webp" alt="Pit Stop technician using a stethoscope to listen to an engine under a raised bonnet" width="1666" height="1074">
 
           <!-- Repeatable block: key takeaways -->
-          <aside class="blog-takeaways" aria-label="Key takeaways">
+          <aside class="takeaways" aria-label="Key takeaways">
             <p>Key takeaways</p>
             <ul>
               <li>Service your car every 12 months or [10,000-15,000] km, whichever comes first.</li>
@@ -522,7 +522,7 @@
           </aside>
 
           <!-- Article body: CMS HTML sits in this wrapper and needs no classes of its own. -->
-          <div class="blog-article__body">
+          <div class="article-body">
             <p>With so many maintenance schedules and recommendations, it can be hard to know exactly what your car really needs and when. That’s why we’ve created the ultimate NZ car service checklist to help Kiwi drivers stay on top of their vehicle care.</p>
             <p>Regular servicing matters because cars are complex machines. Over time, parts wear down, fluids degrade, and small issues can escalate into costly repairs if left unchecked. A properly serviced car runs smoother, consumes less fuel, and keeps both you and your passengers safe. In New Zealand’s diverse driving conditions, staying ahead of maintenance is critical for avoiding inconvenient breakdowns and protecting your investment.</p>
             <h2>How often should I service my car in NZ?</h2>
@@ -593,27 +593,27 @@
         </div>
       </section>
 
-      <section class="blog-related" aria-labelledby="blog-related-title">
-        <div class="blog-shell">
+      <section class="related-posts" aria-labelledby="blog-related-title">
+        <div class="blog-wrap">
           <h2 id="blog-related-title">You might be interested in...</h2>
           <!-- Repeatable block: article card -->
-          <div class="row row-cols-1 row-cols-lg-2 blog-related__list">
-            <div class="col">
-              <article class="blog-card">
-                <div class="blog-card__media">
+          <div class="row row-cols-1 row-cols-lg-2 related-list">
+            <div class="col d-flex">
+              <article class="post-card d-flex flex-column align-items-start w-100 h-100">
+                <div class="card-media d-block w-100">
                   <a href="blog-article.html">
-                    <img src="assets/img/blog/card-wof.webp" alt="Mechanic inspecting a car during a warrant of fitness check" width="1088" height="668" loading="lazy" decoding="async">
+                    <img class="d-block w-100 rounded-0" src="assets/img/blog/card-wof.webp" alt="Mechanic inspecting a car during a warrant of fitness check" width="1088" height="668" loading="lazy" decoding="async">
                   </a>
                 </div>
                 <h3><a href="blog-article.html">WOF Fail? Here Are the 10 Most Common Reasons in New Zealand — And How to Avoid Them.</a></h3>
                 <a class="ps-btn ps-btn-primary blog-btn" href="blog-article.html">Find out more</a>
               </article>
             </div>
-            <div class="col">
-              <article class="blog-card">
-                <div class="blog-card__media">
+            <div class="col d-flex">
+              <article class="post-card d-flex flex-column align-items-start w-100 h-100">
+                <div class="card-media d-block w-100">
                   <a href="blog-article.html">
-                    <img src="assets/img/blog/card-check-engine.webp" alt="Dashboard with the check engine light on" width="1088" height="668" loading="lazy" decoding="async">
+                    <img class="d-block w-100 rounded-0" src="assets/img/blog/card-check-engine.webp" alt="Dashboard with the check engine light on" width="1088" height="668" loading="lazy" decoding="async">
                   </a>
                 </div>
                 <h3><a href="blog-article.html">Why Your Check Engine Light Is On — The 8 Most Likely Causes (Explained Simply).</a></h3>
@@ -625,9 +625,9 @@
       </section>
 
       <!-- Repeatable block: CTA band -->
-      <section class="blog-cta" aria-label="Book a service">
+      <section class="blog-cta text-center" aria-label="Book a service">
         <p>Keep your car running smoothly with expert servicing, WOFs and repairs from your local Pit Stop team.</p>
-        <a class="ps-btn blog-btn blog-btn--book" href="booking.html">Book Now</a>
+        <a class="ps-btn blog-btn cta-book" href="booking.html">Book Now</a>
       </section>
     </main>
 
