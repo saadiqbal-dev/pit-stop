@@ -111,6 +111,33 @@ body.service-template .services-button {
   font-weight: 600;
 }
 
+/* O8  Essentials icons that main.css scales with the shared box.
+   Drum is short and wide, so a shared 100/128px height blows it up.
+   Car and towball are capped at 95px on mobile. */
+@media (min-width: 769px) {
+  body.service-template .s-card .img-container img.drum-icon {
+    height: 65px;
+    width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  body.service-template .s-cards .s-card .img-container img.car-icon {
+    max-width: 146px;
+    max-height: 69px;
+  }
+
+  body.service-template .s-cards .s-card .img-container img.towball-icon {
+    max-width: 101px;
+    max-height: 102px;
+  }
+
+  body.service-template .s-cards .s-card .img-container:has(.towball-icon) {
+    height: 102px;
+    max-height: 102px;
+  }
+}
+
 /* O8  FAQ: last item bottom rule (same as franchise.css / blog.css) */
 body.service-template .faq-item:last-child {
   border-bottom: 1px solid #000;
