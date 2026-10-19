@@ -616,11 +616,15 @@ body.post .article-body a:hover {
 }
 
 /* ---------- Article FAQ ----------
-   Uses the shared .faq component unchanged. The shared rules draw a 1px
-   line at the top of each item, so the last item needs a matching line. */
+   Shared FAQ, narrowed to the 835px article column. The shared rules
+   draw a 2px line at the top of each item, so the last item matches. */
+
+body.post .faq-container {
+  max-width: 835px;
+}
 
 body.post .faq-item:last-child {
-  border-bottom: 1px solid #000;
+  border-bottom: 2px solid #000;
 }
 
 /* ---------- Related articles ---------- */
