@@ -9507,31 +9507,32 @@ section.container-fluid:has(.top-bar) {
   margin-top: 18px;
 }
 
-/* FAQ Section */
-.faq {
+/* FAQ Section
+   Franchise FAQ is the source of truth. Open Sans (not Inter).
+   free-wof uses .free-wof-faq instead of .faq; same section metrics. */
+.faq,
+.free-wof-faq {
   width: 100%;
-  padding: 108px 30px 148px 30px;
-  background: #eeeeee99;
+  padding: 108px 30px 148px;
+  background: var(--color-background-light);
 }
 
 .faq-container {
-  max-width: 868px;
+  max-width: 827px;
   margin: 0 auto;
-  /* padding: 0 100px; */
   width: 100%;
 }
 
 .faq-container h2 {
   color: #000;
-  margin: 0 0 39px 0;
+  margin: 0 0 30px;
   padding: 0;
   text-align: left;
-
-  font-family: var(--font-family-accent);
-  font-size: 26px;
+  font-family: var(--font-family-base);
+  font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  line-height: 36px; /* 211.516% */
+  line-height: 28px;
 }
 
 .faq-item {
@@ -9540,43 +9541,37 @@ section.container-fluid:has(.top-bar) {
   width: 100%;
 }
 
+.faq-item:last-child {
+  border-bottom: 2px solid #000;
+}
+
 .faq-divider {
   width: 100%;
-  height: 1px;
+  height: 2px;
   background-color: #000;
-  transition:
-    background-color 0.3s ease,
-    height 0.3s ease;
   margin: 0;
   padding: 0;
   flex-shrink: 0;
-}
-
-.faq-item.active .faq-divider {
-  background-color: #eb2227;
-  height: 4px;
-  width: 100%;
 }
 
 .faq-question {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding: 32px 0; */
   margin: 0;
   cursor: pointer;
   user-select: none;
   width: 100%;
   gap: 20px;
-  padding: 20px 0;
+  padding: 22px 0;
 }
 
 .faq-question span {
   color: #000;
-  font-family: "Open Sans";
+  font-family: var(--font-family-base);
   font-size: 20px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 28px;
   flex: 1;
   margin: 0;
@@ -9588,7 +9583,8 @@ section.container-fluid:has(.top-bar) {
   transition: transform 0.4s ease;
   margin: 0;
   padding: 0;
-  width: 20px;
+  width: 30px;
+  height: 30px;
 }
 
 .faq-icon-plus {
@@ -9609,12 +9605,11 @@ section.container-fluid:has(.top-bar) {
 
 .faq-answer {
   display: none;
-  padding: 0 0 32px 0;
+  padding: 0 0 22px;
   margin: 0;
   width: 100%;
   overflow: hidden;
-  max-width: 650px;
-  width: 100%;
+  max-width: 732px;
   transition:
     max-height 0.4s ease,
     padding 0.4s ease;
@@ -9631,7 +9626,7 @@ section.container-fluid:has(.top-bar) {
   font-family: var(--font-family-base);
   font-size: 20px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 28px;
   margin: 0;
   padding: 0;
@@ -9642,7 +9637,7 @@ section.container-fluid:has(.top-bar) {
   font-family: var(--font-family-base);
   font-size: 20px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 28px;
   margin: 0;
   padding: 0 0 0 20px;
@@ -9673,19 +9668,6 @@ section.container-fluid:has(.top-bar) {
     line-height: 36px;
   }
 
-  .faq {
-    padding: 70px 0;
-  }
-
-  .faq-container {
-    padding: 0 90px;
-  }
-
-  .faq-container h2 {
-    font-size: 26px;
-    line-height: 36px;
-    margin-bottom: 70px;
-  }
 }
 
 /* 1280px - Laptop */
@@ -9708,19 +9690,6 @@ section.container-fluid:has(.top-bar) {
     line-height: 34px;
   }
 
-  .faq {
-    padding: 65px 0;
-  }
-
-  .faq-container {
-    padding: 0 80px;
-  }
-
-  .faq-container h2 {
-    font-size: 26px;
-    line-height: 36px;
-    margin-bottom: 65px;
-  }
 }
 
 /* 1024px - Tablet Landscape */
@@ -9744,27 +9713,6 @@ section.container-fluid:has(.top-bar) {
     line-height: 32px;
   }
 
-  .faq {
-    padding: 60px 0;
-  }
-
-  .faq-container {
-    padding: 0 60px;
-  }
-
-  .faq-container h2 {
-    font-size: 26px;
-    line-height: 36px;
-    margin-bottom: 60px;
-  }
-
-  .faq-question {
-    padding: 28px 0;
-  }
-
-  .faq-answer {
-    padding: 0 0 28px 0;
-  }
 }
 
 @media (max-width: 990px) {
@@ -9803,36 +9751,27 @@ section.container-fluid:has(.top-bar) {
     margin-top: 50px;
   }
 
-  .faq {
-    padding: 50px 0;
+  .faq,
+  .free-wof-faq {
+    padding: 40px 30px 64px;
   }
 
   .faq-container {
-    padding: 0 40px;
+    padding: 0;
   }
 
   .faq-container h2 {
-    font-size: 26px;
-    line-height: 36px;
-    margin-bottom: 50px;
+    margin-bottom: 24px;
   }
 
   .faq-question {
-    padding: 24px 0;
-  }
-
-  .faq-question span {
-    font-size: 22px;
-    line-height: 30px;
+    padding: 16px 0;
+    gap: 16px;
   }
 
   .faq-answer {
-    padding: 0 0 24px 0;
-  }
-
-  .faq-answer p {
-    font-size: 18px;
-    line-height: 26px;
+    max-width: 100%;
+    padding: 0 0 16px;
   }
 
   .promotion-banner-free-wof {
@@ -9900,44 +9839,6 @@ section.container-fluid:has(.top-bar) {
     margin-top: 50px;
   }
 
-  .faq {
-    padding: 40px 30px 87px 30px;
-  }
-
-  .faq-container {
-    padding: 0px;
-  }
-
-  .faq-container h2 {
-    font-size: 26px;
-    line-height: 36px;
-    margin-bottom: 40px;
-  }
-
-  .faq-question {
-    padding: 20px 0px;
-    gap: 15px;
-  }
-
-  .faq-question span {
-    font-size: 18px;
-    line-height: 26px;
-  }
-
-  .faq-answer {
-    padding: 0 0 20px 0;
-  }
-
-  .faq-answer p {
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  .faq-icon-plus,
-  .faq-icon-close {
-    width: 20px;
-    height: 20px;
-  }
 }
 
 @media (max-width: 768px) {

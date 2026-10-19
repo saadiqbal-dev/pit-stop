@@ -894,8 +894,8 @@ html:has(body.franchise) {
   }
 }
 
-/* The shared FAQ draws its 1px rule at the top of each item, so the last
-   question has no line under it. Match that rule on this page only. */
+/* The shared FAQ draws a 2px rule at the top of each item. Match it
+   under the last question. */
 body.franchise .faq-item:last-child {
-  border-bottom: 1px solid #000;
+  border-bottom: 2px solid #000;
 }
